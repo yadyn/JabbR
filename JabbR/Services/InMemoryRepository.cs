@@ -12,8 +12,6 @@ namespace JabbR.Services
         private readonly ICollection<ChatUserIdentity> _identities;
         private readonly ICollection<ChatRoom> _rooms;
 
-        private DateTime _lastPurge;
-
         public InMemoryRepository()
         {
             _users = new SafeCollection<ChatUser>();
@@ -80,7 +78,7 @@ namespace JabbR.Services
 
         public void CommitChanges()
         {
-            PurgeMessagesIfNecessary();
+            // no-op since this is an in-memory impl' of the repo
         }
 
         public void Dispose()
@@ -216,36 +214,6 @@ namespace JabbR.Services
 
         public void Reload(object entity)
         {
-        }
-
-        private void PurgeMessagesIfNecessary()
-        {
-            var currentDate = DateTime.Now;
-
-            if (currentDate.Subtract(_lastPurge).TotalHours > 1d)
-            {
-                PurgeMessages();
-
-                _lastPurge = currentDate;
-            }
-        }
-        private void PurgeMessages()
-        {
-            foreach (var room in _rooms)
-            {
-                PurgeMessages(room);
-            }
-        }
-        private void PurgeMessages(ChatRoom room)
-        {
-            var messagesToKeep = room.Messages.OrderByDescending(m => m.When).Take(100).ToList();
-
-            room.Messages.Clear();
-
-            foreach (var msg in messagesToKeep)
-            {
-                room.Messages.Add(msg);
-            }
         }
     }
 }

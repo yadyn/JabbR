@@ -62,7 +62,9 @@
         $fileRoom = null,
         $fileConnectionId = null,
         connectionInfoStatus = null,
-        connectionInfoTransport = null;
+        connectionInfoTransport = null,
+        $emotelist = null,
+        $emotelistDialog = null;
 
     function getRoomId(roomName) {
         return window.escape(roomName.toLowerCase()).replace(/[^a-z0-9]/, '_');
@@ -866,6 +868,8 @@
             $downloadRange = $('#download-range');
             $logout = $('#preferences .logout');
             $help = $('#preferences .help');
+            $emotelist = $('#emotelist');
+            $emotelistDialog = $('#emotelist-dialog');
             $disconnectDialog = $('#disconnect-dialog');
             $login = $('#jabbr-login');
             $helpPopup = $('#jabbr-help');
@@ -1177,6 +1181,23 @@
 
                 // clear the search text and update search list
                 ui.$roomFilter.update();
+            });
+
+            $emotelist.click(function () {
+                // toggle emote list dialog
+                if ($emotelistDialog.dialog('isOpen'))
+                    $emotelistDialog.dialog('close');
+                else
+                    $emotelistDialog.dialog('open');
+            });
+
+            $emotelistDialog.dialog({
+                autoOpen: false,
+                draggable: false,
+                resizable: false,
+                width: 340,
+                maxHeight: 650,
+                position: { my: "right top", at: "right bottom", of: "#emotelist" }
             });
 
             $window.blur(function () {
@@ -1596,7 +1617,7 @@
         changeGravatar: function (user, roomName) {
             var room = getRoomElements(roomName),
                 $user = room.getUserReferences(user.Name),
-                src = 'https://secure.gravatar.com/avatar/' + user.Hash + '?s=16&d=mm';
+                src = 'https://secure.gravatar.com/avatar/' + user.Hash + '?s=32&d=mm';
 
             $user.find('.gravatar')
                  .attr('src', src);

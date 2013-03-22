@@ -160,6 +160,7 @@
 
     function getMessageViewModel(message) {
         var re = new RegExp("\\b@?" + chat.state.name.replace(/\./, '\\.') + "\\b", "i");
+        var regt = new RegExp("^&gt;");
         return {
             name: message.User.Name,
             hash: message.User.Hash,
@@ -168,6 +169,7 @@
             id: message.Id,
             date: message.When.fromJsonDate(),
             highlight: re.test(message.Content) ? 'highlight' : '',
+            greentext: regt.test(message.Content) ? 'greentext' : '',
             isOwn: re.test(message.User.name)
         };
     }
@@ -778,13 +780,15 @@
             }
 
             // Added the message to the ui first
+            var regt = new RegExp("^>");
             var viewModel = {
                 name: chat.state.name,
                 hash: chat.state.hash,
                 message: ui.processContent(clientMessage.content),
                 id: clientMessage.id,
                 date: new Date(),
-                highlight: ''
+                highlight: '',
+                greentext: regt.test(clientMessage.content) ? 'greentext' : ''
             };
 
             ui.addChatMessage(viewModel, clientMessage.room);

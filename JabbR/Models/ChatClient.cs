@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace JabbR.Models
 {
+    [Serializable]
     public class ChatClient
     {
         [Key]
@@ -14,5 +15,27 @@ namespace JabbR.Models
         public DateTimeOffset LastActivity { get; set; }
 
         public int UserKey { get; set; }
+
+        public override int GetHashCode()
+        {
+            return Id.GetHashCode();
+        }
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+                return false;
+
+            if (Object.ReferenceEquals(this, obj))
+                return true;
+
+            if (obj is ChatClient)
+            {
+                var cclient = obj as ChatClient;
+
+                return Id == cclient.Id;
+            }
+
+            return false;
+        }
     }
 }

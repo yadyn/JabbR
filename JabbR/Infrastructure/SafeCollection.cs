@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 namespace JabbR.Infrastructure
 {
+    [Serializable]
     public class SafeCollection<T> : ICollection<T>
     {
         private readonly ConcurrentDictionary<T, bool> _inner = new ConcurrentDictionary<T, bool>();

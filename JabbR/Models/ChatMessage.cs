@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace JabbR.Models
 {
+    [Serializable]
     public class ChatMessage
     {
         [Key]

@@ -25,7 +25,7 @@ namespace JabbR
                 .To<JabbrContext>();
 
             kernel.Bind<IJabbrRepository>()
-                .To<InMemoryRepository>()
+                .To<CustomRepository>()
                 .InSingletonScope();
 
             kernel.Bind<IChatService>()
