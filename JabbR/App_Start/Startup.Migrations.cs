@@ -16,7 +16,8 @@ namespace JabbR
             // Get the Jabbr connection string
             var connectionString = ConfigurationManager.ConnectionStrings["Jabbr"];
 
-            if (String.IsNullOrEmpty(connectionString.ProviderName) ||
+            if (connectionString == null ||
+                String.IsNullOrEmpty(connectionString.ProviderName) ||
                 !connectionString.ProviderName.Equals(SqlClient, StringComparison.OrdinalIgnoreCase))
             {
                 return;
