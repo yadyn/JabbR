@@ -127,6 +127,7 @@ cp $libPath\signalr.exe $binPath\signalr.exe
 
 # Set app settngs
 set-appsetting -path $webConfigPath -name "jabbr:requireHttps" -value $true
+set-appsetting -path $webConfigPath -name "jabbr:proxyImages" -value $true
 set-appsetting -path $webConfigPath -name "jabbr:googleAnalytics" -value $googleAnalyticsToken
 set-appsetting -path $webConfigPath -name "jabbr:releaseBranch" -value $commitBranch
 set-appsetting -path $webConfigPath -name "jabbr:releaseSha" -value $commitSha
