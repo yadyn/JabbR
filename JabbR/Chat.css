@@ -163,25 +163,25 @@ form#send-message {
   background-color: #fff;
 }
 
-  .messages li
-  {
-    list-style-type: none;
-    position: relative;
-    margin: 0px;
-  }
+.messages li
+{
+list-style-type: none;
+position: relative;
+margin: 0px;
+}
 
-    .messages li.message
-    {
-      padding: 0px;
-      border-left: 175px solid #f1f1f1; /* background color for left column (user info) */
-    }
+.messages li.message
+{
+    padding: 0px;
+    border-left: 175px solid #f1f1f1; /* background color for left column (user info) */
+}
 
-    .messages li img.gravatar
-    {
-      height: 32px;
-      width: 32px;
-      display: inline-block;
-    }
+.messages li img.gravatar
+{
+    height: 32px;
+    width: 32px;
+    display: inline-block;
+}
 
 .message img 
 {
@@ -267,6 +267,12 @@ form#send-message {
   {
     color: #909090;
     font-style: italic;
+  }
+
+  .users li .gravatar
+  {
+    width: 16px;
+    height: 16px;
   }
 
   .users li .name
