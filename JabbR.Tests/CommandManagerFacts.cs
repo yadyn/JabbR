@@ -128,7 +128,7 @@ namespace JabbR.Test
             }
 
             [Fact]
-            public void ReturnsFalseIfCommandDoesntExists()
+            public void ThrowsIfCommandDoesntExist ()
             {
                 var repository = new InMemoryRepository();
                 var cache = new Mock<ICache>().Object;
@@ -151,9 +151,7 @@ namespace JabbR.Test
                 repository.Add(room);
                 var commandManager = new CommandManager("1", "1", "room", service, repository, cache, notificationService.Object);
 
-                bool result = commandManager.TryHandleCommand("/foo");
-
-                Assert.False(result);
+                Assert.Throws<InvalidOperationException> (() => commandManager.TryHandleCommand ("/message"));
             }
 
             [Fact]
@@ -197,6 +195,22 @@ namespace JabbR.Test
                 commandManager.MatchCommand("invite", out command);
 
                 Assert.IsType<JabbR.Commands.InviteCommand>(command);
+            }
+
+            [Fact]
+            public void DoesNotThrowIfCommandIsPrefixButCaseInsensitiveMatch()
+            {
+                var repository = new InMemoryRepository();
+                var cache = new Mock<ICache>().Object;
+                var service = new ChatService(cache, repository);
+                var notificationService = new Mock<INotificationService>();
+
+                var commandManager = new CommandManager("1", "1", "room", service, repository, cache, notificationService.Object);
+
+                ICommand command;
+                commandManager.MatchCommand("CrEaT", out command);
+
+                Assert.IsType<JabbR.Commands.CreateCommand>(command);
             }
         }
         

@@ -8,14 +8,12 @@ namespace JabbR.Services
 
         string DefaultAdminUserName { get; }
         string DefaultAdminPassword { get; }
-        AuthenticationMode AuthenticationMode { get; }
 
         bool RequireHttps { get; }
         bool MigrateDatabase { get; }
         bool ProxyImages { get; }
         int ProxyImageMaxSizeBytes { get; }
 
-        string ImagurClientId { get; }
         string AzureblobStorageConnectionString { get; }
 
         int MaxFileUploadBytes { get; }

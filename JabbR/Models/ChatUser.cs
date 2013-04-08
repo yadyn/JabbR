@@ -47,6 +47,9 @@ namespace JabbR.Models
         public virtual ICollection<ChatRoom> OwnedRooms { get; set; }
         public virtual ICollection<ChatRoom> Rooms { get; set; }
 
+        public virtual ICollection<Attachment> Attachments { get; set; }
+        public virtual ICollection<Notification> Notifications { get; set; }
+
         // Private rooms this user is allowed to go into
         public virtual ICollection<ChatRoom> AllowedRooms { get; set; }
 
@@ -57,6 +60,8 @@ namespace JabbR.Models
             OwnedRooms = new SafeCollection<ChatRoom>();
             Rooms = new SafeCollection<ChatRoom>();
             AllowedRooms = new SafeCollection<ChatRoom>();
+            Attachments = new SafeCollection<Attachment>();
+            Notifications = new SafeCollection<Notification>();
         }
 
         public override int GetHashCode()

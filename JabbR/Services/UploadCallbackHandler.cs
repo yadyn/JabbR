@@ -45,17 +45,24 @@ namespace JabbR.Services
                 return;
             }
 
-            string contentUrl = null;
+            UploadResult result;
+            ChatMessage message;
 
             try
             {
-                contentUrl = await _processor.HandleUpload(file, contentType, stream);
+                result = await _processor.HandleUpload(file, contentType, stream);
 
-                if (contentUrl == null)
+                if (result == null)
                 {
                     _hubContext.Clients.Client(connectionId).postMessage("Failed to upload " + Path.GetFileName(file) + ".", "error", roomName);
                     return;
                 }
+
+                // Add the message to the persistent chat
+                message = _service.AddMessage(userId, roomName, result.Url);
+
+                // Keep track of this attachment
+                _service.AddAttachment(message, file, contentType, stream.Length, result);
             }
             catch (Exception ex)
             {
@@ -63,15 +70,12 @@ namespace JabbR.Services
                 return;
             }
 
-            // Add the message to the persistent chat
-            ChatMessage message = _service.AddMessage(userId, roomName, contentUrl);
-
             var messageViewModel = new MessageViewModel(message);
 
             // Notify all clients for the uploaded url
             _hubContext.Clients.Group(roomName).addMessage(messageViewModel, roomName);
 
-            _resourceProcessor.ProcessUrls(new[] { contentUrl }, _hubContext.Clients, roomName, message.Id, message.Id);
+            _resourceProcessor.ProcessUrls(new[] { result.Url }, _hubContext.Clients, roomName, message.Id);
         }
 
         private static string FormatBytes(long bytes)

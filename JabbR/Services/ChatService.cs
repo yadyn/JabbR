@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using JabbR.Infrastructure;
 using JabbR.Models;
+using JabbR.UploadHandlers;
 
 namespace JabbR.Services
 {
@@ -278,7 +279,7 @@ namespace JabbR.Services
             _cache = cache;
             _repository = repository;
         }
-        
+
         public ChatRoom AddRoom(ChatUser user, string name)
         {
             if (name.Equals("Lobby", StringComparison.OrdinalIgnoreCase))
@@ -369,6 +370,23 @@ namespace JabbR.Services
             _repository.RemoveUserRoom(user, room);
         }
 
+        public void AddAttachment(ChatMessage message, string fileName, string contentType, long size, UploadResult result)
+        {
+            var attachment = new Attachment
+            {
+                Id = result.Identifier,
+                Url = result.Url,
+                FileName = fileName,
+                ContentType = contentType,
+                Size = size,
+                Room = message.Room,
+                Owner = message.User,
+                When = DateTimeOffset.UtcNow
+            };
+
+            _repository.Add(attachment);
+        }
+
         public ChatMessage AddMessage(ChatUser user, ChatRoom room, string id, string content)
         {
             var chatMessage = new ChatMessage
@@ -388,14 +406,34 @@ namespace JabbR.Services
 
         public ChatMessage AddMessage(string userId, string roomName, string content)
         {
-            var user = _repository.GetUserById(userId);
-            var room = _repository.GetRoomByName(roomName);
+            ChatUser user = _repository.VerifyUserId(userId);
+            ChatRoom room = _repository.VerifyUserRoom(_cache, user, roomName);
+
+            // REVIEW: Is it better to use _repository.VerifyRoom(message.Room, mustBeOpen: false)
+            // here?
+            if (room.Closed)
+            {
+                throw new InvalidOperationException(String.Format("You cannot post messages to '{0}'. The room is closed.", roomName));
+            }
 
             var message = AddMessage(user, room, Guid.NewGuid().ToString("d"), content);
 
             _repository.CommitChanges();
 
             return message;
+        }
+
+        public void AddNotification(ChatUser mentionedUser, ChatMessage message, bool markAsRead)
+        {
+            // We need to use the key here since messages might be a new entity
+            var notification = new Notification
+            {
+                User = mentionedUser,
+                Message = message,
+                Read = markAsRead
+            };
+
+            _repository.Add(notification);
         }
 
         public void AppendMessage(string id, string content)
@@ -538,7 +576,7 @@ namespace JabbR.Services
         {
             return roomName.StartsWith("#") ? roomName.Substring(1) : roomName;
         }
-        
+
         private bool IsUserAllowed(ChatRoom room, ChatUser user)
         {
             return room.AllowedUsers.Contains(user) || user.IsAdmin;
@@ -797,7 +835,7 @@ namespace JabbR.Services
                     "Sorry, but the country ISO code you requested doesn't exist. Please refer to http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for a proper list of country ISO codes.");
             }
         }
-         
+
         internal static string GetCountry(string isoCode)
         {
             if (String.IsNullOrEmpty(isoCode))

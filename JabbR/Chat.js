@@ -2,6 +2,7 @@
 /// <reference path="Scripts/jQuery.tmpl.js" />
 /// <reference path="Scripts/jquery.cookie.js" />
 /// <reference path="Chat.ui.js" />
+/// <reference path="Scripts/moment.min.js" />
 
 (function ($, connection, window, ui, utility) {
     "use strict";
@@ -15,10 +16,10 @@
         loadingHistory = false,
         checkingStatus = false,
         typing = false,
-        typingTimeoutId = null,
         $ui = $(ui),
         messageSendingDelay = 1500,
-        pendingMessages = {};
+        pendingMessages = {},
+        privateRooms = null;
 
     function failPendingMessages() {
         for (var id in pendingMessages) {
@@ -78,10 +79,14 @@
 
     function populateRoom(room) {
         var d = $.Deferred();
+        
+        connection.hub.log('getRoomInfo(' + room + ')');
 
         // Populate the list of users rooms and messages 
         chat.server.getRoomInfo(room)
                 .done(function (roomInfo) {
+                    connection.hub.log('getRoomInfo.done(' + room + ')');
+
                     $.each(roomInfo.Users, function () {
                         var userViewModel = getUserViewModel(this);
                         ui.addUser(userViewModel, room);
@@ -114,7 +119,8 @@
                     // may be appended if we are just joining the room
                     ui.watchMessageScroll(messageIds, room);
                 })
-                .fail(function () {
+                .fail(function (e) {
+                    connection.hub.log('getRoomInfo.failed(' + room + ', ' + e + ')');
                     d.rejectWith(chat);
                 });
 
@@ -122,11 +128,12 @@
     }
 
     function populateLobbyRooms() {
-        try {
+        try { 
             // Populate the user list with room names
             chat.server.getRooms()
                 .done(function (rooms) {
-                    ui.populateLobbyRooms(rooms);
+                    ui.populateLobbyRooms(rooms, privateRooms);
+                    ui.setInitialized('Lobby');
                 });
         }
         catch (e) {
@@ -175,7 +182,7 @@
             highlight: re.test(message.Content) ? 'highlight' : '',
             greentext: regt.test(message.Content) ? 'greentext' : '',
             isOwn: re.test(message.User.name),
-            isMine: message.User.Name == chat.state.name
+            isMine: message.User.Name === chat.state.name
         };
     }
 
@@ -250,9 +257,10 @@
     };
 
     // Called when a returning users join chat
-    chat.client.logOn = function (rooms) {
-        var activeRoom = this.state.activeRoom,
-            loadRooms = function () {
+    chat.client.logOn = function (rooms, myRooms) {
+        privateRooms = myRooms;
+
+           var loadRooms = function () {
                 $.each(rooms, function (index, room) {
                     if (chat.state.activeRoom !== room.Name) {
                         populateRoom(room.Name);
@@ -270,9 +278,6 @@
             }
         });
         ui.setUserName(chat.state.name);
-        ui.addMessage('Welcome back ' + chat.state.name, 'notification', 'lobby');
-        ui.addMessage('You can join any of the rooms on the right', 'notification', 'lobby');
-        ui.addMessage('Type /logout to log out of chat', 'notification', 'lobby');
 
         // Process any urls that may contain room names
         ui.run();
@@ -303,6 +308,7 @@
         }
 
         ui.setRoomLocked(room);
+        ui.updatePrivateLobbyRooms(room);
     };
 
     // Called when this user locked a room
@@ -362,6 +368,19 @@
         updateUnread(room, false /* isMentioned: this is outside normal messages and user shouldn't be mentioned */);
 
         ui.watchMessageScroll([id], room);
+    };
+
+    chat.client.replaceMessage = function (id, message, room) {
+        var viewModel = getMessageViewModel(message);
+
+        scrollIfNecessary(function () {
+            // Update your message when it comes from the server
+            ui.overwriteMessage(id, viewModel);
+        }, room);
+
+        var isMentioned = viewModel.highlight === 'highlight';
+
+        updateUnread(room, isMentioned);
     };
 
     chat.client.addMessage = function (message, room) {
@@ -468,7 +487,7 @@
         var lastActivityDate = userInfo.LastActivity.fromJsonDate();
         var status = "Currently " + userInfo.Status;
         if (userInfo.IsAfk) {
-            status += userInfo.Status == 'Active' ? ' but ' : ' and ';
+            status += userInfo.Status === 'Active' ? ' but ' : ' and ';
             status += ' is Afk';
         }
         ui.addMessage('User information for ' + userInfo.Name +
@@ -763,6 +782,7 @@
             typing = true;
 
             try {
+                ui.setRoomTrimmable(chat.state.activeRoom, typing);
                 chat.server.typing(chat.state.activeRoom);
             }
             catch (e) {
@@ -937,18 +957,26 @@
         loadingHistory = true;
 
         try {
-            // TODO: Show a little animation so the user experience looks fancy
+            // Show a little animation so the user experience looks fancy
+            ui.setLoadingHistory(loadingHistory);
+            ui.setRoomTrimmable(roomInfo.name, false);
+            connection.hub.log('getPreviousMessages(' + roomInfo.name + ')');
             chat.server.getPreviousMessages(roomInfo.messageId)
                 .done(function (messages) {
+                    connection.hub.log('getPreviousMessages.done(' + roomInfo.name + ')');
                     ui.prependChatMessages($.map(messages, getMessageViewModel), roomInfo.name);
                     loadingHistory = false;
+                    ui.setLoadingHistory(loadingHistory);
                 })
-                .fail(function () {
+                .fail(function (e) {
+                    connection.hub.log('getPreviousMessages.failed(' + roomInfo.name + ', ' + e + ')');
                     loadingHistory = false;
+                    ui.setLoadingHistory(loadingHistory);
                 });
         }
         catch (e) {
             connection.hub.log('getPreviousMessages failed');
+            ui.setLoadingHistory(false);
         }
     });
 
@@ -1038,8 +1066,11 @@
                 setTimeout(function () {
                     connection.hub.start(options)
                                   .done(function () {
+                                      // When this works uncomment it.
+                                      // ui.showReloadMessageNotification();
+
                                       // Turn the firehose back on
-                                      chat.server.join(false);
+                                      chat.server.join(true);
                                   });
                 }, 5000);
             });

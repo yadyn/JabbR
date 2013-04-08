@@ -85,19 +85,19 @@
     </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.1.1.0-beta1-130322\lib\net40\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.1.1.0-beta1-130401\lib\net40\Microsoft.AspNet.SignalR.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.Owin, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.SignalR.Owin.1.1.0-beta1-130322\lib\net45\Microsoft.AspNet.SignalR.Owin.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Owin.1.1.0-beta1-130401\lib\net45\Microsoft.AspNet.SignalR.Owin.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.1.1.0-beta1-130322\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.1.1.0-beta1-130401\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AspNet.WebApi.Owin, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.AspNet.WebApi.Owin, Version=0.21.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.0.19-alpha\lib\net40\Microsoft.AspNet.WebApi.Owin.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.0.21.0-pre-20319-141\lib\net40\Microsoft.AspNet.WebApi.Owin.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -108,17 +108,20 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Owin.FileSystems">
+      <HintPath>..\packages\Microsoft.Owin.FileSystems.0.21.0-pre-20319-141\lib\net40\Microsoft.Owin.FileSystems.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.1.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.1.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Mapping, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Owin.Mapping, Version=0.21.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.Owin.Mapping.0.19-alpha-20125-48\lib\net40\Microsoft.Owin.Mapping.dll</HintPath>
+      <HintPath>..\packages\Microsoft.Owin.Mapping.0.21.0-pre-20319-141\lib\net40\Microsoft.Owin.Mapping.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.StaticFiles, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Owin.StaticFiles, Version=0.21.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.Owin.StaticFiles.0.19-alpha-20125-48\lib\net40\Microsoft.Owin.StaticFiles.dll</HintPath>
+      <HintPath>..\packages\Microsoft.Owin.StaticFiles.0.21.0-pre-20319-141\lib\net40\Microsoft.Owin.StaticFiles.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -926,6 +929,15 @@
     <EmbeddedResource Include="Migrations\201303220549121_ContentProviderContent.resx">
       <DependentUpon>201303220549121_ContentProviderContent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201303302002539_Attachments.resx">
+        <DependentUpon>201303302002539_Attachments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201303302058326_AttachmentMetadata.resx">
+      <DependentUpon>201303302058326_AttachmentMetadata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304020629255_Notifications.resx">
+      <DependentUpon>201304020629255_Notifications.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Scripts\jquery-1.9.0.intellisense.js" />
     <Content Include="Scripts\ba-linkify.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -947,8 +959,8 @@
     </Content>
     <Content Include="Scripts\jquery.livesearch.js" />
     <Content Include="Scripts\jquery.network.mock.js" />
-    <Content Include="Scripts\jquery.signalR-1.1.0-beta1-130322.js" />
-    <Content Include="Scripts\jquery.signalR-1.1.0-beta1-130322.min.js" />
+    <Content Include="Scripts\jquery.signalR-1.1.0-beta1-130401.js" />
+    <Content Include="Scripts\jquery.signalR-1.1.0-beta1-130401.min.js" />
     <Content Include="Scripts\jquery.sortElements.js" />
     <Content Include="Scripts\jquery.timeago.0.10.js" />
     <Content Include="Scripts\jQuery.tmpl.js" />
@@ -957,8 +969,11 @@
     <Content Include="Scripts\json2.min.js">
       <DependentUpon>json2.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\livestamp.js" />
+    <Content Include="Scripts\livestamp.min.js" />
     <Content Include="Scripts\Markdown.Converter.js" />
     <Content Include="Scripts\modernizr.js" />
+    <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\quicksilver.js" />
     <Content Include="Scripts\qunit.js" />
     <Content Include="Chat.dictionary.css" />
@@ -980,18 +995,39 @@
     <Content Include="Views\Account\_social.cshtml" />
     <Content Include="Views\Account\login.cshtml" />
     <Content Include="Views\Account\index.cshtml" />
+    <Content Include="Scripts\livestamp.min.js.map">
+      <DependentUpon>livestamp.js</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\Startup.DependencyInjection.cs" />
     <Compile Include="ContentProviders\Core\ContentProviderProcessor.cs" />
+    <Compile Include="ContentProviders\GitHubIssueCommentsContentProvider.cs" />
     <Compile Include="Infrastructure\AuthenticationServiceExtensions.cs" />
     <Compile Include="Infrastructure\CryptoHelper.cs" />
     <Compile Include="Infrastructure\IdentityUtility.cs" />
     <Compile Include="Infrastructure\AlertMessageStore.cs" />
+    <Compile Include="Infrastructure\MentionExtractor.cs" />
     <Compile Include="Migrations\201303220549121_ContentProviderContent.cs" />
     <Compile Include="Migrations\201303220549121_ContentProviderContent.Designer.cs">
       <DependentUpon>201303220549121_ContentProviderContent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201303302002539_Attachments.cs" />
+    <Compile Include="Migrations\201303302002539_Attachments.Designer.cs">
+        <DependentUpon>201303302002539_Attachments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201303302058326_AttachmentMetadata.cs" />
+    <Compile Include="Migrations\201303302058326_AttachmentMetadata.Designer.cs">
+      <DependentUpon>201303302058326_AttachmentMetadata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304020629255_Notifications.cs" />
+    <Compile Include="Migrations\201304020629255_Notifications.Designer.cs">
+      <DependentUpon>201304020629255_Notifications.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Attachment.cs" />
+    <Compile Include="Models\Mapping\AttachmentMap.cs" />
+    <Compile Include="Models\Mapping\NotificationMap.cs" />
+    <Compile Include="Models\Notification.cs" />
     <Compile Include="Nancy\HtmlHelperExtensions.cs" />
     <Compile Include="Migrations\201301250443391_AddProviderName.cs" />
     <Compile Include="Migrations\201301250443391_AddProviderName.Designer.cs">
@@ -1043,7 +1079,6 @@
     <Compile Include="Nancy\HomeModule.cs" />
     <Compile Include="Nancy\SessionExtensions.cs" />
     <Compile Include="Services\AppSettingKeyProvider.cs" />
-    <Compile Include="Services\AuthenticationMode.cs" />
     <Compile Include="Services\AuthenticationTokenService.cs" />
     <Compile Include="Services\CustomRepository.cs" />
     <Compile Include="Services\DefaultCache.cs" />
@@ -1057,8 +1092,8 @@
     <Compile Include="Services\MembershipService.cs" />
     <Compile Include="Services\ChatNotificationService.cs" />
     <Compile Include="Services\UploadCallbackHandler.cs" />
-    <Compile Include="UploadHandlers\ImgurUploadHandler.cs" />
     <Compile Include="UploadHandlers\UploadProcessor.cs" />
+    <Compile Include="UploadHandlers\UploadResult.cs" />
     <Compile Include="ViewModels\LobbyRoomViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ProfilePageViewModel.cs" />

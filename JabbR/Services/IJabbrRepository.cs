@@ -36,6 +36,7 @@ namespace JabbR.Services
         void Add(ChatRoom room);
         void Add(ChatUser user);
         void Add(ChatUserIdentity identity);
+        void Add(Attachment attachment);
 
         void Remove(ChatClient client);
         void Remove(ChatRoom room);
@@ -48,5 +49,8 @@ namespace JabbR.Services
 
         // Reload entities from the store
         void Reload(object entity);
+
+        void Add(Notification notification);
+        void Remove(Notification notification);
     }
 }

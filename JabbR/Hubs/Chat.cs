@@ -26,9 +26,9 @@ namespace JabbR
         private readonly ICache _cache;
         private readonly ContentProviderProcessor _resourceProcessor;
 
-        public Chat(ContentProviderProcessor resourceProcessor, 
-                    IChatService service, 
-                    IJabbrRepository repository, 
+        public Chat(ContentProviderProcessor resourceProcessor,
+                    IChatService service,
+                    IJabbrRepository repository,
                     ICache cache)
         {
             _resourceProcessor = resourceProcessor;
@@ -73,10 +73,10 @@ namespace JabbR
 
         public void Join()
         {
-            Join(login: true);
+            Join(reconnecting: false);
         }
 
-        public void Join(bool login)
+        public void Join(bool reconnecting)
         {
             // Get the client state
             var userId = Context.User.Identity.Name;
@@ -84,13 +84,16 @@ namespace JabbR
             // Try to get the user from the client state
             ChatUser user = _repository.GetUserById(userId);
 
-            // Update some user values
-            _service.UpdateActivity(user, Context.ConnectionId, UserAgent);
-            _repository.CommitChanges();
+            if (!reconnecting)
+            {
+                // Update some user values
+                _service.UpdateActivity(user, Context.ConnectionId, UserAgent);
+                _repository.CommitChanges();
+            }
 
             ClientState clientState = GetClientState();
 
-            OnUserInitialize(clientState, user, login);
+            OnUserInitialize(clientState, user, reconnecting);
         }
 
         private void CheckStatus()
@@ -101,7 +104,7 @@ namespace JabbR
             }
         }
 
-        private void OnUserInitialize(ClientState clientState, ChatUser user, bool login)
+        private void OnUserInitialize(ClientState clientState, ChatUser user, bool reconnecting)
         {
             // Update the active room on the client (only if it's still a valid room)
             if (user.Rooms.Any(room => room.Name.Equals(clientState.ActiveRoom, StringComparison.OrdinalIgnoreCase)))
@@ -110,7 +113,7 @@ namespace JabbR
                 Clients.Caller.activeRoom = clientState.ActiveRoom;
             }
 
-            LogOn(user, Context.ConnectionId, login);
+            LogOn(user, Context.ConnectionId, reconnecting);
         }
 
         public bool Send(string content, string roomName)
@@ -118,19 +121,18 @@ namespace JabbR
             var message = new ClientMessage
             {
                 Content = content,
-                Id = Guid.NewGuid().ToString("d"),
                 Room = roomName
             };
 
             return Send(message);
         }
 
-        public bool Send(ClientMessage message)
+        public bool Send(ClientMessage clientMessage)
         {
             CheckStatus();
 
             // See if this is a valid command (starts with /)
-            if (TryHandleCommand(message.Content, message.Room))
+            if (TryHandleCommand(clientMessage.Content, clientMessage.Room))
             {
                 return true;
             }
@@ -138,39 +140,91 @@ namespace JabbR
             var userId = Context.User.Identity.Name;
 
             ChatUser user = _repository.VerifyUserId(userId);
-            ChatRoom room = _repository.VerifyUserRoom(_cache, user, message.Room);
+            ChatRoom room = _repository.VerifyUserRoom(_cache, user, clientMessage.Room);
+
+            if (room == null || (room.Private && !user.AllowedRooms.Contains(room)))
+            {
+                return false;
+            }
 
             // REVIEW: Is it better to use _repository.VerifyRoom(message.Room, mustBeOpen: false)
             // here?
             if (room.Closed)
             {
-                throw new InvalidOperationException(String.Format("You cannot post messages to '{0}'. The room is closed.", message.Room));
+                throw new InvalidOperationException(String.Format("You cannot post messages to '{0}'. The room is closed.", clientMessage.Room));
             }
 
             // Update activity *after* ensuring the user, this forces them to be active
             UpdateActivity(user, room);
 
-            ChatMessage chatMessage = _service.AddMessage(user, room, message.Id, message.Content);
+            // Create a true unique id and save the message to the db
+            string id = Guid.NewGuid().ToString("d");
+            ChatMessage chatMessage = _service.AddMessage(user, room, id, clientMessage.Content);
+            _repository.CommitChanges();
 
 
             var messageViewModel = new MessageViewModel(chatMessage);
-            Clients.Group(room.Name).addMessage(messageViewModel, room.Name);
 
-            _repository.CommitChanges();
+            if (clientMessage.Id == null)
+            {
+                // If the client didn't generate an id for the message then just
+                // send it to everyone. The assumption is that the client has some ui
+                // that it wanted to update immediately showing the message and
+                // then when the actual message is roundtripped it would "solidify it".
+                Clients.Group(room.Name).addMessage(messageViewModel, room.Name);
+            }
+            else
+            {
+                // If the client did set an id then we need to give everyone the real id first
+                Clients.OthersInGroup(room.Name).addMessage(messageViewModel, room.Name);
 
-            string clientMessageId = chatMessage.Id;
+                // Now tell the caller to replace the message
+                Clients.Caller.replaceMessage(clientMessage.Id, messageViewModel, room.Name);
+            }
 
-            // Update the id on the message
-            chatMessage.Id = Guid.NewGuid().ToString("d");
-            _repository.CommitChanges();
-
+            // Add mentions
+            AddMentions(chatMessage);
+            
             var urls = UrlExtractor.ExtractUrls(chatMessage.Content);
             if (urls.Count > 0)
             {
-                _resourceProcessor.ProcessUrls(urls, Clients, room.Name, clientMessageId, chatMessage.Id);
+                _resourceProcessor.ProcessUrls(urls, Clients, room.Name, chatMessage.Id);
             }
 
             return true;
+        }
+
+        private void AddMentions(ChatMessage message)
+        {
+            bool anyMentions = false;
+
+            foreach (var userName in MentionExtractor.ExtractMentions(message.Content))
+            {
+                ChatUser mentionedUser = _repository.GetUserByName(userName);
+
+                // Don't create a mention if
+                // 1. If the mentioned user doesn't exist.
+                // 2. If you mention yourself
+                // 3. If you're mentioned in a private room that you don't have access to
+                if (mentionedUser == null || 
+                    mentionedUser == message.User || 
+                    (message.Room.Private && !mentionedUser.AllowedRooms.Contains(message.Room)))
+                {
+                    continue;
+                }
+
+                anyMentions = true;
+
+                // Mark the notification as read if the user is online
+                bool markAsRead = mentionedUser.Status == (int)UserStatus.Active;
+
+                _service.AddNotification(mentionedUser, message, markAsRead);
+            }
+
+            if (anyMentions)
+            {
+                _repository.CommitChanges();
+            }
         }
 
         public UserViewModel GetUserInfo()
@@ -251,7 +305,8 @@ namespace JabbR
                 Name = r.Name,
                 Count = r.Users.Count(u => u.Status != (int)UserStatus.Offline),
                 Private = r.Private,
-                Closed = r.Closed
+                Closed = r.Closed,
+                Topic = r.Topic
             }).ToList();
 
             return rooms;
@@ -288,7 +343,7 @@ namespace JabbR
 
             var recentMessages = (from m in _repository.GetMessagesByRoom(room)
                                   orderby m.When descending
-                                  select m).Take(30).ToList();
+                                  select m).Take(50).ToList();
 
             // Reverse them since we want to get them in chronological order
             recentMessages.Reverse();
@@ -315,8 +370,12 @@ namespace JabbR
             string userId = Context.User.Identity.Name;
 
             ChatUser user = _repository.GetUserById(userId);
-
             ChatRoom room = _repository.VerifyUserRoom(_cache, user, roomName);
+
+            if (room == null || (room.Private && !user.AllowedRooms.Contains(room)))
+            {
+                return;
+            }
 
             UpdateActivity(user, room);
 
@@ -334,13 +393,13 @@ namespace JabbR
 
             foreach (var room in user.Rooms)
             {
-                UpdateActivity(user, room);   
-            }            
+                UpdateActivity(user, room);
+            }
         }
 
-        private void LogOn(ChatUser user, string clientId, bool login)
+        private void LogOn(ChatUser user, string clientId, bool reconnecting)
         {
-            if (login)
+            if (!reconnecting)
             {
                 // Update the client state
                 Clients.Caller.id = user.Id;
@@ -349,6 +408,7 @@ namespace JabbR
             }
 
             var rooms = new List<RoomViewModel>();
+            var privateRooms = new List<LobbyRoomViewModel>();
             var userViewModel = new UserViewModel(user);
             var ownedRooms = user.OwnedRooms.Select(r => r.Key);
 
@@ -362,7 +422,7 @@ namespace JabbR
                 // Add the caller to the group so they receive messages
                 Groups.Add(clientId, room.Name);
 
-                if (login)
+                if (!reconnecting)
                 {
                     // Add to the list of room names
                     rooms.Add(new RoomViewModel
@@ -374,10 +434,23 @@ namespace JabbR
                 }
             }
 
-            if (login)
+
+            if (!reconnecting)
             {
+                foreach (var r in user.AllowedRooms)
+                {
+                    privateRooms.Add(new LobbyRoomViewModel
+                    {
+                        Name = r.Name,
+                        Count = _repository.GetOnlineUsers(r).Count(),
+                        Private = r.Private,
+                        Closed = r.Closed,
+                        Topic = r.Topic
+                    });
+                }
+
                 // Initialize the chat with the rooms the user is in
-                Clients.Caller.logOn(rooms);
+                Clients.Caller.logOn(rooms, privateRooms);
             }
         }
 
@@ -393,7 +466,7 @@ namespace JabbR
             _service.UpdateActivity(user, Context.ConnectionId, UserAgent);
 
             _repository.CommitChanges();
-        }        
+        }
 
         private bool TryHandleCommand(string command, string room)
         {
@@ -419,7 +492,7 @@ namespace JabbR
 
             // Query for the user to get the updated status
             ChatUser user = _repository.GetUserById(userId);
-            
+
             // There's no associated user for this client id
             if (user == null)
             {
@@ -461,7 +534,7 @@ namespace JabbR
 
         void INotificationService.LogOn(ChatUser user, string clientId)
         {
-            LogOn(user, clientId, login: true);
+            LogOn(user, clientId, reconnecting: true);
         }
 
         void INotificationService.ChangePassword()

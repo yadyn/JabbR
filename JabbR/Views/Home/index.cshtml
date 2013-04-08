@@ -6,6 +6,7 @@
 <head>
     <title>JabbR</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
     <meta name="description" content="A real-time chat application." />
     <meta name="keywords" content="chat,realtime chat,signalr,jabbr" />
     <link href="@Url.Content("~/Content/images/logo32.png")" rel="icon" type="image/png" sizes="32x32">
@@ -14,6 +15,7 @@
     @{ 
         WriteLiteral(Bundle.Css().ForceDebugIf(() => Model.DebugMode)
             .Add("~/Content/bootstrap.min.css")
+            .Add("~/Content/bootstrap-responsive.min.css")
             .Add("~/Content/font-awesome.min.css")
             .Add("~/Chat.css")
             .Add("~/Chat.nuget.css")
@@ -43,18 +45,18 @@
     </script>
     }
     <script id="new-message-template" type="text/x-jquery-tmpl">
-        <li class="message ${highlight} ${greentext} clearfix{{if isMine}} my-message{{/if}}" id="m-${id}" data-name="${name}" data-timestamp="${date}">
+        <li class="message ${highlight} ${greentext} clearfix{{if isMine}} my-message{{/if}}{{if showUser}} first{{/if}}" id="m-${id}" data-name="${name}" data-timestamp="${date}">
             <div class="left">
                 {{if showUser}}
                 <img src="https://secure.gravatar.com/avatar/${hash}?s=32&d=mm" class="gravatar" />
-                <span class="name">${trimmedName}</span>
+                <div class="name">${trimmedName}</div>
                 {{/if}}
                 <span class="state"></span>
             </div>
-            <div class="middle">
+            <div class="middle{{if showUser}} first{{/if}}">
                 {{html message}}
             </div>
-            <div class="right">
+            <div class="right{{if showUser}} first{{/if}}">
                 <span id="t-${id}" class="time" title="${fulldate}">${when}</span>
             </div>
         </li>
@@ -82,15 +84,41 @@
             </div>
         </div>
     </script>
+    <script id="new-lobby-room-template" type="text/x-jquery-tmpl">
+        <li class="room {{if Private}}locked{{/if}} {{if Closed}}closed{{/if}}" data-room="${Name}" data-name="${Name}">
+            <div class="row-fluid room-row">
+                <div class="span3">
+                    <span class="name">${Name}</span>
+                    <span class="lock"><i class="icon-lock"></i></span>
+                    <span class="readonly"><i class="icon-remove-sign"></i></span>
+                </div>
+                <div class="span4">
+                    <span class="topic">${Topic}</span>
+                </div>
+                <div class="span2">
+                    <span class="count" data-count="${Count}">{{if Count == 0}}Unoccupied{{else}}${Count} occupant{{if Count > 1}}s{{/if}}{{/if}}</span>
+                </div>
+            </div>
+        </li>
+    </script>
     <script id="new-user-template" type="text/x-jquery-tmpl">
         <li class="user" data-name="${name}">
-            <i class="user-status"></i>
-            <img class="gravatar" src="https://secure.gravatar.com/avatar/${hash}?s=16&d=mm" />
-            <div class="details">
-                <div class="name" {{if note}}title="${note}"{{/if}}>${name}</div>
-                <span class="admin"> {{if admin}}(admin){{/if}}</span>
-                <span class="flag{{if flagClass}} ${flagClass}{{/if}}" {{if flag}}title="${country}"{{/if}}></span>
+            <div class="user-status-container">
+                <i class="user-status"></i>
             </div>
+            <img class="gravatar" src="https://secure.gravatar.com/avatar/${hash}?s=16&d=mm" />
+            <div class="details {{if admin}}admin{{/if}}">
+                <div class="flag-container">
+                    <div class="flag{{if flagClass}} ${flagClass}{{/if}}" {{if flag}}title="${country}"{{/if}}></div>
+                </div>
+                <div class="name-container">
+                    <div class="name" {{if note}}title="${note}"{{else}}title="${name}"{{/if}}>${name}</div>
+                    <div class="idle-since"></div>
+                    {{if admin}}<div class="admin">(admin)</div>{{/if}}
+                </div>
+                <div style="clear:both"></div>
+            </div>
+            <div style="clear:both"></div>
         </li>
     </script>
     <script id="new-userlist-template" type="text/x-jquery-tmpl">
@@ -102,7 +130,7 @@
         </div>
     </script>
     <script id="new-tab-template" type="text/x-jquery-tmpl">
-        <li id="tabs-${id}" class="room" data-name="${name}" data-closed="${closed}" role="tab">
+        <li id="tabs-${id}" class="room" data-name="${name}" data-closed="${closed}" data-trimmable="true" role="tab">
             <span class="lock"></span>
             <span class="readonly"></span>
             <button> 
@@ -171,11 +199,40 @@
         </div>   
     </script>
     <!-- /Github Issus Content Provider -->
+    <!-- /GitHub Issues Comment Content Provider -->
+    <script id="github-issues-comment-template" type="text/x-jquery-tmpl">
+        <div class="new-comments">
+            <div class="avatar-bubble js-comment-container">
+                <span class="avatar">
+                    <img height="48" width="48" src="${user.avatar_url}">
+                    <span class="overlay size-48"></span>
+                </span>
+                <div class="bubble">
+                    <div class="comment starting-comment ">
+                        <div class="body">
+                            <p class="author">
+                                <a href="#" class='github-issue-user-${user.login}' target="_blank">${user.login}</a> commented
+                                <time class="js-relative-date" datetime="${created_at}">${created_at}</time>
+                            </p>
+                            <a href="${html_url}" target="_blank"><h2 class="content-title">${title}</h2></a>
+                            <div class="formatted-content">
+                                <div class="content-body wikistyle markdown-format">
+                                    <p>
+                                        {{html body}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </script>
+    <!-- /Github Issus Comment Content Provider -->
     <!--Gravatar Profile Template for Who command-->
     <script id="gravatar-profile-template" type="text/x-jquery-tmpl">
         <div class="collapsible_content">
-            <div class="collapsible_pin">
-            </div>
             <h3 class="collapsible_title">Gravatar Profile: ${profileUrl} (click to show/hide)
             </h3>
             <div class="collapsible_box">
@@ -206,7 +263,7 @@
         </div>
     <nav>
       <ul id="tabs" role="tablist">
-        <li id="tabs-lobby" class="current lobby" data-name="Lobby" role="tab">
+        <li id="tabs-lobby" class="current lobby" data-name="Lobby" data-trimmable="false" role="tab">
           <button accesskey="l">
             <span class="content">Lobby</span>
           </button>
@@ -215,6 +272,13 @@
     </nav>
     </header>
       <div id="topic-bar">
+        <form id="users-filter-form" action="#" class="form-inline">
+            <input id="users-filter" class="filter input-xlarge" type="text" placeholder="Start typing to filter room list..." />
+            <label id="users-filter-closed-area" class="checkbox inline">
+                <input id="users-filter-closed" type="checkbox" />
+                Show Closed Rooms?
+            </label>
+        </form>
         <div id="room-actions" class="btn-group pull-right">
             <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#">Room Settings <span class="caret"></span></a>
             <ul id="room-preferences" class="dropdown-menu">
@@ -226,17 +290,23 @@
         </div>
       </div>
     <div id="chat-area" role="tabpanel">
-      <ul id="messages-lobby" class="messages current" role="log">
-      </ul>
-      <form id="users-filter-form" action="#">
-        <input id="users-filter" class="filter" type="text" />
-        <label id="users-filter-closed-area">
-          <input id="users-filter-closed" type="checkbox" />
-          Show Closed Rooms?
-        </label>
-      </form>
-      <ul id="userlist-lobby" class="users current">
-      </ul>
+        <div id="room-loading">
+            <i class="icon-spinner icon-3x"> </i><h3>Loading...</h3>
+        </div>
+        <div id="lobby-wrapper">
+            <div id="lobby-private">
+                <h2 class="userlist-header nav-header">Your Private Rooms</h2>
+                <ul id="userlist-lobby-owners"></ul>
+            </div>
+            <div id="lobby-other">
+                <h2 class="userlist-header nav-header">Rooms</h2>
+                <ul id="userlist-lobby">
+                </ul>
+                <div id="load-more-rooms-item" class="room" style="display:none;"><div class="row-fluid room-row load-more-rooms"><i class="icon-spinner" style="display:none;"></i><a href="#">Load More...</a></div></div>
+            </div>
+            <ul id="messages-lobby" class="messages current" role="log" style="visibility: hidden;">
+            </ul>
+        </div>
       <form id="send-message" action="#">
       <div id="message-box">
         <textarea id="new-message" autocomplete="off" aria-autocomplete="none" accesskey="m"></textarea>
@@ -339,6 +409,9 @@
       <div id="reloadMessageNotification" class="reload-message alert alert-info">
         <button type="button" class="close" data-dismiss="alert">&times;</button><a href="#">Load missing messages</a>
       </div>
+        <div id="loadingRoomHistory" class="loading-room-history alert alert-info">
+            <i class="icon-spinner icon-spin"></i> Loading previous messages...
+        </div>
         <div id="connectionStatus" class="connection-status" data-toggle="popover" data-placement="left">
             <i class="icon-connection-status"></i>
         </div>
@@ -353,10 +426,10 @@
             .Add("~/Scripts/jquery-1.9.0.min.js")
             .Add("~/Scripts/jquery-migrate-1.0.0.min.js")
             .Add("~/Scripts/json2.min.js")
-            .Add("~/Scripts/bootstrap.js")
+            .Add("~/Scripts/bootstrap.js") 
             .Add("~/Scripts/jquery.KeyTips.js")
             .Add("~/Scripts/jquery-ui-1.10.1.min.js")
-            .Add("~/Scripts/jquery.signalR-1.1.0-beta1-130322.min.js")
+            .Add("~/Scripts/jquery.signalR-1.1.0-beta1-130401.min.js")
             .Render("~/Scripts/JabbR1_#.js"));
     }
   <script type="text/javascript" src="@Url.Content("~/signalr/hubs")"></script>
@@ -377,9 +450,11 @@
              .Add("~/Scripts/jquery.livesearch.js")
              .Add("~/Scripts/Markdown.Converter.js")
              .Add("~/Scripts/jquery.history.js")
-             .Add("~/Chat.utility.js")
+             .Add("~/Scripts/moment.min.js")
+             .Add("~/Scripts/livestamp.min.js")
              .Add("~/Chat.emoji.js")
              .Add("~/Chat.toast.js")
+             .Add("~/Chat.utility.js")
              .Add("~/Chat.ui.js")
              .Add("~/Chat.documentOnWrite.js")
              .Add("~/Chat.twitter.js")
@@ -387,6 +462,10 @@
              .Add("~/Chat.githubissues.js")
              .Add("~/Chat.js")
              .Render("~/Scripts/JabbR2_#.js"));
+    }
+    @if(Model.DebugMode)
+    {
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.network.mock.js")"></script>
     }
 </body>
 </html>
