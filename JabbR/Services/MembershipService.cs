@@ -66,8 +66,7 @@ namespace JabbR.Services
                 Status = (int)UserStatus.Active,
                 Hash = email.ToMD5(),
                 Id = Guid.NewGuid().ToString("d"),
-                LastActivity = DateTime.UtcNow,
-                IsAdmin = (userName == "yadyn")
+                LastActivity = DateTime.UtcNow
             };
 
             var chatUserIdentity = new ChatUserIdentity
@@ -106,8 +105,7 @@ namespace JabbR.Services
                 Status = (int)UserStatus.Active,
                 Id = Guid.NewGuid().ToString("d"),
                 Salt = _crypto.CreateSalt(),
-                LastActivity = DateTime.UtcNow,
-                IsAdmin = (userName == "yadyn")
+                LastActivity = DateTime.UtcNow
             };
 
             ValidatePassword(password);
