@@ -20,7 +20,9 @@ namespace JabbR.ContentProviders
 
         public override bool IsValidContent(Uri uri)
         {
-            return uri.AbsoluteUri.StartsWith("http://imgur.com/", StringComparison.OrdinalIgnoreCase);
+            // exclude imgur album urls as they won't work without fancy json api integration
+            return uri.AbsoluteUri.StartsWith("http://imgur.com/", StringComparison.OrdinalIgnoreCase)
+                && !uri.AbsoluteUri.Contains("imgur.com/a/");
         }
     }
 }
