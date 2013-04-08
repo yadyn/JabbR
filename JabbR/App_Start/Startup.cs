@@ -1,4 +1,5 @@
-﻿using System.Net.Http.Formatting;
+﻿using System;
+using System.Net.Http.Formatting;
 using System.Web.Http;
 using JabbR.Infrastructure;
 using JabbR.Middleware;
@@ -47,6 +48,8 @@ namespace JabbR
             SetupNancy(kernel, app);
 
             SetupErrorHandling();
+
+            SetupDefaultAdmin(settings, kernel.Get<IJabbrRepository>(), kernel.Get<IMembershipService>());
         }
 
         private static void SetupNancy(IKernel kernel, IAppBuilder app)
@@ -117,6 +120,21 @@ namespace JabbR
             );
 
             app.UseWebApi(config);
+        }
+
+        private static void SetupDefaultAdmin(IApplicationSettings settings, IJabbrRepository repository, IMembershipService membershipService)
+        {
+            if (String.IsNullOrEmpty(settings.DefaultAdminUserName))
+                return;
+
+            if (repository.GetUserByName(settings.DefaultAdminUserName) == null)
+            {
+                var defaultAdmin = membershipService.AddUser(settings.DefaultAdminUserName, "admin@myjabbrsite.com", settings.DefaultAdminPassword);
+
+                defaultAdmin.IsAdmin = true;
+
+                repository.CommitChanges();
+            }
         }
     }
 }
