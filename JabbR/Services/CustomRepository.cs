@@ -21,6 +21,8 @@ namespace JabbR.Services
         private readonly ICollection<ChatUser> _users;
         private readonly ICollection<ChatRoom> _rooms;
         private readonly ICollection<ChatUserIdentity> _identities;
+        private readonly ICollection<Attachment> _attachments;
+        private readonly ICollection<Notification> _notifications;
 
         private DateTime _lastPurge;
 
@@ -29,6 +31,8 @@ namespace JabbR.Services
             _users = new SafeCollection<ChatUser>();
             _rooms = new SafeCollection<ChatRoom>();
             _identities = new SafeCollection<ChatUserIdentity>();
+            _attachments = new SafeCollection<Attachment>();
+            _notifications = new SafeCollection<Notification>();
 
             LoadCollectionFromStorage(_users, _usersFileName);
             LoadCollectionFromStorage(_rooms, _roomsFileName);
@@ -38,6 +42,11 @@ namespace JabbR.Services
         public IQueryable<ChatRoom> Rooms { get { return _rooms.AsQueryable(); } }
 
         public IQueryable<ChatUser> Users { get { return _users.AsQueryable(); } }
+
+        public void Add(Attachment attachment)
+        {
+            _attachments.Add(attachment);
+        }
 
         public void Add(ChatRoom room)
         {
@@ -71,6 +80,11 @@ namespace JabbR.Services
             user.ConnectedClients.Add(client);
         }
 
+        public void Add(Notification notification)
+        {
+            _notifications.Add(notification);
+        }
+
         public void Remove(ChatClient client)
         {
             var user = _users.FirstOrDefault(u => client.User == u);
@@ -90,6 +104,11 @@ namespace JabbR.Services
         public void Remove(ChatUserIdentity identity)
         {
             _identities.Remove(identity);
+        }
+
+        public void Remove(Notification notification)
+        {
+            _notifications.Remove(notification);
         }
 
         public void CommitChanges()
