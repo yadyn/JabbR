@@ -19,7 +19,6 @@ namespace JabbR.Services
 
         private readonly ReaderWriterLockSlim _storageLock = new ReaderWriterLockSlim();
 
-        private readonly string _storageDir;
         private readonly ICollection<ChatUser> _users;
         private readonly ICollection<ChatRoom> _rooms;
         private readonly ICollection<ChatUserIdentity> _identities;
@@ -30,8 +29,6 @@ namespace JabbR.Services
 
         public CustomRepository()
         {
-            _storageDir = Path.GetDirectoryName(GetType().Assembly.Location);
-
             _users = new SafeCollection<ChatUser>();
             _rooms = new SafeCollection<ChatRoom>();
             _identities = new SafeCollection<ChatUserIdentity>();
@@ -292,23 +289,24 @@ namespace JabbR.Services
         private void LoadCollectionFromStorage<T>(ICollection<T> collection, string fileName)
             where T : class
         {
-            string filePath = Path.Combine(_storageDir, fileName);
-
             _storageLock.EnterReadLock();
             try
             {
-                if (File.Exists(filePath))
+                using (var storage = IsolatedStorageFile.GetMachineStoreForAssembly())
                 {
-                    using (var collectionFile = new GZipStream(File.OpenRead(filePath), CompressionMode.Decompress))
+                    if (storage.FileExists(fileName))
                     {
-                        var formatter = new BinaryFormatter();
-
-                        var savedCollection = formatter.Deserialize(collectionFile) as ICollection<T>;
-
-                        if (savedCollection != null)
+                        using (var collectionFile = new GZipStream(storage.OpenFile(fileName, FileMode.Open), CompressionMode.Decompress))
                         {
-                            foreach (var item in savedCollection)
-                                collection.Add(item);
+                            var formatter = new BinaryFormatter();
+
+                            var savedCollection = formatter.Deserialize(collectionFile) as ICollection<T>;
+
+                            if (savedCollection != null)
+                            {
+                                foreach (var item in savedCollection)
+                                    collection.Add(item);
+                            }
                         }
                     }
                 }
@@ -321,18 +319,19 @@ namespace JabbR.Services
         private void SaveCollectionToStorage<T>(ICollection<T> collection, string fileName)
             where T : class
         {
-            string filePath = Path.Combine(_storageDir, fileName);
-
             _storageLock.EnterWriteLock();
             try
             {
-                using (var collectionFile = new GZipStream(File.Open(fileName, System.IO.FileMode.Create), CompressionMode.Compress))
+                using (var storage = IsolatedStorageFile.GetMachineStoreForAssembly())
                 {
-                    var formatter = new BinaryFormatter();
+                    using (var collectionFile = new GZipStream(storage.OpenFile(fileName, FileMode.Create), CompressionMode.Compress))
+                    {
+                        var formatter = new BinaryFormatter();
 
-                    formatter.Serialize(collectionFile, collection);
+                        formatter.Serialize(collectionFile, collection);
 
-                    collectionFile.Flush();
+                        collectionFile.Flush();
+                    }
                 }
             }
             finally
