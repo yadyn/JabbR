@@ -1,19 +1,35 @@
 ﻿using System;
+using System.ComponentModel.Composition;
 using System.Linq;
 using System.Threading.Tasks;
 using JabbR.ContentProviders.Core;
+using JabbR.Services;
 
 namespace JabbR.ContentProviders
 {
     public class ImgurContentProvider : CollapsibleContentProvider
     {
+        private readonly IApplicationSettings _settings;
+
+        [ImportingConstructor]
+        public ImgurContentProvider(IApplicationSettings settings)
+        {
+            _settings = settings;
+        }
+
         protected override Task<ContentProviderResult> GetCollapsibleContent(ContentProviderHttpRequest request)
         {
             string id = request.RequestUri.AbsoluteUri.Split('/').Last();
+            string format = @"<img src=""http://i.imgur.com/{0}.jpg"" />";
+
+            if (_settings.ProxyImages)
+            {
+                format = @"<img src=""proxy?url=http://i.imgur.com/{0}.jpg"" />";
+            }
 
             return TaskAsyncHelper.FromResult(new ContentProviderResult()
             {
-                Content = String.Format(@"<img src=""proxy?url=http://i.imgur.com/{0}.jpg"" />", id),
+                Content = String.Format(format, id),
                 Title = request.RequestUri.AbsoluteUri.ToString()
             });
         }
