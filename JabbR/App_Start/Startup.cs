@@ -1,5 +1,9 @@
 ﻿using System;
+using System.IdentityModel.Selectors;
+using System.IdentityModel.Services.Configuration;
+using System.IdentityModel.Tokens;
 using System.Net.Http.Formatting;
+using System.ServiceModel.Security;
 using System.Web.Http;
 using JabbR.Infrastructure;
 using JabbR.Middleware;
@@ -8,8 +12,9 @@ using JabbR.Services;
 using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Infrastructure;
 using Microsoft.AspNet.SignalR.SystemWeb.Infrastructure;
-using Microsoft.Owin.Mapping;
-using Microsoft.Owin.StaticFiles;
+using Microsoft.Owin.Security.DataProtection;
+using Microsoft.Owin.Security.Federation;
+using Microsoft.Owin.Security.Forms;
 using Newtonsoft.Json.Serialization;
 using Ninject;
 using Owin;
@@ -39,17 +44,51 @@ namespace JabbR
 
             app.UseShowExceptions();
 
-            // This needs to run before everything
-            app.Use(typeof(AuthorizationHandler), kernel.Get<IAuthenticationTokenService>());
-
+            SetupAuth(app, kernel);
             SetupSignalR(kernel, app);
             SetupWebApi(kernel, app);
-            SetupMiddleware(settings, app);
+            SetupMiddleware(kernel, app, settings);
             SetupNancy(kernel, app);
 
             SetupErrorHandling();
 
             SetupDefaultAdmin(settings, kernel.Get<IJabbrRepository>(), kernel.Get<IMembershipService>());
+        }
+
+        private static void SetupAuth(IAppBuilder app, KernelBase kernel)
+        {
+            app.UseFormsAuthentication(new FormsAuthenticationOptions
+            {
+                LoginPath = "/account/login",
+                LogoutPath = "/account/logout",
+                CookieHttpOnly = true,
+                AuthenticationType = Constants.JabbRAuthType,
+                CookieName = "jabbr.id",
+                ExpireTimeSpan = TimeSpan.FromDays(30),
+                DataProtection = kernel.Get<IDataProtection>(),
+                Provider = kernel.Get<IFormsAuthenticationProvider>()
+            });
+
+            //var config = new FederationConfiguration(loadConfig: false);
+            //config.WsFederationConfiguration.Issuer = "";
+            //config.WsFederationConfiguration.Realm = "http://localhost:16207/";
+            //config.WsFederationConfiguration.Reply = "http://localhost:16207/wsfederation";
+            //var cbi = new ConfigurationBasedIssuerNameRegistry();
+            //cbi.AddTrustedIssuer("", "");
+            //config.IdentityConfiguration.AudienceRestriction.AllowedAudienceUris.Add(new Uri("http://localhost:16207/"));
+            //config.IdentityConfiguration.IssuerNameRegistry = cbi;
+            //config.IdentityConfiguration.CertificateValidationMode = X509CertificateValidationMode.None;
+            //config.IdentityConfiguration.CertificateValidator = X509CertificateValidator.None;
+
+            //app.UseFederationAuthentication(new FederationAuthenticationOptions
+            //{
+            //    ReturnPath = "/wsfederation",
+            //    SigninAsAuthenticationType = Constants.JabbRAuthType,
+            //    FederationConfiguration = config,
+            //    Provider = new FederationAuthenticationProvider()
+            //});
+
+            app.Use(typeof(WindowsPrincipalHandler));
         }
 
         private static void SetupNancy(IKernel kernel, IAppBuilder app)
@@ -58,7 +97,7 @@ namespace JabbR
             app.UseNancy(bootstrapper);
         }
 
-        private static void SetupMiddleware(IApplicationSettings settings, IAppBuilder app)
+        private static void SetupMiddleware(IKernel kernel, IAppBuilder app, IApplicationSettings settings)
         {
             if (settings.ProxyImages)
             {
@@ -66,6 +105,7 @@ namespace JabbR
             }
 
             app.UseStaticFiles();
+            app.Use(typeof(LoggingHandler), kernel);
         }
 
         private static void SetupSignalR(IKernel kernel, IAppBuilder app)
@@ -100,13 +140,6 @@ namespace JabbR
             jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             config.Formatters.Add(jsonFormatter);
             config.DependencyResolver = new NinjectWebApiDependencyResolver(kernel);
-
-
-            config.Routes.MapHttpRoute(
-                name: "LoginV1",
-                routeTemplate: "api/v1/authenticate",
-                defaults: new { controller = "Authenticate" }
-             );
 
             config.Routes.MapHttpRoute(
                 name: "MessagesV1",

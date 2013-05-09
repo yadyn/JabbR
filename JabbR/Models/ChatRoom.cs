@@ -36,6 +36,7 @@ namespace JabbR.Models
         public virtual ICollection<ChatMessage> Messages { get; set; }
         public virtual ICollection<ChatUser> Users { get; set; }
         public virtual ICollection<Attachment> Attachments { get; set; }
+        public virtual ICollection<Notification> Notifications { get; set; }
 
         public ChatRoom()
         {
