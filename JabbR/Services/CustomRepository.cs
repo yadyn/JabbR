@@ -159,6 +159,11 @@ namespace JabbR.Services
                 .AsQueryable();
         }
 
+        public IQueryable<Notification> GetNotificationsByUser(ChatUser user)
+        {
+            return _notifications.Where(n => n.UserKey == user.Key).AsQueryable();
+        }
+
         public IQueryable<ChatMessage> GetMessagesByRoom(ChatRoom room)
         {
             return room.Messages.AsQueryable();
@@ -199,6 +204,11 @@ namespace JabbR.Services
                 return identity.User;
             }
             return null;
+        }
+
+        public Notification GetNotificationById(int notificationId)
+        {
+            return _notifications.SingleOrDefault(n => n.Key == notificationId);
         }
 
         public ChatClient GetClientById(string clientId, bool includeUser = false)
