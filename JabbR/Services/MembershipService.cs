@@ -111,7 +111,7 @@ namespace JabbR.Services
                 Status = (int)UserStatus.Active,
                 Id = Guid.NewGuid().ToString("d"),
                 Salt = _crypto.CreateSalt(),
-                LastActivity = DateTime.UtcNow
+                LastActivity = DateTime.UtcNow,
                 IsAdmin = IsFirstUser()
             };
 

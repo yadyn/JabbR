@@ -1,7 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace JabbR.Models
 {
+    [Serializable]
     public class Settings
     {
         [Key]

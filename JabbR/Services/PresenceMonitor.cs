@@ -176,7 +176,8 @@ namespace JabbR.Services
         {
             // Remove all zombie clients 
             var zombies = repo.Clients.Where(c =>
-                SqlFunctions.DateDiff("mi", c.LastActivity, DateTimeOffset.UtcNow) > 3);
+                DateTimeOffset.UtcNow.Subtract(c.LastActivity).TotalMinutes > 3);
+                //SqlFunctions.DateDiff("mi", c.LastActivity, DateTimeOffset.UtcNow) > 3);
 
             // We're doing to list since there's no MARS support on azure
             foreach (var client in zombies.ToList())
@@ -223,7 +224,8 @@ namespace JabbR.Services
             var inactiveUsers = new List<ChatUser>();
 
             IQueryable<ChatUser> users = repo.GetOnlineUsers().Where(u =>
-                SqlFunctions.DateDiff("mi", u.LastActivity, DateTime.UtcNow) > 5);
+                DateTimeOffset.UtcNow.Subtract(u.LastActivity).TotalMinutes > 5);
+                //SqlFunctions.DateDiff("mi", u.LastActivity, DateTime.UtcNow) > 5);
 
             foreach (var user in users.ToList())
             {

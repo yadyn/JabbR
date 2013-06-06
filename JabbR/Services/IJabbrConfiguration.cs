@@ -5,13 +5,18 @@ using System.Web;
 
 namespace JabbR.Services
 {
+    [System.ComponentModel.Composition.InheritedExport]
     public interface IJabbrConfiguration
     {
         bool RequireHttps { get; }
+        bool ProxyImages { get; }
         bool MigrateDatabase { get; }
 
         string DeploymentSha { get; }
         string DeploymentBranch { get; }
         string DeploymentTime { get; }
+
+        string DefaultAdminUserName { get; }
+        string DefaultAdminPassword { get; }
     }
 }

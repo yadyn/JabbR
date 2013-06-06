@@ -87,7 +87,11 @@ namespace JabbR
                   });
 
             kernel.Bind<ISettingsManager>()
-                  .To<SettingsManager>();
+                  .ToMethod(context =>
+                  {
+                      return context.Kernel.Get<IJabbrRepository>() as CustomRepository;
+                  });
+                  //.To<SettingsManager>();
 
             kernel.Bind<IUserAuthenticator>()
                   .To<DefaultUserAuthenticator>();

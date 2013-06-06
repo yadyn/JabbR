@@ -19,6 +19,20 @@ namespace JabbR.Services
             }
         }
 
+        public bool ProxyImages
+        {
+            get
+            {
+                string proxyImagesValue = ConfigurationManager.AppSettings["jabbr:proxyImages"];
+                bool proxyImages;
+                if (Boolean.TryParse(proxyImagesValue, out proxyImages))
+                {
+                    return proxyImages;
+                }
+                return false;
+            }
+        }
+
         public bool MigrateDatabase
         {
             get
@@ -54,6 +68,22 @@ namespace JabbR.Services
             get
             {
                 return ConfigurationManager.AppSettings["jabbr:releaseTime"];
+            }
+        }
+
+        public string DefaultAdminUserName
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["jabbr:defaultAdminUserName"];
+            }
+        }
+
+        public string DefaultAdminPassword
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["jabbr:defaultAdminPassword"];
             }
         }
     }

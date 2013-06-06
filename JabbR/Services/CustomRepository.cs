@@ -8,10 +8,11 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading;
 using JabbR.Infrastructure;
 using JabbR.Models;
+using Newtonsoft.Json;
 
 namespace JabbR.Services
 {
-    public class CustomRepository : IJabbrRepository
+    public class CustomRepository : IJabbrRepository, ISettingsManager
     {
         private const string _usersFileName = "users.dat.gz";
         private const string _roomsFileName = "rooms.dat.gz";
@@ -34,15 +35,21 @@ namespace JabbR.Services
             _identities = new SafeCollection<ChatUserIdentity>();
             _attachments = new SafeCollection<Attachment>();
             _notifications = new SafeCollection<Notification>();
+            _settings = new SafeCollection<Settings>();
 
             LoadCollectionFromStorage(_users, _usersFileName);
             LoadCollectionFromStorage(_rooms, _roomsFileName);
             LoadCollectionFromStorage(_identities, _identitiesFileName);
+            LoadCollectionFromStorage(_settings, _settingsFileName);
+
+            FixNullCollections();
         }
 
         public IQueryable<ChatRoom> Rooms { get { return _rooms.AsQueryable(); } }
 
         public IQueryable<ChatUser> Users { get { return _users.AsQueryable(); } }
+
+        public IQueryable<ChatClient> Clients { get { return _users.SelectMany(u => u.ConnectedClients).AsQueryable(); } }
 
         public void Add(Attachment attachment)
         {
@@ -228,12 +235,6 @@ namespace JabbR.Services
                     select m).AsQueryable();
         }
 
-        public void RemoveAllClients()
-        {
-            foreach (var user in _users)
-                user.ConnectedClients.Clear();
-        }
-
         public ChatMessage GetMessageById(string id)
         {
             return (from r in _rooms
@@ -347,6 +348,107 @@ namespace JabbR.Services
             finally
             {
                 _storageLock.ExitWriteLock();
+            }
+        }
+
+        // ISettingsManager
+        private const string _settingsFileName = "settings.dat.gz";
+
+        private readonly ICollection<Settings> _settings;
+
+        public ApplicationSettings Load()
+        {
+            ApplicationSettings appSettings = null;
+
+            var settings = _settings.FirstOrDefault();
+
+            if (settings == null)
+            {
+                // Create the initial app settings
+                appSettings = ApplicationSettings.GetDefaultSettings();
+                settings = new Settings
+                {
+                    RawSettings = JsonConvert.SerializeObject(appSettings)
+                };
+
+                _settings.Add(settings);
+                SaveCollectionToStorage(_settings, _settingsFileName);
+            }
+            else
+            {
+                try
+                {
+                    appSettings = JsonConvert.DeserializeObject<ApplicationSettings>(settings.RawSettings);
+                }
+                catch
+                {
+                    // TODO: Record the exception
+
+                    // We failed to load the settings from the db so go back to using the default
+                    appSettings = ApplicationSettings.GetDefaultSettings();
+
+                    settings.RawSettings = JsonConvert.SerializeObject(appSettings);
+                    SaveCollectionToStorage(_settings, _settingsFileName);
+                }
+            }
+
+            return appSettings;
+        }
+        public void Save(ApplicationSettings settings)
+        {
+            string rawSettings = JsonConvert.SerializeObject(settings);
+
+            // Update the database
+            var dbSettings = _settings.FirstOrDefault();
+
+            if (dbSettings == null)
+            {
+                dbSettings = new Settings
+                {
+                    RawSettings = rawSettings
+                };
+
+                _settings.Add(dbSettings);
+            }
+            else
+            {
+                dbSettings.RawSettings = rawSettings;
+            }
+
+            SaveCollectionToStorage(_settings, _settingsFileName);
+        }
+        private void FixNullCollections()
+        {
+            foreach (var user in _users)
+            {
+                if (user.Identities == null)
+                    user.Identities = new SafeCollection<ChatUserIdentity>();
+                if (user.ConnectedClients == null)
+                    user.ConnectedClients = new SafeCollection<ChatClient>();
+                if (user.OwnedRooms == null)
+                    user.OwnedRooms = new SafeCollection<ChatRoom>();
+                if (user.Rooms == null)
+                    user.Rooms = new SafeCollection<ChatRoom>();
+                if (user.AllowedRooms == null)
+                    user.AllowedRooms = new SafeCollection<ChatRoom>();
+                if (user.Attachments == null)
+                    user.Attachments = new SafeCollection<Attachment>();
+                if (user.Notifications == null)
+                    user.Notifications = new SafeCollection<Notification>();
+            }
+
+            foreach (var room in _rooms)
+            {
+                if (room.Owners == null)
+                    room.Owners = new SafeCollection<ChatUser>();
+                if (room.Messages == null)
+                    room.Messages = new SafeCollection<ChatMessage>();
+                if (room.Users == null)
+                    room.Users = new SafeCollection<ChatUser>();
+                if (room.AllowedUsers == null)
+                    room.AllowedUsers = new SafeCollection<ChatUser>();
+                if (room.Attachments == null)
+                    room.Attachments = new SafeCollection<Attachment>();
             }
         }
     }

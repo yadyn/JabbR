@@ -59,7 +59,7 @@ namespace JabbR
 
             SetupErrorHandling();
 
-            SetupDefaultAdmin(settings, kernel.Get<IJabbrRepository>(), kernel.Get<IMembershipService>());
+            SetupDefaultAdmin(kernel, app);
         }
 
         private static void SetupAuth(IAppBuilder app, IKernel kernel)
@@ -161,14 +161,19 @@ namespace JabbR
             app.UseWebApi(config);
         }
 
-        private static void SetupDefaultAdmin(IApplicationSettings settings, IJabbrRepository repository, IMembershipService membershipService)
+        //private static void SetupDefaultAdmin(IApplicationSettings settings, IJabbrRepository repository, IMembershipService membershipService)
+        private static void SetupDefaultAdmin(IKernel kernel, IAppBuilder app)
         {
-            if (String.IsNullOrEmpty(settings.DefaultAdminUserName))
+            var configuration = kernel.Get<IJabbrConfiguration>();
+            var repository = kernel.Get<IJabbrRepository>();
+            var membershipService = kernel.Get<IMembershipService>();
+
+            if (String.IsNullOrEmpty(configuration.DefaultAdminUserName))
                 return;
 
-            if (repository.GetUserByName(settings.DefaultAdminUserName) == null)
+            if (repository.GetUserByName(configuration.DefaultAdminUserName) == null)
             {
-                var defaultAdmin = membershipService.AddUser(settings.DefaultAdminUserName, "admin@myjabbrsite.com", settings.DefaultAdminPassword);
+                var defaultAdmin = membershipService.AddUser(configuration.DefaultAdminUserName, "admin@myjabbrsite.com", configuration.DefaultAdminPassword);
 
                 defaultAdmin.IsAdmin = true;
 
