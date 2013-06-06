@@ -100,7 +100,7 @@
     }
 
     function getRoomId(roomName) {
-        return window.escape(roomName.toString().toLowerCase()).replace(/[^a-z0-9]/, '_');
+        return window.escape(roomName.toString().toLowerCase()).replace(/[^A-Za-z0-9]/g, '_');
     }
 
     function getUserClassName(userName) {
@@ -275,7 +275,14 @@
             var $this = $(this),
                 liRoomCount = $this.data('count'),
                 liRoomClosed = $this.hasClass('closed'),
-                nameComparison = $this.data('name').toString().toUpperCase().localeCompare(roomName);
+                name = $this.data('name'),
+                nameComparison;
+
+            if (name === undefined) {
+                return true;
+            }
+
+            nameComparison = name.toString().toUpperCase().localeCompare(roomName);
 
             // skip this element
             if (nameComparison === 0) {
@@ -461,7 +468,6 @@
         var isFromCollapibleContentProvider = isFromCollapsibleContentProvider(message.message),
             collapseContent = shouldCollapseContent(message.message, roomName);
 
-        message.trimmedName = utility.trim(message.name, 21);
         message.when = message.date.formatTime(true);
         message.fulldate = message.date.toLocaleString();
 
@@ -626,7 +632,7 @@
             $user.each(function () {
                 var room = getRoomElements($(this).data('inroom'));
                 room.updateUserStatus($(this));
-                room.sortLists();
+                room.sortLists($(this));
             });
         }
     }
@@ -770,8 +776,8 @@
             $userCmdHelp = $('#jabbr-help #user');
             $updatePopup = $('#jabbr-update');
             focus = true;
-            $lobbyRoomFilterForm = $('#room-filter-form'),
-            $roomFilterInput = $('#room-filter'),
+            $lobbyRoomFilterForm = $('#room-filter-form');
+            $roomFilterInput = $('#room-filter');
             $closedRoomFilter = $('#room-filter-closed');
             templates = {
                 userlist: $('#new-userlist-template'),
@@ -809,7 +815,7 @@
             $roomLoadingIndicator = $('#room-loading');
 
             $unreadNotificationCount = $('#notification-unread-count');
-
+            
             if (toast.canToast()) {
                 $toast.show();
             }
@@ -832,19 +838,45 @@
                 });
             });
 
-            $document.on('click', '#tabs li', function () {
-                ui.setActiveRoom($(this).data('name'));
-            });
-
-            $document.on('click', 'li.room .room-row', function () {
-                var roomName = $(this).parent().data('name'),
-                    room = getRoomElements(roomName);
+            var activateOrOpenRoom = function(roomName) {
+                var room = getRoomElements(roomName);
 
                 if (room.exists()) {
                     ui.setActiveRoom(roomName);
                 }
                 else {
                     $ui.trigger(ui.events.openRoom, [roomName]);
+                }
+            };
+            
+            $document.on('click', 'li.room .room-row', function () {
+                var roomName = $(this).parent().data('name');
+                activateOrOpenRoom(roomName);
+            });
+            
+            $roomFilterInput.keypress(function (ev) {
+                var key = ev.keyCode || ev.which,
+                    roomName = $(this).val();
+                
+                switch (key) {
+                    case Keys.Enter:
+                        // only if it's an exact match
+                        if (roomCache[roomName.toUpperCase()]) {
+                            activateOrOpenRoom(roomName);
+                            return;
+                        }
+                }
+            });
+            
+            $document.on('click', '#tabs li', function () {
+                var roomName = $(this).data('name');
+                activateOrOpenRoom(roomName);
+            });
+
+            $document.on('mousedown', '#tabs li.room', function (ev) {
+                // if middle mouse
+                if (ev.which === 2) {
+                    $ui.trigger(ui.events.closeRoom, [$(this).data('name')]);
                 }
             });
 
@@ -894,7 +926,8 @@
             // handle tab cycling - we skip the lobby when cycling
             // handle shift+/ - display help command
             $document.on('keydown', function (ev) {
-                if (ev.keyCode === Keys.Tab && $newMessage.val() === "") {
+                // ctrl + tab event is sent to the page in firefox when the user probably means to change browser tabs
+                if (ev.keyCode === Keys.Tab && !ev.ctrlKey && $newMessage.val() === "") {
                     var current = getCurrentRoomElements(),
                         index = current.tab.index(),
                         tabCount = $tabs.children().length - 1;
@@ -1047,6 +1080,9 @@
 
             $(toast).bind('toast.focus', function (ev, room) {
                 window.focus();
+
+                // focus on the room
+                activateOrOpenRoom(room);
             });
 
             $downloadIcon.click(function () {
@@ -1371,7 +1407,6 @@
                     }
                 }
 
-                triggerFocus();
                 room.makeActive();
 
                 if (room.isLobby()) {
@@ -1384,6 +1419,7 @@
                 ui.toggleMessageSection(room.isClosed());
 
                 $ui.trigger(ui.events.activeRoomChanged, [roomName]);
+                triggerFocus();
                 return true;
             }
 
@@ -1589,7 +1625,8 @@
         },
         changeUserName: function (oldName, user, roomName) {
             var room = getRoomElements(roomName),
-                $user = room.getUserReferences(oldName);
+                $user = room.getUserReferences(oldName),
+                $userListUser = room.getUser(oldName);
 
             // Update the user's name
             $user.find('.name').fadeOut('normal', function () {
@@ -1598,7 +1635,7 @@
             });
             $user.data('name', user.Name);
             $user.attr('data-name', user.Name);
-            room.sortLists();
+            room.sortLists($userListUser);
         },
         changeGravatar: function (user, roomName) {
             var room = getRoomElements(roomName),
