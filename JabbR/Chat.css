@@ -2729,6 +2729,7 @@ h3.userlist-header {
 
 #emotelist-dialog
 {
+    padding: 0;
 }
 
 #emotelist-dialog > div

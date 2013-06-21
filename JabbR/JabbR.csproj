@@ -775,6 +775,7 @@
     <Content Include="Content\images\ponymoticon\a.png" />
     <Content Include="Content\images\ponymoticon\b.png" />
     <Content Include="Content\images\ponymoticon\c.png" />
+    <Content Include="Content\images\ponymoticon\d.png" />
     <Content Include="Content\images\ponymoticon\e.png" />
     <Content Include="Content\images\question-icon-white.png" />
     <Content Include="Content\images\question-icon.png" />
