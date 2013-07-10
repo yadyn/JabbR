@@ -41,7 +41,7 @@ var EmojiIcons;
 
         row += '<td class="ponymoticon ponymoticon-' + group + ' ponymoticon-' + key + '" title="' + key + '"></td>';
 
-        if (colCount[group] == 3) {
+        if (colCount[group] == 4) {
             row += '</tr>';
             colCount[group] = 0;
         }
