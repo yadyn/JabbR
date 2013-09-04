@@ -2,10 +2,11 @@
 using System.Linq;
 using JabbR.Infrastructure;
 using JabbR.Models;
+using Microsoft.AspNet.SignalR;
 
 namespace JabbR.Commands
 {
-    [Command("gravatar", "Set your gravatar.", "email", "user")]
+    [Command("gravatar", "Gravatar_CommandInfo", "email", "user")]
     public class GravatarCommand : UserCommand
     {
         public override void Execute(CommandContext context, CallerContext callerContext, ChatUser callingUser, string[] args)
@@ -14,7 +15,7 @@ namespace JabbR.Commands
 
             if (String.IsNullOrWhiteSpace(email))
             {
-                throw new InvalidOperationException("Which email address do you want to use for the Gravatar image?");
+                throw new HubException(LanguageResources.Gravatar_EmailRequired);
             }
 
             string hash = email.ToLowerInvariant().ToMD5();

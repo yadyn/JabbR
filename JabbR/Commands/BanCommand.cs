@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Linq;
 using JabbR.Models;
+using Microsoft.AspNet.SignalR;
 
 namespace JabbR.Commands
 {
-    [Command("ban", "Ban a user from JabbR!", "user", "admin")]
+    [Command("ban", "Ban_CommandInfo", "user", "admin")]
     public class BanCommand : AdminCommand
     {
         public override void ExecuteAdminOperation(CommandContext context, CallerContext callerContext, ChatUser callingUser, string[] args)
         {
             if (args.Length == 0)
             {
-                throw new InvalidOperationException("Who do you want to ban?");
+                throw new HubException(LanguageResources.Ban_UserRequired);
             }
 
             string targetUserName = args[0];

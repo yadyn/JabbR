@@ -1,10 +1,11 @@
 ﻿using System;
 using JabbR.Models;
 using JabbR.Services;
+using Microsoft.AspNet.SignalR;
 
 namespace JabbR.Commands
 {
-    [Command("who", "Show a list of all users, Use [name] to show specific information about that user.", "[nickname]", "global")]
+    [Command("who", "Who_CommandInfo", "[nickname]", "global")]
     public class WhoCommand : UserCommand
     {
         public override void Execute(CommandContext context, CallerContext callerContext, ChatUser callingUser, string[] args)
@@ -21,7 +22,7 @@ namespace JabbR.Commands
 
             if (user == null)
             {
-                throw new InvalidOperationException(String.Format("We didn't find anyone with the username {0}.", name));
+                throw new HubException(String.Format(LanguageResources.UserNotFound, name));
             }
 
             context.NotificationService.ShowUserInfo(user);

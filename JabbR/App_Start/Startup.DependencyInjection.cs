@@ -1,21 +1,17 @@
-﻿using System;
-using System.Linq;
-using JabbR.ContentProviders.Core;
+﻿using JabbR.ContentProviders.Core;
 using JabbR.Infrastructure;
 using JabbR.Models;
 using JabbR.Nancy;
 using JabbR.Services;
 using JabbR.UploadHandlers;
 using Microsoft.AspNet.SignalR.Hubs;
-using Microsoft.AspNet.SignalR.Json;
 using Microsoft.Owin.Security.DataProtection;
-using Microsoft.Owin.Security.Forms;
-using Nancy.Authentication.WorldDomination;
+using Microsoft.Owin.Security.Cookies;
 using Nancy.Bootstrappers.Ninject;
+using Nancy.SimpleAuthentication;
 using Newtonsoft.Json;
 using Ninject;
-using Ninject.Extensions;
-using WorldDomination.Web.Authentication;
+using Microsoft.AspNet.SignalR;
 
 namespace JabbR
 {
@@ -38,11 +34,14 @@ namespace JabbR
             kernel.Bind<IDataProtector>()
                   .To<JabbRDataProtection>();
 
-            kernel.Bind<IFormsAuthenticationProvider>()
+            kernel.Bind<ICookieAuthenticationProvider>()
                   .To<JabbRFormsAuthenticationProvider>();
 
             kernel.Bind<ILogger>()
                   .To<RealtimeLogger>();
+
+            kernel.Bind<IUserIdProvider>()
+                  .To<JabbrUserIdProvider>();
 
             kernel.Bind<IJabbrConfiguration>()
                   .ToConstant(configuration);
@@ -97,10 +96,10 @@ namespace JabbR
                   .To<DefaultUserAuthenticator>();
 
             kernel.Bind<IAuthenticationService>()
-                  .ToConstant(new AuthenticationService());
+                  .To<AuthenticationService>();
 
             kernel.Bind<IAuthenticationCallbackProvider>()
-                      .To<JabbRAuthenticationCallbackProvider>();
+                  .To<JabbRAuthenticationCallbackProvider>();
 
             kernel.Bind<ICache>()
                   .To<DefaultCache>()
@@ -129,6 +128,18 @@ namespace JabbR
 
             kernel.Bind<ContentProviderProcessor>()
                   .ToConstant(new ContentProviderProcessor(kernel));
+
+            kernel.Bind<IEmailTemplateContentReader>()
+                  .To<RazorEmailTemplateContentReader>();
+
+            kernel.Bind<IEmailTemplateEngine>()
+                  .To<RazorEmailTemplateEngine>();
+
+            kernel.Bind<IEmailSender>()
+                  .To<SmtpClientEmailSender>();
+
+            kernel.Bind<IEmailService>()
+                  .To<EmailService>();
 
             return kernel;
         }

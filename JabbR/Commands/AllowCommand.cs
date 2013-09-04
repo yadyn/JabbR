@@ -1,16 +1,17 @@
 ﻿using System;
 using JabbR.Models;
+using Microsoft.AspNet.SignalR;
 
 namespace JabbR.Commands
 {
-    [Command("allow", "Give a user permission to a private room. Only works if you're an owner of that room.", "user [room]", "room")]
+    [Command("allow", "Allow_CommandInfo", "user [room]", "room")]
     public class AllowCommand : UserCommand
     {
         public override void Execute(CommandContext context, CallerContext callerContext, ChatUser callingUser, string[] args)
         {
             if (args.Length == 0)
             {
-                throw new InvalidOperationException("Who do you want to grant access permissions to?");
+                throw new HubException(LanguageResources.Allow_UserRequired);
             }
 
             string targetUserName = args[0];
@@ -21,7 +22,7 @@ namespace JabbR.Commands
 
             if (String.IsNullOrEmpty(roomName))
             {
-                throw new InvalidOperationException("Which room do you want to allow access to?");
+                throw new HubException(LanguageResources.Allow_RoomRequired);
             }
 
             ChatRoom targetRoom = context.Repository.VerifyRoom(roomName, mustBeOpen: false);

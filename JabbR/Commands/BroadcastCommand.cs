@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using JabbR.Infrastructure;
+using Microsoft.AspNet.SignalR;
 
 namespace JabbR.Commands
 {
-    [Command("broadcast", "Sends a message to all users in all rooms. Only administrators can use this command.", "message", "global")]
+    [Command("broadcast", "Broadcast_CommandInfo", "message", "global")]
     public class BroadcastCommand : AdminCommand
     {
         public override void ExecuteAdminOperation(CommandContext context, CallerContext callerContext, Models.ChatUser callingUser, string[] args)
@@ -14,7 +12,7 @@ namespace JabbR.Commands
 
             if (String.IsNullOrEmpty(messageText))
             {
-                throw new InvalidOperationException("What message do you want to broadcast?");
+                throw new HubException(LanguageResources.Broadcast_MessageRequired);
             }
 
             context.NotificationService.BroadcastMessage(callingUser, messageText);

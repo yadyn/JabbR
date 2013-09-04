@@ -1,16 +1,17 @@
 ﻿using System;
 using JabbR.Models;
+using Microsoft.AspNet.SignalR;
 
 namespace JabbR.Commands
 {
-    [Command("kick", "Kick a user from the room. Note, this is only valid for owners of the room.", "user [room]", "user")]
+    [Command("kick", "Kick_CommandInfo", "user [room]", "user")]
     public class KickCommand : UserCommand
     {
         public override void Execute(CommandContext context, CallerContext callerContext, ChatUser callingUser, string[] args)
         {
             if (args.Length == 0)
             {
-                throw new InvalidOperationException("Who do you want to to kick?");
+                throw new HubException(LanguageResources.Kick_UserRequired);
             }
 
             string targetUserName = args[0];
@@ -21,7 +22,7 @@ namespace JabbR.Commands
 
             if (String.IsNullOrEmpty(targetRoomName))
             {
-                throw new InvalidOperationException("Which room do you want to kick them from?");
+                throw new HubException(LanguageResources.Kick_RoomRequired);
             }
 
             ChatRoom room = context.Repository.VerifyRoom(targetRoomName);

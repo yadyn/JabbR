@@ -1,16 +1,17 @@
 ﻿using System;
 using JabbR.Models;
+using Microsoft.AspNet.SignalR;
 
 namespace JabbR.Commands
 {
-    [Command("unallow", "Revoke a user's permission to a private room. Only works if you're an owner of that room.", "user [room]", "room")]
+    [Command("unallow", "Unallow_CommandInfo", "user [room]", "room")]
     public class UnAllowCommand : UserCommand
     {
         public override void Execute(CommandContext context, CallerContext callerContext, ChatUser callingUser, string[] args)
         {
             if (args.Length == 0)
             {
-                throw new InvalidOperationException("Who you want to revoke access permissions from?");
+                throw new HubException(LanguageResources.UnAllow_UserRequired);
             }
 
             string targetUserName = args[0];
@@ -21,7 +22,7 @@ namespace JabbR.Commands
 
             if (String.IsNullOrEmpty(roomName))
             {
-                throw new InvalidOperationException("Which room do you want to revoke access from?");
+                throw new HubException(LanguageResources.UnAllow_RoomRequired);
             }
 
             ChatRoom targetRoom = context.Repository.VerifyRoom(roomName, mustBeOpen: false);

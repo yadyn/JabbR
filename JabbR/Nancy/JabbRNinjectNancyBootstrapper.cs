@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Security.Claims;
 using System.Security.Principal;
+using System.Threading;
+
 using Nancy;
 using Nancy.Bootstrapper;
 using Nancy.Bootstrappers.Ninject;
 using Nancy.Owin;
+using Nancy.Security;
+
 using Ninject;
 
 namespace JabbR.Nancy
@@ -28,7 +33,10 @@ namespace JabbR.Nancy
         {
             base.ApplicationStartup(container, pipelines);
 
+            Csrf.Enable(pipelines);
+
             pipelines.BeforeRequest.AddItemToStartOfPipeline(FlowPrincipal);
+            pipelines.BeforeRequest.AddItemToStartOfPipeline(SetCulture);
         }
 
         private Response FlowPrincipal(NancyContext context)
@@ -55,6 +63,13 @@ namespace JabbR.Nancy
                 }
             }
 
+            return null;
+        }
+
+        private Response SetCulture(NancyContext ctx)
+        {
+            Thread.CurrentThread.CurrentCulture = ctx.Culture;
+            Thread.CurrentThread.CurrentUICulture = ctx.Culture;
             return null;
         }
 

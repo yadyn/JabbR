@@ -1,10 +1,6 @@
 ﻿using System;
-using System.IdentityModel.Selectors;
-using System.IdentityModel.Services.Configuration;
-using System.IdentityModel.Tokens;
 using System.IO;
 using System.Net.Http.Formatting;
-using System.ServiceModel.Security;
 using System.Web.Http;
 using JabbR;
 using JabbR.Hubs;
@@ -17,10 +13,10 @@ using Microsoft.AspNet.SignalR.Hubs;
 using Microsoft.AspNet.SignalR.Infrastructure;
 using Microsoft.AspNet.SignalR.Transports;
 using Microsoft.Owin;
+using Microsoft.Owin.Extensions;
+using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.DataHandler;
 using Microsoft.Owin.Security.DataProtection;
-using Microsoft.Owin.Security.Federation;
-using Microsoft.Owin.Security.Forms;
 using Newtonsoft.Json.Serialization;
 using Ninject;
 using Owin;
@@ -68,21 +64,23 @@ namespace JabbR
 
         private static void SetupAuth(IAppBuilder app, IKernel kernel)
         {
-            var ticketHandler = new TicketDataHandler(kernel.Get<IDataProtector>());
+            var ticketDataFormat = new TicketDataFormat(kernel.Get<IDataProtector>());
 
-            app.Use(typeof(FixCookieHandler), ticketHandler);
-
-            app.UseFormsAuthentication(new FormsAuthenticationOptions
+            app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
-                LoginPath = "/account/login",
-                LogoutPath = "/account/logout",
+                LoginPath = new PathString("/account/login"),
+                LogoutPath = new PathString("/account/logout"),
                 CookieHttpOnly = true,
                 AuthenticationType = Constants.JabbRAuthType,
                 CookieName = "jabbr.id",
                 ExpireTimeSpan = TimeSpan.FromDays(30),
-                TicketDataHandler = ticketHandler,
-                Provider = kernel.Get<IFormsAuthenticationProvider>()
+                TicketDataFormat = ticketDataFormat,
+                Provider = kernel.Get<ICookieAuthenticationProvider>()
             });
+
+            app.Use(typeof(WindowsPrincipalHandler));
+
+            app.UseStageMarker(PipelineStage.Authenticate);
 
             //var config = new FederationConfiguration(loadConfig: false);
             //config.WsFederationConfiguration.Issuer = "";
@@ -102,8 +100,6 @@ namespace JabbR
             //    FederationConfiguration = config,
             //    Provider = new FederationAuthenticationProvider()
             //});
-
-            app.Use(typeof(WindowsPrincipalHandler));
         }
 
         private static void SetupNancy(IKernel kernel, IAppBuilder app)
@@ -129,13 +125,12 @@ namespace JabbR
 
             var config = new HubConfiguration
             {
-                Resolver = resolver,
-                EnableDetailedErrors = true
+                Resolver = resolver
             };
 
             hubPipeline.AddModule(kernel.Get<LoggingHubPipelineModule>());
 
-            app.MapHubs(config);
+            app.MapSignalR(config);
 
             var monitor = new PresenceMonitor(kernel, connectionManager, heartbeat);
             monitor.Start();

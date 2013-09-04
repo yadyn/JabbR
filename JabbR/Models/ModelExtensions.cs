@@ -1,15 +1,27 @@
 ﻿using System;
+using System.Linq;
+using System.Collections.Generic;
+using Microsoft.AspNet.SignalR;
 
 namespace JabbR.Models
 {
     public static class ModelExtensions
     {
+        public static IList<string> GetConnections(this ChatUser user)
+        {
+            return user.ConnectedClients.Select(c => c.Id).ToList();
+        }
+
+        public static IList<string> GetRoomNames(this ChatUser user)
+        {
+            return user.Rooms.Select(r => r.Name).ToList();
+        }
 
         public static void EnsureAllowed(this ChatUser user, ChatRoom room)
         {
             if (room.Private && !room.IsUserAllowed(user))
             {
-                throw new InvalidOperationException(String.Format("You do not have access to {0}.", room.Name));
+                throw new HubException(String.Format(LanguageResources.RoomAccessPermission, room.Name));
             }
         }
 
@@ -22,7 +34,7 @@ namespace JabbR.Models
         {
             if (room.Closed)
             {
-                throw new InvalidOperationException(String.Format("The room '{0}' is closed.", room.Name));
+                throw new HubException(String.Format(LanguageResources.RoomClosed, room.Name));
             }
         }
     }

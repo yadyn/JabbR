@@ -1,9 +1,10 @@
 ﻿using System;
 using JabbR.Models;
+using Microsoft.AspNet.SignalR;
 
 namespace JabbR.Commands
 {
-    [Command("leave", "Leave the current room. Use [room] to leave a specific room.", "[room]", "room")]
+    [Command("leave", "Leave_CommandInfo", "[room]", "room")]
     public class LeaveCommand : UserCommand
     {
         public override void Execute(CommandContext context, CallerContext callerContext, ChatUser callingUser, string[] args)
@@ -12,7 +13,7 @@ namespace JabbR.Commands
 
             if (String.IsNullOrEmpty(targetRoomName))
             {
-                throw new InvalidOperationException("Which room do you want to leave?");
+                throw new HubException(LanguageResources.Leave_RoomRequired);
             }
 
             ChatRoom room = context.Repository.VerifyRoom(targetRoomName, mustBeOpen: false);
