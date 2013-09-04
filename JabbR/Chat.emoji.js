@@ -125,14 +125,19 @@ var EmojiIcons;
         if (EmojiIcons == null) {
             EmojiIcons = [];
             for (var key in validEmoji) {
-            if (validEmoji.hasOwnProperty(key)) {
-                EmojiIcons.push(key + ':');
+                if (validEmoji.hasOwnProperty(key)) {
+                    EmojiIcons.push(key + ':');
                 }
             }
-                EmojiIcons.push(key + ':');
+            for (var key in validv4c) {
+                if (validEmoji.hasOwnProperty(key)) {
+                    EmojiIcons.push(key + ':');
+                }
             }
             for (var key in validPony) {
-                EmojiIcons.push(key + ':');
+                if (validEmoji.hasOwnProperty(key)) {
+                    EmojiIcons.push(key + ':');
+                }
             }
         }
         return EmojiIcons;
