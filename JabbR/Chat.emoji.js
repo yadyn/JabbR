@@ -130,12 +130,12 @@ var EmojiIcons;
                 }
             }
             for (var key in validv4c) {
-                if (validEmoji.hasOwnProperty(key)) {
+            	if (validv4c.hasOwnProperty(key)) {
                     EmojiIcons.push(key + ':');
                 }
             }
             for (var key in validPony) {
-                if (validEmoji.hasOwnProperty(key)) {
+            	if (validPony.hasOwnProperty(key)) {
                     EmojiIcons.push(key + ':');
                 }
             }
