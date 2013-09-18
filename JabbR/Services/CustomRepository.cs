@@ -51,6 +51,8 @@ namespace JabbR.Services
 
         public IQueryable<ChatClient> Clients { get { return _users.SelectMany(u => u.ConnectedClients).AsQueryable(); } }
 
+        public IQueryable<Settings> Settings { get { return _settings.AsQueryable(); } }
+
         public void Add(Attachment attachment)
         {
             _attachments.Add(attachment);
@@ -73,6 +75,11 @@ namespace JabbR.Services
             {
                 identity.User.Identities.Add(identity);
             }
+        }
+
+        public void Add(Settings settings)
+        {
+            _settings.Add(settings);
         }
 
         public void Add(ChatMessage message)
