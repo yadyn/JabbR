@@ -86,5 +86,21 @@ namespace JabbR.Services
                 return ConfigurationManager.AppSettings["jabbr:defaultAdminPassword"];
             }
         }
+
+        public string ServiceBusConnectionString
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["jabbr:serviceBusConnectionString"];
+            }
+        }
+
+        public string ServiceBusTopicPrefix
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["jabbr:serviceBusTopicPrefix"];
+            }
+        }
     }
 }

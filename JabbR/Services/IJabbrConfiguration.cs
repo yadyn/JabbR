@@ -16,6 +16,9 @@ namespace JabbR.Services
         string DeploymentBranch { get; }
         string DeploymentTime { get; }
 
+        string ServiceBusConnectionString { get; }
+        string ServiceBusTopicPrefix { get; }
+
         string DefaultAdminUserName { get; }
         string DefaultAdminPassword { get; }
     }
