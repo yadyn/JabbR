@@ -19,6 +19,8 @@ namespace JabbR.Services
         string ServiceBusConnectionString { get; }
         string ServiceBusTopicPrefix { get; }
 
+        bool ScaleOutSqlServer { get; }
+
         string DefaultAdminUserName { get; }
         string DefaultAdminPassword { get; }
     }

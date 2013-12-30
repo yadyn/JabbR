@@ -66,7 +66,6 @@
         connectionInfoTransport = null,
         $emotelist = null,
         $emotelistDialog = null,
-        $topicBar = null,
         $loadingHistoryIndicator = null,
         trimRoomHistoryFrequency = 1000 * 60 * 2, // 2 minutes in ms
         $loadMoreRooms = null,
@@ -113,16 +112,14 @@
             var room = getRoomElements(roomName);
             if (!room.isInitialized()) {
                 roomLoadingTimeout = window.setTimeout(function () {
-                    $roomLoadingIndicator.find('i').addClass('icon-spin');
-                    $roomLoadingIndicator.show();
+                    $roomLoadingIndicator.fadeIn('slow');
                 }, roomLoadingDelay);
             }
         } else {
             if (roomLoadingTimeout) {
-                clearTimeout(roomLoadingDelay);
+                clearTimeout(roomLoadingTimeout);
             }
-            $roomLoadingIndicator.hide();
-            $roomLoadingIndicator.find('i').removeClass('icon-spin');
+            $roomLoadingIndicator.fadeOut();
         }
     }
 
@@ -179,6 +176,11 @@
                 $('.roomTopic.current'));
         }
         return room;
+    }
+    
+    function getActiveRoomName() {
+        //TODO: make this less DOM-read-ey
+        return $tabs.find('li.current').data('name');
     }
 
     function getAllRoomElements() {
@@ -396,9 +398,9 @@
                               .appendTo($chatArea)
                               .hide();
 
-        $roomTopic = $('<div/>').attr('id', 'roomTopic-' + roomId)
+        $('<div/>').attr('id', 'roomTopic-' + roomId)
                               .addClass('roomTopic')
-                              .appendTo($topicBar)
+                              .appendTo($chatArea)
                               .hide();
 
         userContainer = $('<div/>').attr('id', 'userlist-' + roomId)
@@ -811,7 +813,6 @@
             $connectionInfoContent = $('#connection-info-content');
             connectionInfoStatus = '#connection-status';
             connectionInfoTransport = '#connection-transport';
-            $topicBar = $('#topic-bar');
             $loadingHistoryIndicator = $('#loadingRoomHistory');
 
             $loadMoreRooms = $('#load-more-rooms-item');
@@ -848,6 +849,11 @@
                 var room = getRoomElements(roomName);
 
                 if (room.exists()) {
+                    if (room.isInitialized()) {
+                        ui.setRoomLoading(false);
+                    } else {
+                        ui.setRoomLoading(true, roomName);
+                    }
                     ui.setActiveRoom(roomName);
                 }
                 else {
@@ -1955,14 +1961,6 @@
                 $middle.append(content);
             }
         },
-        addPrivateMessage: function (content, type) {
-            var rooms = getAllRoomElements();
-            for (var r in rooms) {
-                if (rooms[r].getName() !== undefined && rooms[r].isClosed() === false) {
-                    this.addMessage(content, type, rooms[r].getName());
-                }
-            }
-        },
         prepareNotificationMessage: function (options, type) {
             if (typeof options === 'string') {
                 options = { content: options, encoded: false };
@@ -1989,6 +1987,7 @@
 
             return $element;
         },
+        //TODO swap around type and roomName parameters for consistency
         addMessage: function (content, type, roomName) {
             var room = roomName ? getRoomElements(roomName) : getCurrentRoomElements(),
                 nearEnd = room.isNearTheEnd(),
@@ -2029,6 +2028,49 @@
             }
 
             $(newMessage).appendTo(room.messages);
+        },
+        addNotification: function (message, roomName) {
+            this.addMessage(message, 'notification', roomName);
+        },
+        addNotificationToActiveRoom: function (message) {
+            this.addNotification(message, getActiveRoomName());
+        },
+        addError: function (message, roomName) {
+            this.addMessage(message, 'error', roomName);
+        },
+        addErrorToActiveRoom: function (message) {
+            this.addError(message, getActiveRoomName());
+        },
+        addWelcome: function (message, roomName) {
+            this.addMessage(message, 'welcome', roomName);
+        },
+        addWelcomeToActiveRoom: function(message) {
+            this.addWelcome(message, getActiveRoomName());
+        },
+        addList: function(header, messages, roomName) {
+            this.addMessage(header, 'list-header', roomName);
+            
+            var _this = this;
+            $.each(messages, function () {
+                _this.addMessage(this, 'list-item', roomName);
+            });
+        },
+        addListToActiveRoom: function(header, messages) {
+            this.addList(header, messages, getActiveRoomName());
+        },
+        addBroadcast: function(message, roomName) {
+            this.addMessage(message, 'broadcast', roomName);
+        },
+        addAction: function(message, roomName) {
+            this.addMessage(message, 'action', roomName);
+        },
+        addPrivateMessage: function (content) {
+            var rooms = getAllRoomElements();
+            for (var r in rooms) {
+                if (rooms[r].getName() !== undefined && rooms[r].isClosed() === false) {
+                    this.addMessage(content, 'pm', rooms[r].getName());
+                }
+            }
         },
         hasFocus: function () {
             return focus;
@@ -2341,23 +2383,29 @@
                 $tabsDropdownButton = $('#tabs-dropdown-rooms');
             
             // move all (non-dragsort) tabs to the first list
-            $tabs.last().find('li:not(.placeholder)').each(function () { $(this).detach().appendTo($tabsList); });
-
-            // find overflow and move it all to the dropdown list ul
+            $tabs.last().find('li:not(.placeholder)').each(function () { $(this).css('visibility', 'hidden').detach().appendTo($tabsList); });
+            
             $roomTabs = $tabsList.find('li:not(.placeholder)');
-            $roomTabs.each(function (idx) {
-                if (sliceIndex !== -1) {
-                    return;
-                }
+            
+            // if width of first tab is greater than the tab area, move them all to the list
+            if ($roomTabs.length > 0 && $roomTabs.width() > $tabsList.width()) {
+                sliceIndex = 0;
+            } else {
+                // find overflow and move it all to the dropdown list ul
+                $roomTabs.each(function(idx) {
+                    if (sliceIndex !== -1) {
+                        return;
+                    }
 
-                var thisOffsetLeft = $(this).offset().left;
-                if (thisOffsetLeft <= lastOffsetLeft) {
-                    sliceIndex = idx;
-                    return;
-                }
+                    var thisOffsetLeft = $(this).offset().left;
+                    if (thisOffsetLeft <= lastOffsetLeft) {
+                        sliceIndex = idx;
+                        return;
+                    }
 
-                lastOffsetLeft = thisOffsetLeft;
-            });
+                    lastOffsetLeft = thisOffsetLeft;
+                });
+            }
 
             // move all elements from here to the dropdown list
             if (sliceIndex !== -1) {
@@ -2369,6 +2417,8 @@
             } else {
                 $tabsDropdownButton.fadeOut('slow').parent().removeClass('open');
             }
+
+            $roomTabs.each(function () { $(this).css('visibility', 'visible'); });
 
             return;
         },

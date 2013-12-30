@@ -69,7 +69,8 @@ namespace JabbR
                                       recentMessageCache,
                                       repository,
                                       cache,
-                                      logger);
+                                      logger,
+                                      settings);
                   });
 
             kernel.Bind<ICryptoService>()
