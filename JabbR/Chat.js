@@ -1037,8 +1037,6 @@
             messageCompleteTimeout = null;
 
         if (!isCommand) {
-            var regt = new RegExp("^(>|&gt;)");
-                greentext: regt.test(clientMessage.content) ? 'greentext' : '',
             // If there's a significant delay in getting the message sent
             // mark it as pending
             messageCompleteTimeout = window.setTimeout(function () {

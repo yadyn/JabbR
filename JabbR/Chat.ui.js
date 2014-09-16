@@ -614,7 +614,8 @@
                     return false;
                 }
 
-                // Added the message to the ui first
+            	// Added the message to the ui first
+                var regt = new RegExp("^(>|&gt;)");
                 var viewModel = {
                     name: ui.getUserName(),
                     hash: ui.getUserHash(),
@@ -622,6 +623,7 @@
                     id: utility.newId(),
                     date: new Date(),
                     highlight: '',
+                    greentext: regt.test(msg) ? 'greentext' : '',
                     isMine: true
                 };
 
