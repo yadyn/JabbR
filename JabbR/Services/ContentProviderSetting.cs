@@ -81,6 +81,24 @@ namespace JabbR.Services
                     Output = "<object width=\"100%\" height=\"120\"><param name=\"movie\" value=\"//www.mixcloud.com/media/swf/player/mixcloudLoader.swf?feed={0}&embed_uuid=06c5d381-1643-407d-80e7-2812382408e9&stylecolor=1e2671&embed_type=widget_standard\"></param><param name=\"allowFullScreen\" value=\"true\"></param><param name=\"wmode\" value=\"opaque\"></param><param name=\"allowscriptaccess\" value=\"always\"></param><embed src=\"//www.mixcloud.com/media/swf/player/mixcloudLoader.swf?feed={0}&embed_uuid=06c5d381-1643-407d-80e7-2812382408e9&stylecolor=1e2671&embed_type=widget_standard\" type=\"application/x-shockwave-flash\" wmode=\"opaque\" allowscriptaccess=\"always\" allowfullscreen=\"true\" width=\"100%\" height=\"120\"></embed></object>",
                     Collapsible = true,
                 },
+                new ContentProviderSetting
+                {
+                    Name = "gfycat",
+                    Enabled = true,
+                    Domains = "http://gfycat.com/;http://www.gfycat.com/;https://gfycat.com/;https://www.gfycat.com/",
+                    Extract = @".*gfycat\.com\/(\w+)",
+                    Output = "<video width=\"425\" height=\"344\" preload=\"none\" controls=\"\" loop=\"\" muted=\"muted\" style=\"display: block;\" poster=\"//thumbs.gfycat.com/{0}-poster.jpg\"><source id=\"webmsource\" src=\"//zippy.gfycat.com/{0}.webm\" type=\"video/webm\"><source id=\"mp4source\" src=\"//zippy.gfycat.com/{0}.mp4\" type=\"video/mp4\">Sorry, you don't have HTML5 video and we didn't catch this properly in javascript.  You can try to view the gif directly: <a href=\"http://fat.gfycat.com/{0}.gif\">http://fat.gfycat.com/{0}.gif</a>.</video>",
+                    Collapsible = true,
+                },
+                new ContentProviderSetting
+                {
+                    Name = "giphy",
+                    Enabled = true,
+                    Domains = "http://giphy.com/;http://www.giphy.com/;https://giphy.com/;https://www.giphy.com/",
+                    Extract = @".*giphy\.com\/gifs\/(\w+)",
+                    Output = "<video width=\"425\" height=\"344\" preload=\"none\" controls=\"\" loop=\"\" muted=\"muted\" style=\"display: block;\" poster=\"//media.giphy.com/media/{0}/200_s.gif\"><source src=\"//media.giphy.com/media/{0}/giphy.mp4\" type=\"video/mp4\">Sorry, you don't have HTML5 video and we didn't catch this properly in javascript.  You can try to view the gif directly: <a href=\"https://i.giphy.com/{0}.gif\">https://i.giphy.com/{0}.gif</a>.</video>",
+                    Collapsible = true,
+                },
             };
         }
 
