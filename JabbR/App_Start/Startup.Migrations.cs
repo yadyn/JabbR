@@ -15,7 +15,6 @@ namespace JabbR
         {
             if (String.IsNullOrEmpty(config.SqlConnectionString.ProviderName) ||
                 !config.SqlConnectionString.ProviderName.Equals(SqlClient, StringComparison.OrdinalIgnoreCase))
-                String.IsNullOrEmpty(connectionString.ProviderName) ||
             {
                 return;
             }
