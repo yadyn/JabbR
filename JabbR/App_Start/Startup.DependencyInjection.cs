@@ -33,8 +33,7 @@ namespace JabbR
                   .InSingletonScope();
 
             kernel.Bind<IJabbrRepository>()
-                .To<CustomRepository>()
-                .InSingletonScope();
+                  .To<PersistedRepository>();
 
             kernel.Bind<IChatService>()
                   .To<ChatService>();
@@ -94,11 +93,7 @@ namespace JabbR
                   });
 
             kernel.Bind<ISettingsManager>()
-                  .ToMethod(context =>
-                  {
-                      return context.Kernel.Get<IJabbrRepository>() as CustomRepository;
-                  });
-                  //.To<SettingsManager>();
+                  .To<SettingsManager>();
 
             kernel.Bind<IUserAuthenticator>()
                   .To<DefaultUserAuthenticator>();
