@@ -44,7 +44,7 @@ var EmojiIcons;
 
         row += '<td class="ponymoticon ponymoticon-' + group + ' ponymoticon-' + key + '" title="' + key + '"></td>';
 
-        if (colCount[group] == 4) {
+        if (colCount[group] == 6) {
             row += '</tr>';
             colCount[group] = 0;
         }
@@ -66,7 +66,7 @@ var EmojiIcons;
         }
         row += '<td class="emoji20 emoji20-' + css + '" title="' + key + '"></td>';
 
-        if (colCount[group] == 11) {
+        if (colCount[group] == 20) {
             row += '</tr>';
             colCount[group] = 0;
         }
@@ -84,7 +84,7 @@ var EmojiIcons;
 
         row += '<td title="' + key + '"><img src="Content/images/v4c/' + validv4c[key] + '" alt="' + key + '" /></td>';
 
-        if (colCount[group] == 3) {
+        if (colCount[group] == 5) {
             row += '</tr>';
             colCount[group] = 0;
         }

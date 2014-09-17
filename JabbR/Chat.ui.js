@@ -1226,7 +1226,7 @@
                 autoOpen: false,
                 draggable: false,
                 resizable: false,
-                width: 340,
+                width: 480,
                 maxHeight: 650,
                 position: { my: "right top", at: "right bottom", of: "#emotelist" }
             });
