@@ -1,9 +1,9 @@
 .ponymoticon { background-repeat: no-repeat; background-repeat: no-repeat; position: relative; display: inline-block; top: 5px; margin-top: -5px; padding: 0; }
-.ponymoticon-a { background-image: url(images/ponymoticon/a2.png); width: 70px; height: 70px; }
-.ponymoticon-b { background-image: url(images/ponymoticon/b2.png); width: 70px; height: 70px; }
-.ponymoticon-c { background-image: url(images/ponymoticon/c2.png); width: 70px; height: 70px; }
+.ponymoticon-a { background-image: url(images/ponymoticon/a.png); width: 70px; height: 70px; }
+.ponymoticon-b { background-image: url(images/ponymoticon/b.png); width: 70px; height: 70px; }
+.ponymoticon-c { background-image: url(images/ponymoticon/c.png); width: 70px; height: 70px; }
 .ponymoticon-d { background-image: url(images/ponymoticon/d.png); width: 70px; height: 70px; }
-.ponymoticon-e { background-image: url(images/ponymoticon/e2.png); width: 70px; height: 70px; }
+.ponymoticon-e { background-image: url(images/ponymoticon/e.png); width: 70px; height: 70px; }
 
 .ponymoticon-ajlie { background-position: -0px -0px; }
 .ponymoticon-priceless { background-position: -70px -0px; }

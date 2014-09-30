@@ -244,6 +244,7 @@
     <Content Include="Content\images\ponymoticon\c2.png" />
     <Content Include="Content\images\ponymoticon\e2.png" />
     <Content Include="Content\images\splash-logo.png" />
+    <Content Include="Content\images\tl-logo64.png" />
     <Content Include="Content\themes\default\Chat.bbcnews.css" />
     <Content Include="Content\themes\default\Chat.css" />
     <Content Include="Chat.documentOnWrite.js" />
