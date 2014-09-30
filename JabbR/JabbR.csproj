@@ -240,8 +240,10 @@
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="Content\images\ponymoticon\a2.png" />
+    <Content Include="Content\images\ponymoticon\a3.png" />
     <Content Include="Content\images\ponymoticon\b2.png" />
     <Content Include="Content\images\ponymoticon\c2.png" />
+    <Content Include="Content\images\ponymoticon\c3.png" />
     <Content Include="Content\images\ponymoticon\e2.png" />
     <Content Include="Content\images\splash-logo.png" />
     <Content Include="Content\images\tl-logo64.png" />
@@ -1031,6 +1033,7 @@
     <Compile Include="Commands\CheckBannedCommand.cs" />
     <Compile Include="Commands\UnBanCommand.cs" />
     <Compile Include="ContentProviders\ConfiguredContentProvider.cs" />
+    <Compile Include="ContentProviders\VideoContentProvider.cs" />
     <Compile Include="Infrastructure\BinaryBlob.cs" />
     <Compile Include="Commands\MemeCommand.cs" />
     <Compile Include="Infrastructure\AuthenticationService.cs" />
