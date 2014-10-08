@@ -1,4 +1,4 @@
-.emoji20 { position: relative; display: inline-block; width: 20px; height: 20px; top: 5px; margin-top: -5px; }
+.emoji20 { position: relative; display: inline-block; width: 20px; height: 20px; top: 5px; margin-top: -5px; padding: 0; }
 .emoji20-plus1 { background:url(images/emoji20.png) no-repeat -0px -0px; }
 .emoji20-0 { background:url(images/emoji20.png) no-repeat -0px -20px; }
 .emoji20-1 { background:url(images/emoji20.png) no-repeat -0px -40px; }

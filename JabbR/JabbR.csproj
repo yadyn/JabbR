@@ -249,6 +249,8 @@
     <Content Include="Content\images\splash-logo.png" />
     <Content Include="Content\images\tl-logo64.png" />
     <Content Include="Content\hotgluemoticon.css" />
+    <Content Include="Content\images\yukkuri.png" />
+    <Content Include="Content\yukkuri.css" />
     <Content Include="Content\themes\default\Chat.bbcnews.css" />
     <Content Include="Content\themes\default\Chat.css" />
     <Content Include="Chat.documentOnWrite.js" />

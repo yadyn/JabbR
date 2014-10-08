@@ -1227,7 +1227,7 @@
                 draggable: false,
                 resizable: false,
                 width: 480,
-                maxHeight: 650,
+                maxHeight: 668,
                 position: { my: "right top", at: "right bottom", of: "#emotelist" }
             });
 
