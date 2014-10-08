@@ -1033,6 +1033,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\CheckBannedCommand.cs" />
+    <Compile Include="Commands\SpoilerCommand.cs" />
     <Compile Include="Commands\UnBanCommand.cs" />
     <Compile Include="ContentProviders\ConfiguredContentProvider.cs" />
     <Compile Include="ContentProviders\VideoContentProvider.cs" />

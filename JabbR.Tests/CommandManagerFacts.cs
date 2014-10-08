@@ -5597,7 +5597,7 @@ namespace JabbR.Test
 
                 // Assert.
                 Assert.True(result);
-                notificationService.Verify(x => x.GenerateMeme(user, room, "https://upboat.me/aa/top-line/bottom-line.jpg"), Times.Once());
+                notificationService.Verify(x => x.SendMessage(user, room, "https://upboat.me/aa/top-line/bottom-line.jpg"), Times.Once());
             }
 
             [Fact]
@@ -5631,7 +5631,7 @@ namespace JabbR.Test
 
                 // Assert.
                 Assert.True(result);
-                notificationService.Verify(x => x.GenerateMeme(user, room, "https://upboat.me/ramsay/cold-hands%3F/type-faster...%2F..jpg"), Times.Once());
+                notificationService.Verify(x => x.SendMessage(user, room, "https://upboat.me/ramsay/cold-hands%3F/type-faster...%2F..jpg"), Times.Once());
             }
 
             [Fact]

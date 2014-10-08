@@ -3112,6 +3112,24 @@ namespace JabbR {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hide what?.
+        /// </summary>
+        public static string Spoiler_ActionRequired {
+            get {
+                return ResourceManager.GetString("Spoiler_ActionRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hides [message] until users mouse-over it. Can mix visible/invisible text by enclosing the invisible parts with square brackets, like &apos;this is visible [but this is hidden [and this is more hidden]]&apos;..
+        /// </summary>
+        public static string Spoiler_CommandInfo {
+            get {
+                return ResourceManager.GetString("Spoiler_CommandInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Set or clear the room topic. Exclude [topic] to clear the room&apos;s topic..
         /// </summary>
         public static string Topic_CommandInfo {

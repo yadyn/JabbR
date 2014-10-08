@@ -14,7 +14,7 @@ namespace JabbR.Commands
 
             room.EnsureOpen();
 
-            if (args.Length  == 0)
+            if (args.Length == 0)
             {
                 throw new HubException(LanguageResources.Me_ActionRequired);
             }

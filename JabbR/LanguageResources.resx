@@ -1215,4 +1215,10 @@ Use ? or type /? to display the FAQ and list of commands.</value>
   <data name="CheckBanned_CommandInfo" xml:space="preserve">
     <value>Checks if a user is banned. Only works if you're an admin.</value>
   </data>
+  <data name="Spoiler_ActionRequired" xml:space="preserve">
+    <value>Hide what?</value>
+  </data>
+  <data name="Spoiler_CommandInfo" xml:space="preserve">
+    <value>Hides [message] until users mouse-over it. Can mix visible/invisible text by enclosing the invisible parts with square brackets, like 'this is visible [but this is hidden [and this is more hidden]]'.</value>
+  </data>
 </root>

@@ -27,7 +27,7 @@ namespace JabbR.Services
         void ChangeFlag(ChatUser user);
         void ChangeTopic(ChatUser user, ChatRoom room);
         void ChangeWelcome(ChatUser user, ChatRoom room);
-        void GenerateMeme(ChatUser user, ChatRoom room, string message);
+        void SendMessage(ChatUser user, ChatRoom room, string message);
 
         void PostNotification(ChatRoom room, ChatUser user, string message);
         void SendPrivateMessage(ChatUser user, ChatUser targetUser, string messageText);

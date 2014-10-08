@@ -29,7 +29,7 @@ namespace JabbR.Commands
             string bottomLine = Uri.EscapeDataString(args[2]);
             string message = String.Format("https://upboat.me/{0}/{1}/{2}.jpg", args[0], topLine, bottomLine);
 
-            context.NotificationService.GenerateMeme(callingUser, callingRoom, message);
+            context.NotificationService.SendMessage(callingUser, callingRoom, message);
         }
     }
 }
