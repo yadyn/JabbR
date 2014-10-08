@@ -239,6 +239,7 @@
     <Content Include="Content\images\download-on.png" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\images\hotglue\h1.png" />
     <Content Include="Content\images\ponymoticon\a2.png" />
     <Content Include="Content\images\ponymoticon\a3.png" />
     <Content Include="Content\images\ponymoticon\b2.png" />
@@ -247,6 +248,7 @@
     <Content Include="Content\images\ponymoticon\e2.png" />
     <Content Include="Content\images\splash-logo.png" />
     <Content Include="Content\images\tl-logo64.png" />
+    <Content Include="Content\hotgluemoticon.css" />
     <Content Include="Content\themes\default\Chat.bbcnews.css" />
     <Content Include="Content\themes\default\Chat.css" />
     <Content Include="Chat.documentOnWrite.js" />
@@ -1456,6 +1458,7 @@
   <ItemGroup>
     <Content Include="Chat.emoji.js" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
