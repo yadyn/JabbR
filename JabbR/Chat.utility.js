@@ -160,11 +160,6 @@
                     return m;
                 });
             }
-
-            // Auto-link subreddits
-            content = content.replace(/(\/?(r\/([\w]+)))\b/g, function (m) {
-                return '<a rel="nofollow external" target="_blank" href="//www.reddit.com/$2" title="$3">$1</a>';
-            });
                 
             // Convert normal links
             content = linkify(content, {
@@ -172,6 +167,9 @@
                     return href ? '<a rel="nofollow external" target="_blank" href="' + href + '" title="' + href + '">' + text + '</a>' : text;
                 }
             });
+
+        	// Auto-link subreddits
+            content = content.replace(/(\/?(r\/([\w]+)))($|\s)/g, '<a rel="nofollow external" target="_blank" href="//www.reddit.com/$2" title="$3">$1</a>$4');
 
             return content;
         }
