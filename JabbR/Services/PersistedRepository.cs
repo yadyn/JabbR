@@ -20,6 +20,8 @@ namespace JabbR.Services
         private static readonly Func<JabbrContext, string, ChatClient> getClientByIdWithUser = (db, clientId) => db.Clients.Include(c => c.User).FirstOrDefault(u => u.Id == clientId);
         private static readonly Func<JabbrContext, string, string, DateTimeOffset, ChatUser> getUserByRequestResetPasswordId = (db, userName, requestId, now) => db.Users.FirstOrDefault(u => u.Name == userName && u.RequestPasswordResetId != null && u.RequestPasswordResetId.Equals(requestId, StringComparison.OrdinalIgnoreCase) && u.RequestPasswordResetValidThrough > now);
 
+        private DateTime _lastPurge;
+
         public PersistedRepository(JabbrContext db)
         {
             _db = db;
@@ -76,6 +78,8 @@ namespace JabbR.Services
 
         public void Add(ChatMessage message)
         {
+            PurgeMessagesIfNecessary();
+
             _db.Messages.Add(message);
         }
 
@@ -303,6 +307,35 @@ namespace JabbR.Services
         public void Reload(object entity)
         {
             _db.Entry(entity).Reload();
+        }
+
+        private void PurgeMessagesIfNecessary()
+        {
+            var currentDate = DateTime.Now;
+
+            if (currentDate.Subtract(_lastPurge).TotalHours > 1d)
+            {
+                PurgeMessages();
+
+                _lastPurge = currentDate;
+            }
+        }
+        private void PurgeMessages()
+        {
+            foreach (var room in Rooms)
+            {
+                PurgeMessages(room);
+            }
+        }
+        private void PurgeMessages(ChatRoom room)
+        {
+            var messages = _db.Messages.Where(m => m.RoomKey == room.Key).OrderByDescending(m => m.When);
+
+            // Keep the last 100, remove the rest
+            foreach (var msg in messages.Skip(100))
+            {
+                _db.Entry(msg).State = EntityState.Deleted;
+            }
         }
     }
 }
