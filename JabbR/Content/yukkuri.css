@@ -1,4 +1,5 @@
 ﻿.yukkuri { position: relative; display: inline-block; width: 25px; height: 20px; top: 5px; margin-top: -5px; padding: 0; }
+/*fix for table display*/td.yukkuri {margin-top:0}
 .yukkuri-marisa1 { background:url(images/yukkuri.png) no-repeat -0px -0px; }
 .yukkuri-marisa2 { background:url(images/yukkuri.png) no-repeat -0px -20px; }
 .yukkuri-marisa3 { background:url(images/yukkuri.png) no-repeat -0px -40px; }
