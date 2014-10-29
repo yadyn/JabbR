@@ -1,4 +1,5 @@
 .hotgluemoticon { background-repeat: no-repeat; background-repeat: no-repeat; position: relative; display: inline-block; top: 5px; margin-top: -5px; padding: 0; }
+td.hotgluemoticon { margin-top: 0; }
 .hotgluemoticon-1 { background-image: url(images/hotglue/h1.png); width: 70px; height: 70px; }
 
 .hotgluemoticon-doge { background-position: -0px -0px; }

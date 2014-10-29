@@ -400,7 +400,7 @@
 
         $('<div/>').attr('id', 'roomTopic-' + roomId)
                               .addClass('roomTopic')
-                              .appendTo($chatArea)
+                              .appendTo('#heading')
                               .hide();
 
         userContainer = $('<div/>').attr('id', 'userlist-' + roomId)

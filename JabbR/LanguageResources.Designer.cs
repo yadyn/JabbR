@@ -1748,6 +1748,15 @@ namespace JabbR {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Emote List.
+        /// </summary>
+        public static string Client_EmoteList {
+            get {
+                return ResourceManager.GetString("Client_EmoteList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to FAQ.
         /// </summary>
         public static string Client_FAQ {

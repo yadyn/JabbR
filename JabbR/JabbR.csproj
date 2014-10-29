@@ -247,6 +247,7 @@
     <Content Include="Content\images\ponymoticon\c3.png" />
     <Content Include="Content\images\ponymoticon\e2.png" />
     <Content Include="Content\images\splash-logo.png" />
+    <Content Include="Content\images\tl-logo.png" />
     <Content Include="Content\images\tl-logo64.png" />
     <Content Include="Content\hotgluemoticon.css" />
     <Content Include="Content\images\yukkuri.png" />
@@ -775,7 +776,6 @@
     <Content Include="Content\images\emojis\yellow_heart.png" />
     <Content Include="Content\images\emojis\zap.png" />
     <Content Include="Content\images\emojis\zzz.png" />
-    <Content Include="Content\images\emotelist.png" />
     <Content Include="Content\images\error.png" />
     <Content Include="Content\images\flags.png" />
     <Content Include="Content\images\link.png" />

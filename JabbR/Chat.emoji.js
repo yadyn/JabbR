@@ -29,7 +29,14 @@ var EmojiIcons;
         
         "\\:-?\\)": ":smile:", ":-?D\\b": ":grin:", ";-?\\)": ":wink:",
         "\\:-?\\(": ":disappointed:", "\\:'-?\\(": ":cry:", ":-?P\\b": ":tongue:",
-        ":-?p\\b": ":tongue:", ":-?O\\b": ":astonished:", ":-?o\\b": ":astonished:", "<3": ":heart:"
+        ":-?p\\b": ":tongue:", ":-?O\\b": ":astonished:", ":-?o\\b": ":astonished:", "<3": ":heart:",
+
+        //"bob": ":babz:", "Bob": ":babz:", "babz": ":babz:", "Babz": ":babz:",
+        //"sean": ":shanz:", "Sean": ":shanz:", "shanz": ":shanz:", "Shanz": ":shanz:", "shanley": ":shanz:", "Shanley": ":shanz:",
+        //"ben": ":fertilemeadors:", "Ben": ":fertilemeadors:", "benjamin": ":fertilemeadors:", "Benjamin": ":fertilemeadors:", "meadors": ":fertilemeadors:", "Meadors": ":fertilemeadors:",
+        //"bson": ":bson:", "benson": ":bson:", "Benson": ":bson:", "benneh": ":bson:",
+        //"derika": ":derika:", "Derika": ":derika:",
+        //"jamesy": ":jamesy:", "Jamesy": ":jamesy:",
     };
 
     // initialize emote list dialog
