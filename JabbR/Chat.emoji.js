@@ -45,24 +45,26 @@ var EmojiIcons;
     emotelistTabs.append(
         $('<ul/>')
             .append($('<li/>')
-                .append($('<a/>').attr('href', '#emotelisttab-1').text('a')))
+                .append($('<a/>').attr('href', '#emotelisttab-1').attr('title', 'pony-a').text('a')))
             .append($('<li/>')
-                .append($('<a/>').attr('href', '#emotelisttab-2').text('b')))
+                .append($('<a/>').attr('href', '#emotelisttab-2').attr('title', 'pony-b').text('b')))
             .append($('<li/>')
-                .append($('<a/>').attr('href', '#emotelisttab-3').text('c')))
+                .append($('<a/>').attr('href', '#emotelisttab-3').attr('title', 'pony-c').text('c')))
             .append($('<li/>')
-                .append($('<a/>').attr('href', '#emotelisttab-4').text('d')))
+                .append($('<a/>').attr('href', '#emotelisttab-4').attr('title', 'pony-d').text('d')))
             .append($('<li/>')
-                .append($('<a/>').attr('href', '#emotelisttab-5').text('e')))
+                .append($('<a/>').attr('href', '#emotelisttab-5').attr('title', 'pony-e').text('e')))
             .append($('<li/>')
-                .append($('<a/>').attr('href', '#emotelisttab-6').text('h')))
+                .append($('<a/>').attr('href', '#emotelisttab-6').attr('title', 'hotglue').text('h')))
             .append($('<li/>')
-                .append($('<a/>').attr('href', '#emotelisttab-7').text('j')))
+                .append($('<a/>').attr('href', '#emotelisttab-7').attr('title', 'emoji').text('j')))
             .append($('<li/>')
-                .append($('<a/>').attr('href', '#emotelisttab-8').text('v'))))
+                .append($('<a/>').attr('href', '#emotelisttab-8').attr('title', 'v4c').text('v')))
+            .append($('<li/>')
+                .append($('<a/>').attr('href', '#emotelisttab-9').attr('title', 'yukkuri').text('y'))))
 
-    var colCount = { 'a': 0, 'b': 0, 'c': 0, 'd': 0, 'e': 0, 'h': 0, 'j': 0, 'v': 0 };
-    var rows = { 'a': [], 'b': [], 'c': [], 'd': [], 'e': [], 'h': [], 'j': [], 'v': [] };
+    var colCount = { 'a': 0, 'b': 0, 'c': 0, 'd': 0, 'e': 0, 'h': 0, 'j': 0, 'v': 0, 'y': 0 };
+    var rows = { 'a': [], 'b': [], 'c': [], 'd': [], 'e': [], 'h': [], 'j': [], 'v': [], 'y': [] };
 
     for (var key in validPony) {
         var row = '';
@@ -124,17 +126,14 @@ var EmojiIcons;
     }
     for (var key in validYukkuri) {
         var row = '';
-        var group = 'j';
+        var group = 'y';
 
         colCount[group] = colCount[group] + 1;
 
-        if (colCount[group] > 8) {
-            row += '</tr>';
-            colCount[group] = 1;
-        }
-
         if (colCount[group] == 1)
             row += '<tr>';
+
+        var css = key;
 
         row += '<td class="yukkuri yukkuri-' + key + '" title="' + key + '"></td>';
 
@@ -180,6 +179,8 @@ var EmojiIcons;
         $('<div/>').attr('id', 'emotelisttab-7').append($('<table/>').append(rows['j'].join(''))));
     emotelistTabs.append(
         $('<div/>').attr('id', 'emotelisttab-8').append($('<table/>').append(rows['v'].join(''))));
+    emotelistTabs.append(
+        $('<div/>').attr('id', 'emotelisttab-9').append($('<table/>').append(rows['y'].join(''))));
 
     emotelistTabs.tabs();
     $('#emotelist-dialog').append(emotelistTabs);
@@ -205,9 +206,9 @@ var EmojiIcons;
                 }
             }
             for (var key in validYukkuri) {
-            	if (validYukkuri.hasOwnProperty(key)) {
-            		EmojiIcons.push(key + ':');
-            	}
+                if (validYukkuri.hasOwnProperty(key)) {
+                    EmojiIcons.push(key + ':');
+                }
             }
             for (var key in validv4c) {
                 if (validv4c.hasOwnProperty(key)) {
@@ -258,7 +259,7 @@ var EmojiIcons;
                 }
                 return '<span class="emoji20 emoji20-' + css + '" alt="' + match + '" title="' + match + '" />';
             } else if (validYukkuri[match]) {
-            	return '<span class="yukkuri yukkuri-' + match + '" alt="' + match + '" title="' + match + '" />';
+                return '<span class="yukkuri yukkuri-' + match + '" alt="' + match + '" title="' + match + '" />';
             } else if (validv4c[match]) {
                 return '<img src="Content/images/v4c/' + validv4c[match] + '" alt="' + match + '" title="' + match + '" />';
             } else if (validPony[match]) {
