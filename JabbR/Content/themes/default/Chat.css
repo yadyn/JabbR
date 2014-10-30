@@ -67,7 +67,6 @@ form#send-message {
     background: #fff;
     overflow: auto;
     color: #424143;
-    color: rgba(0, 16, 63, 0.5);
 }
 
 #room-filter-form {
@@ -235,12 +234,12 @@ form#send-message {
 
 .roomTopic {
     position: absolute;
+    top: 44px;
     left: 98px;
     right: 125px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    font-size: 12px;
 }
 
 .users {
