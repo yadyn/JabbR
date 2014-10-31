@@ -736,22 +736,22 @@ li.user.typing .gravatar {
         }
 
         #tabs li.unread {
-            background-color: #004b85;
+            background-color: #fae905;
             animation: btn-fade-unread 2s linear 3.5;
             -webkit-animation: btn-fade-unread 2s linear 3.5;
         }
 
         @-webkit-keyframes btn-fade-unread
         {
-          0% { background-color: #003259; }
-          50% { background-color: #004b85; }
-          100% { background-color: #003259; }
+          0% { background-color: #fff580; }
+          50% { background-color: #fae905; }
+          100% { background-color: #fff580; }
         }
 
         @keyframes btn-fade-unread {
-          0% { background-color: #003259; }
-          50% { background-color: #004b85; }
-          100% { background-color: #003259; }
+          0% { background-color: #fff580; }
+          50% { background-color: #fae905; }
+          100% { background-color: #fff580; }
         }
 
         #tabs li.current,        
