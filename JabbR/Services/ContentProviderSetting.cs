@@ -99,6 +99,15 @@ namespace JabbR.Services
                     Output = "<video width=\"425\" height=\"344\" preload=\"none\" controls=\"\" loop=\"\" muted=\"muted\" style=\"display: block;\" poster=\"//media.giphy.com/media/{0}/200_s.gif\"><source src=\"//media.giphy.com/media/{0}/giphy.mp4\" type=\"video/mp4\">Sorry, you don't have HTML5 video and we didn't catch this properly in javascript.  You can try to view the gif directly: <a href=\"https://i.giphy.com/{0}.gif\">https://i.giphy.com/{0}.gif</a>.</video>",
                     Collapsible = true,
                 },
+                new ContentProviderSetting
+                {
+                    Name = "gifv",
+                    Enabled = true,
+                    Domains = "http://i.imgur.com/;https://i.imgur.com/",
+                    Extract = @".*imgur\.com\/(\w+).(gifv|gif)",
+                    Output = "<video width=\"425\" height=\"344\" preload=\"none\" controls=\"\" loop=\"\" muted=\"muted\" style=\"display: block;\"><source src=\"//i.imgur.com/media/{0}.webm\" type=\"video/webm\"><source src=\"//i.imgur.com/media/{0}.mp4\" type=\"video/mp4\">Sorry, you don't have HTML5 video and we didn't catch this properly in javascript.  You can try to view the gif directly: <a href=\"https://i.imgur.com/{0}.gif\">https://i.imgur.com/{0}.gif</a>.</video>",
+                    Collapsible = true,
+                },
             };
         }
 
