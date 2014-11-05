@@ -1,4 +1,4 @@
-.ponymoticon { background-repeat: no-repeat; background-repeat: no-repeat; position: relative; display: inline-block; top: 5px; margin-top: -5px; padding: 0; }
+.ponymoticon { background-repeat: no-repeat; position: relative; display: inline-block; top: 5px; margin-top: -5px; padding: 0; }
 td.ponymoticon { margin-top: 0; }
 .ponymoticon-a { background-image: url(images/ponymoticon/a.png); width: 70px; height: 70px; }
 .ponymoticon-b { background-image: url(images/ponymoticon/b.png); width: 70px; height: 70px; }
