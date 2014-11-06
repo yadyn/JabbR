@@ -183,6 +183,7 @@ var EmojiIcons;
         $('<div/>').attr('id', 'emotelisttab-9').append($('<table/>').append(rows['y'].join(''))));
 
     emotelistTabs.tabs();
+    emotelistTabs.tabs({ active: 7});
     $('#emotelist-dialog').append(emotelistTabs);
 
     $('#emotelist-dialog td').each(function (i) {
@@ -261,7 +262,7 @@ var EmojiIcons;
             } else if (validYukkuri[match]) {
                 return '<span class="yukkuri yukkuri-' + match + '" alt="' + match + '" title="' + match + '" />';
             } else if (validv4c[match]) {
-                return '<img src="Content/images/v4c/' + validv4c[match] + '" alt="' + match + '" title="' + match + '" />';
+                return '<img src="Content/images/v4c/' + validv4c[match] + '" alt="' + match + '" title="' + match + '" class="v4cemote" />';
             } else if (validPony[match]) {
                 return '<span class="ponymoticon ponymoticon-' + validPony[match] + ' ponymoticon-' + match + '" alt="' + match + '" title="' + match + '" />';
             } else if (validHotglue[match]) {

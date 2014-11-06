@@ -2943,6 +2943,7 @@ h3.userlist-header {
 #emotelist-dialog td
 {
     cursor: pointer;
+    text-align: center;
 }
 
 .inactive-since {
@@ -3429,6 +3430,10 @@ ul.ui-widget-header > li > a {
 
 .ui-front {
     z-index: 500 !important;
+}
+
+.ui-dialog {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
 }
 
 /* Make admin screens nicer */
