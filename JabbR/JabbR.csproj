@@ -333,6 +333,7 @@
     <Content Include="Content\images\v4c\whatastory.png" />
     <Content Include="Content\images\v4c\why.png" />
     <Content Include="Content\images\v4c\wow.png" />
+    <Content Include="Content\images\v4c\yotsubano.png" />
     <Content Include="Content\images\yukkuri.png" />
     <Content Include="Content\yukkuri.css" />
     <Content Include="Content\themes\default\Chat.bbcnews.css" />
