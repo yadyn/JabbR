@@ -1031,7 +1031,7 @@ li.error {
 #notification-unread-count.badge {
     display: none;
     position: absolute;
-    left: 19px;
+    left: 61px;
     top: 2px;
     font-size: 0.55em;
     padding: 0 3px;
