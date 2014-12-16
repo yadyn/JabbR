@@ -614,7 +614,7 @@
                     return false;
                 }
 
-            	// Added the message to the ui first
+                // Added the message to the ui first
                 var regt = new RegExp("^(>|&gt;)");
                 var viewModel = {
                     name: ui.getUserName(),
@@ -624,7 +624,8 @@
                     date: new Date(),
                     highlight: '',
                     greentext: regt.test(msg) ? 'greentext' : '',
-                    isMine: true
+                    isMine: true,
+                    clearscreen: msg === "cls"
                 };
 
                 ui.addChatMessage(viewModel, room.getName());

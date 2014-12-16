@@ -237,7 +237,8 @@
             source: message.Source,
             messageType: message.MessageType,
             presence: (message.UserRoomPresence || 'absent').toLowerCase(),
-            status: getMessageUserStatus(message.User).toLowerCase()
+            status: getMessageUserStatus(message.User).toLowerCase(),
+            clearscreen: message.Content === "cls"
         };
     }
 

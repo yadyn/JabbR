@@ -1041,6 +1041,9 @@ li.error {
 .message {
     border-bottom: 1px solid #eee;
 }
+    .message.clearscreen {
+        height: 100%;
+    }
 
     .message.continue {
         border-bottom: 1px solid #f1f1f1;

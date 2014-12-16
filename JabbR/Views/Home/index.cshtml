@@ -46,7 +46,7 @@
     </script>
     }
     <script id="new-message-template" type="text/x-jquery-tmpl">
-        <li class="message ${highlight} ${greentext} clearfix{{if isMine}} my-message{{/if}}{{if showUser}} first{{/if}}" id="m-${id}" data-name="${name}" data-timestamp="${date}">
+        <li class="message ${highlight} ${greentext} clearfix{{if isMine}} my-message{{/if}}{{if showUser}} first{{/if}}{{if clearscreen}} clearscreen{{/if}}" id="m-${id}" data-name="${name}" data-timestamp="${date}">
             <div class="left">
                 {{if showUser}}
                 <div class="user ${status} ${presence}">
