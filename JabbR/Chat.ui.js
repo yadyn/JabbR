@@ -863,11 +863,28 @@
                 $toast.hide();
             }
 
+            var pauseVideo = function (iframeElement) {
+            	if (iframeElement && iframeElement.contentWindow) {
+            		if (iframeElement.src.indexOf("youtube") > -1) {
+            			//http://stackoverflow.com/a/8668741/7290
+            			iframeElement.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', "*");
+            		}
+            		else if (iframeElement.src.indexOf("vimeo") > -1) {
+            			//http://stackoverflow.com/a/16403940/7290
+            			iframeElement.contentWindow.postMessage('{"method":"pause"}', iframeElement.src.split("?")[0]);
+            			iframeElement.contentWindow.postMessage('{"method":"unload"}', iframeElement.src.split("?")[0]);
+            		}
+            	}
+            }
+
             // DOM events
             $document.on('click', 'h3.collapsible_title', function () {
-                var nearEnd = ui.isNearTheEnd();
+            	var nearEnd = ui.isNearTheEnd();
 
-                $(this).next().toggle(0, function () {
+            	$(this).next().toggle(0, function () {
+            		$(this).find("iframe").each(function (i, elem) {
+            			pauseVideo(elem);
+            		});
                     if (nearEnd) {
                         ui.scrollToBottom();
                     }

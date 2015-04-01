@@ -36,7 +36,7 @@ namespace JabbR.ContentProviders
 
         protected override string GetIFrameVideoEmbedUrl()
         {
-            return "//player.vimeo.com/video/{0}";
+            return "//player.vimeo.com/video/{0}?api=1";
         }
     }
 }

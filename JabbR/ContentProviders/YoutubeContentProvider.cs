@@ -55,7 +55,7 @@ namespace JabbR.ContentProviders
 
         protected override string GetIFrameVideoEmbedUrl()
         {
-            return "https://www.youtube.com/embed/{0}";
+            return "https://www.youtube.com/embed/{0}?enablejsapi=1";
         }
     }
 }
