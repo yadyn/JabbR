@@ -5,7 +5,7 @@ using JabbR.ContentProviders.Core;
 
 namespace JabbR.ContentProviders
 {
-    public class YouTubeContentProvider : EmbedContentProvider
+    public class YouTubeContentProvider : IFrameContentProvider
     {
         // Regex taken from this SO answer: http://stackoverflow.com/a/5831191
         private static readonly Regex YoutubeRegex = new Regex(
@@ -29,14 +29,6 @@ namespace JabbR.ContentProviders
             )                 # End negative lookahead assertion.
             [?=&+%\w-]*       # Consume any URL (query) remainder.",
             RegexOptions.IgnoreCase | RegexOptions.IgnorePatternWhitespace);
-
-        public override string MediaFormatString
-        {
-            get
-            {
-                return @"<object width=""425"" height=""344""><param name=""WMode"" value=""transparent""></param><param name=""movie"" value=""https://www.youtube.com/v/{0}fs=1""></param><param name=""allowFullScreen"" value=""true""></param><param name=""allowScriptAccess"" value=""always""></param><embed src=""https://www.youtube.com/v/{0}?fs=1"" wmode=""transparent"" type=""application/x-shockwave-flash"" allowfullscreen=""true"" allowscriptaccess=""always"" width=""425"" height=""344B""></embed></object>";
-            }
-        }
 
         public override IEnumerable<string> Domains
         {
