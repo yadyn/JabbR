@@ -8,7 +8,7 @@ namespace JabbR.ContentProviders
     public class VimeoContentProvider : IFrameContentProvider
     {
         private static readonly Regex VimeoRegex = new Regex(
-            @"/https?:\/\/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|video\/|)(\d+)(?:$|\/|\?)/",
+            @"https?:\/\/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|video\/|)(\d+)(?:$|\/|\?)",
             RegexOptions.IgnoreCase | RegexOptions.IgnorePatternWhitespace);
 
         public override IEnumerable<string> Domains
@@ -25,13 +25,18 @@ namespace JabbR.ContentProviders
         protected override IList<string> ExtractParameters(Uri responseUri)
         {
             Match match = VimeoRegex.Match(responseUri.ToString());
-            if (match.Groups.Count < 3 || String.IsNullOrEmpty(match.Groups[2].Value))
+            if (match.Groups.Count < 4 || String.IsNullOrEmpty(match.Groups[3].Value))
             {
                 return null;
             }
 
-            string videoId = match.Groups[2].Value;
+            string videoId = match.Groups[3].Value;
             return new List<string> { videoId };
+        }
+
+        protected override string GetIFrameVideoEmbedUrl()
+        {
+            return "//player.vimeo.com/video/{0}";
         }
     }
 }

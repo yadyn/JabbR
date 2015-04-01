@@ -52,5 +52,10 @@ namespace JabbR.ContentProviders
             string videoId = match.Groups[1].Value;
             return new List<string> { videoId };
         }
+
+        protected override string GetIFrameVideoEmbedUrl()
+        {
+            return "https://www.youtube.com/embed/{0}";
+        }
     }
 }

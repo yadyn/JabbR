@@ -11,8 +11,10 @@ namespace JabbR.ContentProviders
         {
             get
             {
-                return "<iframe src=\"{0}\" style=\"width: 100%; height: 344px; border:0;\" frameborder=\"0\"></iframe>";
+                return "<iframe src=\"" + this.GetIFrameVideoEmbedUrl() + "\" style=\"width: 100%; height: 344px; border:0;\" frameborder=\"0\"></iframe>";
             }
         }
+
+        protected abstract string GetIFrameVideoEmbedUrl();
     }
 }
