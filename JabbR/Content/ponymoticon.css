@@ -5,6 +5,7 @@ td.ponymoticon { margin-top: 0; }
 .ponymoticon-c { background-image: url(images/ponymoticon/c.png); width: 70px; height: 70px; }
 .ponymoticon-d { background-image: url(images/ponymoticon/d.png); width: 70px; height: 70px; }
 .ponymoticon-e { background-image: url(images/ponymoticon/e.png); width: 70px; height: 70px; }
+.ponymoticon-f { background-image: url(images/ponymoticon/f.png); width: 70px; height: 70px; }
 
 .ponymoticon-ajlie { background-position: -0px -0px; }
 .ponymoticon-priceless { background-position: -70px -0px; }
@@ -210,3 +211,11 @@ td.ponymoticon { margin-top: 0; }
 .ponymoticon-discentia { background-position: -70px -630px; }
 .ponymoticon-macintears { background-position: -140px -630px; }
 .ponymoticon-spikehappy { background-position: -210px -630px; }
+
+.ponymoticon-ppsad { background-position: -0px -0px; }
+.ponymoticon-dt { background-position: -0px -70px; }
+.ponymoticon-sombra { background-position: -0px -140px; }
+.ponymoticon-sbshocked { background-position: -0px -210px; }
+.ponymoticon-guard { background-position: -0px -280px; }
+.ponymoticon-abstern { background-position: -0px -350px; }
+.ponymoticon-apathia { background-position: -0px -420px; }
