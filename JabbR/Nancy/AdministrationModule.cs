@@ -7,14 +7,12 @@ using JabbR.Infrastructure;
 using JabbR.Services;
 using Nancy;
 using Nancy.ModelBinding;
-using Ninject;
 
 namespace JabbR.Nancy
 {
     public class AdministrationModule : JabbRModule
     {
-        public AdministrationModule(IKernel kernel,
-                                    ApplicationSettings applicationSettings,
+        public AdministrationModule(ApplicationSettings applicationSettings,
                                     ISettingsManager settingsManager,
                                     IEnumerable<IContentProvider> contentProviders)
             : base("/administration")
@@ -39,6 +37,11 @@ namespace JabbR.Nancy
 
             Post["/"] = _ =>
             {
+                if (!HasValidCsrfTokenOrSecHeader)
+                {
+                    return HttpStatusCode.Forbidden;
+                }
+
                 if (!IsAuthenticated || !Principal.HasClaim(JabbRClaimTypes.Admin))
                 {
                     return HttpStatusCode.Forbidden;
@@ -59,7 +62,8 @@ namespace JabbR.Nancy
                     settings.DisabledContentProviders =
                         new HashSet<string>(contentProviders
                             .Select(cp => cp.GetType().Name)
-                            .Where(typeName => !enabledContentProvidersResult.EnabledContentProviders.Contains(typeName))
+                            .Where(typeName => enabledContentProvidersResult.EnabledContentProviders == null ||
+                                !enabledContentProvidersResult.EnabledContentProviders.Contains(typeName))
                             .ToList());
 
                     IDictionary<string, string> errors;

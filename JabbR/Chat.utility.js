@@ -2,10 +2,34 @@
 /// <reference path="Scripts/jQuery.tmpl.js" />
 /// <reference path="Scripts/jquery.cookie.js" />
 /// <reference path="Scripts/moment.min.js" />
+/// <reference path="Scripts/marked.js" />
 
 /*jshint evil:true, bitwise:false*/
-(function ($, window, emoji, markdown, linkify, moment, languageResources) {
+(function ($, window, emoji, marked, hljs, linkify, moment, languageResources) {
     "use strict";
+
+    var markdownOptions = {
+        highlight: function(code) {
+            return hljs.highlightAuto(code).value;
+        },
+        tables: false,
+        breaks: true,
+        sanitize: true,
+        gfm: true
+    };
+
+    function processMarkdown(src) {
+        function noop() { }
+        noop.exec = noop;
+
+        // process inline markdown elements using custom lexer rules
+        var inlineLexer = new marked.InlineLexer([], markdownOptions);
+
+        inlineLexer.rules.link = noop;
+        inlineLexer.rules.url = noop;
+
+        return inlineLexer.output(src);
+    }
 
     // getting the browser's name for use in isMobile
     var nav = navigator.userAgent || navigator.vendor || window.opera;
@@ -75,6 +99,37 @@
         return format.apply(null, args);
     }
 
+    // adds a parenthesis and all relevent tags to the users in the userlist
+    function tagUsers(usernames, online, admins, owners, creators) {
+        online = online === null ? [] : $.makeArray(online);
+        admins = admins === null ? [] : $.makeArray(admins);
+        owners = owners === null ? [] : $.makeArray(owners);
+        creators = creators === null ? [] : $.makeArray(creators);
+
+        // add the user's tags to the end of their username
+        return $.map(usernames, function (el) {
+            var tags = [];
+
+            if (online.indexOf(el) > -1) {
+                tags.push(utility.getLanguageResource('Client_OnlineTag'));
+            }
+
+            if (admins.indexOf(el) > -1) {
+                tags.push(utility.getLanguageResource('Client_AdminTag'));
+            }
+
+            if (owners.indexOf(el) > -1) {
+                tags.push(utility.getLanguageResource('Client_OwnerTag'));
+            }
+
+            if (creators.indexOf(el) > -1) {
+                tags.push(utility.getLanguageResource('Client_CreatorTag'));
+            }
+
+            return el + (tags.length > 0 ? ' (' + tags.join(', ') + ')' : '');
+        });
+    }
+
     String.prototype.fromJsonDate = function () {
         return new Date(moment(this.toString()).valueOf());
     };
@@ -129,7 +184,7 @@
         return new Date(this.getTime() + 1000 * 3600 * 24 * days);
     };
 
-    function processContent(content, templates, roomCache, htmlEncoded) {
+    function processContent(content, templates, roomCache) {
         content = content || '';
 
         var hasNewline = content.indexOf('\n') !== -1;
@@ -141,10 +196,8 @@
             // Emoji
             content = utility.parseEmojis(content);
 
-            // Html encode
-            if (!htmlEncoded) {
-                content = utility.encodeHtml(content);
-            }
+            // Convert markdown
+            content = processMarkdown(content);
 
             // Transform emoji to html
             content = utility.transformEmojis(content);
@@ -190,8 +243,8 @@
             return prefix + n;
         },
         markdownToHtml: function (content) {
-            var converter = new markdown.Converter().makeHtml;
-            return (converter(content));
+            var transformer = marked.parse;
+            return (transformer(content, markdownOptions));
         },
         isMobile: isMobile,
         parseEmojis: function (content) {
@@ -207,7 +260,8 @@
         newId: guidGenerator,
         processContent: processContent,
         format: format,
-        getLanguageResource: getLanguageResource
+        getLanguageResource: getLanguageResource,
+        tagUsers: tagUsers
     };
 
     if (!window.chat) {
@@ -216,4 +270,4 @@
 
     window.chat.utility = utility;
 
-})(window.jQuery, window, window.Emoji, window.Markdown, window.linkify, window.moment, window.languageResources);
+})(window.jQuery, window, window.Emoji, window.marked, window.hljs, window.linkify, window.moment, window.languageResources);

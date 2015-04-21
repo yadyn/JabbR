@@ -694,6 +694,9 @@
   <data name="RoomNameCannotBeBlank" xml:space="preserve">
     <value>Room name cannot be blank!</value>
   </data>
+  <data name="RoomNameCannotContainSpaces" xml:space="preserve">
+    <value>Room name cannot contain spaces!</value>
+  </data>
   <data name="RoomNotFound" xml:space="preserve">
     <value>Unable to find {0}.</value>
   </data>
@@ -753,6 +756,9 @@
   </data>
   <data name="UploadFailed" xml:space="preserve">
     <value>Failed to upload {0}.</value>
+  </data>
+  <data name="UploadTooLarge" xml:space="preserve">
+    <value>Failed to upload {0}, as it is larger than {1}MB.</value>
   </data>
   <data name="UploadFailedException" xml:space="preserve">
     <value>Failed to upload {0}. {1}</value>
@@ -977,7 +983,7 @@ Use ? or type /? to display the FAQ and list of commands.</value>
     <value>Invitation to {0} to join #{1} has been sent.</value>
   </data>
   <data name="Chat_YouKickedFromRoom" xml:space="preserve">
-    <value>You were kicked from {0}.</value>
+    <value>You were kicked from {0} by {1}.</value>
   </data>
   <data name="Chat_YouRevokedUserRoomAccess" xml:space="preserve">
     <value>You have revoked {0}'s access to {1}.</value>
@@ -1223,5 +1229,71 @@ Use ? or type /? to display the FAQ and list of commands.</value>
   </data>
   <data name="Client_EmoteList" xml:space="preserve">
     <value>Emote List</value>
+  </data>
+  <data name="Chat_RoomOwnersEmpty" xml:space="preserve">
+    <value>No users are owners of {0}.</value>
+  </data>
+  <data name="Chat_RoomOwnersResults" xml:space="preserve">
+    <value>The following users are owners of {0}:</value>
+  </data>
+  <data name="Owners_CommandInfo" xml:space="preserve">
+    <value>Show a list of all owners of the specified (or current) room.</value>
+  </data>
+  <data name="Owners_RoomRequired" xml:space="preserve">
+    <value>Which room do you want to list the owners of?</value>
+  </data>
+  <data name="Client_CreatorTag" xml:space="preserve">
+    <value>creator</value>
+  </data>
+  <data name="Client_OnlineTag" xml:space="preserve">
+    <value>online</value>
+  </data>
+  <data name="Client_OwnerTag" xml:space="preserve">
+    <value>owner</value>
+  </data>
+  <data name="ErrorContent" xml:space="preserve">
+    <value>&lt;strong&gt;Status code: {1} - {0}&lt;/strong&gt;&lt;br /&gt;&lt;br /&gt;An error has occurred and the requested resource cannot be provided.  Please check the current URL or &lt;a href="{2}"&gt;Login&lt;/a&gt;.</value>
+  </data>
+  <data name="ErrorContentSuggestion" xml:space="preserve">
+    <value>&lt;strong&gt;Status code: {1} - {0}&lt;/strong&gt;&lt;br /&gt;&lt;br /&gt;&lt;i&gt;Did you mean to access the &lt;a href="{4}"&gt;#{3}&lt;/a&gt; room?&lt;/i&gt;&lt;br /&gt;&lt;br /&gt;An error has occurred and the requested resource cannot be provided.  Please check the current URL or &lt;a href="{2}"&gt;Login&lt;/a&gt;.</value>
+  </data>
+  <data name="Chat_YouKickedTitle" xml:space="preserve">
+    <value>Kicked</value>
+  </data>
+  <data name="Client_Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Administration_AppInsightsId" xml:space="preserve">
+    <value>AppInsights ID</value>
+  </data>
+  <data name="Chat_UserBanned" xml:space="preserve">
+    <value>{0} was banned by {1}.</value>
+  </data>
+  <data name="Chat_UserBannedReason" xml:space="preserve">
+    <value>{0} was banned by {1} for "{2}".</value>
+  </data>
+  <data name="Chat_UserKickedFromRoom" xml:space="preserve">
+    <value>{0} was kicked from {1} by {2}.</value>
+  </data>
+  <data name="Chat_UserKickedFromRoomReason" xml:space="preserve">
+    <value>{0} was kicked from {1} by {2} for "{3}".</value>
+  </data>
+  <data name="Chat_YouBanned" xml:space="preserve">
+    <value>You have been banned by {0}.</value>
+  </data>
+  <data name="Chat_YouBannedReason" xml:space="preserve">
+    <value>You have been banned by {0} for "{1}".</value>
+  </data>
+  <data name="Chat_YouBannedTitle" xml:space="preserve">
+    <value>Banned</value>
+  </data>
+  <data name="Chat_YouKickedFromRoomReason" xml:space="preserve">
+    <value>You were kicked from {0} by {1} for "{2}".</value>
+  </data>
+  <data name="Client_DownloadMessagesNotOpen" xml:space="preserve">
+    <value>{0} is not an open room, messages cannot be downloaded.</value>
+  </data>
+  <data name="Account_OwnedRooms" xml:space="preserve">
+    <value>Owned Rooms</value>
   </data>
 </root>

@@ -80,7 +80,8 @@
         roomLoadingTimeout = null,
         Room = chat.Room,
         $unreadNotificationCount = null,
-        $splashScreen = null;
+        $splashScreen = null,
+        $createRoomButton = null;
 
     function getRoomNameFromHash(hash) {
         if (hash.length && hash[0] === '/') {
@@ -516,7 +517,11 @@
 
     function triggerFocus() {
         if (!utility.isMobile && !readOnly) {
-            $newMessage.focus();
+            if (getActiveRoomName() === 'Lobby') {
+                $roomFilterInput.focus();
+            } else {
+                $newMessage.focus();
+            }
         }
 
         if (focus === false) {
@@ -827,7 +832,8 @@
                 multiline: $('#multiline-content-template'),
                 lobbyroom: $('#new-lobby-room-template'),
                 otherlobbyroom: $('#new-other-lobby-room-template'),
-                commandConfirm: $('#command-confirm-template')
+                commandConfirm: $('#command-confirm-template'),
+                modalMessage: $('#modal-message-template')
             };
             $reloadMessageNotification = $('#reloadMessageNotification');
             $fileUploadButton = $('.upload-button');
@@ -851,6 +857,8 @@
             $splashScreen = $('#splash-screen');
 
             $unreadNotificationCount = $('#notification-unread-count');
+
+            $createRoomButton = $('#create-room');
             
             if (toast.canToast()) {
                 $toast.show();
@@ -1085,6 +1093,15 @@
             $document.on('click', '.users li.user .name', prepareMessage);
             $document.on('click', '.message .left .name', prepareMessage);
 
+            $document.on('click', '.resend', function () {
+                var $msg = $(this).parents('.message'),
+                    id = $msg.attr('id').slice(2),
+                    msg = ui.processContent($msg.find('.middle').text());
+
+                $msg.removeClass('failed');
+                $ui.trigger(ui.events.sendMessage, [msg, id, false]);
+            });
+
             $submitButton.click(function (ev) {
                 triggerSend();
 
@@ -1176,12 +1193,11 @@
             $downloadIcon.click(function () {
                 var room = getCurrentRoomElements();
 
-                if (room.isLobby()) {
-                    return; //Show a message?
-                }
-
-                if (room.isLocked()) {
-                    return; //Show a message?
+                if (room.isLobby() || room.isLocked()) {
+                    var title = utility.getLanguageResource('Client_DownloadMessages');
+                    var message = utility.getLanguageResource('Client_DownloadMessagesNotOpen', room.getName());
+                    ui.addModalMessage(title, message, 'icon-cloud-download');
+                    return;
                 }
 
                 $downloadDialog.modal({ backdrop: true, keyboard: true });
@@ -1202,6 +1218,23 @@
                 $('<iframe style="display:none">').attr('src', url).appendTo(document.body);
 
                 $downloadDialog.modal('hide');
+            });
+
+            $createRoomButton.click(function () {              
+                var roomName = prompt(utility.getLanguageResource('Create_CommandInfo'), ''),
+                    msg = '/create ' + roomName;
+                if (roomName === null) {
+                    return false;
+                }
+                else if (roomName === '') {
+                    alert(utility.getLanguageResource('RoomNameCannotBeBlank'));
+                }
+                else if (/\s/.test(roomName)) {
+                    alert(utility.getLanguageResource('RoomNameCannotContainSpaces'));
+                }
+                else {
+                    $ui.trigger(ui.events.sendMessage, [msg, null, true]);
+                }
             });
 
             $logout.click(function () {
@@ -1436,6 +1469,7 @@
                     if (currentRoom.isLobby()) {
                         $lobbyRoomFilterForm.hide();
                         $roomActions.show();
+                        $createRoomButton.hide();
                     }
                 }
 
@@ -1445,6 +1479,7 @@
 
                 if (room.isLobby()) {
                     $roomActions.hide();
+                    $createRoomButton.show();
                     $lobbyRoomFilterForm.show();
 
                     room.messages.hide();
@@ -1645,7 +1680,7 @@
         addUser: function (userViewModel, roomName) {
             var room = getRoomElements(roomName),
                 $user = null,
-                $userMessages = room.messages.find(getUserClassName(userViewModel.name));
+                $userMessages = room.messages.find('.message-user' + getUserClassName(userViewModel.name));
 
             // Remove all users that are being removed
             room.users.find('.removing').remove();
@@ -1662,7 +1697,7 @@
             $user.data('owner', userViewModel.owner);
             $user.data('admin', userViewModel.admin);
 
-            $userMessages.find('.user').removeClass('offline active inactive absent present').addClass('active present');
+            $userMessages.removeClass('offline active inactive absent present').addClass('active present');
 
             room.addUser(userViewModel, $user);
             updateNote(userViewModel, $user);
@@ -1671,34 +1706,37 @@
             return true;
         },
         setUserActivity: function (userViewModel) {
-            var $user = $('.users').find(getUserClassName(userViewModel.name)),
-                $inactiveSince = $user.find('.inactive-since'),
-                $userMessages = $('.messages').find(getUserClassName(userViewModel.name));
+            var $user = $('.users .user' + getUserClassName(userViewModel.name)),
+                $inactiveSince = $user.find('.inactive-since');
 
             if (userViewModel.active === true && userViewModel.afk === false) {
                 if ($user.hasClass('inactive')) {
                     $user.removeClass('inactive');
                     $inactiveSince.livestamp('destroy');
                 }
-                
-                $userMessages.find('.user').removeClass('offline active inactive').addClass('active');
+
+                $('.message-user' + getUserClassName(userViewModel.name))
+                    .removeClass('offline inactive')
+                    .addClass('active');
             } else {
                 if (!$user.hasClass('inactive')) {
                     $user.addClass('inactive');
+                    
+                    $('.message-user' + getUserClassName(userViewModel.name))
+                        .removeClass('offline active')
+                        .addClass('inactive');
                 }
 
                 if (!$inactiveSince.html()) {
                     $inactiveSince.livestamp(userViewModel.lastActive);
                 }
-                
-                $userMessages.find('.user').removeClass('offline active inactive').addClass('inactive');
             }
 
             updateNote(userViewModel, $user);
         },
         setUserActive: function ($user) {
             var $inactiveSince = $user.find('.inactive-since'),
-                $userMessages = $('.messages').find(getUserClassName($user.data('name')));
+                $userMessages = $('.message-user' + getUserClassName($user.data('name')));
             
             if ($user.data('active') === true) {
                 return false;
@@ -1710,12 +1748,12 @@
                 $inactiveSince.livestamp('destroy');
             }
             
-            $userMessages.find('.user').removeClass('offline active inactive').addClass('active');
+            $userMessages.removeClass('offline active inactive').addClass('active');
 
             return true;
         },
         setUserInActive: function ($user) {
-            var $userMessages = $('.messages').find(getUserClassName($user.data('name'))),
+            var $userMessages = $('.message-user' + getUserClassName($user.data('name'))),
                 $inactiveSince = $user.find('.inactive-since');
             
             if ($user.data('active') === false) {
@@ -1729,7 +1767,7 @@
                 $inactiveSince.livestamp(new Date());
             }
             
-            $userMessages.find('.user').removeClass('offline active inactive').addClass('inactive');
+            $userMessages.removeClass('offline active inactive').addClass('inactive');
             
             return true;
         },
@@ -1750,10 +1788,14 @@
         changeGravatar: function (user, roomName) {
             var room = getRoomElements(roomName),
                 $user = room.getUserReferences(user.Name),
-                src = 'https://secure.gravatar.com/avatar/' + user.Hash + '?s=32&d=mm';
+                src = 'https://secure.gravatar.com/avatar/' + user.Hash + '?s=16&d=mm',
+                lrgSrc = 'https://secure.gravatar.com/avatar/' + user.Hash + '?s=96&d=mm';
 
-            $user.find('.gravatar')
+            $user.find('.gravatar-wrapper .gravatar')
                  .attr('src', src);
+
+            $user.find('.gravatar-wrapper .jabbr-user-card .gravatar-large')
+                 .attr('src', lrgSrc);
         },
         showGravatarProfile: function (profile) {
             var room = getCurrentRoomElements(),
@@ -1950,6 +1992,13 @@
                 ui.addMessage(model, 'postedNotification', roomName);
             }
             else {
+                if (showUserName === true) {
+                    var $user = room.getUser(message.name),
+                        $flag = $user.find('.flag');
+                    message.flagClass = $flag.attr('class');
+                    message.flagTitle = $flag.attr('title');
+                }
+
                 this.appendMessage(templates.message.tmpl(message), room);
             }
 
@@ -2122,6 +2171,18 @@
                     this.addMessage(content, 'pm', rooms[r].getName());
                 }
             }
+        },
+        addModalMessage: function (title, message, icon) {
+            var deferred = $.Deferred();
+            var $dialog = templates.modalMessage.tmpl({ Title: title, Body: message, Icon: icon }).appendTo('#dialog-container').modal()
+                .on('hidden.bs.modal', function () {
+                    $dialog.remove();
+                    deferred.resolve();
+                })
+                .on('click', 'a.btn', function () {
+                    $dialog.modal('hide');
+                });
+            return deferred.promise();
         },
         hasFocus: function () {
             return focus;
@@ -2361,12 +2422,14 @@
                 $submitButton.attr('disabled', 'disabled');
                 $newMessage.attr('disabled', 'disabled');
                 $fileUploadButton.attr('disabled', 'disabled');
+                $('.message.failed .resend').addClass('disabled');
             }
             else {
                 $hiddenFile.removeAttr('disabled');
                 $submitButton.removeAttr('disabled');
                 $newMessage.removeAttr('disabled');
                 $fileUploadButton.removeAttr('disabled');
+                $('.message.failed .resend').removeClass('disabled');
             }
         },
         initializeConnectionStatus: function (transport) {
@@ -2391,14 +2454,23 @@
             $('#m-' + id).removeClass('failed')
                          .removeClass('loading');
         },
-        failMessage: function (id) {
-            $('#m-' + id).removeClass('loading')
-                         .addClass('failed');
+        failMessage: function (id, isCommand) {
+            var $message = $('#m-' + id);
+            $message.removeClass('loading');
+            if ($message.hasClass('failed') === false &&
+                $message.hasClass('failed-command') === false) {
+                if (isCommand) {
+                    $message.addClass('failed-command');
+                } else {
+                    $message.addClass('failed');
+                }
+            }
         },
         markMessagePending: function (id) {
             var $message = $('#m-' + id);
 
-            if ($message.hasClass('failed') === false) {
+            if ($message.hasClass('failed') === false &&
+                $message.hasClass('failed-command') === false) {
                 $message.addClass('loading');
             }
         },
@@ -2434,6 +2506,7 @@
                 $submitButton.attr('disabled', 'disabled');
                 $fileUploadButton.attr('disabled', 'disabled');
                 $hiddenFile.attr('disabled', 'disabled');
+                $('.message.failed .resend').addClass('disabled');
             } else if (!readOnly) {
                 // re-enable textarea button
                 $newMessage.attr('disabled', '');
@@ -2448,6 +2521,9 @@
                 $fileUploadButton.removeAttr('disabled');
                 $hiddenFile.attr('disabled', '');
                 $hiddenFile.removeAttr('disabled');
+
+                // re-enable send failed message button
+                $('.message.failed .resend').removeClass('disabled');
             }
         },
         toggleDownloadButton: function(disabled) {

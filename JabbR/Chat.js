@@ -20,7 +20,8 @@
         messageSendingDelay = 1500,
         pendingMessages = {},
         privateRooms = null,
-        roomsToLoad = 0;
+        roomsToLoad = 0,
+        banDialogShown = false;
 
     function failPendingMessages() {
         for (var id in pendingMessages) {
@@ -623,9 +624,36 @@
         ui.showUpdateUI();
     };
 
-    chat.client.banUser = function (userInfo) {
-        var msg = 'User ' + userInfo.Name + ' was banned';
-        ui.addNotificationToActiveRoom(msg);
+    chat.client.ban = function (userInfo, room, callingUser, reason) {
+        var message;
+
+        if (isSelf(userInfo)) {
+            // don't show multiple instances of dialog
+            if (banDialogShown === true) {
+                return;
+            }
+            banDialogShown = true;
+
+            var title = utility.getLanguageResource('Chat_YouBannedTitle');
+            if (reason !== null) {
+                message = utility.getLanguageResource('Chat_YouBannedReason', callingUser.Name, reason);
+            } else {
+                message = utility.getLanguageResource('Chat_YouBanned', callingUser.Name);
+            }
+
+            ui.addModalMessage(title, message, 'icon-ban-circle').done(function() {
+                performLogout();
+            });
+        } else {
+            if (reason !== null) {
+                message = utility.getLanguageResource('Chat_UserBannedReason', userInfo.Name, callingUser.Name, reason);
+            } else {
+                message = utility.getLanguageResource('Chat_UserBanned', userInfo.Name, callingUser.Name);
+            }
+
+            ui.addNotification(message, room);
+            ui.removeUser(userInfo, room);
+        }
     };
 
     chat.client.unbanUser = function (userInfo) {
@@ -891,16 +919,33 @@
         }
     };
 
-    chat.client.kick = function (room) {
-        var message = utility.getLanguageResource('Chat_YouKickedFromRoom', room);
+    chat.client.kick = function (user, room, callingUser, reason) {
+        if (isSelf(user)) {
+            var title = utility.getLanguageResource('Chat_YouKickedTitle'),
+                message;
+            
+            if (chat.state.activeRoom === room) {
+                ui.setActiveRoom('Lobby');
+            }
 
-        if (chat.state.activeRoom === room) {
-            ui.setActiveRoom('Lobby');
+            ui.removeRoom(room);
+
+            if (reason !== null) {
+                message = utility.getLanguageResource('Chat_YouKickedFromRoomReason', room, callingUser.Name, reason);
+            } else {
+                message = utility.getLanguageResource('Chat_YouKickedFromRoom', room, callingUser.Name);
+            }
+
+            ui.addModalMessage(title, message, 'icon-ban-circle');
+        } else {
+            ui.removeUser(user, room);
+
+            if (reason !== null) {
+                ui.addNotification(utility.getLanguageResource('Chat_UserKickedFromRoomReason', user.Name, room, callingUser.Name, reason), room);
+            } else {
+                ui.addNotification(utility.getLanguageResource('Chat_UserKickedFromRoom', user.Name, room, callingUser.Name), room);
+            }
         }
-        
-        ui.removeRoom(room);
-        // it looks like we write to the lobby, but the activeRoom is set via a fragment, so this writes to the last active room.
-        ui.addNotificationToActiveRoom(message);
     };
 
     // Helpish commands
@@ -934,6 +979,16 @@
             ui.addListToActiveRoom(utility.getLanguageResource('Chat_RoomPrivateNoUsersAllowed', room), []);
         } else {
             ui.addListToActiveRoom(utility.getLanguageResource('Chat_RoomPrivateUsersAllowedResults', room), [users.join(', ')]);
+        }
+    };
+
+    chat.client.listOwners = function (room, users, creator) {
+        if (users.length === 0) {
+            ui.addListToActiveRoom(utility.getLanguageResource('Chat_RoomOwnersEmpty', room), []);
+        } else {
+            // we don't want admins or owners tagged, so we don't provide them.
+            users = utility.tagUsers(users, null, null, null, creator);
+            ui.addListToActiveRoom(utility.getLanguageResource('Chat_RoomOwnersResults', room), [users.join(', ')]);
         }
     };
 
@@ -1065,7 +1120,8 @@
                     ui.confirmMessage(id);
                 })
                 .fail(function (e) {
-                    ui.failMessage(id);
+                    isCommand = msg.match(/^\/[A-Za-z0-9?]+?/) !== null;
+                    ui.failMessage(id, isCommand);
                     if (e.source === 'HubException') {
                         ui.addErrorToActiveRoom(e.message);
                     }
@@ -1158,7 +1214,7 @@
     });
 
     $ui.bind(ui.events.scrollRoomTop, function (ev, roomInfo) {
-        // Do nothing if we're loading history already
+        // Do nothing if we're loading history already or if we recently loaded history
         if (loadingHistory === true) {
             return;
         }
@@ -1175,13 +1231,17 @@
                 .done(function (messages) {
                     connection.hub.log('getPreviousMessages.done(' + roomInfo.name + ')');
                     ui.prependChatMessages($.map(messages, getMessageViewModel), roomInfo.name);
-                    loadingHistory = false;
+                    window.setTimeout(function() {
+                        loadingHistory = false;
+                    }, 1000);
 
                     ui.setLoadingHistory(false);
                 })
                 .fail(function (e) {
                     connection.hub.log('getPreviousMessages.failed(' + roomInfo.name + ', ' + e + ')');
-                    loadingHistory = false;
+                    window.setTimeout(function () {
+                        loadingHistory = false;
+                    }, 1000);
 
                     ui.setLoadingHistory(false);
                 });

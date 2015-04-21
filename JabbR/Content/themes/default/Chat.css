@@ -332,20 +332,29 @@ canvas {
 }
 
 #userlist-lobby,
-#userlist-lobby-owners {
+#userlist-lobby-owners,
+#owned-rooms {
     position: relative;
     margin: 0 5px;
     top: 10px;
     background: none;
 }
 
-    #userlist-lobby li {
+#owned-rooms {
+    top: 0;
+}
+    #userlist-lobby li,
+    #owned-rooms li {
         display: block;
         animation: room-fade 0.8s linear 1;
         -webkit-animation: room-fade 0.8s linear 1;
         animation-play-state: paused;
         -webkit-animation-play-state: paused;
         cursor: pointer;
+    }
+
+    #owned-rooms li {
+        cursor: default;
     }
 
     #userlist-lobby-owners li {
@@ -373,7 +382,8 @@ canvas {
     }
 
         #userlist-lobby li.empty,
-        #userlist-lobby-owners li.empty {
+        #userlist-lobby-owners li.empty,
+        #owned-rooms li.empty {
             color: #909090;
             display: inline-block;
             font-style: italic;
@@ -382,12 +392,13 @@ canvas {
         }
 
         #userlist-lobby li:hover,
-        #userlist-lobby-owners li:hover {
+        #userlist-lobby-owners li:hover,
+        #owned-rooms li:hover {
             background: none;
         }
 
-
-    #userlist-lobby div.room-row {
+    #userlist-lobby div.room-row,
+    #owned-rooms div.room-row {
         min-height: 30px;
         border-color: #EEEEEE;
         border-style: solid;
@@ -395,6 +406,11 @@ canvas {
         margin: 5px 5px 0 -5px;
         padding-top: 5px;
         padding-left: 15px;
+    }
+
+    #owned-rooms div.room-row {
+        padding: 5px;
+        line-height: 2em;
     }
 
     #userlist-lobby div:hover {
@@ -457,7 +473,8 @@ canvas {
 }
 
 #userlist-lobby .name,
-#userlist-lobby-owners .name {
+#userlist-lobby-owners .name,
+#owned-rooms .name {
     font-size: 1.25em;
     overflow: hidden;
     width: 215px;
@@ -475,7 +492,8 @@ canvas {
 }
 
 #userlist-lobby .topic,
-#userlist-lobby-owners .topic {
+#userlist-lobby-owners .topic,
+#owned-rooms .topic {
     font-size: 1em;
     overflow: hidden;
 }
@@ -1073,15 +1091,35 @@ li.error {
         height: 20px;
         float: right;
         background-repeat: no-repeat;
+    }
+
+    .message.loading .left .state,
+    .message.failed .left .resend {
         margin-right: 5px;
     }
 
-    .message.failed .left .state {
-        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAASCAYAAAC9+TVUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABh0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjEwcrIlkgAAAmRJREFUOE+llE1IVGEUhm+GEBUItdBdO7Ma09QU04LI0lL8GQktDDMDMwtzDDWnQVMzXRQpRpYONakJomlDumhwYZMmKampMxFW0qIWKS2KSNF5ut+luXkZIsgLh8u3eJ9z3vf7WQNIq/4EZLXlAfjgdOLssjBeY2D4XDKDZ5MYrsxnrN3M26lpuZ9nUw3kjc3KpOkU7wuSmCtOYbEsjZ+lej5lBDGq12HLTWHE2ukBUiHOp1YcBj1zZRnQfBlar0GTEWqz4aQO4jYyHeNLT1Iozx91aEAKxDHl4LUxi3nTcWiTxT23wWyCK+lwYT+cCIDDPvzYK/EiehNtxw7xcnRCBSmQ8Y77zOTFQmMxtFSz5FpSymWpxNVUqq6/R0vMRki0R/jR3VCnhYxUF8gZ6OF6DtTn4+q+pQpVYEMBX6MkZnZL9IVsoC5TnvJ3yMokQ3nJLBhToTwNjCmKheXBxypo2dbGomzlc6SEQ4bYd3lRFB6ohdhzE1koPAIl8ZAdpGSwPGT9A+kzM79H4l24xFioxLNgL/J2btVCBsrPMxvnBwe8lV1wNRZ52PlSkclkmMRIiETHdm8M8XLDlXb6791hMMFf8SzCc+fwzRDLXE6UuhYAUVVb1nH1UrkW0msf5cnpRIb3bVbS/yiX+IsQRQbCghtg8V9LVuA2zNYBLUSM1fWglc6EYPojfZiQRUL4aoVYQBSAnw+mipueh83traXZgvloDA/DfekNWa/sgghRZCAsZO4IoKTsxt+PvRt012qnvqqGqvRUCsN05Oj8OXMwlov5Rmrbbf++gP/7JKz6LRGNfwFSXSktqxuLhQAAAABJRU5ErkJggg==');
+    .message.failed .left .resend {
+        display: block;
+        width: 20px;
+        height: 20px;
+        float: right;
+        cursor: pointer;
     }
 
-    .message.loading .left .state {
-        background-image: url('data:image/gif;base64,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');
+    .message.failed .left .send-failed,
+    .message.loading .left .send-pending {
+        display: block;
+        transition: all 0.3s;
+    }
+
+    .message.failed-command .left .state {
+        width: 20px;
+        height: 20px;
+        float: right;
+    }
+
+    .message.failed-command .left .send-failed {
+        display: block;
     }
 
     .message .middle {
@@ -2369,25 +2407,25 @@ li.clearfix {
         margin: 10px;
     }
 
-.command {
-    border: 1px solid #000;
-    border-radius: 3px;
-    -moz-border-radius: 3px; /* Firefox 3.6 and earlier */
-    padding: 5px 10px;
-    box-shadow: 2px 2px 2px #888888;
-}
+    .command-list .command {
+        border: 1px solid #000;
+        border-radius: 3px;
+        -moz-border-radius: 3px; /* Firefox 3.6 and earlier */
+        padding: 5px 10px;
+        box-shadow: 2px 2px 2px #888888;
+    }
 
-.command-name {
+    .command-list .command-name {
     border-color: #424143;
     background-color: #fae905;
     color: #424143;
-}
+    }
 
-.command-args {
+    .command-list .command-args {
     border-color: #424143;
     background-color: #f3f1e7;
     color: #424143;
-}
+    }
 
 .hide {
     display: none;
@@ -2531,6 +2569,10 @@ li.clearfix {
     }
 
 .user-reset-password {
+    margin: 0 10px;
+}
+
+.error-content {
     margin: 0 10px;
 }
 
@@ -2749,6 +2791,10 @@ h3.userlist-header {
         background-color: #b9b3ae;
         color: #000000
     }
+
+#create-room {
+    top: 2px;
+}
 
 #room-preferences .sound:hover .icon-sound {
     background-image: url('../../images/sound-on-white.png');
@@ -3005,6 +3051,60 @@ h3.userlist-header {
                 background: #f3f1e7;
             }
 
+.gravatar-wrapper:hover .jabbr-user-card,
+.gravatar-wrapper:hover .gravatar-large,
+.gravatar-wrapper:focus .jabbr-user-card,
+.gravatar-wrapper:focus .gravatar-large,
+.gravatar-wrapper:active .jabbr-user-card,
+.gravatar-wrapper:active .gravatar-large {
+    display: block;
+}
+
+.jabbr-user-card,
+.gravatar-large {
+    position: absolute;
+    z-index: 2;
+    margin-left: 25px;
+}
+
+.jabbr-user-card {
+    position: absolute;
+    background-color: #f5f5f5;
+    padding: 5px 5px 5px 0;
+    box-shadow: 0 0 1px 0 #888;
+}
+
+    .jabbr-user-card .user-status-container {
+        padding-left: 5px;
+    }
+
+    .jabbr-user-card .user-status {
+        height: 96px;
+    }
+
+    .jabbr-user-card .flag-container {
+        float: none;
+        margin-top: 0;
+    }
+
+    .message .left .jabbr-user-card .name {
+        float: none;
+        text-align: left;
+        margin-left: 5px;
+    }
+
+    .jabbr-user-card img {
+        position: relative;
+        margin: 0;
+        float: left;
+    }
+
+    .jabbr-user-card .name {
+        clear: both;
+        display: block;
+        text-align: center;
+    }
+
 @media (max-width:900px) {
     .messages,
     #drop-file-target {
@@ -3056,6 +3156,10 @@ h3.userlist-header {
 }
 
 @media (max-width:768px) {
+    #owned-rooms div.room-row {
+        line-height: 1em;
+    }
+
     .login-body .auth-divider {
         border-right-width: 0;
     }
@@ -3160,6 +3264,14 @@ h3.userlist-header {
     .user .details.admin .name-container .name {
         width: 55px;
     }
+
+    .jabbr-user-card .flag-container {
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 45px;
+    }
 }
 
 @media screen and (max-width:580px) {
@@ -3200,6 +3312,7 @@ h3.userlist-header {
         .messages .message .left .name {
             display: none;
         }
+
 
     .messages .middle, .notification .content,
     .action .content, .pm .content, .error .content, .broadcast .content {
@@ -3263,6 +3376,36 @@ h3.userlist-header {
     .flag-container {
         display: none;
     }
+
+    .message .left .jabbr-user-card .name {
+        display: block;
+        width: 90px;
+    }
+
+    .jabbr-user-card .flag-container {
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 45px;
+    }
+    
+    .users .jabbr-user-card img {
+        height: 48px;
+        width: 48px;
+    }
+
+    .users .jabbr-user-card .user-status {
+        height: 48px;
+    }
+
+    .users .jabbr-user-card .name {
+        width: 55px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-left: 5px;
+    }
+
 }
 
 @media screen and (max-height:600px) {
@@ -3465,3 +3608,43 @@ ul.ui-widget-header > li > a {
         margin-left: 0;
     }
 }
+
+.message.failed .left .resend.disabled {
+    display: none;
+}
+
+.urban-dictionary {
+    width: auto;
+    max-width: 400px;
+    padding: 10px 15px;
+    background-color: #fff;
+}
+
+    .urban-dictionary .word {
+        margin-bottom: 10px;
+        font-size: 24px;
+        line-height: 24px;
+        font-weight: bold;
+        color: #000;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+        .urban-dictionary .word a {
+            color: #40627a;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+    .urban-dictionary .meaning,
+    .urban-dictionary .example {
+        margin-bottom: 10px;
+        color: #333;
+        font-size: 14px;
+        line-height: 1.4em;
+        font-family: Verdana;
+    }
+
+    .urban-dictionary .example {
+        margin-bottom: 0;
+        font-style: italic;
+    }
