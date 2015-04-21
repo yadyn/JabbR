@@ -227,6 +227,11 @@ form#send-message {
             margin: 0 2px 0 0;
         }
 
+        .messages li img.gravatar-large {
+            height: 96px;
+            width: 96px;
+        }
+
 .message img {
     max-width: 500px;
     max-height: 300px;
