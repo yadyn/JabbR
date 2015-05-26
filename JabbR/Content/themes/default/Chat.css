@@ -2999,9 +2999,10 @@ h3.userlist-header {
     padding: 0;
 }
 
-#emotelist-dialog > div
+#emotelist-dialog .ui-tabs-panel
 {
     overflow: auto;
+    max-height: 540px;
 }
 
 #emotelist-dialog td

@@ -1,0 +1,505 @@
+﻿.animu { background-repeat: no-repeat; position: relative; display: inline-block; top: 5px; margin-top: -5px; padding: 0; }
+td.animu { margin-top: 0; }
+.animu-1 { background-image: url(images/animu/1.png); }
+.animu-2 { background-image: url(images/animu/2.png); }
+.animu-3 { background-image: url(images/animu/3.png); }
+.animu-4 { background-image: url(images/animu/4.png); }
+.animu-5 { background-image: url(images/animu/5.png); }
+
+.animu-asuka-shouting {
+    width: 80px;
+    height: 80px;
+    background-position: 0 -0px;
+}
+
+.animu-chiyo-uhh {
+    width: 80px;
+    height: 80px;
+    background-position: 0 -130px;
+}
+
+.animu-she-ded {
+    width: 100px;
+    height: 80px;
+    background-position: 0 -260px;
+}
+
+.animu-deko-cry {
+    width: 80px;
+    height: 80px;
+    background-position: 0 -389px;
+}
+
+.animu-gendo-pls {
+    width: 171px;
+    height: 114px;
+    background-position: 0 -520px;
+}
+
+.animu-haruhi-annoyed {
+    width: 100px;
+    height: 80px;
+    background-position: 0 -684px;
+}
+
+.animu-k-on-hug {
+    width: 180px;
+    height: 120px;
+    background-position: 0 -814px;
+}
+
+.animu-lewd {
+    width: 100px;
+    height: 150px;
+    background-position: 0 -984px;
+}
+
+.animu-nanami-hug {
+    width: 120px;
+    height: 150px;
+    background-position: 0 -1184px;
+}
+
+.animu-pika-dead {
+    width: 100px;
+    height: 80px;
+    background-position: 0 -1384px;
+}
+
+.animu-super-happy {
+    width: 80px;
+    height: 80px;
+    background-position: 0 -1514px;
+}
+
+.animu-yui-crying {
+    width: 80px;
+    height: 80px;
+    background-position: 0 -1644px;
+}
+
+.animu-durr {
+    width: 100px;
+    height: 80px;
+    background-position: 0 -1774px;
+}
+
+.animu-mugi-fish {
+    width: 120px;
+    height: 150px;
+    background-position: 0 -1904px;
+}
+
+.animu-objection {
+    width: 100px;
+    height: 80px;
+    background-position: -230px 0
+}
+
+.animu-chaika {
+    width: 80px;
+    height: 80px;
+    background-position: 0 0px;
+}
+
+.animu-chiho-wut {
+    width: 100px;
+    height: 80px;
+    background-position: 0 -130px;
+}
+
+.animu-disapproval {
+    width: 80px;
+    height: 80px;
+    background-position: 0 -260px;
+}
+
+.animu-grrrr {
+    width: 100px;
+    height: 80px;
+    background-position: 0 -390px;
+}
+
+.animu-im-listening {
+    width: 100px;
+    height: 80px;
+    background-position: 0 -520px;
+}
+
+.animu-om-nom {
+    width: 100px;
+    height: 80px;
+    background-position: 0 -650px;
+}
+
+.animu-stare {
+    width: 150px;
+    height: 100px;
+    background-position: 0 -780px;
+}
+
+.animu-u-wat-m8 {
+    width: 80px;
+    height: 80px;
+    background-position: 0 -930px;
+}
+
+.animu-what {
+    width: 100px;
+    height: 80px;
+    background-position: 0 -1060px;
+}
+
+.animu-wide-face {
+    width: 150px;
+    height: 103px;
+    background-position: 0 -1190px;
+}
+
+.animu-ehehehe {
+    width: 80px;
+    height: 80px;
+    background-position: 0 -1343px;
+}
+
+.animu-mandom {
+    width: 181px;
+    height: 101px;
+    background-position: 0 -1473px;
+}
+
+.animu-pointandlaugh {
+    width: 79px;
+    height: 80px;
+    background-position: 0 0
+}
+
+.animu-smug {
+    width: 89px;
+    height: 80px;
+    background-position: 0 -130px;
+}
+
+.animu-confused {
+    width: 91px;
+    height: 80px;
+    background-position: 0 -260px;
+}
+
+.animu-yunocaine {
+    width: 80px;
+    height: 80px;
+    background-position: 0 -390px;
+}
+
+.animu-konahappy {
+    width: 86px;
+    height: 80px;
+    background-position: 0 -520px;
+}
+
+.animu-konacat {
+    width: 89px;
+    height: 80px;
+    background-position: 0 -650px;
+}
+
+.animu-gununu {
+    width: 107px;
+    height: 80px;
+    background-position: 0 -780px;
+}
+
+.animu-cat1 {
+    width: 117px;
+    height: 80px;
+    background-position: 0 -910px;
+}
+
+.animu-somad {
+    width: 80px;
+    height: 79px;
+    background-position: 0 -1040px;
+}
+
+.animu-mad {
+    width: 85px;
+    height: 80px;
+    background-position: 0 -1169px;
+}
+
+.animu-crying {
+    width: 89px;
+    height: 80px;
+    background-position: 0 -1299px;
+}
+
+.animu-cat2 {
+    width: 133px;
+    height: 80px;
+    background-position: 0 -1429px;
+}
+
+.animu-um {
+    width: 80px;
+    height: 80px;
+    background-position: 0 -1559px;
+}
+
+.animu-facepalm {
+    width: 80px;
+    height: 80px;
+    background-position: 0 0
+}
+
+.animu-wtfika {
+    width: 82px;
+    height: 80px;
+    background-position: 0 -130px;
+}
+
+.animu-kanie-disgust {
+    width: 80px;
+    height: 80px;
+    background-position: 0 -260px;
+}
+
+.animu-nerrr {
+    width: 80px;
+    height: 80px;
+    background-position: 0 -390px;
+}
+
+.animu-nico-heart {
+    width: 100px;
+    height: 80px;
+    background-position: 0 -520px;
+}
+
+.animu-sonico-wink {
+    width: 80px;
+    height: 80px;
+    background-position: 0 -650px;
+}
+
+.animu-sparkle-ika {
+    width: 80px;
+    height: 80px;
+    background-position: 0 -780px;
+}
+
+.animu-suave {
+    width: 100px;
+    height: 80px;
+    background-position: 0 -910px;
+}
+
+.animu-super-blush {
+    width: 100px;
+    height: 80px;
+    background-position: 0 -1040px;
+}
+
+.animu-surprised-blush {
+    width: 80px;
+    height: 80px;
+    background-position: 0 -1170px;
+}
+
+.animu-shocked {
+    width: 73px;
+    height: 80px;
+    background-position: 0 -1300px;
+}
+
+.animu-thumbs-up {
+    width: 120px;
+    height: 100px;
+    background-position: 0 -1430px;
+}
+
+.animu-u-dont-say {
+    width: 100px;
+    height: 80px;
+    background-position: 0 -1580px;
+}
+
+.animu-ugh-peasants {
+    width: 100px;
+    height: 80px;
+    background-position: 0 -1710px;
+}
+
+.animu-uhhh {
+    width: 80px;
+    height: 80px;
+    background-position: 0 -1840px;
+}
+
+.animu-yay {
+    width: 84px;
+    height: 80px;
+    background-position: -170px 0
+}
+
+.animu-you-bore-me {
+    width: 100px;
+    height: 80px;
+    background-position: -170px -130px;
+}
+
+.animu-osaka {
+    width: 80px;
+    height: 80px;
+    background-position: -170px -260px;
+}
+
+.animu-kukuku {
+    width: 100px;
+    height: 150px;
+    background-position: -170px -390px;
+}
+
+.animu-toohappy {
+    width: 84px;
+    height: 80px;
+    background-position: -170px -590px;
+}
+
+.animu-chitoge-smile {
+    width: 100px;
+    height: 56px;
+    background-position: -5px -5px;
+}
+
+.animu-kininarimasu {
+    width: 90px;
+    height: 75px;
+    background-position: -115px -5px;
+}
+
+.animu-kotori {
+    width: 85px;
+    height: 89px;
+    background-position: -215px -5px;
+}
+
+.animu-kyon-facepalm {
+    width: 125px;
+    height: 80px;
+    background-position: -310px -5px;
+}
+
+.animu-araragi-1 {
+    width: 100px;
+    height: 50px;
+    background-position: -5px -95px;
+}
+
+.animu-araragi-2 {
+    width: 100px;
+    height: 50px;
+    background-position: -310px -95px;
+}
+
+.animu-blank-stare {
+    width: 80px;
+    height: 80px;
+    background-position: -115px -95px;
+}
+
+.animu-chaika-smile {
+    width: 77px;
+    height: 80px;
+    background-position: -5px -155px;
+}
+
+.animu-chitoge-pissed {
+    width: 85px;
+    height: 100px;
+    background-position: -205px -155px;
+}
+
+.animu-deadpan {
+    width: 80px;
+    height: 85px;
+    background-position: -300px -155px;
+}
+
+.animu-exuberant-shu {
+    width: 80px;
+    height: 50px;
+    background-position: -390px -155px;
+}
+
+.animu-dead-eyed-stare {
+    width: 100px;
+    height: 70px;
+    background-position: -92px -215px;
+}
+
+.animu-gamagori-hnng {
+    width: 80px;
+    height: 65px;
+    background-position: -390px -215px;
+}
+
+.animu-glasses-push {
+    width: 100px;
+    height: 50px;
+    background-position: -202px -290px;
+}
+
+.animu-head-tilt {
+    width: 121px;
+    height: 100px;
+    background-position: -312px -290px;
+}
+
+.animu-jiii {
+    width: 100px;
+    height: 60px;
+    background-position: -5px -400px;
+}
+
+.animu-manly-tears {
+    width: 150px;
+    height: 100px;
+    background-position: -445px -5px;
+}
+
+.animu-not-raining {
+    width: 146px;
+    height: 100px;
+    background-position: -480px -115px;
+}
+
+.animu-ohmygod {
+    width: 175px;
+    height: 100px;
+    background-position: -443px -290px;
+}
+
+.animu-shock {
+    width: 170px;
+    height: 100px;
+    background-position: -115px -400px;
+}
+
+.animu-heart-thumbs-up {
+    width: 79px;
+    height: 100px;
+    background-position: -295px -400px;
+}
+
+.animu-worried {
+    width: 170px;
+    height: 100px;
+    background-position: -384px -400px;
+}
+
+.animu-wow-really {
+    width: 80px;
+    height: 85px;
+    background-position: -564px -400px;
+}

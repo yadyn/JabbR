@@ -13,6 +13,7 @@ var EmojiIcons;
         "marisa": true, "marisakiss": true, "marisalol": true, "marisablank": true, "marisablush": true, "marisasad": true, "marisacry": true, "marisamad": true, "marisaangry": true, "marisahappy": true, "marisacute": true, "marisawhat": true, "marisaannoy": true, "marisanervous": true, "marisashock": true, "marisasmile": true,
         "reimu": true, "reimukiss": true, "reimulol": true, "reimublank": true, "reimublush": true, "reimusad": true, "reimucry": true, "reimumad": true, "reimuangry": true, "reimuhappy": true, "reimucute": true, "reimuwhat": true, "reimuannoy": true, "reimunervous": true, "reimushock": true, "reimusmile": true
     };
+    var validAnimu = { "asuka-shouting": "5", "chiyo-uhh": "5", "she-ded": "5", "deko-cry": "5", "gendo-pls": "5", "haruhi-annoyed": "5", "k-on-hug": "5", "lewd": "5", "nanami-hug": "5", "pika-dead": "5", "super-happy": "5", "yui-crying": "5", "durr": "5", "mugi-fish": "5", "objection": "5", "chaika": "4", "chiho-wut": "4", "disapproval": "4", "grrrr": "4", "im-listening": "4", "om-nom": "4", "stare": "4", "u-wat-m8": "4", "what": "4", "wide-face": "4", "ehehehe": "4", "mandom": "4", "pointandlaugh": "3", "smug": "3", "confused": "3", "yunocaine": "3", "konahappy": "3", "konacat": "3", "gununu": "3", "cat1": "3", "somad": "3", "mad": "3", "crying": "3", "cat2": "3", "um": "3", "facepalm": "2", "wtfika": "2", "kanie-disgust": "2", "nerrr": "2", "nico-heart": "2", "sonico-wink": "2", "sparkle-ika": "2", "suave": "2", "super-blush": "2", "surprised-blush": "2", "shocked": "2", "thumbs-up": "2", "u-dont-say": "2", "ugh-peasants": "2", "uhhh": "2", "yay": "2", "you-bore-me": "2", "osaka": "2", "kukuku": "2", "toohappy": "2", "chitoge-smile": "1", "kininarimasu": "1", "kotori": "1", "kyon-facepalm": "1", "araragi-1": "1", "araragi-2": "1", "blank-stare": "1", "chaika-smile": "1", "chitoge-pissed": "1", "deadpan": "1", "exuberant-shu": "1", "dead-eyed-stare": "1", "gamagori-hnng": "1", "glasses-push": "1", "head-tilt": "1", "jiii": "1", "manly-tears": "1", "not-raining": "1", "ohmygod": "1", "shock": "1", "heart-thumbs-up": "1", "worried": "1", "wow-really": "1" };
 
     var validAlias = {
         "m\\:3\\b": ":marisacute:", "m\\^\\^": ":marisahappy:", "m>o<": ":marisaangry:", "m>O<": ":marisaangry:",
@@ -59,14 +60,16 @@ var EmojiIcons;
             .append($('<li/>')
                 .append($('<a/>').attr('href', '#emotelisttab-7').attr('title', 'hotglue').text('h')))
             .append($('<li/>')
-                .append($('<a/>').attr('href', '#emotelisttab-8').attr('title', 'emoji').text('j')))
+                .append($('<a/>').attr('href', '#emotelisttab-8').attr('title', 'animu').text('m')))
             .append($('<li/>')
-                .append($('<a/>').attr('href', '#emotelisttab-9').attr('title', 'v4c').text('v')))
+                .append($('<a/>').attr('href', '#emotelisttab-9').attr('title', 'emoji').text('j')))
             .append($('<li/>')
-                .append($('<a/>').attr('href', '#emotelisttab-10').attr('title', 'yukkuri').text('y'))))
+                .append($('<a/>').attr('href', '#emotelisttab-10').attr('title', 'v4c').text('v')))
+            .append($('<li/>')
+                .append($('<a/>').attr('href', '#emotelisttab-11').attr('title', 'yukkuri').text('y'))))
 
-    var colCount = { 'a': 0, 'b': 0, 'c': 0, 'd': 0, 'e': 0, 'f': 0, 'h': 0, 'j': 0, 'v': 0, 'y': 0 };
-    var rows = { 'a': [], 'b': [], 'c': [], 'd': [], 'e': [], 'f': [], 'h': [], 'j': [], 'v': [], 'y': [] };
+    var colCount = { 'a': 0, 'b': 0, 'c': 0, 'd': 0, 'e': 0, 'f': 0, 'h': 0, 'm': 0, 'j': 0, 'v': 0, 'y': 0 };
+    var rows = { 'a': [], 'b': [], 'c': [], 'd': [], 'e': [], 'f': [], 'h': [], 'm': [], 'j': [], 'v': [], 'y': [] };
 
     for (var key in validPony) {
         var row = '';
@@ -146,6 +149,25 @@ var EmojiIcons;
 
         rows[group].push(row);
     }
+    for (var key in validAnimu) {
+        var row = '';
+        var group = 'm';
+        var section = validAnimu[key];
+
+        colCount[group] = colCount[group] + 1;
+
+        if (colCount[group] == 1)
+            row += '<tr>';
+
+        row += '<td class="animu animu-' + section + ' animu-' + key + '" title="' + key + '"></td>';
+
+        if (colCount[group] == 4) {
+            row += '</tr>';
+            colCount[group] = 0;
+        }
+
+        rows[group].push(row);
+    }
     for (var key in validv4c) {
         var row = '';
         var group = 'v';
@@ -180,14 +202,16 @@ var EmojiIcons;
     emotelistTabs.append(
         $('<div/>').attr('id', 'emotelisttab-7').append($('<table/>').append(rows['h'].join(''))));
     emotelistTabs.append(
-        $('<div/>').attr('id', 'emotelisttab-8').append($('<table/>').append(rows['j'].join(''))));
+        $('<div/>').attr('id', 'emotelisttab-8').append($('<table/>').append(rows['m'].join(''))));
     emotelistTabs.append(
-        $('<div/>').attr('id', 'emotelisttab-9').append($('<table/>').append(rows['v'].join(''))));
+        $('<div/>').attr('id', 'emotelisttab-9').append($('<table/>').append(rows['j'].join(''))));
     emotelistTabs.append(
-        $('<div/>').attr('id', 'emotelisttab-10').append($('<table/>').append(rows['y'].join(''))));
+        $('<div/>').attr('id', 'emotelisttab-10').append($('<table/>').append(rows['v'].join(''))));
+    emotelistTabs.append(
+        $('<div/>').attr('id', 'emotelisttab-11').append($('<table/>').append(rows['y'].join(''))));
 
     emotelistTabs.tabs();
-    emotelistTabs.tabs({ active: 7});
+    emotelistTabs.tabs({ active: 8 });
     $('#emotelist-dialog').append(emotelistTabs);
 
     $('#emotelist-dialog td').each(function (i) {
@@ -222,6 +246,11 @@ var EmojiIcons;
             }
             for (var key in validPony) {
                 if (validPony.hasOwnProperty(key)) {
+                    EmojiIcons.push(key + ':');
+                }
+            }
+            for (var key in validAnimu) {
+                if (validAnimu.hasOwnProperty(key)) {
                     EmojiIcons.push(key + ':');
                 }
             }
@@ -269,6 +298,8 @@ var EmojiIcons;
                 return '<img src="Content/images/v4c/' + validv4c[match] + '" alt="' + match + '" title="' + match + '" class="v4cemote" />';
             } else if (validPony[match]) {
                 return '<span class="ponymoticon ponymoticon-' + validPony[match] + ' ponymoticon-' + match + '" alt="' + match + '" title="' + match + '" />';
+            } else if (validAnimu[match]) {
+                return '<span class="animu animu-' + validAnimu[match] + ' animu-' + match + '" alt="' + match + '" title="' + match + '" />';
             } else if (validHotglue[match]) {
                 return '<span class="hotgluemoticon hotgluemoticon-' + validHotglue[match] + ' hotgluemoticon-' + match + '" alt="' + match + '" title="' + match + '" />';
             } else {

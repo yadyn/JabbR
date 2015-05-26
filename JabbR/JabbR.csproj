@@ -232,6 +232,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="apple-touch-icon.png" />
+    <Content Include="Content\animu.css" />
     <Content Include="Content\Highlight\arta.css" />
     <Content Include="Content\Highlight\ascetic.css" />
     <Content Include="Content\Highlight\brown_paper.css" />
@@ -261,6 +262,11 @@
     <Content Include="Content\Highlight\vs.css" />
     <Content Include="Content\Highlight\xcode.css" />
     <Content Include="Content\Highlight\zenburn.css" />
+    <Content Include="Content\images\animu\1.png" />
+    <Content Include="Content\images\animu\2.png" />
+    <Content Include="Content\images\animu\3.png" />
+    <Content Include="Content\images\animu\4.png" />
+    <Content Include="Content\images\animu\5.png" />
     <Content Include="Content\images\download-off-white.png" />
     <Content Include="Content\images\download-off.png" />
     <Content Include="Content\images\download-on-white.png" />
