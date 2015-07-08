@@ -651,7 +651,7 @@ td.animu { margin-top: 0; }
     background-position: -348px -423px; /* a2 */
 }
 
-.animu-blush {
+.animu-blush2 {
     width: 80px;
     height: 80px;
     background-position: -84px -427px; /* a2 */
@@ -929,7 +929,7 @@ td.animu { margin-top: 0; }
     background-position: 0 -283px;
 }
 
-.animu-blush2 {
+.animu-blush3 {
     width: 107px;
     height: 90px;
     background-position: 0 -363px;
@@ -938,17 +938,17 @@ td.animu { margin-top: 0; }
 .animu-noooo2 {
     width: 107px;
     height: 80px;
-    background-position: 0 -443px;
+    background-position: 0 -453px;
 }
 
 .animu-delight {
-    width: 107px;
+    width: 89px;
     height: 80px;
     background-position: 0 -533px;
 }
 
 .animu-sparkle2 {
-    width: 107px;
+    width: 104px;
     height: 80px;
     background-position: 0 -613px;
 }
