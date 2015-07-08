@@ -267,6 +267,11 @@
     <Content Include="Content\images\animu\3.png" />
     <Content Include="Content\images\animu\4.png" />
     <Content Include="Content\images\animu\5.png" />
+    <Content Include="Content\images\animu\a1.png" />
+    <Content Include="Content\images\animu\a2.png" />
+    <Content Include="Content\images\animu\a3.png" />
+    <Content Include="Content\images\animu\a4.png" />
+    <Content Include="Content\images\animu\p.png" />
     <Content Include="Content\images\download-off-white.png" />
     <Content Include="Content\images\download-off.png" />
     <Content Include="Content\images\download-on-white.png" />
