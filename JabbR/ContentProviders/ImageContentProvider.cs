@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using JabbR.ContentProviders.Core;
 using JabbR.Infrastructure;
@@ -14,11 +15,13 @@ namespace JabbR.ContentProviders
     public class ImageContentProvider : CollapsibleContentProvider
     {
         private readonly IKernel _kernel;
+        private readonly ApplicationSettings _settings;
         private readonly IJabbrConfiguration _configuration;
 
-        public ImageContentProvider(IKernel kernel)
+        public ImageContentProvider(IKernel kernel, ApplicationSettings settings)
         {
             _kernel = kernel;
+            _settings = settings;
             _configuration = kernel.Get<IJabbrConfiguration>();
         }
 
@@ -94,12 +97,15 @@ namespace JabbR.ContentProviders
 
         public override bool IsValidContent(Uri uri)
         {
-            return IsValidImagePath(uri);
+            return IsValidImagePath(uri, _settings.AdditionalImageHosts == null ? null : _settings.AdditionalImageHosts.Split(new [] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries));
         }
 
-        public static bool IsValidImagePath(Uri uri)
+        public static bool IsValidImagePath(Uri uri, string[] additionalHosts = null)
         {
             string path = uri.LocalPath.ToLowerInvariant();
+
+            if (additionalHosts != null && additionalHosts.Any(h => uri.Host.EndsWith(h)))
+                return true;
 
             return path.EndsWith(".png") ||
                    path.EndsWith(".bmp") ||

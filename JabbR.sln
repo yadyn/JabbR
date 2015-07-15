@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JabbR", "JabbR\JabbR.csproj", "{16204F16-6354-4B68-BB0F-1A4F109FC92B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JabbR.Tests", "JabbR.Tests\JabbR.Tests.csproj", "{45AB4285-8B37-47FD-9D38-40E6BC5D2E13}"
@@ -34,6 +36,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{F8B28AB9
 		Build\Build.proj = Build\Build.proj
 		Build\MSBuild.Community.Tasks.dll = Build\MSBuild.Community.Tasks.dll
 		Build\MSBuild.Community.Tasks.targets = Build\MSBuild.Community.Tasks.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hubot", "Hubot", "{7795D064-0758-4033-928C-2527568122ED}"
+	ProjectSection(SolutionItems) = preProject
+		Hubot\run.ps1 = Hubot\run.ps1
+		Hubot\told.coffee = Hubot\told.coffee
 	EndProjectSection
 EndProject
 Global

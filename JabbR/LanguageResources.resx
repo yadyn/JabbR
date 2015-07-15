@@ -1296,4 +1296,10 @@ Use ? or type /? to display the FAQ and list of commands.</value>
   <data name="Account_OwnedRooms" xml:space="preserve">
     <value>Owned Rooms</value>
   </data>
+  <data name="Administration_ImageEmbedding" xml:space="preserve">
+    <value>Image Embedding</value>
+  </data>
+  <data name="Administration_ImageHosts" xml:space="preserve">
+    <value>Additional Image Hosts</value>
+  </data>
 </root>
