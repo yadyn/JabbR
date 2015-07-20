@@ -27,6 +27,18 @@ namespace JabbR.Infrastructure
             return TaskAsyncHelper.Empty;
         }
 
+        public void Exception(CookieExceptionContext context)
+        {
+        }
+
+        public void ResponseSignOut(CookieResponseSignOutContext context)
+        {
+        }
+
+        public void ResponseSignedIn(CookieResponseSignedInContext context)
+        {
+        }
+
         public void ResponseSignIn(CookieResponseSignInContext context)
         {
             var authResult = new AuthenticationResult

@@ -41,6 +41,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hubot", "Hubot", "{7795D064-0758-4033-928C-2527568122ED}"
 	ProjectSection(SolutionItems) = preProject
 		Hubot\run.ps1 = Hubot\run.ps1
+		test.coffee = test.coffee
 		Hubot\told.coffee = Hubot\told.coffee
 	EndProjectSection
 EndProject

@@ -149,5 +149,4 @@ told= [
 
 module.exports = (robot) ->
     robot.hear /.*(how told)|btfo.*/i, (msg) ->
-        msg.send "[ ] Not Told "
-        msg.send msg.random told
+        msg.send "[ ] Not Told\r\n" + msg.random told
