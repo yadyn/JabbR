@@ -14,11 +14,6 @@ namespace JabbR.Commands
 
             room.EnsureOpen();
 
-            if (args.Length == 0)
-            {
-                throw new HubException(LanguageResources.Me_ActionRequired);
-            }
-
             var content = String.Join(" ", args);
 
             context.NotificationService.OnXyzzy(room);
