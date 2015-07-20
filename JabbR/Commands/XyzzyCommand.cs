@@ -5,7 +5,7 @@ using Microsoft.AspNet.SignalR;
 
 namespace JabbR.Commands
 {
-    [Command("xyzzy", "xyzzy_CommandInfo", "note", "user")]
+    [Command("xyzzy", "Xyzzy_CommandInfo", "note", "user")]
     public class XyzzyCommand : UserCommand
     {
         public override void Execute(CommandContext context, CallerContext callerContext, ChatUser callingUser, string[] args)

@@ -3587,5 +3587,14 @@ namespace JabbR {
                 return ResourceManager.GetString("Who_CommandInfo", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ???.
+        /// </summary>
+        public static string Xyzzy_CommandInfo {
+            get {
+                return ResourceManager.GetString("Xyzzy_CommandInfo", resourceCulture);
+            }
+        }
     }
 }

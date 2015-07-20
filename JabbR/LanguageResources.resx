@@ -1302,4 +1302,7 @@ Use ? or type /? to display the FAQ and list of commands.</value>
   <data name="Administration_ImageHosts" xml:space="preserve">
     <value>Additional Image Hosts</value>
   </data>
+  <data name="Xyzzy_CommandInfo" xml:space="preserve">
+    <value>???</value>
+  </data>
 </root>
