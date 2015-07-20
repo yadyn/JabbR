@@ -53,11 +53,11 @@ namespace JabbR
             var summaryBuilder = new StringBuilder();
 
             summaryBuilder.Append(@"<ul class=""validation-summary-errors"">");
-            foreach (var modelValidationError in validationResult.Errors)
+            foreach (var memberNameEntry in validationResult.Errors)
             {
-                foreach (var memberName in modelValidationError.MemberNames)
+                foreach (var modelValidationError in memberNameEntry.Value)
                 {
-                    summaryBuilder.AppendFormat("<li>{0}</li>", modelValidationError.GetMessage(memberName));
+                    summaryBuilder.AppendFormat("<li>{0}</li>", modelValidationError.ErrorMessage);
                 }
             }
             summaryBuilder.Append(@"</ul>");
@@ -74,7 +74,7 @@ namespace JabbR
                 return new NonEncodedHtmlString(String.Empty);
             }
 
-            return new NonEncodedHtmlString(errorsForField.First().GetMessage(propertyName));
+            return new NonEncodedHtmlString(errorsForField.First().ErrorMessage);
         }
 
         public static IHtmlString AlertMessages<TModel>(this HtmlHelpers<TModel> htmlHelper)
@@ -107,9 +107,7 @@ namespace JabbR
                 return Enumerable.Empty<ModelValidationError>();
             }
 
-            var errorsForField =
-                validationResult.Errors.Where(
-                    x => x.MemberNames.Any(y => y.Equals(propertyName, StringComparison.InvariantCultureIgnoreCase)));
+            var errorsForField = validationResult.Errors[propertyName];
 
             return errorsForField;
         }

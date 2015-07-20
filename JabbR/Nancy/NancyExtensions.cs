@@ -7,6 +7,7 @@ using Microsoft.Owin;
 using Nancy;
 using Nancy.Helpers;
 using Nancy.Owin;
+using Nancy.Validation;
 using Newtonsoft.Json;
 
 namespace JabbR.Nancy
@@ -15,7 +16,7 @@ namespace JabbR.Nancy
     {
         public static Response SignIn(this NancyModule module, IEnumerable<Claim> claims)
         {
-            var env = Get<IDictionary<string, object>>(module.Context.Items, NancyOwinHost.RequestEnvironmentKey);
+            var env = Get<IDictionary<string, object>>(module.Context.Items, NancyMiddleware.RequestEnvironmentKey);
             var owinContext = new OwinContext(env);
 
             var identity = new ClaimsIdentity(claims, Constants.JabbRAuthType);
@@ -40,7 +41,7 @@ namespace JabbR.Nancy
 
         public static void SignOut(this NancyModule module)
         {
-            var env = Get<IDictionary<string, object>>(module.Context.Items, NancyOwinHost.RequestEnvironmentKey);
+            var env = Get<IDictionary<string, object>>(module.Context.Items, NancyMiddleware.RequestEnvironmentKey);
             var owinContext = new OwinContext(env);
 
             owinContext.Authentication.SignOut(Constants.JabbRAuthType);
@@ -48,7 +49,7 @@ namespace JabbR.Nancy
 
         public static void AddValidationError(this NancyModule module, string propertyName, string errorMessage)
         {
-            module.ModelValidationResult = module.ModelValidationResult.AddError(propertyName, errorMessage);
+            module.ModelValidationResult.Errors.Add(propertyName, errorMessage);
         }
 
         public static AuthenticationResult GetAuthenticationResult(this NancyContext context)
