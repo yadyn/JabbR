@@ -832,6 +832,10 @@
         ui.addAction(utility.getLanguageResource('Chat_UserPerformsAction', name, message), room);
     };
 
+    chat.client.nothingHappensMessage = function(room) {
+        ui.addAction('Nothing happens.', room);
+    }
+
     chat.client.sendPrivateMessage = function (from, to, message) {
         if (isSelf({ Name: to })) {
             // Force notification for direct messages

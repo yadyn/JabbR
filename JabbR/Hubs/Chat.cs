@@ -868,6 +868,11 @@ namespace JabbR
             Clients.Group(room.Name).sendMeMessage(user.Name, content, room.Name);
         }
 
+        void INotificationService.OnXyzzy(ChatRoom room)
+        {
+            Clients.Group(room.Name).nothingHappensMessage(room.Name);
+        }
+
         void INotificationService.SendPrivateMessage(ChatUser fromUser, ChatUser toUser, string messageText)
         {
             // Send a message to the sender and the sendee
