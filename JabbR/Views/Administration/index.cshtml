@@ -90,7 +90,7 @@
                     <div class="control-group">
                         <label class="control-label" for="imageHosts">@LanguageResources.Administration_ImageHosts</label>
                         <div class="controls">
-							<textarea id="additionalImageHosts" name="additionalImageHosts" class="input-xlarge" rows="5">@applicationSettings.AdditionalImageHosts</textarea>
+                            <textarea id="additionalImageHosts" name="additionalImageHosts" class="input-xlarge" rows="5">@applicationSettings.AdditionalImageHosts</textarea>
                         </div>
                     </div>
                 </fieldset>
@@ -214,7 +214,7 @@
                                             <tr style="vertical-align: top">
                                                 <td><input type="checkbox" name="EnabledContentProviders" checked="@enabled" value="@fullName"/></td>
                                                 <td>
-                                                    @Encoder.HtmlEncode(friendlyName)
+                                                    @Html.Raw(Encoder.HtmlEncode(friendlyName))
                                                 </td>
                                             </tr>
                                         }
@@ -262,12 +262,12 @@
                                             <tr style="vertical-align: top">
                                                 <td><input type="checkbox" name="enabled[@i]" checked="@provider.Enabled"/></td>
                                                 <td><input type="checkbox" name="collapsible[@i]" checked="@provider.Collapsible" /></td>
-                                                <td><input type="text" name="name[@i]" class="input-mini" value="@Encoder.HtmlEncode(provider.Name)" /></td>
-                                                <td><input type="text" name="domains[@i]" class="input-small" value="@Encoder.HtmlEncode(provider.Domains)" /></td>
-                                                <td><input type="text" name="extract[@i]" class="input-mini" value="@Encoder.HtmlEncode(provider.Extract)" /></td>
-                                                <td><input type="text" name="output[@i]" class="" value="@Encoder.HtmlEncode(provider.Output)"/></td>
-                                                <td><input type="text" name="script[@i]" class="input-small" value="@Encoder.HtmlEncode(provider.Script)" /></td>
-                                                <td><input type="text" name="title[@i]" class="input-small" value="@Encoder.HtmlEncode(provider.Title)" /></td>
+                                                <td><input type="text" name="name[@i]" class="input-mini" value="@Html.Raw(Encoder.HtmlEncode(provider.Name))" /></td>
+                                                <td><input type="text" name="domains[@i]" class="input-small" value="@Html.Raw(Encoder.HtmlEncode(provider.Domains))" /></td>
+                                                <td><input type="text" name="extract[@i]" class="input-mini" value="@Html.Raw(Encoder.HtmlEncode(provider.Extract))" /></td>
+                                                <td><input type="text" name="output[@i]" class="" value="@Html.Raw(Encoder.HtmlEncode(provider.Output))"/></td>
+                                                <td><input type="text" name="script[@i]" class="input-small" value="@Html.Raw(Encoder.HtmlEncode(provider.Script))" /></td>
+                                                <td><input type="text" name="title[@i]" class="input-small" value="@Html.Raw(Encoder.HtmlEncode(provider.Title))" /></td>
                                                 <td><a href="#" class="remove">@(LanguageResources.Administration_ContentProviders_Remove)</a></td>
                                             </tr>
                                         }
