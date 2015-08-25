@@ -21,6 +21,7 @@
             .Add("~/Content/font-awesome.min.css")
             .Add("~/Content/themes/default/Chat.css")
             .Add("~/Content/emoji20.css")
+            .Add("~/Content/themes/smoothness/jquery-ui-1.10.3.custom.min.css")
             .Render("~/Content/JabbR_#.css"));
     }
 </head>
@@ -95,7 +96,8 @@
     </script>
     @{
         WriteLiteral(Bundle.JavaScript()
-            .Add("~/Scripts/jquery-2.0.3.min.js")
+            .Add("~/Scripts/jquery-2.1.4.min.js")
+            .Add("~/Scripts/jquery-ui-1.10.3.custom.min.js")
             .Add("~/Scripts/json2.min.js")
             .Add("~/Scripts/bootstrap.js")
             .Add("~/Scripts/jQuery.tmpl.min.js")
