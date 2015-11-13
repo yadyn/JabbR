@@ -20,3 +20,4 @@ lib/iOS/Microsoft.AspNet.SignalR.Client.iOS.dll.mdb
 *.dotSettings
 *.pubxml
 *.GhostDoc.xml
+uploads/

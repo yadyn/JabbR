@@ -3669,3 +3669,7 @@ ul.ui-widget-header > li > a {
         margin-bottom: 0;
         font-style: italic;
     }
+
+.ui-tabs .ui-tabs-nav li a {
+    padding: .5em .75em !important;
+}
