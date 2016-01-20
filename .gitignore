@@ -21,3 +21,6 @@ lib/iOS/Microsoft.AspNet.SignalR.Client.iOS.dll.mdb
 *.pubxml
 *.GhostDoc.xml
 uploads/
+
+# Visual Studio 2015 cache/options directory
+.vs/
