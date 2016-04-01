@@ -26,6 +26,7 @@
     <TargetFrameworkProfile />
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -287,10 +288,20 @@
     <Content Include="Content\images\hotglue\h1.png" />
     <Content Include="Content\images\ponymoticon\a-mspaint.png" />
     <Content Include="Content\images\ponymoticon\a-googly.png" />
+    <Content Include="Content\images\ponymoticon\a-pokemon.png" />
+    <Content Include="Content\images\ponymoticon\a-twi.png" />
     <Content Include="Content\images\ponymoticon\b-mspaint.png" />
+    <Content Include="Content\images\ponymoticon\b-pokemon.png" />
+    <Content Include="Content\images\ponymoticon\b-twi.png" />
     <Content Include="Content\images\ponymoticon\c-mspaint.png" />
     <Content Include="Content\images\ponymoticon\c-googly.png" />
+    <Content Include="Content\images\ponymoticon\c-pokemon.png" />
+    <Content Include="Content\images\ponymoticon\c-twi.png" />
     <Content Include="Content\images\ponymoticon\e-mspaint.png" />
+    <Content Include="Content\images\ponymoticon\e-pokemon.png" />
+    <Content Include="Content\images\ponymoticon\e-twi.png" />
+    <Content Include="Content\images\ponymoticon\f-pokemon.png" />
+    <Content Include="Content\images\ponymoticon\f-twi.png" />
     <Content Include="Content\images\ponymoticon\f.png" />
     <Content Include="Content\images\splash-logo.png" />
     <Content Include="Content\images\tl-logo.png" />
