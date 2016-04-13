@@ -237,6 +237,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="apple-touch-icon.png" />
+    <Content Include="Chat.documentOnWrite.js" />
+    <Content Include="Chat.emoji.js" />
+    <Content Include="Chat.githubissues.js" />
+    <Content Include="Chat.js" />
+    <Content Include="Chat.toast.js" />
+    <Content Include="Chat.twitter.js" />
+    <Content Include="Chat.ui.fileUpload.js" />
+    <Content Include="Chat.ui.js" />
+    <Content Include="Chat.ui.room.js" />
+    <Content Include="Chat.utility.js" />
     <Content Include="Content\animu.css" />
     <Content Include="Content\emoji20.css" />
     <Content Include="Content\Highlight\arta.css" />
@@ -397,14 +407,6 @@
     <Content Include="Content\sounds\notification.mp3" />
     <Content Include="Content\themes\default\Chat.bbcnews.css" />
     <Content Include="Content\themes\default\Chat.css" />
-    <Content Include="Chat.documentOnWrite.js" />
-    <Content Include="Chat.js" />
-    <Content Include="Chat.toast.js" />
-    <Content Include="Chat.twitter.js" />
-    <Content Include="Chat.ui.fileUpload.js" />
-    <Content Include="Chat.ui.js" />
-    <Content Include="Chat.ui.room.js" />
-    <Content Include="Chat.utility.js" />
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -1322,14 +1324,6 @@
     <Content Include="Content\sounds\notification.mp3" />
     <Content Include="Content\themes\default\Chat.bbcnews.css" />
     <Content Include="Content\themes\default\Chat.css" />
-    <Content Include="Chat.documentOnWrite.js" />
-    <Content Include="Chat.js" />
-    <Content Include="Chat.toast.js" />
-    <Content Include="Chat.twitter.js" />
-    <Content Include="Chat.ui.fileUpload.js" />
-    <Content Include="Chat.ui.js" />
-    <Content Include="Chat.ui.room.js" />
-    <Content Include="Chat.utility.js" />
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -1433,7 +1427,6 @@
     <Content Include="Content\ponymoticon.css" />
     <Content Include="Content\popup-back.gif" />
     <Content Include="Content\qunit.css" />
-    <Content Include="Chat.githubissues.js" />
     <Content Include="Content\themes\default\Chat.githubissues.css" />
     <Content Include="Content\themes\default\Chat.nuget.css" />
     <Content Include="Content\themes\smoothness\images\animated-overlay.gif" />
@@ -2035,9 +2028,6 @@
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Chat.emoji.js" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
