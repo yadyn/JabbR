@@ -7,11 +7,10 @@ using Microsoft.AspNet.SignalR;
 
 namespace JabbR.Commands
 {
-    //[Command("spoiler", "Spoiler_CommandInfo", "message", "user")]
+    [Command("spoiler", "Spoiler_CommandInfo", "message", "user")]
     public class SpoilerCommand : UserCommand
     {
-        private const string _hiddenFormat = @"<span class=""spoiler1"">{0}</span>";
-        private const string _moreHiddenFormat = @"<span class=""spoiler2"">{0}</span>";
+        private const string _hiddenFormat = @"<s>{0}</s>";
 
         private readonly Regex _hiddenPattern = new Regex(@"\[(.+)\]");
 
@@ -45,7 +44,7 @@ namespace JabbR.Commands
                     {
                         foreach (var subMatch in subMatches)
                         {
-                            message = message.Replace(subMatch.Value, String.Format(_moreHiddenFormat, subMatch.Groups[1].Value));
+                            message = message.Replace(subMatch.Value, String.Format(_hiddenFormat, subMatch.Groups[1].Value));
                         }
                     }
                 }
@@ -56,7 +55,7 @@ namespace JabbR.Commands
                 message = String.Format(_hiddenFormat, message);
             }
 
-            context.NotificationService.SendMessage(callingUser, callingRoom, message);
+            context.NotificationService.SendHtmlMessage(callingUser, callingRoom, message);
         }
     }
 }

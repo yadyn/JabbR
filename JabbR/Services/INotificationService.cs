@@ -29,6 +29,7 @@ namespace JabbR.Services
         void ChangeTopic(ChatUser user, ChatRoom room);
         void ChangeWelcome(ChatUser user, ChatRoom room);
         void SendMessage(ChatUser user, ChatRoom room, string message);
+        void SendHtmlMessage(ChatUser user, ChatRoom room, string message);
 
         void PostNotification(ChatRoom room, ChatUser user, string message);
         void SendPrivateMessage(ChatUser user, ChatUser targetUser, string messageText);
