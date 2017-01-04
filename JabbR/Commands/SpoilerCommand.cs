@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -7,7 +7,7 @@ using Microsoft.AspNet.SignalR;
 
 namespace JabbR.Commands
 {
-    //[Command("spoiler", "Spoiler_CommandInfo", "message", "user")]
+    [Command("spoiler", "Spoiler_CommandInfo", "message", "user")]
     public class SpoilerCommand : UserCommand
     {
         private const string _hiddenFormat = @"<span class=""spoiler1"">{0}</span>";
