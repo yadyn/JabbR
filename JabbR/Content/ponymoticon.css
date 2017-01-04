@@ -6,6 +6,7 @@ td.ponymoticon { margin-top: 0; }
 .ponymoticon-d { background-image: url(images/ponymoticon/d.png); width: 70px; height: 70px; }
 .ponymoticon-e { background-image: url(images/ponymoticon/e.png); width: 70px; height: 70px; }
 .ponymoticon-f { background-image: url(images/ponymoticon/f.png); width: 70px; height: 70px; }
+.ponymoticon-g { background-image: url(images/ponymoticon/g.png); width: 70px; height: 70px; }
 
 .ponymoticon-ajlie { background-position: -0px -0px; }
 .ponymoticon-priceless { background-position: -70px -0px; }
@@ -248,3 +249,16 @@ td.ponymoticon { margin-top: 0; }
 .ponymoticon-spikeapproves { background-position: -210px -210px; }
 .ponymoticon-flutternice { background-position: -210px -280px; }
 .ponymoticon-ppdont { background-position: -210px -350px; }
+.ponymoticon-ajgrump { background-position: -210px -420px; }
+.ponymoticon-sgpopcorn { background-position: -210px -490px; }
+.ponymoticon-raritysquee { background-position: -210px -560px; }
+.ponymoticon-gummystare { background-position: -210px -630px; }
+
+.ponymoticon-karma { background-position: -0px -0px; }
+.ponymoticon-discentiajudge { background-position: -0px -70px; }
+.ponymoticon-twisnide { background-position: -0px -140px; }
+.ponymoticon-pinkie { background-position: -0px -210px; }
+.ponymoticon-cococold { background-position: -0px -280px; }
+.ponymoticon-quibble { background-position: -0px -350px; }
+.ponymoticon-rdthis { background-position: -0px -420px; }
+.ponymoticon-flutterbrow { background-position: -0px -490px; }
