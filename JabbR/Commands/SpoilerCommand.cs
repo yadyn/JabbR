@@ -13,8 +13,6 @@ namespace JabbR.Commands
     {
         private const string _hiddenFormat = @"<s>{0}</s>";
 
-        //private readonly Regex _hiddenPattern = new Regex(@"\[(.+)\]");
-
         public override void Execute(CommandContext context, CallerContext callerContext, ChatUser callingUser, string[] args)
         {
             ChatRoom room = context.Repository.VerifyUserRoom(context.Cache, callingUser, callerContext.RoomName);
