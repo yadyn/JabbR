@@ -26,7 +26,7 @@ namespace JabbR.Commands
             }
 
             var callingRoom = context.Repository.GetRoomByName(callerContext.RoomName);
-            var message = String.Join(" ", args);
+            var message = System.Net.WebUtility.HtmlEncode(String.Join(" ", args));
 
             var matches = _hiddenPattern.Matches(message).Cast<Match>().ToList();
 
