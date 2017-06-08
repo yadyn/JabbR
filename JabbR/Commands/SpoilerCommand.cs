@@ -1,10 +1,8 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
+using JabbR.Extensions;
 using JabbR.Models;
 using Microsoft.AspNet.SignalR;
-using JabbR.Extensions;
 
 namespace JabbR.Commands
 {
@@ -26,12 +24,10 @@ namespace JabbR.Commands
             var callingRoom = context.Repository.GetRoomByName(callerContext.RoomName);
             var message = System.Net.WebUtility.HtmlEncode(String.Join(" ", args));
 
-
-
             if (message.Contains('[') && message.Contains(']') && message.HasValidBrackets())
             {
                 //Case 1: spoilers wrapped with brackets.
-                message.Replace("[", "<s>").Replace("]", "</s>");
+                message = message.Replace("[", "<s>").Replace("]", "</s>");
             }
             else
             {
