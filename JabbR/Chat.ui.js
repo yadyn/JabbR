@@ -806,7 +806,7 @@
             $downloadRange = $('#download-range');
             $logout = $('#preferences .logout');
             $help = $('#preferences .help');
-            $emotelist = $('#emotelist');
+            $emotelist = $('#emotelist, #emotelist2');
             $emotelistDialog = $('#emotelist-dialog');
             $disconnectDialog = $('#disconnect-dialog');
             $helpPopup = $('#jabbr-help');
