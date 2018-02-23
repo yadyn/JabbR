@@ -1,896 +1,897 @@
-﻿.emoji20 { position: relative; display: inline-block; width: 20px; height: 20px; top: 5px; margin-top: -5px; padding: 0; }
-.emoji20-plus1 { background: url(images/emoji20.png) no-repeat -0px 0; }
-.emoji20--1 { background: url(images/emoji20.png) no-repeat -0px -20px; }
-.emoji20-0 { background: url(images/emoji20.png) no-repeat -0px -40px; }
-.emoji20-1 { background: url(images/emoji20.png) no-repeat -0px -60px; }
-.emoji20-100 { background: url(images/emoji20.png) no-repeat -0px -80px; }
-.emoji20-109 { background: url(images/emoji20.png) no-repeat -0px -100px; }
-.emoji20-1234 { background: url(images/emoji20.png) no-repeat -0px -120px; }
-.emoji20-2 { background: url(images/emoji20.png) no-repeat -0px -140px; }
-.emoji20-3 { background: url(images/emoji20.png) no-repeat -0px -160px; }
-.emoji20-4 { background: url(images/emoji20.png) no-repeat -0px -180px; }
-.emoji20-5 { background: url(images/emoji20.png) no-repeat -0px -200px; }
-.emoji20-6 { background: url(images/emoji20.png) no-repeat -0px -220px; }
-.emoji20-7 { background: url(images/emoji20.png) no-repeat -0px -240px; }
-.emoji20-8 { background: url(images/emoji20.png) no-repeat -0px -260px; }
-.emoji20-8ball { background: url(images/emoji20.png) no-repeat -0px -280px; }
-.emoji20-9 { background: url(images/emoji20.png) no-repeat -0px -300px; }
-.emoji20-a { background: url(images/emoji20.png) no-repeat -0px -320px; }
-.emoji20-ab { background: url(images/emoji20.png) no-repeat -0px -340px; }
-.emoji20-abc { background: url(images/emoji20.png) no-repeat -0px -360px; }
-.emoji20-abcd { background: url(images/emoji20.png) no-repeat -0px -380px; }
-.emoji20-accept { background: url(images/emoji20.png) no-repeat -0px -400px; }
-.emoji20-aerial_tramway { background: url(images/emoji20.png) no-repeat -0px -420px; }
-.emoji20-airplane { background: url(images/emoji20.png) no-repeat -0px -440px; }
-.emoji20-alarm_clock { background: url(images/emoji20.png) no-repeat -0px -460px; }
-.emoji20-alien { background: url(images/emoji20.png) no-repeat -0px -480px; }
-.emoji20-ambulance { background: url(images/emoji20.png) no-repeat -0px -500px; }
-.emoji20-anchor { background: url(images/emoji20.png) no-repeat -0px -520px; }
-.emoji20-angel { background: url(images/emoji20.png) no-repeat -0px -540px; }
-.emoji20-anger { background: url(images/emoji20.png) no-repeat -0px -560px; }
-.emoji20-angry { background: url(images/emoji20.png) no-repeat -0px -580px; }
-.emoji20-anguished { background: url(images/emoji20.png) no-repeat -0px -600px; }
-.emoji20-ant { background: url(images/emoji20.png) no-repeat -0px -620px; }
-.emoji20-apple { background: url(images/emoji20.png) no-repeat -0px -640px; }
-.emoji20-aquarius { background: url(images/emoji20.png) no-repeat -0px -660px; }
-.emoji20-aries { background: url(images/emoji20.png) no-repeat -0px -680px; }
-.emoji20-arrows_clockwise { background: url(images/emoji20.png) no-repeat -0px -700px; }
-.emoji20-arrows_counterclockwise { background: url(images/emoji20.png) no-repeat -0px -720px; }
-.emoji20-arrow_backward { background: url(images/emoji20.png) no-repeat -0px -740px; }
-.emoji20-arrow_double_down { background: url(images/emoji20.png) no-repeat -0px -760px; }
-.emoji20-arrow_double_up { background: url(images/emoji20.png) no-repeat -0px -780px; }
-.emoji20-arrow_down { background: url(images/emoji20.png) no-repeat -0px -800px; }
-.emoji20-arrow_down_small { background: url(images/emoji20.png) no-repeat -0px -820px; }
-.emoji20-arrow_forward { background: url(images/emoji20.png) no-repeat -0px -840px; }
-.emoji20-arrow_heading_down { background: url(images/emoji20.png) no-repeat -0px -860px; }
-.emoji20-arrow_heading_up { background: url(images/emoji20.png) no-repeat -0px -880px; }
-.emoji20-arrow_left { background: url(images/emoji20.png) no-repeat -0px -900px; }
-.emoji20-arrow_lower_left { background: url(images/emoji20.png) no-repeat -0px -920px; }
-.emoji20-arrow_lower_right { background: url(images/emoji20.png) no-repeat -0px -940px; }
-.emoji20-arrow_right { background: url(images/emoji20.png) no-repeat -0px -960px; }
-.emoji20-arrow_right_hook { background: url(images/emoji20.png) no-repeat -0px -980px; }
-.emoji20-arrow_up { background: url(images/emoji20.png) no-repeat -0px -1000px; }
-.emoji20-arrow_upper_left { background: url(images/emoji20.png) no-repeat -0px -1020px; }
-.emoji20-arrow_upper_right { background: url(images/emoji20.png) no-repeat -0px -1040px; }
-.emoji20-arrow_up_down { background: url(images/emoji20.png) no-repeat -0px -1060px; }
-.emoji20-arrow_up_small { background: url(images/emoji20.png) no-repeat -0px -1080px; }
-.emoji20-art { background: url(images/emoji20.png) no-repeat -0px -1100px; }
-.emoji20-articulated_lorry { background: url(images/emoji20.png) no-repeat -0px -1120px; }
-.emoji20-astonished { background: url(images/emoji20.png) no-repeat -0px -1140px; }
-.emoji20-atm { background: url(images/emoji20.png) no-repeat -0px -1160px; }
-.emoji20-b { background: url(images/emoji20.png) no-repeat -0px -1180px; }
-.emoji20-baby { background: url(images/emoji20.png) no-repeat -0px -1200px; }
-.emoji20-baby_bottle { background: url(images/emoji20.png) no-repeat -0px -1220px; }
-.emoji20-baby_chick { background: url(images/emoji20.png) no-repeat -0px -1240px; }
-.emoji20-baby_symbol { background: url(images/emoji20.png) no-repeat -0px -1260px; }
-.emoji20-back { background: url(images/emoji20.png) no-repeat -0px -1280px; }
-.emoji20-baggage_claim { background: url(images/emoji20.png) no-repeat -0px -1300px; }
-.emoji20-balloon { background: url(images/emoji20.png) no-repeat -0px -1320px; }
-.emoji20-ballot_box_with_check { background: url(images/emoji20.png) no-repeat -0px -1340px; }
-.emoji20-bamboo { background: url(images/emoji20.png) no-repeat -0px -1360px; }
-.emoji20-banana { background: url(images/emoji20.png) no-repeat -0px -1380px; }
-.emoji20-bangbang { background: url(images/emoji20.png) no-repeat -0px -1400px; }
-.emoji20-bank { background: url(images/emoji20.png) no-repeat -0px -1420px; }
-.emoji20-barber { background: url(images/emoji20.png) no-repeat -0px -1440px; }
-.emoji20-bar_chart { background: url(images/emoji20.png) no-repeat -0px -1460px; }
-.emoji20-baseball { background: url(images/emoji20.png) no-repeat -0px -1480px; }
-.emoji20-basketball { background: url(images/emoji20.png) no-repeat -0px -1500px; }
-.emoji20-bath { background: url(images/emoji20.png) no-repeat -0px -1520px; }
-.emoji20-bathtub { background: url(images/emoji20.png) no-repeat -0px -1540px; }
-.emoji20-battery { background: url(images/emoji20.png) no-repeat -0px -1560px; }
-.emoji20-bear { background: url(images/emoji20.png) no-repeat -0px -1580px; }
-.emoji20-bee { background: url(images/emoji20.png) no-repeat -0px -1600px; }
-.emoji20-beer { background: url(images/emoji20.png) no-repeat -0px -1620px; }
-.emoji20-beers { background: url(images/emoji20.png) no-repeat -0px -1640px; }
-.emoji20-beetle { background: url(images/emoji20.png) no-repeat -0px -1660px; }
-.emoji20-beginner { background: url(images/emoji20.png) no-repeat -0px -1680px; }
-.emoji20-bell { background: url(images/emoji20.png) no-repeat -0px -1700px; }
-.emoji20-bento { background: url(images/emoji20.png) no-repeat -0px -1720px; }
-.emoji20-bicyclist { background: url(images/emoji20.png) no-repeat -0px -1740px; }
-.emoji20-bike { background: url(images/emoji20.png) no-repeat -0px -1760px; }
-.emoji20-bikini { background: url(images/emoji20.png) no-repeat -0px -1780px; }
-.emoji20-bird { background: url(images/emoji20.png) no-repeat -0px -1800px; }
-.emoji20-birthday { background: url(images/emoji20.png) no-repeat -0px -1820px; }
-.emoji20-black_circle { background: url(images/emoji20.png) no-repeat -0px -1840px; }
-.emoji20-black_joker { background: url(images/emoji20.png) no-repeat -0px -1860px; }
-.emoji20-black_medium_small_square { background: url(images/emoji20.png) no-repeat -0px -1880px; }
-.emoji20-black_medium_square { background: url(images/emoji20.png) no-repeat -0px -1900px; }
-.emoji20-black_nib { background: url(images/emoji20.png) no-repeat -0px -1920px; }
-.emoji20-black_small_square { background: url(images/emoji20.png) no-repeat -0px -1940px; }
-.emoji20-black_square { background: url(images/emoji20.png) no-repeat -0px -1960px; }
-.emoji20-black_square_button { background: url(images/emoji20.png) no-repeat -0px -1980px; }
-.emoji20-blossom { background: url(images/emoji20.png) no-repeat -0px -2000px; }
-.emoji20-blowfish { background: url(images/emoji20.png) no-repeat -0px -2020px; }
-.emoji20-blue_book { background: url(images/emoji20.png) no-repeat -0px -2040px; }
-.emoji20-blue_car { background: url(images/emoji20.png) no-repeat -0px -2060px; }
-.emoji20-blue_heart { background: url(images/emoji20.png) no-repeat -0px -2080px; }
-.emoji20-blush { background: url(images/emoji20.png) no-repeat -0px -2100px; }
-.emoji20-boar { background: url(images/emoji20.png) no-repeat -0px -2120px; }
-.emoji20-boat { background: url(images/emoji20.png) no-repeat -0px -2140px; }
-.emoji20-bomb { background: url(images/emoji20.png) no-repeat -0px -2160px; }
-.emoji20-book { background: url(images/emoji20.png) no-repeat -0px -2180px; }
-.emoji20-bookmark { background: url(images/emoji20.png) no-repeat -0px -2200px; }
-.emoji20-bookmark_tabs { background: url(images/emoji20.png) no-repeat -0px -2220px; }
-.emoji20-books { background: url(images/emoji20.png) no-repeat -0px -2240px; }
-.emoji20-boom { background: url(images/emoji20.png) no-repeat -0px -2260px; }
-.emoji20-boot { background: url(images/emoji20.png) no-repeat -0px -2280px; }
-.emoji20-bouquet { background: url(images/emoji20.png) no-repeat -0px -2300px; }
-.emoji20-bow { background: url(images/emoji20.png) no-repeat -0px -2320px; }
-.emoji20-bowling { background: url(images/emoji20.png) no-repeat -0px -2340px; }
-.emoji20-bowtie { background: url(images/emoji20.png) no-repeat -0px -2360px; }
-.emoji20-boy { background: url(images/emoji20.png) no-repeat -0px -2380px; }
-.emoji20-bread { background: url(images/emoji20.png) no-repeat -0px -2400px; }
-.emoji20-bride_with_veil { background: url(images/emoji20.png) no-repeat -0px -2420px; }
-.emoji20-bridge_at_night { background: url(images/emoji20.png) no-repeat -0px -2440px; }
-.emoji20-briefcase { background: url(images/emoji20.png) no-repeat -0px -2460px; }
-.emoji20-broken_heart { background: url(images/emoji20.png) no-repeat -0px -2480px; }
-.emoji20-bug { background: url(images/emoji20.png) no-repeat -0px -2500px; }
-.emoji20-bulb { background: url(images/emoji20.png) no-repeat -0px -2520px; }
-.emoji20-bullettrain_front { background: url(images/emoji20.png) no-repeat -0px -2540px; }
-.emoji20-bullettrain_side { background: url(images/emoji20.png) no-repeat -0px -2560px; }
-.emoji20-bus { background: url(images/emoji20.png) no-repeat -0px -2580px; }
-.emoji20-busstop { background: url(images/emoji20.png) no-repeat -0px -2600px; }
-.emoji20-busts_in_silhouette { background: url(images/emoji20.png) no-repeat -0px -2620px; }
-.emoji20-bust_in_silhouette { background: url(images/emoji20.png) no-repeat -0px -2640px; }
-.emoji20-cactus { background: url(images/emoji20.png) no-repeat -0px -2660px; }
-.emoji20-cake { background: url(images/emoji20.png) no-repeat -0px -2680px; }
-.emoji20-calendar { background: url(images/emoji20.png) no-repeat -0px -2700px; }
-.emoji20-calling { background: url(images/emoji20.png) no-repeat -0px -2720px; }
-.emoji20-camel { background: url(images/emoji20.png) no-repeat -0px -2740px; }
-.emoji20-camera { background: url(images/emoji20.png) no-repeat -0px -2760px; }
-.emoji20-cancer { background: url(images/emoji20.png) no-repeat -0px -2780px; }
-.emoji20-candy { background: url(images/emoji20.png) no-repeat -0px -2800px; }
-.emoji20-capital_abcd { background: url(images/emoji20.png) no-repeat -0px -2820px; }
-.emoji20-capricorn { background: url(images/emoji20.png) no-repeat -0px -2840px; }
-.emoji20-car { background: url(images/emoji20.png) no-repeat -0px -2860px; }
-.emoji20-card_index { background: url(images/emoji20.png) no-repeat -0px -2880px; }
-.emoji20-carousel_horse { background: url(images/emoji20.png) no-repeat -0px -2900px; }
-.emoji20-cat { background: url(images/emoji20.png) no-repeat -0px -2920px; }
-.emoji20-cat2 { background: url(images/emoji20.png) no-repeat -0px -2940px; }
-.emoji20-cd { background: url(images/emoji20.png) no-repeat -0px -2960px; }
-.emoji20-chart { background: url(images/emoji20.png) no-repeat -0px -2980px; }
-.emoji20-chart_with_downwards_trend { background: url(images/emoji20.png) no-repeat -0px -3000px; }
-.emoji20-chart_with_upwards_trend { background: url(images/emoji20.png) no-repeat -0px -3020px; }
-.emoji20-checkered_flag { background: url(images/emoji20.png) no-repeat -0px -3040px; }
-.emoji20-cherries { background: url(images/emoji20.png) no-repeat -0px -3060px; }
-.emoji20-cherry_blossom { background: url(images/emoji20.png) no-repeat -0px -3080px; }
-.emoji20-chestnut { background: url(images/emoji20.png) no-repeat -0px -3100px; }
-.emoji20-chicken { background: url(images/emoji20.png) no-repeat -0px -3120px; }
-.emoji20-children_crossing { background: url(images/emoji20.png) no-repeat -0px -3140px; }
-.emoji20-chocolate_bar { background: url(images/emoji20.png) no-repeat -0px -3160px; }
-.emoji20-christmas_tree { background: url(images/emoji20.png) no-repeat -0px -3180px; }
-.emoji20-church { background: url(images/emoji20.png) no-repeat -0px -3200px; }
-.emoji20-cinema { background: url(images/emoji20.png) no-repeat -0px -3220px; }
-.emoji20-circus_tent { background: url(images/emoji20.png) no-repeat -0px -3240px; }
-.emoji20-city_sunrise { background: url(images/emoji20.png) no-repeat -0px -3260px; }
-.emoji20-city_sunset { background: url(images/emoji20.png) no-repeat -0px -3280px; }
-.emoji20-cl { background: url(images/emoji20.png) no-repeat -0px -3300px; }
-.emoji20-clap { background: url(images/emoji20.png) no-repeat -0px -3320px; }
-.emoji20-clapper { background: url(images/emoji20.png) no-repeat -0px -3340px; }
-.emoji20-clipboard { background: url(images/emoji20.png) no-repeat -0px -3360px; }
-.emoji20-clock1 { background: url(images/emoji20.png) no-repeat -0px -3380px; }
-.emoji20-clock10 { background: url(images/emoji20.png) no-repeat -0px -3400px; }
-.emoji20-clock1030 { background: url(images/emoji20.png) no-repeat -0px -3420px; }
-.emoji20-clock11 { background: url(images/emoji20.png) no-repeat -0px -3440px; }
-.emoji20-clock1130 { background: url(images/emoji20.png) no-repeat -0px -3460px; }
-.emoji20-clock12 { background: url(images/emoji20.png) no-repeat -0px -3480px; }
-.emoji20-clock1230 { background: url(images/emoji20.png) no-repeat -0px -3500px; }
-.emoji20-clock130 { background: url(images/emoji20.png) no-repeat -0px -3520px; }
-.emoji20-clock2 { background: url(images/emoji20.png) no-repeat -0px -3540px; }
-.emoji20-clock230 { background: url(images/emoji20.png) no-repeat -0px -3560px; }
-.emoji20-clock3 { background: url(images/emoji20.png) no-repeat -0px -3580px; }
-.emoji20-clock330 { background: url(images/emoji20.png) no-repeat -0px -3600px; }
-.emoji20-clock4 { background: url(images/emoji20.png) no-repeat -0px -3620px; }
-.emoji20-clock430 { background: url(images/emoji20.png) no-repeat -0px -3640px; }
-.emoji20-clock5 { background: url(images/emoji20.png) no-repeat -0px -3660px; }
-.emoji20-clock530 { background: url(images/emoji20.png) no-repeat -0px -3680px; }
-.emoji20-clock6 { background: url(images/emoji20.png) no-repeat -0px -3700px; }
-.emoji20-clock630 { background: url(images/emoji20.png) no-repeat -0px -3720px; }
-.emoji20-clock7 { background: url(images/emoji20.png) no-repeat -0px -3740px; }
-.emoji20-clock730 { background: url(images/emoji20.png) no-repeat -0px -3760px; }
-.emoji20-clock8 { background: url(images/emoji20.png) no-repeat -0px -3780px; }
-.emoji20-clock830 { background: url(images/emoji20.png) no-repeat -0px -3800px; }
-.emoji20-clock9 { background: url(images/emoji20.png) no-repeat -0px -3820px; }
-.emoji20-clock930 { background: url(images/emoji20.png) no-repeat -0px -3840px; }
-.emoji20-closed_book { background: url(images/emoji20.png) no-repeat -0px -3860px; }
-.emoji20-closed_lock_with_key { background: url(images/emoji20.png) no-repeat -0px -3880px; }
-.emoji20-closed_umbrella { background: url(images/emoji20.png) no-repeat -0px -3900px; }
-.emoji20-cloud { background: url(images/emoji20.png) no-repeat -0px -3920px; }
-.emoji20-clubs { background: url(images/emoji20.png) no-repeat -0px -3940px; }
-.emoji20-cn { background: url(images/emoji20.png) no-repeat -0px -3960px; }
-.emoji20-cocktail { background: url(images/emoji20.png) no-repeat -0px -3980px; }
-.emoji20-coffee { background: url(images/emoji20.png) no-repeat -0px -4000px; }
-.emoji20-cold_sweat { background: url(images/emoji20.png) no-repeat -0px -4020px; }
-.emoji20-collision { background: url(images/emoji20.png) no-repeat -0px -4040px; }
-.emoji20-computer { background: url(images/emoji20.png) no-repeat -0px -4060px; }
-.emoji20-confetti_ball { background: url(images/emoji20.png) no-repeat -0px -4080px; }
-.emoji20-confounded { background: url(images/emoji20.png) no-repeat -0px -4100px; }
-.emoji20-confused { background: url(images/emoji20.png) no-repeat -0px -4120px; }
-.emoji20-congratulations { background: url(images/emoji20.png) no-repeat -0px -4140px; }
-.emoji20-construction { background: url(images/emoji20.png) no-repeat -0px -4160px; }
-.emoji20-construction_worker { background: url(images/emoji20.png) no-repeat -0px -4180px; }
-.emoji20-convenience_store { background: url(images/emoji20.png) no-repeat -0px -4200px; }
-.emoji20-cookie { background: url(images/emoji20.png) no-repeat -0px -4220px; }
-.emoji20-cool { background: url(images/emoji20.png) no-repeat -0px -4240px; }
-.emoji20-cop { background: url(images/emoji20.png) no-repeat -0px -4260px; }
-.emoji20-copyright { background: url(images/emoji20.png) no-repeat -0px -4280px; }
-.emoji20-corn { background: url(images/emoji20.png) no-repeat -0px -4300px; }
-.emoji20-couple { background: url(images/emoji20.png) no-repeat -0px -4320px; }
-.emoji20-couplekiss { background: url(images/emoji20.png) no-repeat -0px -4340px; }
-.emoji20-couple_with_heart { background: url(images/emoji20.png) no-repeat -0px -4360px; }
-.emoji20-cow { background: url(images/emoji20.png) no-repeat -0px -4380px; }
-.emoji20-cow2 { background: url(images/emoji20.png) no-repeat -0px -4400px; }
-.emoji20-credit_card { background: url(images/emoji20.png) no-repeat -0px -4420px; }
-.emoji20-crocodile { background: url(images/emoji20.png) no-repeat -0px -4440px; }
-.emoji20-crossed_flags { background: url(images/emoji20.png) no-repeat -0px -4460px; }
-.emoji20-crown { background: url(images/emoji20.png) no-repeat -0px -4480px; }
-.emoji20-cry { background: url(images/emoji20.png) no-repeat -0px -4500px; }
-.emoji20-crying_cat_face { background: url(images/emoji20.png) no-repeat -0px -4520px; }
-.emoji20-crystal_ball { background: url(images/emoji20.png) no-repeat -0px -4540px; }
-.emoji20-cupid { background: url(images/emoji20.png) no-repeat -0px -4560px; }
-.emoji20-curly_loop { background: url(images/emoji20.png) no-repeat -0px -4580px; }
-.emoji20-currency_exchange { background: url(images/emoji20.png) no-repeat -0px -4600px; }
-.emoji20-curry { background: url(images/emoji20.png) no-repeat -0px -4620px; }
-.emoji20-custard { background: url(images/emoji20.png) no-repeat -0px -4640px; }
-.emoji20-customs { background: url(images/emoji20.png) no-repeat -0px -4660px; }
-.emoji20-cyclone { background: url(images/emoji20.png) no-repeat -0px -4680px; }
-.emoji20-dancer { background: url(images/emoji20.png) no-repeat -0px -4700px; }
-.emoji20-dancers { background: url(images/emoji20.png) no-repeat -0px -4720px; }
-.emoji20-dango { background: url(images/emoji20.png) no-repeat -0px -4740px; }
-.emoji20-dart { background: url(images/emoji20.png) no-repeat -0px -4760px; }
-.emoji20-dash { background: url(images/emoji20.png) no-repeat -0px -4780px; }
-.emoji20-date { background: url(images/emoji20.png) no-repeat -0px -4800px; }
-.emoji20-de { background: url(images/emoji20.png) no-repeat -0px -4820px; }
-.emoji20-deciduous_tree { background: url(images/emoji20.png) no-repeat -0px -4840px; }
-.emoji20-department_store { background: url(images/emoji20.png) no-repeat -0px -4860px; }
-.emoji20-diamonds { background: url(images/emoji20.png) no-repeat -0px -4880px; }
-.emoji20-diamond_shape_with_a_dot_inside { background: url(images/emoji20.png) no-repeat -0px -4900px; }
-.emoji20-disappointed { background: url(images/emoji20.png) no-repeat -0px -4920px; }
-.emoji20-disappointed_relieved { background: url(images/emoji20.png) no-repeat -0px -4940px; }
-.emoji20-dizzy { background: url(images/emoji20.png) no-repeat -0px -4960px; }
-.emoji20-dizzy_face { background: url(images/emoji20.png) no-repeat -0px -4980px; }
-.emoji20-dog { background: url(images/emoji20.png) no-repeat -0px -5000px; }
-.emoji20-dog2 { background: url(images/emoji20.png) no-repeat -0px -5020px; }
-.emoji20-dollar { background: url(images/emoji20.png) no-repeat -0px -5040px; }
-.emoji20-dolls { background: url(images/emoji20.png) no-repeat -0px -5060px; }
-.emoji20-dolphin { background: url(images/emoji20.png) no-repeat -0px -5080px; }
-.emoji20-donut { background: url(images/emoji20.png) no-repeat -0px -5100px; }
-.emoji20-door { background: url(images/emoji20.png) no-repeat -0px -5120px; }
-.emoji20-doughnut { background: url(images/emoji20.png) no-repeat -0px -5140px; }
-.emoji20-do_not_litter { background: url(images/emoji20.png) no-repeat -0px -5160px; }
-.emoji20-dragon { background: url(images/emoji20.png) no-repeat -0px -5180px; }
-.emoji20-dragon_face { background: url(images/emoji20.png) no-repeat -0px -5200px; }
-.emoji20-dress { background: url(images/emoji20.png) no-repeat -0px -5220px; }
-.emoji20-dromedary_camel { background: url(images/emoji20.png) no-repeat -0px -5240px; }
-.emoji20-droplet { background: url(images/emoji20.png) no-repeat -0px -5260px; }
-.emoji20-dvd { background: url(images/emoji20.png) no-repeat -0px -5280px; }
-.emoji20-e-mail { background: url(images/emoji20.png) no-repeat -0px -5300px; }
-.emoji20-ear { background: url(images/emoji20.png) no-repeat -0px -5320px; }
-.emoji20-earth_africa { background: url(images/emoji20.png) no-repeat -0px -5340px; }
-.emoji20-earth_americas { background: url(images/emoji20.png) no-repeat -0px -5360px; }
-.emoji20-earth_asia { background: url(images/emoji20.png) no-repeat -0px -5380px; }
-.emoji20-ear_of_rice { background: url(images/emoji20.png) no-repeat -0px -5400px; }
-.emoji20-egg { background: url(images/emoji20.png) no-repeat -0px -5420px; }
-.emoji20-eggplant { background: url(images/emoji20.png) no-repeat -0px -5440px; }
-.emoji20-egplant { background: url(images/emoji20.png) no-repeat -0px -5460px; }
-.emoji20-eight { background: url(images/emoji20.png) no-repeat -0px -5480px; }
-.emoji20-eight_pointed_black_star { background: url(images/emoji20.png) no-repeat -0px -5500px; }
-.emoji20-eight_spoked_asterisk { background: url(images/emoji20.png) no-repeat -0px -5520px; }
-.emoji20-electric_plug { background: url(images/emoji20.png) no-repeat -0px -5540px; }
-.emoji20-elephant { background: url(images/emoji20.png) no-repeat -0px -5560px; }
-.emoji20-email { background: url(images/emoji20.png) no-repeat -0px -5580px; }
-.emoji20-end { background: url(images/emoji20.png) no-repeat -0px -5600px; }
-.emoji20-envelope { background: url(images/emoji20.png) no-repeat -0px -5620px; }
-.emoji20-es { background: url(images/emoji20.png) no-repeat -0px -5640px; }
-.emoji20-euro { background: url(images/emoji20.png) no-repeat -0px -5660px; }
-.emoji20-european_castle { background: url(images/emoji20.png) no-repeat -0px -5680px; }
-.emoji20-european_post_office { background: url(images/emoji20.png) no-repeat -0px -5700px; }
-.emoji20-evergreen_tree { background: url(images/emoji20.png) no-repeat -0px -5720px; }
-.emoji20-exclamation { background: url(images/emoji20.png) no-repeat -0px -5740px; }
-.emoji20-expressionless { background: url(images/emoji20.png) no-repeat -0px -5760px; }
-.emoji20-eyeglasses { background: url(images/emoji20.png) no-repeat -0px -5780px; }
-.emoji20-eyes { background: url(images/emoji20.png) no-repeat -0px -5800px; }
-.emoji20-facepunch { background: url(images/emoji20.png) no-repeat -0px -5820px; }
-.emoji20-factory { background: url(images/emoji20.png) no-repeat -0px -5840px; }
-.emoji20-fallen_leaf { background: url(images/emoji20.png) no-repeat -0px -5860px; }
-.emoji20-family { background: url(images/emoji20.png) no-repeat -0px -5880px; }
-.emoji20-fast_forward { background: url(images/emoji20.png) no-repeat -0px -5900px; }
-.emoji20-fax { background: url(images/emoji20.png) no-repeat -0px -5920px; }
-.emoji20-fearful { background: url(images/emoji20.png) no-repeat -0px -5940px; }
-.emoji20-feelsgood { background: url(images/emoji20.png) no-repeat -0px -5960px; }
-.emoji20-feet { background: url(images/emoji20.png) no-repeat -0px -5980px; }
-.emoji20-ferris_wheel { background: url(images/emoji20.png) no-repeat -0px -6000px; }
-.emoji20-file_folder { background: url(images/emoji20.png) no-repeat -0px -6020px; }
-.emoji20-finnadie { background: url(images/emoji20.png) no-repeat -0px -6040px; }
-.emoji20-fire { background: url(images/emoji20.png) no-repeat -0px -6060px; }
-.emoji20-fireworks { background: url(images/emoji20.png) no-repeat -0px -6080px; }
-.emoji20-fire_engine { background: url(images/emoji20.png) no-repeat -0px -6100px; }
-.emoji20-first_quarter_moon { background: url(images/emoji20.png) no-repeat -0px -6120px; }
-.emoji20-first_quarter_moon_with_face { background: url(images/emoji20.png) no-repeat -0px -6140px; }
-.emoji20-fish { background: url(images/emoji20.png) no-repeat -0px -6160px; }
-.emoji20-fishing_pole_and_fish { background: url(images/emoji20.png) no-repeat -0px -6180px; }
-.emoji20-fish_cake { background: url(images/emoji20.png) no-repeat -0px -6200px; }
-.emoji20-fist { background: url(images/emoji20.png) no-repeat -0px -6220px; }
-.emoji20-five { background: url(images/emoji20.png) no-repeat -0px -6240px; }
-.emoji20-flags { background: url(images/emoji20.png) no-repeat -0px -6260px; }
-.emoji20-flashlight { background: url(images/emoji20.png) no-repeat -0px -6280px; }
-.emoji20-floppy_disk { background: url(images/emoji20.png) no-repeat -0px -6300px; }
-.emoji20-flower_playing_cards { background: url(images/emoji20.png) no-repeat -0px -6320px; }
-.emoji20-flushed { background: url(images/emoji20.png) no-repeat -0px -6340px; }
-.emoji20-foggy { background: url(images/emoji20.png) no-repeat -0px -6360px; }
-.emoji20-football { background: url(images/emoji20.png) no-repeat -0px -6380px; }
-.emoji20-fork_and_knife { background: url(images/emoji20.png) no-repeat -0px -6400px; }
-.emoji20-fountain { background: url(images/emoji20.png) no-repeat -0px -6420px; }
-.emoji20-four { background: url(images/emoji20.png) no-repeat -0px -6440px; }
-.emoji20-four_leaf_clover { background: url(images/emoji20.png) no-repeat -0px -6460px; }
-.emoji20-fr { background: url(images/emoji20.png) no-repeat -0px -6480px; }
-.emoji20-free { background: url(images/emoji20.png) no-repeat -0px -6500px; }
-.emoji20-fried_shrimp { background: url(images/emoji20.png) no-repeat -0px -6520px; }
-.emoji20-fries { background: url(images/emoji20.png) no-repeat -0px -6540px; }
-.emoji20-frog { background: url(images/emoji20.png) no-repeat -0px -6560px; }
-.emoji20-frowning { background: url(images/emoji20.png) no-repeat -0px -6580px; }
-.emoji20-fu { background: url(images/emoji20.png) no-repeat -0px -6600px; }
-.emoji20-fuelpump { background: url(images/emoji20.png) no-repeat -0px -6620px; }
-.emoji20-full_moon { background: url(images/emoji20.png) no-repeat -0px -6640px; }
-.emoji20-full_moon_with_face { background: url(images/emoji20.png) no-repeat -0px -6660px; }
-.emoji20-game_die { background: url(images/emoji20.png) no-repeat -0px -6680px; }
-.emoji20-gb { background: url(images/emoji20.png) no-repeat -0px -6700px; }
-.emoji20-gem { background: url(images/emoji20.png) no-repeat -0px -6720px; }
-.emoji20-gemini { background: url(images/emoji20.png) no-repeat -0px -6740px; }
-.emoji20-ghost { background: url(images/emoji20.png) no-repeat -0px -6760px; }
-.emoji20-gift { background: url(images/emoji20.png) no-repeat -0px -6780px; }
-.emoji20-gift_heart { background: url(images/emoji20.png) no-repeat -0px -6800px; }
-.emoji20-girl { background: url(images/emoji20.png) no-repeat -0px -6820px; }
-.emoji20-globe_with_meridians { background: url(images/emoji20.png) no-repeat -0px -6840px; }
-.emoji20-goat { background: url(images/emoji20.png) no-repeat -0px -6860px; }
-.emoji20-goberserk { background: url(images/emoji20.png) no-repeat -0px -6880px; }
-.emoji20-godmode { background: url(images/emoji20.png) no-repeat -0px -6900px; }
-.emoji20-golf { background: url(images/emoji20.png) no-repeat -0px -6920px; }
-.emoji20-grapes { background: url(images/emoji20.png) no-repeat -0px -6940px; }
-.emoji20-green_apple { background: url(images/emoji20.png) no-repeat -0px -6960px; }
-.emoji20-green_book { background: url(images/emoji20.png) no-repeat -0px -6980px; }
-.emoji20-green_heart { background: url(images/emoji20.png) no-repeat -0px -7000px; }
-.emoji20-grey_exclamation { background: url(images/emoji20.png) no-repeat -0px -7020px; }
-.emoji20-grey_question { background: url(images/emoji20.png) no-repeat -0px -7040px; }
-.emoji20-grimacing { background: url(images/emoji20.png) no-repeat -0px -7060px; }
-.emoji20-grin { background: url(images/emoji20.png) no-repeat -0px -7080px; }
-.emoji20-grinning { background: url(images/emoji20.png) no-repeat -0px -7100px; }
-.emoji20-guardsman { background: url(images/emoji20.png) no-repeat -0px -7120px; }
-.emoji20-guitar { background: url(images/emoji20.png) no-repeat -0px -7140px; }
-.emoji20-gun { background: url(images/emoji20.png) no-repeat -0px -7160px; }
-.emoji20-haircut { background: url(images/emoji20.png) no-repeat -0px -7180px; }
-.emoji20-hamburger { background: url(images/emoji20.png) no-repeat -0px -7200px; }
-.emoji20-hammer { background: url(images/emoji20.png) no-repeat -0px -7220px; }
-.emoji20-hamster { background: url(images/emoji20.png) no-repeat -0px -7240px; }
-.emoji20-hand { background: url(images/emoji20.png) no-repeat -0px -7260px; }
-.emoji20-handbag { background: url(images/emoji20.png) no-repeat -0px -7280px; }
-.emoji20-hankey { background: url(images/emoji20.png) no-repeat -0px -7300px; }
-.emoji20-hash { background: url(images/emoji20.png) no-repeat -0px -7320px; }
-.emoji20-hatched_chick { background: url(images/emoji20.png) no-repeat -0px -7340px; }
-.emoji20-hatching_chick { background: url(images/emoji20.png) no-repeat -0px -7360px; }
-.emoji20-headphones { background: url(images/emoji20.png) no-repeat -0px -7380px; }
-.emoji20-heart { background: url(images/emoji20.png) no-repeat -0px -7400px; }
-.emoji20-heartbeat { background: url(images/emoji20.png) no-repeat -0px -7420px; }
-.emoji20-heartpulse { background: url(images/emoji20.png) no-repeat -0px -7440px; }
-.emoji20-hearts { background: url(images/emoji20.png) no-repeat -0px -7460px; }
-.emoji20-heart_decoration { background: url(images/emoji20.png) no-repeat -0px -7480px; }
-.emoji20-heart_eyes { background: url(images/emoji20.png) no-repeat -0px -7500px; }
-.emoji20-heart_eyes_cat { background: url(images/emoji20.png) no-repeat -0px -7520px; }
-.emoji20-hear_no_evil { background: url(images/emoji20.png) no-repeat -0px -7540px; }
-.emoji20-heavy_check_mark { background: url(images/emoji20.png) no-repeat -0px -7560px; }
-.emoji20-heavy_division_sign { background: url(images/emoji20.png) no-repeat -0px -7580px; }
-.emoji20-heavy_dollar_sign { background: url(images/emoji20.png) no-repeat -0px -7600px; }
-.emoji20-heavy_exclamation_mark { background: url(images/emoji20.png) no-repeat -0px -7620px; }
-.emoji20-heavy_minus_sign { background: url(images/emoji20.png) no-repeat -0px -7640px; }
-.emoji20-heavy_multiplication_x { background: url(images/emoji20.png) no-repeat -0px -7660px; }
-.emoji20-heavy_plus_sign { background: url(images/emoji20.png) no-repeat -0px -7680px; }
-.emoji20-helicopter { background: url(images/emoji20.png) no-repeat -0px -7700px; }
-.emoji20-herb { background: url(images/emoji20.png) no-repeat -0px -7720px; }
-.emoji20-hibiscus { background: url(images/emoji20.png) no-repeat -0px -7740px; }
-.emoji20-high_brightness { background: url(images/emoji20.png) no-repeat -0px -7760px; }
-.emoji20-high_heel { background: url(images/emoji20.png) no-repeat -0px -7780px; }
-.emoji20-hocho { background: url(images/emoji20.png) no-repeat -0px -7800px; }
-.emoji20-honeybee { background: url(images/emoji20.png) no-repeat -0px -7820px; }
-.emoji20-honey_pot { background: url(images/emoji20.png) no-repeat -0px -7840px; }
-.emoji20-horse { background: url(images/emoji20.png) no-repeat -0px -7860px; }
-.emoji20-horse_racing { background: url(images/emoji20.png) no-repeat -0px -7880px; }
-.emoji20-hospital { background: url(images/emoji20.png) no-repeat -0px -7900px; }
-.emoji20-hotel { background: url(images/emoji20.png) no-repeat -0px -7920px; }
-.emoji20-hotsprings { background: url(images/emoji20.png) no-repeat -0px -7940px; }
-.emoji20-hourglass { background: url(images/emoji20.png) no-repeat -0px -7960px; }
-.emoji20-hourglass_flowing_sand { background: url(images/emoji20.png) no-repeat -0px -7980px; }
-.emoji20-house { background: url(images/emoji20.png) no-repeat -0px -8000px; }
-.emoji20-house_with_garden { background: url(images/emoji20.png) no-repeat -0px -8020px; }
-.emoji20-hurtrealbad { background: url(images/emoji20.png) no-repeat -0px -8040px; }
-.emoji20-hushed { background: url(images/emoji20.png) no-repeat -0px -8060px; }
-.emoji20-icecream { background: url(images/emoji20.png) no-repeat -0px -8080px; }
-.emoji20-ice_cream { background: url(images/emoji20.png) no-repeat -0px -8100px; }
-.emoji20-id { background: url(images/emoji20.png) no-repeat -0px -8120px; }
-.emoji20-ideograph_advantage { background: url(images/emoji20.png) no-repeat -0px -8140px; }
-.emoji20-imp { background: url(images/emoji20.png) no-repeat -0px -8160px; }
-.emoji20-inbox_tray { background: url(images/emoji20.png) no-repeat -0px -8180px; }
-.emoji20-incoming_envelope { background: url(images/emoji20.png) no-repeat -0px -8200px; }
-.emoji20-information_desk_person { background: url(images/emoji20.png) no-repeat -0px -8220px; }
-.emoji20-information_source { background: url(images/emoji20.png) no-repeat -0px -8240px; }
-.emoji20-innocent { background: url(images/emoji20.png) no-repeat -0px -8260px; }
-.emoji20-interrobang { background: url(images/emoji20.png) no-repeat -0px -8280px; }
-.emoji20-iphone { background: url(images/emoji20.png) no-repeat -0px -8300px; }
-.emoji20-it { background: url(images/emoji20.png) no-repeat -0px -8320px; }
-.emoji20-izakaya_lantern { background: url(images/emoji20.png) no-repeat -0px -8340px; }
-.emoji20-jack_o_lantern { background: url(images/emoji20.png) no-repeat -0px -8360px; }
-.emoji20-japan { background: url(images/emoji20.png) no-repeat -0px -8380px; }
-.emoji20-japanese_castle { background: url(images/emoji20.png) no-repeat -0px -8400px; }
-.emoji20-japanese_goblin { background: url(images/emoji20.png) no-repeat -0px -8420px; }
-.emoji20-japanese_ogre { background: url(images/emoji20.png) no-repeat -0px -8440px; }
-.emoji20-jeans { background: url(images/emoji20.png) no-repeat -0px -8460px; }
-.emoji20-joy { background: url(images/emoji20.png) no-repeat -0px -8480px; }
-.emoji20-joy_cat { background: url(images/emoji20.png) no-repeat -0px -8500px; }
-.emoji20-jp { background: url(images/emoji20.png) no-repeat -0px -8520px; }
-.emoji20-key { background: url(images/emoji20.png) no-repeat -0px -8540px; }
-.emoji20-keycap_ten { background: url(images/emoji20.png) no-repeat -0px -8560px; }
-.emoji20-kimono { background: url(images/emoji20.png) no-repeat -0px -8580px; }
-.emoji20-kiss { background: url(images/emoji20.png) no-repeat -0px -8600px; }
-.emoji20-kissing { background: url(images/emoji20.png) no-repeat -0px -8620px; }
-.emoji20-kissing_cat { background: url(images/emoji20.png) no-repeat -0px -8640px; }
-.emoji20-kissing_closed_eyes { background: url(images/emoji20.png) no-repeat -0px -8660px; }
-.emoji20-kissing_face { background: url(images/emoji20.png) no-repeat -0px -8680px; }
-.emoji20-kissing_heart { background: url(images/emoji20.png) no-repeat -0px -8700px; }
-.emoji20-kissing_smiling_eyes { background: url(images/emoji20.png) no-repeat -0px -8720px; }
-.emoji20-koala { background: url(images/emoji20.png) no-repeat -0px -8740px; }
-.emoji20-koko { background: url(images/emoji20.png) no-repeat -0px -8760px; }
-.emoji20-kr { background: url(images/emoji20.png) no-repeat -0px -8780px; }
-.emoji20-large_blue_circle { background: url(images/emoji20.png) no-repeat -0px -8800px; }
-.emoji20-large_blue_diamond { background: url(images/emoji20.png) no-repeat -0px -8820px; }
-.emoji20-large_orange_diamond { background: url(images/emoji20.png) no-repeat -0px -8840px; }
-.emoji20-last_quarter_moon { background: url(images/emoji20.png) no-repeat -0px -8860px; }
-.emoji20-last_quarter_moon_with_face { background: url(images/emoji20.png) no-repeat -0px -8880px; }
-.emoji20-laughing { background: url(images/emoji20.png) no-repeat -0px -8900px; }
-.emoji20-leaves { background: url(images/emoji20.png) no-repeat -0px -8920px; }
-.emoji20-ledger { background: url(images/emoji20.png) no-repeat -0px -8940px; }
-.emoji20-leftwards_arrow_with_hook { background: url(images/emoji20.png) no-repeat -0px -8960px; }
-.emoji20-left_luggage { background: url(images/emoji20.png) no-repeat -0px -8980px; }
-.emoji20-left_right_arrow { background: url(images/emoji20.png) no-repeat -0px -9000px; }
-.emoji20-lemon { background: url(images/emoji20.png) no-repeat -0px -9020px; }
-.emoji20-leo { background: url(images/emoji20.png) no-repeat -0px -9040px; }
-.emoji20-leopard { background: url(images/emoji20.png) no-repeat -0px -9060px; }
-.emoji20-libra { background: url(images/emoji20.png) no-repeat -0px -9080px; }
-.emoji20-light_rail { background: url(images/emoji20.png) no-repeat -0px -9100px; }
-.emoji20-link { background: url(images/emoji20.png) no-repeat -0px -9120px; }
-.emoji20-lips { background: url(images/emoji20.png) no-repeat -0px -9140px; }
-.emoji20-lipstick { background: url(images/emoji20.png) no-repeat -0px -9160px; }
-.emoji20-lock { background: url(images/emoji20.png) no-repeat -0px -9180px; }
-.emoji20-lock_with_ink_pen { background: url(images/emoji20.png) no-repeat -0px -9200px; }
-.emoji20-lollipop { background: url(images/emoji20.png) no-repeat -0px -9220px; }
-.emoji20-loop { background: url(images/emoji20.png) no-repeat -0px -9240px; }
-.emoji20-loudspeaker { background: url(images/emoji20.png) no-repeat -0px -9260px; }
-.emoji20-love_hotel { background: url(images/emoji20.png) no-repeat -0px -9280px; }
-.emoji20-love_letter { background: url(images/emoji20.png) no-repeat -0px -9300px; }
-.emoji20-low_brightness { background: url(images/emoji20.png) no-repeat -0px -9320px; }
-.emoji20-m { background: url(images/emoji20.png) no-repeat -0px -9340px; }
-.emoji20-mag { background: url(images/emoji20.png) no-repeat -0px -9360px; }
-.emoji20-mag_right { background: url(images/emoji20.png) no-repeat -0px -9380px; }
-.emoji20-mahjong { background: url(images/emoji20.png) no-repeat -0px -9400px; }
-.emoji20-mailbox { background: url(images/emoji20.png) no-repeat -0px -9420px; }
-.emoji20-mailbox_closed { background: url(images/emoji20.png) no-repeat -0px -9440px; }
-.emoji20-mailbox_with_mail { background: url(images/emoji20.png) no-repeat -0px -9460px; }
-.emoji20-mailbox_with_no_mail { background: url(images/emoji20.png) no-repeat -0px -9480px; }
-.emoji20-man { background: url(images/emoji20.png) no-repeat -0px -9500px; }
-.emoji20-mans_shoe { background: url(images/emoji20.png) no-repeat -0px -9520px; }
-.emoji20-man_with_gua_pi_mao { background: url(images/emoji20.png) no-repeat -0px -9540px; }
-.emoji20-man_with_turban { background: url(images/emoji20.png) no-repeat -0px -9560px; }
-.emoji20-maple_leaf { background: url(images/emoji20.png) no-repeat -0px -9580px; }
-.emoji20-mask { background: url(images/emoji20.png) no-repeat -0px -9600px; }
-.emoji20-massage { background: url(images/emoji20.png) no-repeat -0px -9620px; }
-.emoji20-meat_on_bone { background: url(images/emoji20.png) no-repeat -0px -9640px; }
-.emoji20-mega { background: url(images/emoji20.png) no-repeat -0px -9660px; }
-.emoji20-melon { background: url(images/emoji20.png) no-repeat -0px -9680px; }
-.emoji20-memo { background: url(images/emoji20.png) no-repeat -0px -9700px; }
-.emoji20-mens { background: url(images/emoji20.png) no-repeat -0px -9720px; }
-.emoji20-metal { background: url(images/emoji20.png) no-repeat -0px -9740px; }
-.emoji20-metro { background: url(images/emoji20.png) no-repeat -0px -9760px; }
-.emoji20-microphone { background: url(images/emoji20.png) no-repeat -0px -9780px; }
-.emoji20-microscope { background: url(images/emoji20.png) no-repeat -0px -9800px; }
-.emoji20-milky_way { background: url(images/emoji20.png) no-repeat -0px -9820px; }
-.emoji20-minibus { background: url(images/emoji20.png) no-repeat -0px -9840px; }
-.emoji20-minidisc { background: url(images/emoji20.png) no-repeat -0px -9860px; }
-.emoji20-mobile_phone_off { background: url(images/emoji20.png) no-repeat -0px -9880px; }
-.emoji20-moneybag { background: url(images/emoji20.png) no-repeat -0px -9900px; }
-.emoji20-money_with_wings { background: url(images/emoji20.png) no-repeat -0px -9920px; }
-.emoji20-monkey { background: url(images/emoji20.png) no-repeat -0px -9940px; }
-.emoji20-monkey_face { background: url(images/emoji20.png) no-repeat -0px -9960px; }
-.emoji20-monorail { background: url(images/emoji20.png) no-repeat -0px -9980px; }
-.emoji20-moon { background: url(images/emoji20.png) no-repeat -0px -10000px; }
-.emoji20-mortar_board { background: url(images/emoji20.png) no-repeat -0px -10020px; }
-.emoji20-mountain_bicyclist { background: url(images/emoji20.png) no-repeat -0px -10040px; }
-.emoji20-mountain_cableway { background: url(images/emoji20.png) no-repeat -0px -10060px; }
-.emoji20-mountain_railway { background: url(images/emoji20.png) no-repeat -0px -10080px; }
-.emoji20-mount_fuji { background: url(images/emoji20.png) no-repeat -0px -10100px; }
-.emoji20-mouse { background: url(images/emoji20.png) no-repeat -0px -10120px; }
-.emoji20-mouse2 { background: url(images/emoji20.png) no-repeat -0px -10140px; }
-.emoji20-movie_camera { background: url(images/emoji20.png) no-repeat -0px -10160px; }
-.emoji20-moyai { background: url(images/emoji20.png) no-repeat -0px -10180px; }
-.emoji20-muscle { background: url(images/emoji20.png) no-repeat -0px -10200px; }
-.emoji20-mushroom { background: url(images/emoji20.png) no-repeat -0px -10220px; }
-.emoji20-musical_keyboard { background: url(images/emoji20.png) no-repeat -0px -10240px; }
-.emoji20-musical_note { background: url(images/emoji20.png) no-repeat -0px -10260px; }
-.emoji20-musical_score { background: url(images/emoji20.png) no-repeat -0px -10280px; }
-.emoji20-mute { background: url(images/emoji20.png) no-repeat -0px -10300px; }
-.emoji20-nail_care { background: url(images/emoji20.png) no-repeat -0px -10320px; }
-.emoji20-name_badge { background: url(images/emoji20.png) no-repeat -0px -10340px; }
-.emoji20-neckbeard { background: url(images/emoji20.png) no-repeat -0px -10360px; }
-.emoji20-necktie { background: url(images/emoji20.png) no-repeat -0px -10380px; }
-.emoji20-negative_squared_cross_mark { background: url(images/emoji20.png) no-repeat -0px -10400px; }
-.emoji20-neutral_face { background: url(images/emoji20.png) no-repeat -0px -10420px; }
-.emoji20-new { background: url(images/emoji20.png) no-repeat -0px -10440px; }
-.emoji20-newspaper { background: url(images/emoji20.png) no-repeat -0px -10460px; }
-.emoji20-new_moon { background: url(images/emoji20.png) no-repeat -0px -10480px; }
-.emoji20-new_moon_with_face { background: url(images/emoji20.png) no-repeat -0px -10500px; }
-.emoji20-ng { background: url(images/emoji20.png) no-repeat -0px -10520px; }
-.emoji20-nine { background: url(images/emoji20.png) no-repeat -0px -10540px; }
-.emoji20-non-potable_water { background: url(images/emoji20.png) no-repeat -0px -10560px; }
-.emoji20-nose { background: url(images/emoji20.png) no-repeat -0px -10580px; }
-.emoji20-notebook { background: url(images/emoji20.png) no-repeat -0px -10600px; }
-.emoji20-notebook_with_decorative_cover { background: url(images/emoji20.png) no-repeat -0px -10620px; }
-.emoji20-notes { background: url(images/emoji20.png) no-repeat -0px -10640px; }
-.emoji20-no_bell { background: url(images/emoji20.png) no-repeat -0px -10660px; }
-.emoji20-no_bicycles { background: url(images/emoji20.png) no-repeat -0px -10680px; }
-.emoji20-no_entry { background: url(images/emoji20.png) no-repeat -0px -10700px; }
-.emoji20-no_entry_sign { background: url(images/emoji20.png) no-repeat -0px -10720px; }
-.emoji20-no_good { background: url(images/emoji20.png) no-repeat -0px -10740px; }
-.emoji20-no_mobile_phones { background: url(images/emoji20.png) no-repeat -0px -10760px; }
-.emoji20-no_mouth { background: url(images/emoji20.png) no-repeat -0px -10780px; }
-.emoji20-no_pedestrians { background: url(images/emoji20.png) no-repeat -0px -10800px; }
-.emoji20-no_smoking { background: url(images/emoji20.png) no-repeat -0px -10820px; }
-.emoji20-nut_and_bolt { background: url(images/emoji20.png) no-repeat -0px -10840px; }
-.emoji20-o { background: url(images/emoji20.png) no-repeat -0px -10860px; }
-.emoji20-o2 { background: url(images/emoji20.png) no-repeat -0px -10880px; }
-.emoji20-ocean { background: url(images/emoji20.png) no-repeat -0px -10900px; }
-.emoji20-octocat { background: url(images/emoji20.png) no-repeat -0px -10920px; }
-.emoji20-octopus { background: url(images/emoji20.png) no-repeat -0px -10940px; }
-.emoji20-oden { background: url(images/emoji20.png) no-repeat -0px -10960px; }
-.emoji20-office { background: url(images/emoji20.png) no-repeat -0px -10980px; }
-.emoji20-ok { background: url(images/emoji20.png) no-repeat -0px -11000px; }
-.emoji20-ok_hand { background: url(images/emoji20.png) no-repeat -0px -11020px; }
-.emoji20-ok_woman { background: url(images/emoji20.png) no-repeat -0px -11040px; }
-.emoji20-older_man { background: url(images/emoji20.png) no-repeat -0px -11060px; }
-.emoji20-older_woman { background: url(images/emoji20.png) no-repeat -0px -11080px; }
-.emoji20-on { background: url(images/emoji20.png) no-repeat -0px -11100px; }
-.emoji20-oncoming_automobile { background: url(images/emoji20.png) no-repeat -0px -11120px; }
-.emoji20-oncoming_bus { background: url(images/emoji20.png) no-repeat -0px -11140px; }
-.emoji20-oncoming_police_car { background: url(images/emoji20.png) no-repeat -0px -11160px; }
-.emoji20-oncoming_taxi { background: url(images/emoji20.png) no-repeat -0px -11180px; }
-.emoji20-one { background: url(images/emoji20.png) no-repeat -0px -11200px; }
-.emoji20-open_file_folder { background: url(images/emoji20.png) no-repeat -0px -11220px; }
-.emoji20-open_hands { background: url(images/emoji20.png) no-repeat -0px -11240px; }
-.emoji20-open_mouth { background: url(images/emoji20.png) no-repeat -0px -11260px; }
-.emoji20-ophiuchus { background: url(images/emoji20.png) no-repeat -0px -11280px; }
-.emoji20-orange_book { background: url(images/emoji20.png) no-repeat -0px -11300px; }
-.emoji20-outbox_tray { background: url(images/emoji20.png) no-repeat -0px -11320px; }
-.emoji20-ox { background: url(images/emoji20.png) no-repeat -0px -11340px; }
-.emoji20-package { background: url(images/emoji20.png) no-repeat -0px -11360px; }
-.emoji20-pager { background: url(images/emoji20.png) no-repeat -0px -11380px; }
-.emoji20-page_facing_up { background: url(images/emoji20.png) no-repeat -0px -11400px; }
-.emoji20-page_with_curl { background: url(images/emoji20.png) no-repeat -0px -11420px; }
-.emoji20-palm_tree { background: url(images/emoji20.png) no-repeat -0px -11440px; }
-.emoji20-panda_face { background: url(images/emoji20.png) no-repeat -0px -11460px; }
-.emoji20-paperclip { background: url(images/emoji20.png) no-repeat -0px -11480px; }
-.emoji20-parking { background: url(images/emoji20.png) no-repeat -0px -11500px; }
-.emoji20-partly_sunny { background: url(images/emoji20.png) no-repeat -0px -11520px; }
-.emoji20-part_alternation_mark { background: url(images/emoji20.png) no-repeat -0px -11540px; }
-.emoji20-passport_control { background: url(images/emoji20.png) no-repeat -0px -11560px; }
-.emoji20-paw_prints { background: url(images/emoji20.png) no-repeat -0px -11580px; }
-.emoji20-peach { background: url(images/emoji20.png) no-repeat -0px -11600px; }
-.emoji20-pear { background: url(images/emoji20.png) no-repeat -0px -11620px; }
-.emoji20-pencil { background: url(images/emoji20.png) no-repeat -0px -11640px; }
-.emoji20-pencil2 { background: url(images/emoji20.png) no-repeat -0px -11660px; }
-.emoji20-penguin { background: url(images/emoji20.png) no-repeat -0px -11680px; }
-.emoji20-pensive { background: url(images/emoji20.png) no-repeat -0px -11700px; }
-.emoji20-performing_arts { background: url(images/emoji20.png) no-repeat -0px -11720px; }
-.emoji20-persevere { background: url(images/emoji20.png) no-repeat -0px -11740px; }
-.emoji20-person_frowning { background: url(images/emoji20.png) no-repeat -0px -11760px; }
-.emoji20-person_with_blond_hair { background: url(images/emoji20.png) no-repeat -0px -11780px; }
-.emoji20-person_with_pouting_face { background: url(images/emoji20.png) no-repeat -0px -11800px; }
-.emoji20-phone { background: url(images/emoji20.png) no-repeat -0px -11820px; }
-.emoji20-pig { background: url(images/emoji20.png) no-repeat -0px -11840px; }
-.emoji20-pig2 { background: url(images/emoji20.png) no-repeat -0px -11860px; }
-.emoji20-pig_nose { background: url(images/emoji20.png) no-repeat -0px -11880px; }
-.emoji20-pill { background: url(images/emoji20.png) no-repeat -0px -11900px; }
-.emoji20-pineapple { background: url(images/emoji20.png) no-repeat -0px -11920px; }
-.emoji20-pisces { background: url(images/emoji20.png) no-repeat -0px -11940px; }
-.emoji20-pizza { background: url(images/emoji20.png) no-repeat -0px -11960px; }
-.emoji20-plus1 { background: url(images/emoji20.png) no-repeat -0px -11980px; }
-.emoji20-point_down { background: url(images/emoji20.png) no-repeat -0px -12000px; }
-.emoji20-point_left { background: url(images/emoji20.png) no-repeat -0px -12020px; }
-.emoji20-point_right { background: url(images/emoji20.png) no-repeat -0px -12040px; }
-.emoji20-point_up { background: url(images/emoji20.png) no-repeat -0px -12060px; }
-.emoji20-point_up_2 { background: url(images/emoji20.png) no-repeat -0px -12080px; }
-.emoji20-police_car { background: url(images/emoji20.png) no-repeat -0px -12100px; }
-.emoji20-poodle { background: url(images/emoji20.png) no-repeat -0px -12120px; }
-.emoji20-poop { background: url(images/emoji20.png) no-repeat -0px -12140px; }
-.emoji20-postal_horn { background: url(images/emoji20.png) no-repeat -0px -12160px; }
-.emoji20-postbox { background: url(images/emoji20.png) no-repeat -0px -12180px; }
-.emoji20-post_office { background: url(images/emoji20.png) no-repeat -0px -12200px; }
-.emoji20-potable_water { background: url(images/emoji20.png) no-repeat -0px -12220px; }
-.emoji20-pouch { background: url(images/emoji20.png) no-repeat -0px -12240px; }
-.emoji20-poultry_leg { background: url(images/emoji20.png) no-repeat -0px -12260px; }
-.emoji20-pound { background: url(images/emoji20.png) no-repeat -0px -12280px; }
-.emoji20-pouting_cat { background: url(images/emoji20.png) no-repeat -0px -12300px; }
-.emoji20-pray { background: url(images/emoji20.png) no-repeat -0px -12320px; }
-.emoji20-princess { background: url(images/emoji20.png) no-repeat -0px -12340px; }
-.emoji20-punch { background: url(images/emoji20.png) no-repeat -0px -12360px; }
-.emoji20-purple_heart { background: url(images/emoji20.png) no-repeat -0px -12380px; }
-.emoji20-purse { background: url(images/emoji20.png) no-repeat -0px -12400px; }
-.emoji20-pushpin { background: url(images/emoji20.png) no-repeat -0px -12420px; }
-.emoji20-put_litter_in_its_place { background: url(images/emoji20.png) no-repeat -0px -12440px; }
-.emoji20-question { background: url(images/emoji20.png) no-repeat -0px -12460px; }
-.emoji20-rabbit { background: url(images/emoji20.png) no-repeat -0px -12480px; }
-.emoji20-rabbit2 { background: url(images/emoji20.png) no-repeat -0px -12500px; }
-.emoji20-racehorse { background: url(images/emoji20.png) no-repeat -0px -12520px; }
-.emoji20-radio { background: url(images/emoji20.png) no-repeat -0px -12540px; }
-.emoji20-radio_button { background: url(images/emoji20.png) no-repeat -0px -12560px; }
-.emoji20-rage { background: url(images/emoji20.png) no-repeat -0px -12580px; }
-.emoji20-rage1 { background: url(images/emoji20.png) no-repeat -0px -12600px; }
-.emoji20-rage2 { background: url(images/emoji20.png) no-repeat -0px -12620px; }
-.emoji20-rage3 { background: url(images/emoji20.png) no-repeat -0px -12640px; }
-.emoji20-rage4 { background: url(images/emoji20.png) no-repeat -0px -12660px; }
-.emoji20-railway_car { background: url(images/emoji20.png) no-repeat -0px -12680px; }
-.emoji20-rainbow { background: url(images/emoji20.png) no-repeat -0px -12700px; }
-.emoji20-raised_hand { background: url(images/emoji20.png) no-repeat -0px -12720px; }
-.emoji20-raised_hands { background: url(images/emoji20.png) no-repeat -0px -12740px; }
-.emoji20-raising_hand { background: url(images/emoji20.png) no-repeat -0px -12760px; }
-.emoji20-ram { background: url(images/emoji20.png) no-repeat -0px -12780px; }
-.emoji20-ramen { background: url(images/emoji20.png) no-repeat -0px -12800px; }
-.emoji20-rat { background: url(images/emoji20.png) no-repeat -0px -12820px; }
-.emoji20-recycle { background: url(images/emoji20.png) no-repeat -0px -12840px; }
-.emoji20-red_car { background: url(images/emoji20.png) no-repeat -0px -12860px; }
-.emoji20-red_circle { background: url(images/emoji20.png) no-repeat -0px -12880px; }
-.emoji20-registered { background: url(images/emoji20.png) no-repeat -0px -12900px; }
-.emoji20-relaxed { background: url(images/emoji20.png) no-repeat -0px -12920px; }
-.emoji20-relieved { background: url(images/emoji20.png) no-repeat -0px -12940px; }
-.emoji20-repeat { background: url(images/emoji20.png) no-repeat -0px -12960px; }
-.emoji20-repeat_one { background: url(images/emoji20.png) no-repeat -0px -12980px; }
-.emoji20-restroom { background: url(images/emoji20.png) no-repeat -0px -13000px; }
-.emoji20-revolving_hearts { background: url(images/emoji20.png) no-repeat -0px -13020px; }
-.emoji20-rewind { background: url(images/emoji20.png) no-repeat -0px -13040px; }
-.emoji20-ribbon { background: url(images/emoji20.png) no-repeat -0px -13060px; }
-.emoji20-rice { background: url(images/emoji20.png) no-repeat -0px -13080px; }
-.emoji20-rice_ball { background: url(images/emoji20.png) no-repeat -0px -13100px; }
-.emoji20-rice_cracker { background: url(images/emoji20.png) no-repeat -0px -13120px; }
-.emoji20-rice_scene { background: url(images/emoji20.png) no-repeat -0px -13140px; }
-.emoji20-ring { background: url(images/emoji20.png) no-repeat -0px -13160px; }
-.emoji20-rocket { background: url(images/emoji20.png) no-repeat -0px -13180px; }
-.emoji20-roller_coaster { background: url(images/emoji20.png) no-repeat -0px -13200px; }
-.emoji20-rooster { background: url(images/emoji20.png) no-repeat -0px -13220px; }
-.emoji20-rose { background: url(images/emoji20.png) no-repeat -0px -13240px; }
-.emoji20-rotating_light { background: url(images/emoji20.png) no-repeat -0px -13260px; }
-.emoji20-round_pushpin { background: url(images/emoji20.png) no-repeat -0px -13280px; }
-.emoji20-rowboat { background: url(images/emoji20.png) no-repeat -0px -13300px; }
-.emoji20-ru { background: url(images/emoji20.png) no-repeat -0px -13320px; }
-.emoji20-rugby_football { background: url(images/emoji20.png) no-repeat -0px -13340px; }
-.emoji20-runner { background: url(images/emoji20.png) no-repeat -0px -13360px; }
-.emoji20-running { background: url(images/emoji20.png) no-repeat -0px -13380px; }
-.emoji20-running_shirt_with_sash { background: url(images/emoji20.png) no-repeat -0px -13400px; }
-.emoji20-sa { background: url(images/emoji20.png) no-repeat -0px -13420px; }
-.emoji20-sagittarius { background: url(images/emoji20.png) no-repeat -0px -13440px; }
-.emoji20-sailboat { background: url(images/emoji20.png) no-repeat -0px -13460px; }
-.emoji20-sake { background: url(images/emoji20.png) no-repeat -0px -13480px; }
-.emoji20-sandal { background: url(images/emoji20.png) no-repeat -0px -13500px; }
-.emoji20-santa { background: url(images/emoji20.png) no-repeat -0px -13520px; }
-.emoji20-satellite { background: url(images/emoji20.png) no-repeat -0px -13540px; }
-.emoji20-satisfied { background: url(images/emoji20.png) no-repeat -0px -13560px; }
-.emoji20-saxophone { background: url(images/emoji20.png) no-repeat -0px -13580px; }
-.emoji20-school { background: url(images/emoji20.png) no-repeat -0px -13600px; }
-.emoji20-school_satchel { background: url(images/emoji20.png) no-repeat -0px -13620px; }
-.emoji20-scissors { background: url(images/emoji20.png) no-repeat -0px -13640px; }
-.emoji20-scorpius { background: url(images/emoji20.png) no-repeat -0px -13660px; }
-.emoji20-scream { background: url(images/emoji20.png) no-repeat -0px -13680px; }
-.emoji20-scream_cat { background: url(images/emoji20.png) no-repeat -0px -13700px; }
-.emoji20-scroll { background: url(images/emoji20.png) no-repeat -0px -13720px; }
-.emoji20-seat { background: url(images/emoji20.png) no-repeat -0px -13740px; }
-.emoji20-secret { background: url(images/emoji20.png) no-repeat -0px -13760px; }
-.emoji20-seedling { background: url(images/emoji20.png) no-repeat -0px -13780px; }
-.emoji20-see_no_evil { background: url(images/emoji20.png) no-repeat -0px -13800px; }
-.emoji20-seven { background: url(images/emoji20.png) no-repeat -0px -13820px; }
-.emoji20-shaved_ice { background: url(images/emoji20.png) no-repeat -0px -13840px; }
-.emoji20-sheep { background: url(images/emoji20.png) no-repeat -0px -13860px; }
-.emoji20-shell { background: url(images/emoji20.png) no-repeat -0px -13880px; }
-.emoji20-ship { background: url(images/emoji20.png) no-repeat -0px -13900px; }
-.emoji20-shipit { background: url(images/emoji20.png) no-repeat -0px -13920px; }
-.emoji20-shirt { background: url(images/emoji20.png) no-repeat -0px -13940px; }
-.emoji20-shit { background: url(images/emoji20.png) no-repeat -0px -13960px; }
-.emoji20-shoe { background: url(images/emoji20.png) no-repeat -0px -13980px; }
-.emoji20-shower { background: url(images/emoji20.png) no-repeat -0px -14000px; }
-.emoji20-signal_strength { background: url(images/emoji20.png) no-repeat -0px -14020px; }
-.emoji20-six { background: url(images/emoji20.png) no-repeat -0px -14040px; }
-.emoji20-six_pointed_star { background: url(images/emoji20.png) no-repeat -0px -14060px; }
-.emoji20-ski { background: url(images/emoji20.png) no-repeat -0px -14080px; }
-.emoji20-skull { background: url(images/emoji20.png) no-repeat -0px -14100px; }
-.emoji20-sleeping { background: url(images/emoji20.png) no-repeat -0px -14120px; }
-.emoji20-sleepy { background: url(images/emoji20.png) no-repeat -0px -14140px; }
-.emoji20-slot_machine { background: url(images/emoji20.png) no-repeat -0px -14160px; }
-.emoji20-small_blue_diamond { background: url(images/emoji20.png) no-repeat -0px -14180px; }
-.emoji20-small_orange_diamond { background: url(images/emoji20.png) no-repeat -0px -14200px; }
-.emoji20-small_red_triangle { background: url(images/emoji20.png) no-repeat -0px -14220px; }
-.emoji20-small_red_triangle_down { background: url(images/emoji20.png) no-repeat -0px -14240px; }
-.emoji20-smile { background: url(images/emoji20.png) no-repeat -0px -14260px; }
-.emoji20-smiley { background: url(images/emoji20.png) no-repeat -0px -14280px; }
-.emoji20-smiley_cat { background: url(images/emoji20.png) no-repeat -0px -14300px; }
-.emoji20-smile_cat { background: url(images/emoji20.png) no-repeat -0px -14320px; }
-.emoji20-smiling_imp { background: url(images/emoji20.png) no-repeat -0px -14340px; }
-.emoji20-smirk { background: url(images/emoji20.png) no-repeat -0px -14360px; }
-.emoji20-smirk_cat { background: url(images/emoji20.png) no-repeat -0px -14380px; }
-.emoji20-smoking { background: url(images/emoji20.png) no-repeat -0px -14400px; }
-.emoji20-snail { background: url(images/emoji20.png) no-repeat -0px -14420px; }
-.emoji20-snake { background: url(images/emoji20.png) no-repeat -0px -14440px; }
-.emoji20-snowboarder { background: url(images/emoji20.png) no-repeat -0px -14460px; }
-.emoji20-snowflake { background: url(images/emoji20.png) no-repeat -0px -14480px; }
-.emoji20-snowman { background: url(images/emoji20.png) no-repeat -0px -14500px; }
-.emoji20-sob { background: url(images/emoji20.png) no-repeat -0px -14520px; }
-.emoji20-soccer { background: url(images/emoji20.png) no-repeat -0px -14540px; }
-.emoji20-soon { background: url(images/emoji20.png) no-repeat -0px -14560px; }
-.emoji20-sos { background: url(images/emoji20.png) no-repeat -0px -14580px; }
-.emoji20-sound { background: url(images/emoji20.png) no-repeat -0px -14600px; }
-.emoji20-space_invader { background: url(images/emoji20.png) no-repeat -0px -14620px; }
-.emoji20-spades { background: url(images/emoji20.png) no-repeat -0px -14640px; }
-.emoji20-spaghetti { background: url(images/emoji20.png) no-repeat -0px -14660px; }
-.emoji20-sparkle { background: url(images/emoji20.png) no-repeat -0px -14680px; }
-.emoji20-sparkler { background: url(images/emoji20.png) no-repeat -0px -14700px; }
-.emoji20-sparkles { background: url(images/emoji20.png) no-repeat -0px -14720px; }
-.emoji20-sparkling_heart { background: url(images/emoji20.png) no-repeat -0px -14740px; }
-.emoji20-speaker { background: url(images/emoji20.png) no-repeat -0px -14760px; }
-.emoji20-speak_no_evil { background: url(images/emoji20.png) no-repeat -0px -14780px; }
-.emoji20-speech_balloon { background: url(images/emoji20.png) no-repeat -0px -14800px; }
-.emoji20-speedboat { background: url(images/emoji20.png) no-repeat -0px -14820px; }
-.emoji20-squirrel { background: url(images/emoji20.png) no-repeat -0px -14840px; }
-.emoji20-star { background: url(images/emoji20.png) no-repeat -0px -14860px; }
-.emoji20-star2 { background: url(images/emoji20.png) no-repeat -0px -14880px; }
-.emoji20-stars { background: url(images/emoji20.png) no-repeat -0px -14900px; }
-.emoji20-station { background: url(images/emoji20.png) no-repeat -0px -14920px; }
-.emoji20-statue_of_liberty { background: url(images/emoji20.png) no-repeat -0px -14940px; }
-.emoji20-steam_locomotive { background: url(images/emoji20.png) no-repeat -0px -14960px; }
-.emoji20-stew { background: url(images/emoji20.png) no-repeat -0px -14980px; }
-.emoji20-straight_ruler { background: url(images/emoji20.png) no-repeat -0px -15000px; }
-.emoji20-strawberry { background: url(images/emoji20.png) no-repeat -0px -15020px; }
-.emoji20-stuck_out_tongue { background: url(images/emoji20.png) no-repeat -0px -15040px; }
-.emoji20-stuck_out_tongue_closed_eyes { background: url(images/emoji20.png) no-repeat -0px -15060px; }
-.emoji20-stuck_out_tongue_winking_eye { background: url(images/emoji20.png) no-repeat -0px -15080px; }
-.emoji20-sunflower { background: url(images/emoji20.png) no-repeat -0px -15100px; }
-.emoji20-sunglasses { background: url(images/emoji20.png) no-repeat -0px -15120px; }
-.emoji20-sunny { background: url(images/emoji20.png) no-repeat -0px -15140px; }
-.emoji20-sunrise { background: url(images/emoji20.png) no-repeat -0px -15160px; }
-.emoji20-sunrise_over_mountains { background: url(images/emoji20.png) no-repeat -0px -15180px; }
-.emoji20-sun_with_face { background: url(images/emoji20.png) no-repeat -0px -15200px; }
-.emoji20-surfer { background: url(images/emoji20.png) no-repeat -0px -15220px; }
-.emoji20-sushi { background: url(images/emoji20.png) no-repeat -0px -15240px; }
-.emoji20-suspect { background: url(images/emoji20.png) no-repeat -0px -15260px; }
-.emoji20-suspension_railway { background: url(images/emoji20.png) no-repeat -0px -15280px; }
-.emoji20-sweat { background: url(images/emoji20.png) no-repeat -0px -15300px; }
-.emoji20-sweat_drops { background: url(images/emoji20.png) no-repeat -0px -15320px; }
-.emoji20-sweat_smile { background: url(images/emoji20.png) no-repeat -0px -15340px; }
-.emoji20-sweet_potato { background: url(images/emoji20.png) no-repeat -0px -15360px; }
-.emoji20-swimmer { background: url(images/emoji20.png) no-repeat -0px -15380px; }
-.emoji20-symbols { background: url(images/emoji20.png) no-repeat -0px -15400px; }
-.emoji20-syringe { background: url(images/emoji20.png) no-repeat -0px -15420px; }
-.emoji20-tada { background: url(images/emoji20.png) no-repeat -0px -15440px; }
-.emoji20-tanabata_tree { background: url(images/emoji20.png) no-repeat -0px -15460px; }
-.emoji20-tangerine { background: url(images/emoji20.png) no-repeat -0px -15480px; }
-.emoji20-taurus { background: url(images/emoji20.png) no-repeat -0px -15500px; }
-.emoji20-taxi { background: url(images/emoji20.png) no-repeat -0px -15520px; }
-.emoji20-tea { background: url(images/emoji20.png) no-repeat -0px -15540px; }
-.emoji20-telephone { background: url(images/emoji20.png) no-repeat -0px -15560px; }
-.emoji20-telephone_receiver { background: url(images/emoji20.png) no-repeat -0px -15580px; }
-.emoji20-telescope { background: url(images/emoji20.png) no-repeat -0px -15600px; }
-.emoji20-tennis { background: url(images/emoji20.png) no-repeat -0px -15620px; }
-.emoji20-tent { background: url(images/emoji20.png) no-repeat -0px -15640px; }
-.emoji20-thought_balloon { background: url(images/emoji20.png) no-repeat -0px -15660px; }
-.emoji20-three { background: url(images/emoji20.png) no-repeat -0px -15680px; }
-.emoji20-thumbsdown { background: url(images/emoji20.png) no-repeat -0px -15700px; }
-.emoji20-thumbsup { background: url(images/emoji20.png) no-repeat -0px -15720px; }
-.emoji20-ticket { background: url(images/emoji20.png) no-repeat -0px -15740px; }
-.emoji20-tiger { background: url(images/emoji20.png) no-repeat -0px -15760px; }
-.emoji20-tiger2 { background: url(images/emoji20.png) no-repeat -0px -15780px; }
-.emoji20-tired_face { background: url(images/emoji20.png) no-repeat -0px -15800px; }
-.emoji20-tm { background: url(images/emoji20.png) no-repeat -0px -15820px; }
-.emoji20-toilet { background: url(images/emoji20.png) no-repeat -0px -15840px; }
-.emoji20-tokyo_tower { background: url(images/emoji20.png) no-repeat -0px -15860px; }
-.emoji20-tomato { background: url(images/emoji20.png) no-repeat -0px -15880px; }
-.emoji20-tongue { background: url(images/emoji20.png) no-repeat -0px -15900px; }
-.emoji20-top { background: url(images/emoji20.png) no-repeat -0px -15920px; }
-.emoji20-tophat { background: url(images/emoji20.png) no-repeat -0px -15940px; }
-.emoji20-tractor { background: url(images/emoji20.png) no-repeat -0px -15960px; }
-.emoji20-traffic_light { background: url(images/emoji20.png) no-repeat -0px -15980px; }
-.emoji20-train { background: url(images/emoji20.png) no-repeat -0px -16000px; }
-.emoji20-train2 { background: url(images/emoji20.png) no-repeat -0px -16020px; }
-.emoji20-tram { background: url(images/emoji20.png) no-repeat -0px -16040px; }
-.emoji20-triangular_flag_on_post { background: url(images/emoji20.png) no-repeat -0px -16060px; }
-.emoji20-triangular_ruler { background: url(images/emoji20.png) no-repeat -0px -16080px; }
-.emoji20-trident { background: url(images/emoji20.png) no-repeat -0px -16100px; }
-.emoji20-triumph { background: url(images/emoji20.png) no-repeat -0px -16120px; }
-.emoji20-trolleybus { background: url(images/emoji20.png) no-repeat -0px -16140px; }
-.emoji20-trollface { background: url(images/emoji20.png) no-repeat -0px -16160px; }
-.emoji20-trophy { background: url(images/emoji20.png) no-repeat -0px -16180px; }
-.emoji20-tropical_drink { background: url(images/emoji20.png) no-repeat -0px -16200px; }
-.emoji20-tropical_fish { background: url(images/emoji20.png) no-repeat -0px -16220px; }
-.emoji20-truck { background: url(images/emoji20.png) no-repeat -0px -16240px; }
-.emoji20-trumpet { background: url(images/emoji20.png) no-repeat -0px -16260px; }
-.emoji20-tshirt { background: url(images/emoji20.png) no-repeat -0px -16280px; }
-.emoji20-tulip { background: url(images/emoji20.png) no-repeat -0px -16300px; }
-.emoji20-turtle { background: url(images/emoji20.png) no-repeat -0px -16320px; }
-.emoji20-tv { background: url(images/emoji20.png) no-repeat -0px -16340px; }
-.emoji20-twisted_rightwards_arrows { background: url(images/emoji20.png) no-repeat -0px -16360px; }
-.emoji20-two { background: url(images/emoji20.png) no-repeat -0px -16380px; }
-.emoji20-two_hearts { background: url(images/emoji20.png) no-repeat -0px -16400px; }
-.emoji20-two_men_holding_hands { background: url(images/emoji20.png) no-repeat -0px -16420px; }
-.emoji20-two_women_holding_hands { background: url(images/emoji20.png) no-repeat -0px -16440px; }
-.emoji20-u5272 { background: url(images/emoji20.png) no-repeat -0px -16460px; }
-.emoji20-u5408 { background: url(images/emoji20.png) no-repeat -0px -16480px; }
-.emoji20-u55b6 { background: url(images/emoji20.png) no-repeat -0px -16500px; }
-.emoji20-u6307 { background: url(images/emoji20.png) no-repeat -0px -16520px; }
-.emoji20-u6708 { background: url(images/emoji20.png) no-repeat -0px -16540px; }
-.emoji20-u6709 { background: url(images/emoji20.png) no-repeat -0px -16560px; }
-.emoji20-u6e80 { background: url(images/emoji20.png) no-repeat -0px -16580px; }
-.emoji20-u7121 { background: url(images/emoji20.png) no-repeat -0px -16600px; }
-.emoji20-u7533 { background: url(images/emoji20.png) no-repeat -0px -16620px; }
-.emoji20-u7981 { background: url(images/emoji20.png) no-repeat -0px -16640px; }
-.emoji20-u7a7a { background: url(images/emoji20.png) no-repeat -0px -16660px; }
-.emoji20-uk { background: url(images/emoji20.png) no-repeat -0px -16680px; }
-.emoji20-umbrella { background: url(images/emoji20.png) no-repeat -0px -16700px; }
-.emoji20-unamused { background: url(images/emoji20.png) no-repeat -0px -16720px; }
-.emoji20-underage { background: url(images/emoji20.png) no-repeat -0px -16740px; }
-.emoji20-unlock { background: url(images/emoji20.png) no-repeat -0px -16760px; }
-.emoji20-up { background: url(images/emoji20.png) no-repeat -0px -16780px; }
-.emoji20-us { background: url(images/emoji20.png) no-repeat -0px -16800px; }
-.emoji20-v { background: url(images/emoji20.png) no-repeat -0px -16820px; }
-.emoji20-vertical_traffic_light { background: url(images/emoji20.png) no-repeat -0px -16840px; }
-.emoji20-vhs { background: url(images/emoji20.png) no-repeat -0px -16860px; }
-.emoji20-vibration_mode { background: url(images/emoji20.png) no-repeat -0px -16880px; }
-.emoji20-video_camera { background: url(images/emoji20.png) no-repeat -0px -16900px; }
-.emoji20-video_game { background: url(images/emoji20.png) no-repeat -0px -16920px; }
-.emoji20-violin { background: url(images/emoji20.png) no-repeat -0px -16940px; }
-.emoji20-virgo { background: url(images/emoji20.png) no-repeat -0px -16960px; }
-.emoji20-volcano { background: url(images/emoji20.png) no-repeat -0px -16980px; }
-.emoji20-vs { background: url(images/emoji20.png) no-repeat -0px -17000px; }
-.emoji20-walking { background: url(images/emoji20.png) no-repeat -0px -17020px; }
-.emoji20-waning_crescent_moon { background: url(images/emoji20.png) no-repeat -0px -17040px; }
-.emoji20-waning_gibbous_moon { background: url(images/emoji20.png) no-repeat -0px -17060px; }
-.emoji20-warning { background: url(images/emoji20.png) no-repeat -0px -17080px; }
-.emoji20-watch { background: url(images/emoji20.png) no-repeat -0px -17100px; }
-.emoji20-watermelon { background: url(images/emoji20.png) no-repeat -0px -17120px; }
-.emoji20-water_buffalo { background: url(images/emoji20.png) no-repeat -0px -17140px; }
-.emoji20-wave { background: url(images/emoji20.png) no-repeat -0px -17160px; }
-.emoji20-wavy_dash { background: url(images/emoji20.png) no-repeat -0px -17180px; }
-.emoji20-waxing_crescent_moon { background: url(images/emoji20.png) no-repeat -0px -17200px; }
-.emoji20-waxing_gibbous_moon { background: url(images/emoji20.png) no-repeat -0px -17220px; }
-.emoji20-wc { background: url(images/emoji20.png) no-repeat -0px -17240px; }
-.emoji20-weary { background: url(images/emoji20.png) no-repeat -0px -17260px; }
-.emoji20-wedding { background: url(images/emoji20.png) no-repeat -0px -17280px; }
-.emoji20-whale { background: url(images/emoji20.png) no-repeat -0px -17300px; }
-.emoji20-whale2 { background: url(images/emoji20.png) no-repeat -0px -17320px; }
-.emoji20-wheelchair { background: url(images/emoji20.png) no-repeat -0px -17340px; }
-.emoji20-white_check_mark { background: url(images/emoji20.png) no-repeat -0px -17360px; }
-.emoji20-white_circle { background: url(images/emoji20.png) no-repeat -0px -17380px; }
-.emoji20-white_flower { background: url(images/emoji20.png) no-repeat -0px -17400px; }
-.emoji20-white_large_square { background: url(images/emoji20.png) no-repeat -0px -17420px; }
-.emoji20-white_medium_small_square { background: url(images/emoji20.png) no-repeat -0px -17440px; }
-.emoji20-white_medium_square { background: url(images/emoji20.png) no-repeat -0px -17460px; }
-.emoji20-white_small_square { background: url(images/emoji20.png) no-repeat -0px -17480px; }
-.emoji20-white_square { background: url(images/emoji20.png) no-repeat -0px -17500px; }
-.emoji20-white_square_button { background: url(images/emoji20.png) no-repeat -0px -17520px; }
-.emoji20-wind_chime { background: url(images/emoji20.png) no-repeat -0px -17540px; }
-.emoji20-wine_glass { background: url(images/emoji20.png) no-repeat -0px -17560px; }
-.emoji20-wink { background: url(images/emoji20.png) no-repeat -0px -17580px; }
-.emoji20-wink2 { background: url(images/emoji20.png) no-repeat -0px -17600px; }
-.emoji20-wolf { background: url(images/emoji20.png) no-repeat -0px -17620px; }
-.emoji20-woman { background: url(images/emoji20.png) no-repeat -0px -17640px; }
-.emoji20-womans_clothes { background: url(images/emoji20.png) no-repeat -0px -17660px; }
-.emoji20-womans_hat { background: url(images/emoji20.png) no-repeat -0px -17680px; }
-.emoji20-womens { background: url(images/emoji20.png) no-repeat -0px -17700px; }
-.emoji20-worried { background: url(images/emoji20.png) no-repeat -0px -17720px; }
-.emoji20-wrench { background: url(images/emoji20.png) no-repeat -0px -17740px; }
-.emoji20-x { background: url(images/emoji20.png) no-repeat -0px -17760px; }
-.emoji20-yellow_heart { background: url(images/emoji20.png) no-repeat -0px -17780px; }
-.emoji20-yen { background: url(images/emoji20.png) no-repeat -0px -17800px; }
-.emoji20-yum { background: url(images/emoji20.png) no-repeat -0px -17820px; }
-.emoji20-zap { background: url(images/emoji20.png) no-repeat -0px -17840px; }
-.emoji20-zero { background: url(images/emoji20.png) no-repeat -0px -17860px; }
-.emoji20-zzz { background: url(images/emoji20.png) no-repeat -0px -17880px; }
+﻿.emoji20 { font-family: arial helvetica sans-serif; font-size: 32px; min-height: 28px; display:inline-block }
+.emoji20-plus1::before { content: "\1F440"; vertical-align: middle; }
+.emoji20--1::before { content: "\1F44E"; vertical-align: middle; }
+.emoji20-0::before { content: "\0030"; vertical-align: middle; }
+.emoji20-1 { content: "\0031"; vertical-align: middle; }
+.emoji20-100 { content: "\1F4AF"; vertical-align: middle; }
+.emoji20-109 { content: "\1F937"; vertical-align: middle; }
+.emoji20-1234 { content: "\1FS22"; vertical-align: middle; }
+.emoji20-2 { content: "\0031"; vertical-align: middle; }
+.emoji20-3 { content: "\0033"; vertical-align: middle; }
+.emoji20-4 { content: "\0034"; vertical-align: middle; }
+.emoji20-5 { content: "\0035"; vertical-align: middle; }
+.emoji20-6 { content: "\0036"; vertical-align: middle; }
+.emoji20-7 { content: "\0037"; vertical-align: middle; }
+.emoji20-8 { content: "\0038"; vertical-align: middle; }
+.emoji20-8ball { content: "\1F3B1"; vertical-align: middle; }
+.emoji20-9 { content: "\0039"; vertical-align: middle; }
+.emoji20-a { content: "\1F170"; vertical-align: middle; }
+.emoji20-ab { content: "\1F18E"; vertical-align: middle; }
+.emoji20-abc { content: "\1F524"; vertical-align: middle; }
+.emoji20-abcd { content: "\1F521"; vertical-align: middle; }
+.emoji20-accept { content: "\1F251"; vertical-align: middle; }
+.emoji20-aerial_tramway { content: "\1F6A0"; vertical-align: middle; }
+.emoji20-airplane { content: "\2708"; vertical-align: middle; }
+.emoji20-alarm_clock { content: "\23F0"; vertical-align: middle; }
+.emoji20-alien { content: "\1F47D"; vertical-align: middle; }
+.emoji20-ambulance { content: "\1F691"; vertical-align: middle; }
+.emoji20-anchor { content: "\2693"; vertical-align: middle; }
+.emoji20-angel { content: "\1F47C"; vertical-align: middle; }
+.emoji20-anger { content: "\1F4A2"; vertical-align: middle; }
+.emoji20-angry { content: "\1F620"; vertical-align: middle; }
+.emoji20-anguished { content: "\1F627"; vertical-align: middle; }
+.emoji20-ant { content: "\1F41B"; vertical-align: middle; }
+.emoji20-apple { content: "\1F34E"; vertical-align: middle; }
+.emoji20-aquarius { content: "\2652"; vertical-align: middle; }
+.emoji20-aries { content: "\2648"; vertical-align: middle; }
+.emoji20-arrows_clockwise { content: "\1F503"; vertical-align: middle; }
+.emoji20-arrows_counterclockwise { content: "\1F504"; vertical-align: middle; }
+.emoji20-arrow_backward { content: "\25C0"; vertical-align: middle; }
+.emoji20-arrow_double_down { content: "\23EC"; vertical-align: middle; }
+.emoji20-arrow_double_up { content: "\23E8"; vertical-align: middle; }
+.emoji20-arrow_down { content: "\2B07"; vertical-align: middle; }
+.emoji20-arrow_down_small { content: "\1D53D"; vertical-align: middle; }
+.emoji20-arrow_forward { content: "\25B6"; vertical-align: middle; }
+.emoji20-arrow_heading_down { content: "\2935"; vertical-align: middle; }
+.emoji20-arrow_heading_up { content: "\2934"; vertical-align: middle; }
+.emoji20-arrow_left { content: "\2B05"; vertical-align: middle; }
+.emoji20-arrow_lower_left { content: "\2199"; vertical-align: middle; }
+.emoji20-arrow_lower_right { content: "\2198"; vertical-align: middle; }
+.emoji20-arrow_right { content: "\27A1"; vertical-align: middle; }
+.emoji20-arrow_right_hook { content: "\21AA"; vertical-align: middle; }
+.emoji20-arrow_up { content: "\2B06"; vertical-align: middle; }
+.emoji20-arrow_upper_left { content: "\2196"; vertical-align: middle; }
+.emoji20-arrow_upper_right { content: "\2197"; vertical-align: middle; }
+.emoji20-arrow_up_down { content: "\2195"; vertical-align: middle; }
+.emoji20-arrow_up_small { content: "\1F53C"; vertical-align: middle; }
+.emoji20-art { content: "\1F3A8"; vertical-align: middle; }
+.emoji20-articulated_lorry { content: "\1F69B"; vertical-align: middle; }
+.emoji20-astonished { content: "\1F632"; vertical-align: middle; }
+.emoji20-atm { content: "\1F3E7"; vertical-align: middle; }
+.emoji20-b { content: "\1F171"; vertical-align: middle; }
+.emoji20-baby { content: "\1F476"; vertical-align: middle; }
+.emoji20-baby_bottle { content: "\1F37C"; vertical-align: middle; }
+.emoji20-baby_chick { content: "\1F424"; vertical-align: middle; }
+.emoji20-baby_symbol { content: "\1F6BC"; vertical-align: middle; }
+.emoji20-back { content: "\1F519"; vertical-align: middle; }
+.emoji20-baggage_claim { content: "\1F6C4"; vertical-align: middle; }
+.emoji20-balloon { content: "\1F388"; vertical-align: middle; }
+.emoji20-ballot_box_with_check { content: "\2611"; vertical-align: middle; }
+.emoji20-bamboo { content: "\1F937"; vertical-align: middle; }
+.emoji20-banana { content: "\1F937"; vertical-align: middle; }
+.emoji20-bangbang { content: "\203C"; vertical-align: middle; }
+.emoji20-bank { content: "\1F3E6"; vertical-align: middle; }
+.emoji20-barber { content: "\1F448"; vertical-align: middle; }
+.emoji20-bar_chart { content: "\1F4CA"; vertical-align: middle; }
+.emoji20-baseball { content: "\26BE"; vertical-align: middle; }
+.emoji20-basketball { content: "\1F3C0"; vertical-align: middle; }
+.emoji20-bath { content: "\1F6C0"; vertical-align: middle; }
+.emoji20-bathtub { content: "\1F6C1"; vertical-align: middle; }
+.emoji20-battery { content: "\1F50B"; vertical-align: middle; }
+.emoji20-bear { content: "\1F43B"; vertical-align: middle; }
+.emoji20-bee { content: "\1F41D"; vertical-align: middle; }
+.emoji20-beer { content: "\1F37A"; vertical-align: middle; }
+.emoji20-beers { content: "\1F37B"; vertical-align: middle; }
+.emoji20-beetle { content: "\1F41E"; vertical-align: middle; }
+.emoji20-beginner { content: "\1F530"; vertical-align: middle; }
+.emoji20-bell { content: "\1F514"; vertical-align: middle; }
+.emoji20-bento { content: "\1F371"; vertical-align: middle; }
+.emoji20-bicyclist { content: "\1F6B4"; vertical-align: middle; }
+.emoji20-bike { content: "\1F6B2"; vertical-align: middle; }
+.emoji20-bikini { content: "\1F459"; vertical-align: middle; }
+.emoji20-bird { content: "\1F426"; vertical-align: middle; }
+.emoji20-birthday { content: "\1F382"; vertical-align: middle; }
+.emoji20-black_circle { content: "\26AB"; vertical-align: middle; }
+.emoji20-black_joker { content: "\1F0CF"; vertical-align: middle; }
+.emoji20-black_medium_small_square { content: "\25FE"; vertical-align: middle; }
+.emoji20-black_medium_square { content: "\25FC"; vertical-align: middle; }
+.emoji20-black_nib { content: "\2712"; vertical-align: middle; }
+.emoji20-black_small_square { content: "\25AA"; vertical-align: middle; }
+.emoji20-black_square { content: "\2B1B"; vertical-align: middle; }
+.emoji20-black_square_button { content: "\1F532"; vertical-align: middle; }
+.emoji20-blossom { content: "\1F33C"; vertical-align: middle; }
+.emoji20-blowfish { content: "\1F421"; vertical-align: middle; }
+.emoji20-blue_book { content: "\1F4D8"; vertical-align: middle; }
+.emoji20-blue_car { content: "\1F699"; vertical-align: middle; }
+.emoji20-blue_heart { content: "\1F499"; vertical-align: middle; }
+.emoji20-blush { content: "\1F60A"; vertical-align: middle; }
+.emoji20-boar { content: "\1F417"; vertical-align: middle; }
+.emoji20-boat { content: "\26F5"; vertical-align: middle; }
+.emoji20-bomb { content: "\1F4A3"; vertical-align: middle; }
+.emoji20-book { content: "\1F4D6"; vertical-align: middle; }
+/*--------------------------------------------------*/
+.emoji20-bookmark { content: "\1F937"; vertical-align: middle; }
+.emoji20-bookmark_tabs { content: "\1F937"; vertical-align: middle; }
+.emoji20-books { content: "\1F937"; vertical-align: middle; }
+.emoji20-boom { content: "\1F937"; vertical-align: middle; }
+.emoji20-boot { content: "\1F937"; vertical-align: middle; }
+.emoji20-bouquet { content: "\1F937"; vertical-align: middle; }
+.emoji20-bow { content: "\1F937"; vertical-align: middle; }
+.emoji20-bowling { content: "\1F937"; vertical-align: middle; }
+.emoji20-bowtie { content: "\1F937"; vertical-align: middle; }
+.emoji20-boy { content: "\1F937"; vertical-align: middle; }
+.emoji20-bread { content: "\1F937"; vertical-align: middle; }
+.emoji20-bride_with_veil { content: "\1F937"; vertical-align: middle; }
+.emoji20-bridge_at_night { content: "\1F937"; vertical-align: middle; }
+.emoji20-briefcase { content: "\1F937"; vertical-align: middle; }
+.emoji20-broken_heart { content: "\1F937"; vertical-align: middle; }
+.emoji20-bug { content: "\1F937"; vertical-align: middle; }
+.emoji20-bulb { content: "\1F937"; vertical-align: middle; }
+.emoji20-bullettrain_front { content: "\1F937"; vertical-align: middle; }
+.emoji20-bullettrain_side { content: "\1F937"; vertical-align: middle; }
+.emoji20-bus { content: "\1F937"; vertical-align: middle; }
+.emoji20-busstop { content: "\1F937"; vertical-align: middle; }
+.emoji20-busts_in_silhouette { content: "\1F937"; vertical-align: middle; }
+.emoji20-bust_in_silhouette { content: "\1F937"; vertical-align: middle; }
+.emoji20-cactus { content: "\1F937"; vertical-align: middle; }
+.emoji20-cake { content: "\1F937"; vertical-align: middle; }
+.emoji20-calendar { content: "\1F937"; vertical-align: middle; }
+.emoji20-calling { content: "\1F937"; vertical-align: middle; }
+.emoji20-camel { content: "\1F937"; vertical-align: middle; }
+.emoji20-camera { content: "\1F937"; vertical-align: middle; }
+.emoji20-cancer { content: "\1F937"; vertical-align: middle; }
+.emoji20-candy { content: "\1F937"; vertical-align: middle; }
+.emoji20-capital_abcd { content: "\1F937"; vertical-align: middle; }
+.emoji20-capricorn { content: "\1F937"; vertical-align: middle; }
+.emoji20-car { content: "\1F937"; vertical-align: middle; }
+.emoji20-card_index { content: "\1F937"; vertical-align: middle; }
+.emoji20-carousel_horse { content: "\1F937"; vertical-align: middle; }
+.emoji20-cat { content: "\1F937"; vertical-align: middle; }
+.emoji20-cat2 { content: "\1F937"; vertical-align: middle; }
+.emoji20-cd { content: "\1F937"; vertical-align: middle; }
+.emoji20-chart { content: "\1F937"; vertical-align: middle; }
+.emoji20-chart_with_downwards_trend { content: "\1F937"; vertical-align: middle; }
+.emoji20-chart_with_upwards_trend { content: "\1F937"; vertical-align: middle; }
+.emoji20-checkered_flag { content: "\1F937"; vertical-align: middle; }
+.emoji20-cherries { content: "\1F937"; vertical-align: middle; }
+.emoji20-cherry_blossom { content: "\1F937"; vertical-align: middle; }
+.emoji20-chestnut { content: "\1F937"; vertical-align: middle; }
+.emoji20-chicken { content: "\1F937"; vertical-align: middle; }
+.emoji20-children_crossing { content: "\1F937"; vertical-align: middle; }
+.emoji20-chocolate_bar { content: "\1F937"; vertical-align: middle; }
+.emoji20-christmas_tree { content: "\1F937"; vertical-align: middle; }
+.emoji20-church { content: "\1F937"; vertical-align: middle; }
+.emoji20-cinema { content: "\1F937"; vertical-align: middle; }
+.emoji20-circus_tent { content: "\1F937"; vertical-align: middle; }
+.emoji20-city_sunrise { content: "\1F937"; vertical-align: middle; }
+.emoji20-city_sunset { content: "\1F937"; vertical-align: middle; }
+.emoji20-cl { content: "\1F937"; vertical-align: middle; }
+.emoji20-clap { content: "\1F937"; vertical-align: middle; }
+.emoji20-clapper { content: "\1F937"; vertical-align: middle; }
+.emoji20-clipboard { content: "\1F937"; vertical-align: middle; }
+.emoji20-clock1 { content: "\1F937"; vertical-align: middle; }
+.emoji20-clock10 { content: "\1F937"; vertical-align: middle; }
+.emoji20-clock1030 { content: "\1F937"; vertical-align: middle; }
+.emoji20-clock11 { content: "\1F937"; vertical-align: middle; }
+.emoji20-clock1130 { content: "\1F937"; vertical-align: middle; }
+.emoji20-clock12 { content: "\1F937"; vertical-align: middle; }
+.emoji20-clock1230 { content: "\1F937"; vertical-align: middle; }
+.emoji20-clock130 { content: "\1F937"; vertical-align: middle; }
+.emoji20-clock2 { content: "\1F937"; vertical-align: middle; }
+.emoji20-clock230 { content: "\1F937"; vertical-align: middle; }
+.emoji20-clock3 { content: "\1F937"; vertical-align: middle; }
+.emoji20-clock330 { content: "\1F937"; vertical-align: middle; }
+.emoji20-clock4 { content: "\1F937"; vertical-align: middle; }
+.emoji20-clock430 { content: "\1F937"; vertical-align: middle; }
+.emoji20-clock5 { content: "\1F937"; vertical-align: middle; }
+.emoji20-clock530 { content: "\1F937"; vertical-align: middle; }
+.emoji20-clock6 { content: "\1F937"; vertical-align: middle; }
+.emoji20-clock630 { content: "\1F937"; vertical-align: middle; }
+.emoji20-clock7 { content: "\1F937"; vertical-align: middle; }
+.emoji20-clock730 { content: "\1F937"; vertical-align: middle; }
+.emoji20-clock8 { content: "\1F937"; vertical-align: middle; }
+.emoji20-clock830 { content: "\1F937"; vertical-align: middle; }
+.emoji20-clock9 { content: "\1F937"; vertical-align: middle; }
+.emoji20-clock930 { content: "\1F937"; vertical-align: middle; }
+.emoji20-closed_book { content: "\1F937"; vertical-align: middle; }
+.emoji20-closed_lock_with_key { content: "\1F937"; vertical-align: middle; }
+.emoji20-closed_umbrella { content: "\1F937"; vertical-align: middle; }
+.emoji20-cloud { content: "\1F937"; vertical-align: middle; }
+.emoji20-clubs { content: "\1F937"; vertical-align: middle; }
+.emoji20-cn { content: "\1F937"; vertical-align: middle; }
+.emoji20-cocktail { content: "\1F937"; vertical-align: middle; }
+.emoji20-coffee { content: "\1F937"; vertical-align: middle; }
+.emoji20-cold_sweat { content: "\1F937"; vertical-align: middle; }
+.emoji20-collision { content: "\1F937"; vertical-align: middle; }
+.emoji20-computer { content: "\1F937"; vertical-align: middle; }
+.emoji20-confetti_ball { content: "\1F937"; vertical-align: middle; }
+.emoji20-confounded { content: "\1F937"; vertical-align: middle; }
+.emoji20-confused { content: "\1F937"; vertical-align: middle; }
+.emoji20-congratulations { content: "\1F937"; vertical-align: middle; }
+.emoji20-construction { content: "\1F937"; vertical-align: middle; }
+.emoji20-construction_worker { content: "\1F937"; vertical-align: middle; }
+.emoji20-convenience_store { content: "\1F937"; vertical-align: middle; }
+.emoji20-cookie { content: "\1F937"; vertical-align: middle; }
+.emoji20-cool { content: "\1F937"; vertical-align: middle; }
+.emoji20-cop { content: "\1F937"; vertical-align: middle; }
+.emoji20-copyright { content: "\1F937"; vertical-align: middle; }
+.emoji20-corn { content: "\1F937"; vertical-align: middle; }
+.emoji20-couple { content: "\1F937"; vertical-align: middle; }
+.emoji20-couplekiss { content: "\1F937"; vertical-align: middle; }
+.emoji20-couple_with_heart { content: "\1F937"; vertical-align: middle; }
+.emoji20-cow { content: "\1F937"; vertical-align: middle; }
+.emoji20-cow2 { content: "\1F937"; vertical-align: middle; }
+.emoji20-credit_card { content: "\1F937"; vertical-align: middle; }
+.emoji20-crocodile { content: "\1F937"; vertical-align: middle; }
+.emoji20-crossed_flags { content: "\1F937"; vertical-align: middle; }
+.emoji20-crown { content: "\1F937"; vertical-align: middle; }
+.emoji20-cry { content: "\1F937"; vertical-align: middle; }
+.emoji20-crying_cat_face { content: "\1F937"; vertical-align: middle; }
+.emoji20-crystal_ball { content: "\1F937"; vertical-align: middle; }
+.emoji20-cupid { content: "\1F937"; vertical-align: middle; }
+.emoji20-curly_loop { content: "\1F937"; vertical-align: middle; }
+.emoji20-currency_exchange { content: "\1F937"; vertical-align: middle; }
+.emoji20-curry { content: "\1F937"; vertical-align: middle; }
+.emoji20-custard { content: "\1F937"; vertical-align: middle; }
+.emoji20-customs { content: "\1F937"; vertical-align: middle; }
+.emoji20-cyclone { content: "\1F937"; vertical-align: middle; }
+.emoji20-dancer { content: "\1F937"; vertical-align: middle; }
+.emoji20-dancers { content: "\1F937"; vertical-align: middle; }
+.emoji20-dango { content: "\1F937"; vertical-align: middle; }
+.emoji20-dart { content: "\1F937"; vertical-align: middle; }
+.emoji20-dash { content: "\1F937"; vertical-align: middle; }
+.emoji20-date { content: "\1F937"; vertical-align: middle; }
+.emoji20-de { content: "\1F937"; vertical-align: middle; }
+.emoji20-deciduous_tree { content: "\1F937"; vertical-align: middle; }
+.emoji20-department_store { content: "\1F937"; vertical-align: middle; }
+.emoji20-diamonds { content: "\1F937"; vertical-align: middle; }
+.emoji20-diamond_shape_with_a_dot_inside { content: "\1F937"; vertical-align: middle; }
+.emoji20-disappointed { content: "\1F937"; vertical-align: middle; }
+.emoji20-disappointed_relieved { content: "\1F937"; vertical-align: middle; }
+.emoji20-dizzy { content: "\1F937"; vertical-align: middle; }
+.emoji20-dizzy_face { content: "\1F937"; vertical-align: middle; }
+.emoji20-dog { content: "\1F937"; vertical-align: middle; }
+.emoji20-dog2 { content: "\1F937"; vertical-align: middle; }
+.emoji20-dollar { content: "\1F937"; vertical-align: middle; }
+.emoji20-dolls { content: "\1F937"; vertical-align: middle; }
+.emoji20-dolphin { content: "\1F937"; vertical-align: middle; }
+.emoji20-donut { content: "\1F937"; vertical-align: middle; }
+.emoji20-door { content: "\1F937"; vertical-align: middle; }
+.emoji20-doughnut { content: "\1F937"; vertical-align: middle; }
+.emoji20-do_not_litter { content: "\1F937"; vertical-align: middle; }
+.emoji20-dragon { content: "\1F937"; vertical-align: middle; }
+.emoji20-dragon_face { content: "\1F937"; vertical-align: middle; }
+.emoji20-dress { content: "\1F937"; vertical-align: middle; }
+.emoji20-dromedary_camel { content: "\1F937"; vertical-align: middle; }
+.emoji20-droplet { content: "\1F937"; vertical-align: middle; }
+.emoji20-dvd { content: "\1F937"; vertical-align: middle; }
+.emoji20-e-mail { content: "\1F937"; vertical-align: middle; }
+.emoji20-ear { content: "\1F937"; vertical-align: middle; }
+.emoji20-earth_africa { content: "\1F937"; vertical-align: middle; }
+.emoji20-earth_americas { content: "\1F937"; vertical-align: middle; }
+.emoji20-earth_asia { content: "\1F937"; vertical-align: middle; }
+.emoji20-ear_of_rice { content: "\1F937"; vertical-align: middle; }
+.emoji20-egg { content: "\1F937"; vertical-align: middle; }
+.emoji20-eggplant { content: "\1F937"; vertical-align: middle; }
+.emoji20-egplant { content: "\1F937"; vertical-align: middle; }
+.emoji20-eight { content: "\1F937"; vertical-align: middle; }
+.emoji20-eight_pointed_black_star { content: "\1F937"; vertical-align: middle; }
+.emoji20-eight_spoked_asterisk { content: "\1F937"; vertical-align: middle; }
+.emoji20-electric_plug { content: "\1F937"; vertical-align: middle; }
+.emoji20-elephant { content: "\1F937"; vertical-align: middle; }
+.emoji20-email { content: "\1F937"; vertical-align: middle; }
+.emoji20-end { content: "\1F937"; vertical-align: middle; }
+.emoji20-envelope { content: "\1F937"; vertical-align: middle; }
+.emoji20-es { content: "\1F937"; vertical-align: middle; }
+.emoji20-euro { content: "\1F937"; vertical-align: middle; }
+.emoji20-european_castle { content: "\1F937"; vertical-align: middle; }
+.emoji20-european_post_office { content: "\1F937"; vertical-align: middle; }
+.emoji20-evergreen_tree { content: "\1F937"; vertical-align: middle; }
+.emoji20-exclamation { content: "\1F937"; vertical-align: middle; }
+.emoji20-expressionless { content: "\1F937"; vertical-align: middle; }
+.emoji20-eyeglasses { content: "\1F937"; vertical-align: middle; }
+.emoji20-eyes { content: "\1F937"; vertical-align: middle; }
+.emoji20-facepunch { content: "\1F937"; vertical-align: middle; }
+.emoji20-factory { content: "\1F937"; vertical-align: middle; }
+.emoji20-fallen_leaf { content: "\1F937"; vertical-align: middle; }
+.emoji20-family { content: "\1F937"; vertical-align: middle; }
+.emoji20-fast_forward { content: "\1F937"; vertical-align: middle; }
+.emoji20-fax { content: "\1F937"; vertical-align: middle; }
+.emoji20-fearful { content: "\1F937"; vertical-align: middle; }
+.emoji20-feelsgood { content: "\1F937"; vertical-align: middle; }
+.emoji20-feet { content: "\1F937"; vertical-align: middle; }
+.emoji20-ferris_wheel { content: "\1F937"; vertical-align: middle; }
+.emoji20-file_folder { content: "\1F937"; vertical-align: middle; }
+.emoji20-finnadie { content: "\1F937"; vertical-align: middle; }
+.emoji20-fire { content: "\1F937"; vertical-align: middle; }
+.emoji20-fireworks { content: "\1F937"; vertical-align: middle; }
+.emoji20-fire_engine { content: "\1F937"; vertical-align: middle; }
+.emoji20-first_quarter_moon { content: "\1F937"; vertical-align: middle; }
+.emoji20-first_quarter_moon_with_face { content: "\1F937"; vertical-align: middle; }
+.emoji20-fish { content: "\1F937"; vertical-align: middle; }
+.emoji20-fishing_pole_and_fish { content: "\1F937"; vertical-align: middle; }
+.emoji20-fish_cake { content: "\1F937"; vertical-align: middle; }
+.emoji20-fist { content: "\1F937"; vertical-align: middle; }
+.emoji20-five { content: "\1F937"; vertical-align: middle; }
+.emoji20-flags { content: "\1F937"; vertical-align: middle; }
+.emoji20-flashlight { content: "\1F937"; vertical-align: middle; }
+.emoji20-floppy_disk { content: "\1F937"; vertical-align: middle; }
+.emoji20-flower_playing_cards { content: "\1F937"; vertical-align: middle; }
+.emoji20-flushed { content: "\1F937"; vertical-align: middle; }
+.emoji20-foggy { content: "\1F937"; vertical-align: middle; }
+.emoji20-football { content: "\1F937"; vertical-align: middle; }
+.emoji20-fork_and_knife { content: "\1F937"; vertical-align: middle; }
+.emoji20-fountain { content: "\1F937"; vertical-align: middle; }
+.emoji20-four { content: "\1F937"; vertical-align: middle; }
+.emoji20-four_leaf_clover { content: "\1F937"; vertical-align: middle; }
+.emoji20-fr { content: "\1F937"; vertical-align: middle; }
+.emoji20-free { content: "\1F937"; vertical-align: middle; }
+.emoji20-fried_shrimp { content: "\1F937"; vertical-align: middle; }
+.emoji20-fries { content: "\1F937"; vertical-align: middle; }
+.emoji20-frog { content: "\1F937"; vertical-align: middle; }
+.emoji20-frowning { content: "\1F937"; vertical-align: middle; }
+.emoji20-fu { content: "\1F937"; vertical-align: middle; }
+.emoji20-fuelpump { content: "\1F937"; vertical-align: middle; }
+.emoji20-full_moon { content: "\1F937"; vertical-align: middle; }
+.emoji20-full_moon_with_face { content: "\1F937"; vertical-align: middle; }
+.emoji20-game_die { content: "\1F937"; vertical-align: middle; }
+.emoji20-gb { content: "\1F937"; vertical-align: middle; }
+.emoji20-gem { content: "\1F937"; vertical-align: middle; }
+.emoji20-gemini { content: "\1F937"; vertical-align: middle; }
+.emoji20-ghost { content: "\1F937"; vertical-align: middle; }
+.emoji20-gift { content: "\1F937"; vertical-align: middle; }
+.emoji20-gift_heart { content: "\1F937"; vertical-align: middle; }
+.emoji20-girl { content: "\1F937"; vertical-align: middle; }
+.emoji20-globe_with_meridians { content: "\1F937"; vertical-align: middle; }
+.emoji20-goat { content: "\1F937"; vertical-align: middle; }
+.emoji20-goberserk { content: "\1F937"; vertical-align: middle; }
+.emoji20-godmode { content: "\1F937"; vertical-align: middle; }
+.emoji20-golf { content: "\1F937"; vertical-align: middle; }
+.emoji20-grapes { content: "\1F937"; vertical-align: middle; }
+.emoji20-green_apple { content: "\1F937"; vertical-align: middle; }
+.emoji20-green_book { content: "\1F937"; vertical-align: middle; }
+.emoji20-green_heart { content: "\1F937"; vertical-align: middle; }
+.emoji20-grey_exclamation { content: "\1F937"; vertical-align: middle; }
+.emoji20-grey_question { content: "\1F937"; vertical-align: middle; }
+.emoji20-grimacing { content: "\1F937"; vertical-align: middle; }
+.emoji20-grin { content: "\1F937"; vertical-align: middle; }
+.emoji20-grinning { content: "\1F937"; vertical-align: middle; }
+.emoji20-guardsman { content: "\1F937"; vertical-align: middle; }
+.emoji20-guitar { content: "\1F937"; vertical-align: middle; }
+.emoji20-gun { content: "\1F937"; vertical-align: middle; }
+.emoji20-haircut { content: "\1F937"; vertical-align: middle; }
+.emoji20-hamburger { content: "\1F937"; vertical-align: middle; }
+.emoji20-hammer { content: "\1F937"; vertical-align: middle; }
+.emoji20-hamster { content: "\1F937"; vertical-align: middle; }
+.emoji20-hand { content: "\1F937"; vertical-align: middle; }
+.emoji20-handbag { content: "\1F937"; vertical-align: middle; }
+.emoji20-hankey { content: "\1F937"; vertical-align: middle; }
+.emoji20-hash { content: "\1F937"; vertical-align: middle; }
+.emoji20-hatched_chick { content: "\1F937"; vertical-align: middle; }
+.emoji20-hatching_chick { content: "\1F937"; vertical-align: middle; }
+.emoji20-headphones { content: "\1F937"; vertical-align: middle; }
+.emoji20-heart { content: "\1F937"; vertical-align: middle; }
+.emoji20-heartbeat { content: "\1F937"; vertical-align: middle; }
+.emoji20-heartpulse { content: "\1F937"; vertical-align: middle; }
+.emoji20-hearts { content: "\1F937"; vertical-align: middle; }
+.emoji20-heart_decoration { content: "\1F937"; vertical-align: middle; }
+.emoji20-heart_eyes { content: "\1F937"; vertical-align: middle; }
+.emoji20-heart_eyes_cat { content: "\1F937"; vertical-align: middle; }
+.emoji20-hear_no_evil { content: "\1F937"; vertical-align: middle; }
+.emoji20-heavy_check_mark { content: "\1F937"; vertical-align: middle; }
+.emoji20-heavy_division_sign { content: "\1F937"; vertical-align: middle; }
+.emoji20-heavy_dollar_sign { content: "\1F937"; vertical-align: middle; }
+.emoji20-heavy_exclamation_mark { content: "\1F937"; vertical-align: middle; }
+.emoji20-heavy_minus_sign { content: "\1F937"; vertical-align: middle; }
+.emoji20-heavy_multiplication_x { content: "\1F937"; vertical-align: middle; }
+.emoji20-heavy_plus_sign { content: "\1F937"; vertical-align: middle; }
+.emoji20-helicopter { content: "\1F937"; vertical-align: middle; }
+.emoji20-herb { content: "\1F937"; vertical-align: middle; }
+.emoji20-hibiscus { content: "\1F937"; vertical-align: middle; }
+.emoji20-high_brightness { content: "\1F937"; vertical-align: middle; }
+.emoji20-high_heel { content: "\1F937"; vertical-align: middle; }
+.emoji20-hocho { content: "\1F937"; vertical-align: middle; }
+.emoji20-honeybee { content: "\1F937"; vertical-align: middle; }
+.emoji20-honey_pot { content: "\1F937"; vertical-align: middle; }
+.emoji20-horse { content: "\1F937"; vertical-align: middle; }
+.emoji20-horse_racing { content: "\1F937"; vertical-align: middle; }
+.emoji20-hospital { content: "\1F937"; vertical-align: middle; }
+.emoji20-hotel { content: "\1F937"; vertical-align: middle; }
+.emoji20-hotsprings { content: "\1F937"; vertical-align: middle; }
+.emoji20-hourglass { content: "\1F937"; vertical-align: middle; }
+.emoji20-hourglass_flowing_sand { content: "\1F937"; vertical-align: middle; }
+.emoji20-house { content: "\1F937"; vertical-align: middle; }
+.emoji20-house_with_garden { content: "\1F937"; vertical-align: middle; }
+.emoji20-hurtrealbad { content: "\1F937"; vertical-align: middle; }
+.emoji20-hushed { content: "\1F937"; vertical-align: middle; }
+.emoji20-icecream { content: "\1F937"; vertical-align: middle; }
+.emoji20-ice_cream { content: "\1F937"; vertical-align: middle; }
+.emoji20-id { content: "\1F937"; vertical-align: middle; }
+.emoji20-ideograph_advantage { content: "\1F937"; vertical-align: middle; }
+.emoji20-imp { content: "\1F937"; vertical-align: middle; }
+.emoji20-inbox_tray { content: "\1F937"; vertical-align: middle; }
+.emoji20-incoming_envelope { content: "\1F937"; vertical-align: middle; }
+.emoji20-information_desk_person { content: "\1F937"; vertical-align: middle; }
+.emoji20-information_source { content: "\1F937"; vertical-align: middle; }
+.emoji20-innocent { content: "\1F937"; vertical-align: middle; }
+.emoji20-interrobang { content: "\1F937"; vertical-align: middle; }
+.emoji20-iphone { content: "\1F937"; vertical-align: middle; }
+.emoji20-it { content: "\1F937"; vertical-align: middle; }
+.emoji20-izakaya_lantern { content: "\1F937"; vertical-align: middle; }
+.emoji20-jack_o_lantern { content: "\1F937"; vertical-align: middle; }
+.emoji20-japan { content: "\1F937"; vertical-align: middle; }
+.emoji20-japanese_castle { content: "\1F937"; vertical-align: middle; }
+.emoji20-japanese_goblin { content: "\1F937"; vertical-align: middle; }
+.emoji20-japanese_ogre { content: "\1F937"; vertical-align: middle; }
+.emoji20-jeans { content: "\1F937"; vertical-align: middle; }
+.emoji20-joy { content: "\1F937"; vertical-align: middle; }
+.emoji20-joy_cat { content: "\1F937"; vertical-align: middle; }
+.emoji20-jp { content: "\1F937"; vertical-align: middle; }
+.emoji20-key { content: "\1F937"; vertical-align: middle; }
+.emoji20-keycap_ten { content: "\1F937"; vertical-align: middle; }
+.emoji20-kimono { content: "\1F937"; vertical-align: middle; }
+.emoji20-kiss { content: "\1F937"; vertical-align: middle; }
+.emoji20-kissing { content: "\1F937"; vertical-align: middle; }
+.emoji20-kissing_cat { content: "\1F937"; vertical-align: middle; }
+.emoji20-kissing_closed_eyes { content: "\1F937"; vertical-align: middle; }
+.emoji20-kissing_face { content: "\1F937"; vertical-align: middle; }
+.emoji20-kissing_heart { content: "\1F937"; vertical-align: middle; }
+.emoji20-kissing_smiling_eyes { content: "\1F937"; vertical-align: middle; }
+.emoji20-koala { content: "\1F937"; vertical-align: middle; }
+.emoji20-koko { content: "\1F937"; vertical-align: middle; }
+.emoji20-kr { content: "\1F937"; vertical-align: middle; }
+.emoji20-large_blue_circle { content: "\1F937"; vertical-align: middle; }
+.emoji20-large_blue_diamond { content: "\1F937"; vertical-align: middle; }
+.emoji20-large_orange_diamond { content: "\1F937"; vertical-align: middle; }
+.emoji20-last_quarter_moon { content: "\1F937"; vertical-align: middle; }
+.emoji20-last_quarter_moon_with_face { content: "\1F937"; vertical-align: middle; }
+.emoji20-laughing {  vertical-align: middle; }
+.emoji20-leaves { content: "\1F937"; vertical-align: middle; }
+.emoji20-ledger { content: "\1F937"; vertical-align: middle; }
+.emoji20-leftwards_arrow_with_hook { content: "\1F937"; vertical-align: middle; }
+.emoji20-left_luggage { content: "\1F937"; vertical-align: middle; }
+.emoji20-left_right_arrow { content: "\1F937"; vertical-align: middle; }
+.emoji20-lemon { content: "\1F937"; vertical-align: middle; }
+.emoji20-leo { content: "\1F937"; vertical-align: middle; }
+.emoji20-leopard { content: "\1F937"; vertical-align: middle; }
+.emoji20-libra { content: "\1F937"; vertical-align: middle; }
+.emoji20-light_rail { content: "\1F937"; vertical-align: middle; }
+.emoji20-link { content: "\1F937"; vertical-align: middle; }
+.emoji20-lips { content: "\1F937"; vertical-align: middle; }
+.emoji20-lipstick { content: "\1F937"; vertical-align: middle; }
+.emoji20-lock { content: "\1F937"; vertical-align: middle; }
+.emoji20-lock_with_ink_pen { content: "\1F937"; vertical-align: middle; }
+.emoji20-lollipop { content: "\1F937"; vertical-align: middle; }
+.emoji20-loop { content: "\1F937"; vertical-align: middle; }
+.emoji20-loudspeaker { content: "\1F937"; vertical-align: middle; }
+.emoji20-love_hotel { content: "\1F937"; vertical-align: middle; }
+.emoji20-love_letter { content: "\1F937"; vertical-align: middle; }
+.emoji20-low_brightness { content: "\1F937"; vertical-align: middle; }
+.emoji20-m { content: "\1F937"; vertical-align: middle; }
+.emoji20-mag { content: "\1F937"; vertical-align: middle; }
+.emoji20-mag_right { content: "\1F937"; vertical-align: middle; }
+.emoji20-mahjong { content: "\1F937"; vertical-align: middle; }
+.emoji20-mailbox { content: "\1F937"; vertical-align: middle; }
+.emoji20-mailbox_closed { content: "\1F937"; vertical-align: middle; }
+.emoji20-mailbox_with_mail { content: "\1F937"; vertical-align: middle; }
+.emoji20-mailbox_with_no_mail { content: "\1F937"; vertical-align: middle; }
+.emoji20-man { content: "\1F937"; vertical-align: middle; }
+.emoji20-mans_shoe { content: "\1F937"; vertical-align: middle; }
+.emoji20-man_with_gua_pi_mao { content: "\1F937"; vertical-align: middle; }
+.emoji20-man_with_turban { content: "\1F937"; vertical-align: middle; }
+.emoji20-maple_leaf { content: "\1F937"; vertical-align: middle; }
+.emoji20-mask { content: "\1F937"; vertical-align: middle; }
+.emoji20-massage { content: "\1F937"; vertical-align: middle; }
+.emoji20-meat_on_bone { content: "\1F937"; vertical-align: middle; }
+.emoji20-mega { content: "\1F937"; vertical-align: middle; }
+.emoji20-melon { content: "\1F937"; vertical-align: middle; }
+.emoji20-memo { content: "\1F937"; vertical-align: middle; }
+.emoji20-mens { content: "\1F937"; vertical-align: middle; }
+.emoji20-metal { content: "\1F937"; vertical-align: middle; }
+.emoji20-metro { content: "\1F937"; vertical-align: middle; }
+.emoji20-microphone { content: "\1F937"; vertical-align: middle; }
+.emoji20-microscope { content: "\1F937"; vertical-align: middle; }
+.emoji20-milky_way { content: "\1F937"; vertical-align: middle; }
+.emoji20-minibus { content: "\1F937"; vertical-align: middle; }
+.emoji20-minidisc { content: "\1F937"; vertical-align: middle; }
+.emoji20-mobile_phone_off { content: "\1F937"; vertical-align: middle; }
+.emoji20-moneybag { content: "\1F937"; vertical-align: middle; }
+.emoji20-money_with_wings { content: "\1F937"; vertical-align: middle; }
+.emoji20-monkey { content: "\1F937"; vertical-align: middle; }
+.emoji20-monkey_face { content: "\1F937"; vertical-align: middle; }
+.emoji20-monorail { content: "\1F937"; vertical-align: middle; }
+.emoji20-moon { content: "\1F937"; vertical-align: middle; }
+.emoji20-mortar_board { content: "\1F937"; vertical-align: middle; }
+.emoji20-mountain_bicyclist { content: "\1F937"; vertical-align: middle; }
+.emoji20-mountain_cableway { content: "\1F937"; vertical-align: middle; }
+.emoji20-mountain_railway { content: "\1F937"; vertical-align: middle; }
+.emoji20-mount_fuji { content: "\1F937"; vertical-align: middle; }
+.emoji20-mouse { content: "\1F937"; vertical-align: middle; }
+.emoji20-mouse2 { content: "\1F937"; vertical-align: middle; }
+.emoji20-movie_camera { content: "\1F937"; vertical-align: middle; }
+.emoji20-moyai { content: "\1F937"; vertical-align: middle; }
+.emoji20-muscle { content: "\1F937"; vertical-align: middle; }
+.emoji20-mushroom { content: "\1F937"; vertical-align: middle; }
+.emoji20-musical_keyboard { content: "\1F937"; vertical-align: middle; }
+.emoji20-musical_note { content: "\1F937"; vertical-align: middle; }
+.emoji20-musical_score { content: "\1F937"; vertical-align: middle; }
+.emoji20-mute { content: "\1F937"; vertical-align: middle; }
+.emoji20-nail_care { content: "\1F937"; vertical-align: middle; }
+.emoji20-name_badge { content: "\1F937"; vertical-align: middle; }
+.emoji20-neckbeard { content: "\1F937"; vertical-align: middle; }
+.emoji20-necktie { content: "\1F937"; vertical-align: middle; }
+.emoji20-negative_squared_cross_mark { content: "\1F937"; vertical-align: middle; }
+.emoji20-neutral_face { content: "\1F937"; vertical-align: middle; }
+.emoji20-new { content: "\1F937"; vertical-align: middle; }
+.emoji20-newspaper { content: "\1F937"; vertical-align: middle; }
+.emoji20-new_moon { content: "\1F937"; vertical-align: middle; }
+.emoji20-new_moon_with_face { content: "\1F937"; vertical-align: middle; }
+.emoji20-ng { content: "\1F937"; vertical-align: middle; }
+.emoji20-nine { content: "\1F937"; vertical-align: middle; }
+.emoji20-non-potable_water { content: "\1F937"; vertical-align: middle; }
+.emoji20-nose { content: "\1F937"; vertical-align: middle; }
+.emoji20-notebook { content: "\1F937"; vertical-align: middle; }
+.emoji20-notebook_with_decorative_cover { content: "\1F937"; vertical-align: middle; }
+.emoji20-notes { content: "\1F937"; vertical-align: middle; }
+.emoji20-no_bell { content: "\1F937"; vertical-align: middle; }
+.emoji20-no_bicycles { content: "\1F937"; vertical-align: middle; }
+.emoji20-no_entry { content: "\1F937"; vertical-align: middle; }
+.emoji20-no_entry_sign { content: "\1F937"; vertical-align: middle; }
+.emoji20-no_good { content: "\1F937"; vertical-align: middle; }
+.emoji20-no_mobile_phones { content: "\1F937"; vertical-align: middle; }
+.emoji20-no_mouth { content: "\1F937"; vertical-align: middle; }
+.emoji20-no_pedestrians { content: "\1F937"; vertical-align: middle; }
+.emoji20-no_smoking { content: "\1F937"; vertical-align: middle; }
+.emoji20-nut_and_bolt { content: "\1F937"; vertical-align: middle; }
+.emoji20-o { content: "\1F937"; vertical-align: middle; }
+.emoji20-o2 { content: "\1F937"; vertical-align: middle; }
+.emoji20-ocean { content: "\1F937"; vertical-align: middle; }
+.emoji20-octocat { content: "\1F937"; vertical-align: middle; }
+.emoji20-octopus { content: "\1F937"; vertical-align: middle; }
+.emoji20-oden { content: "\1F937"; vertical-align: middle; }
+.emoji20-office { content: "\1F937"; vertical-align: middle; }
+.emoji20-ok { content: "\1F937"; vertical-align: middle; }
+.emoji20-ok_hand { content: "\1F937"; vertical-align: middle; }
+.emoji20-ok_woman { content: "\1F937"; vertical-align: middle; }
+.emoji20-older_man { content: "\1F937"; vertical-align: middle; }
+.emoji20-older_woman { content: "\1F937"; vertical-align: middle; }
+.emoji20-on { content: "\1F937"; vertical-align: middle; }
+.emoji20-oncoming_automobile { content: "\1F937"; vertical-align: middle; }
+.emoji20-oncoming_bus { content: "\1F937"; vertical-align: middle; }
+.emoji20-oncoming_police_car { content: "\1F937"; vertical-align: middle; }
+.emoji20-oncoming_taxi { content: "\1F937"; vertical-align: middle; }
+.emoji20-one { content: "\1F937"; vertical-align: middle; }
+.emoji20-open_file_folder { content: "\1F937"; vertical-align: middle; }
+.emoji20-open_hands { content: "\1F937"; vertical-align: middle; }
+.emoji20-open_mouth { content: "\1F937"; vertical-align: middle; }
+.emoji20-ophiuchus { content: "\1F937"; vertical-align: middle; }
+.emoji20-orange_book { content: "\1F937"; vertical-align: middle; }
+.emoji20-outbox_tray { content: "\1F937"; vertical-align: middle; }
+.emoji20-ox { content: "\1F937"; vertical-align: middle; }
+.emoji20-package { content: "\1F937"; vertical-align: middle; }
+.emoji20-pager { content: "\1F937"; vertical-align: middle; }
+.emoji20-page_facing_up { content: "\1F937"; vertical-align: middle; }
+.emoji20-page_with_curl { content: "\1F937"; vertical-align: middle; }
+.emoji20-palm_tree { content: "\1F937"; vertical-align: middle; }
+.emoji20-panda_face { content: "\1F937"; vertical-align: middle; }
+.emoji20-paperclip { content: "\1F937"; vertical-align: middle; }
+.emoji20-parking { content: "\1F937"; vertical-align: middle; }
+.emoji20-partly_sunny { content: "\1F937"; vertical-align: middle; }
+.emoji20-part_alternation_mark { content: "\1F937"; vertical-align: middle; }
+.emoji20-passport_control { content: "\1F937"; vertical-align: middle; }
+.emoji20-paw_prints { content: "\1F937"; vertical-align: middle; }
+.emoji20-peach { content: "\1F937"; vertical-align: middle; }
+.emoji20-pear { content: "\1F937"; vertical-align: middle; }
+.emoji20-pencil { content: "\1F937"; vertical-align: middle; }
+.emoji20-pencil2 { content: "\1F937"; vertical-align: middle; }
+.emoji20-penguin { content: "\1F937"; vertical-align: middle; }
+.emoji20-pensive { content: "\1F937"; vertical-align: middle; }
+.emoji20-performing_arts { content: "\1F937"; vertical-align: middle; }
+.emoji20-persevere { content: "\1F937"; vertical-align: middle; }
+.emoji20-person_frowning { content: "\1F937"; vertical-align: middle; }
+.emoji20-person_with_blond_hair { content: "\1F937"; vertical-align: middle; }
+.emoji20-person_with_pouting_face { content: "\1F937"; vertical-align: middle; }
+.emoji20-phone { content: "\1F937"; vertical-align: middle; }
+.emoji20-pig { content: "\1F937"; vertical-align: middle; }
+.emoji20-pig2 { content: "\1F937"; vertical-align: middle; }
+.emoji20-pig_nose { content: "\1F937"; vertical-align: middle; }
+.emoji20-pill { content: "\1F937"; vertical-align: middle; }
+.emoji20-pineapple { content: "\1F937"; vertical-align: middle; }
+.emoji20-pisces { content: "\1F937"; vertical-align: middle; }
+.emoji20-pizza { content: "\1F937"; vertical-align: middle; }
+.emoji20-plus1 { content: "\1F937"; vertical-align: middle; }
+.emoji20-point_down { content: "\1F937"; vertical-align: middle; }
+.emoji20-point_left { content: "\1F937"; vertical-align: middle; }
+.emoji20-point_right { content: "\1F937"; vertical-align: middle; }
+.emoji20-point_up { content: "\1F937"; vertical-align: middle; }
+.emoji20-point_up_2 { content: "\1F937"; vertical-align: middle; }
+.emoji20-police_car { content: "\1F937"; vertical-align: middle; }
+.emoji20-poodle { content: "\1F937"; vertical-align: middle; }
+.emoji20-poop { content: "\1F937"; vertical-align: middle; }
+.emoji20-postal_horn { content: "\1F937"; vertical-align: middle; }
+.emoji20-postbox { content: "\1F937"; vertical-align: middle; }
+.emoji20-post_office { content: "\1F937"; vertical-align: middle; }
+.emoji20-potable_water { content: "\1F937"; vertical-align: middle; }
+.emoji20-pouch { content: "\1F937"; vertical-align: middle; }
+.emoji20-poultry_leg { content: "\1F937"; vertical-align: middle; }
+.emoji20-pound { content: "\1F937"; vertical-align: middle; }
+.emoji20-pouting_cat { content: "\1F937"; vertical-align: middle; }
+.emoji20-pray { content: "\1F937"; vertical-align: middle; }
+.emoji20-princess { content: "\1F937"; vertical-align: middle; }
+.emoji20-punch { content: "\1F937"; vertical-align: middle; }
+.emoji20-purple_heart { content: "\1F937"; vertical-align: middle; }
+.emoji20-purse { content: "\1F937"; vertical-align: middle; }
+.emoji20-pushpin { content: "\1F937"; vertical-align: middle; }
+.emoji20-put_litter_in_its_place { content: "\1F937"; vertical-align: middle; }
+.emoji20-question { content: "\1F937"; vertical-align: middle; }
+.emoji20-rabbit { content: "\1F937"; vertical-align: middle; }
+.emoji20-rabbit2 { content: "\1F937"; vertical-align: middle; }
+.emoji20-racehorse { content: "\1F937"; vertical-align: middle; }
+.emoji20-radio { content: "\1F937"; vertical-align: middle; }
+.emoji20-radio_button { content: "\1F937"; vertical-align: middle; }
+.emoji20-rage { content: "\1F937"; vertical-align: middle; }
+.emoji20-rage1 { content: "\1F937"; vertical-align: middle; }
+.emoji20-rage2 { content: "\1F937"; vertical-align: middle; }
+.emoji20-rage3 { content: "\1F937"; vertical-align: middle; }
+.emoji20-rage4 { content: "\1F937"; vertical-align: middle; }
+.emoji20-railway_car { content: "\1F937"; vertical-align: middle; }
+.emoji20-rainbow { content: "\1F937"; vertical-align: middle; }
+.emoji20-raised_hand { content: "\1F937"; vertical-align: middle; }
+.emoji20-raised_hands { content: "\1F937"; vertical-align: middle; }
+.emoji20-raising_hand { content: "\1F937"; vertical-align: middle; }
+.emoji20-ram { content: "\1F937"; vertical-align: middle; }
+.emoji20-ramen { content: "\1F937"; vertical-align: middle; }
+.emoji20-rat { content: "\1F937"; vertical-align: middle; }
+.emoji20-recycle { content: "\1F937"; vertical-align: middle; }
+.emoji20-red_car { content: "\1F937"; vertical-align: middle; }
+.emoji20-red_circle { content: "\1F937"; vertical-align: middle; }
+.emoji20-registered { content: "\1F937"; vertical-align: middle; }
+.emoji20-relaxed { content: "\1F937"; vertical-align: middle; }
+.emoji20-relieved { content: "\1F937"; vertical-align: middle; }
+.emoji20-repeat { content: "\1F937"; vertical-align: middle; }
+.emoji20-repeat_one { content: "\1F937"; vertical-align: middle; }
+.emoji20-restroom { content: "\1F937"; vertical-align: middle; }
+.emoji20-revolving_hearts { content: "\1F937"; vertical-align: middle; }
+.emoji20-rewind { content: "\1F937"; vertical-align: middle; }
+.emoji20-ribbon { content: "\1F937"; vertical-align: middle; }
+.emoji20-rice { content: "\1F937"; vertical-align: middle; }
+.emoji20-rice_ball { content: "\1F937"; vertical-align: middle; }
+.emoji20-rice_cracker { content: "\1F937"; vertical-align: middle; }
+.emoji20-rice_scene { content: "\1F937"; vertical-align: middle; }
+.emoji20-ring { content: "\1F937"; vertical-align: middle; }
+.emoji20-rocket { content: "\1F937"; vertical-align: middle; }
+.emoji20-roller_coaster { content: "\1F937"; vertical-align: middle; }
+.emoji20-rooster { content: "\1F937"; vertical-align: middle; }
+.emoji20-rose { content: "\1F937"; vertical-align: middle; }
+.emoji20-rotating_light { content: "\1F937"; vertical-align: middle; }
+.emoji20-round_pushpin { content: "\1F937"; vertical-align: middle; }
+.emoji20-rowboat { content: "\1F937"; vertical-align: middle; }
+.emoji20-ru { content: "\1F937"; vertical-align: middle; }
+.emoji20-rugby_football { content: "\1F937"; vertical-align: middle; }
+.emoji20-runner { content: "\1F937"; vertical-align: middle; }
+.emoji20-running { content: "\1F937"; vertical-align: middle; }
+.emoji20-running_shirt_with_sash { content: "\1F937"; vertical-align: middle; }
+.emoji20-sa { content: "\1F937"; vertical-align: middle; }
+.emoji20-sagittarius { content: "\1F937"; vertical-align: middle; }
+.emoji20-sailboat { content: "\1F937"; vertical-align: middle; }
+.emoji20-sake { content: "\1F937"; vertical-align: middle; }
+.emoji20-sandal { content: "\1F937"; vertical-align: middle; }
+.emoji20-santa { content: "\1F937"; vertical-align: middle; }
+.emoji20-satellite { content: "\1F937"; vertical-align: middle; }
+.emoji20-satisfied { content: "\1F937"; vertical-align: middle; }
+.emoji20-saxophone { content: "\1F937"; vertical-align: middle; }
+.emoji20-school { content: "\1F937"; vertical-align: middle; }
+.emoji20-school_satchel { content: "\1F937"; vertical-align: middle; }
+.emoji20-scissors { content: "\1F937"; vertical-align: middle; }
+.emoji20-scorpius { content: "\1F937"; vertical-align: middle; }
+.emoji20-scream { content: "\1F937"; vertical-align: middle; }
+.emoji20-scream_cat { content: "\1F937"; vertical-align: middle; }
+.emoji20-scroll { content: "\1F937"; vertical-align: middle; }
+.emoji20-seat { content: "\1F937"; vertical-align: middle; }
+.emoji20-secret { content: "\1F937"; vertical-align: middle; }
+.emoji20-seedling { content: "\1F937"; vertical-align: middle; }
+.emoji20-see_no_evil { content: "\1F937"; vertical-align: middle; }
+.emoji20-seven { content: "\1F937"; vertical-align: middle; }
+.emoji20-shaved_ice { content: "\1F937"; vertical-align: middle; }
+.emoji20-sheep { content: "\1F937"; vertical-align: middle; }
+.emoji20-shell { content: "\1F937"; vertical-align: middle; }
+.emoji20-ship { content: "\1F937"; vertical-align: middle; }
+.emoji20-shipit { content: "\1F937"; vertical-align: middle; }
+.emoji20-shirt { content: "\1F937"; vertical-align: middle; }
+.emoji20-shit { content: "\1F937"; vertical-align: middle; }
+.emoji20-shoe { content: "\1F937"; vertical-align: middle; }
+.emoji20-shower { content: "\1F937"; vertical-align: middle; }
+.emoji20-signal_strength { content: "\1F937"; vertical-align: middle; }
+.emoji20-six { content: "\1F937"; vertical-align: middle; }
+.emoji20-six_pointed_star { content: "\1F937"; vertical-align: middle; }
+.emoji20-ski { content: "\1F937"; vertical-align: middle; }
+.emoji20-skull { content: "\1F937"; vertical-align: middle; }
+.emoji20-sleeping { content: "\1F937"; vertical-align: middle; }
+.emoji20-sleepy { content: "\1F937"; vertical-align: middle; }
+.emoji20-slot_machine { content: "\1F937"; vertical-align: middle; }
+.emoji20-small_blue_diamond { content: "\1F937"; vertical-align: middle; }
+.emoji20-small_orange_diamond { content: "\1F937"; vertical-align: middle; }
+.emoji20-small_red_triangle { content: "\1F937"; vertical-align: middle; }
+.emoji20-small_red_triangle_down { content: "\1F937"; vertical-align: middle; }
+.emoji20-smile { content: "\1F937"; vertical-align: middle; }
+.emoji20-smiley { content: "\1F937"; vertical-align: middle; }
+.emoji20-smiley_cat { content: "\1F937"; vertical-align: middle; }
+.emoji20-smile_cat { content: "\1F937"; vertical-align: middle; }
+.emoji20-smiling_imp { content: "\1F937"; vertical-align: middle; }
+.emoji20-smirk { content: "\1F937"; vertical-align: middle; }
+.emoji20-smirk_cat { content: "\1F937"; vertical-align: middle; }
+.emoji20-smoking { content: "\1F937"; vertical-align: middle; }
+.emoji20-snail { content: "\1F937"; vertical-align: middle; }
+.emoji20-snake { content: "\1F937"; vertical-align: middle; }
+.emoji20-snowboarder { content: "\1F937"; vertical-align: middle; }
+.emoji20-snowflake { content: "\1F937"; vertical-align: middle; }
+.emoji20-snowman { content: "\1F937"; vertical-align: middle; }
+.emoji20-sob { content: "\1F937"; vertical-align: middle; }
+.emoji20-soccer { content: "\1F937"; vertical-align: middle; }
+.emoji20-soon { content: "\1F937"; vertical-align: middle; }
+.emoji20-sos { content: "\1F937"; vertical-align: middle; }
+.emoji20-sound { content: "\1F937"; vertical-align: middle; }
+.emoji20-space_invader { content: "\1F937"; vertical-align: middle; }
+.emoji20-spades { content: "\1F937"; vertical-align: middle; }
+.emoji20-spaghetti { content: "\1F937"; vertical-align: middle; }
+.emoji20-sparkle { content: "\1F937"; vertical-align: middle; }
+.emoji20-sparkler { content: "\1F937"; vertical-align: middle; }
+.emoji20-sparkles { content: "\1F937"; vertical-align: middle; }
+.emoji20-sparkling_heart { content: "\1F937"; vertical-align: middle; }
+.emoji20-speaker { content: "\1F937"; vertical-align: middle; }
+.emoji20-speak_no_evil { content: "\1F937"; vertical-align: middle; }
+.emoji20-speech_balloon { content: "\1F937"; vertical-align: middle; }
+.emoji20-speedboat { content: "\1F937"; vertical-align: middle; }
+.emoji20-squirrel { content: "\1F937"; vertical-align: middle; }
+.emoji20-star { content: "\1F937"; vertical-align: middle; }
+.emoji20-star2 { content: "\1F937"; vertical-align: middle; }
+.emoji20-stars { content: "\1F937"; vertical-align: middle; }
+.emoji20-station { content: "\1F937"; vertical-align: middle; }
+.emoji20-statue_of_liberty { content: "\1F937"; vertical-align: middle; }
+.emoji20-steam_locomotive { content: "\1F937"; vertical-align: middle; }
+.emoji20-stew { content: "\1F937"; vertical-align: middle; }
+.emoji20-straight_ruler { content: "\1F937"; vertical-align: middle; }
+.emoji20-strawberry { content: "\1F937"; vertical-align: middle; }
+.emoji20-stuck_out_tongue { content: "\1F937"; vertical-align: middle; }
+.emoji20-stuck_out_tongue_closed_eyes { content: "\1F937"; vertical-align: middle; }
+.emoji20-stuck_out_tongue_winking_eye { content: "\1F937"; vertical-align: middle; }
+.emoji20-sunflower { content: "\1F937"; vertical-align: middle; }
+.emoji20-sunglasses { content: "\1F937"; vertical-align: middle; }
+.emoji20-sunny { content: "\1F937"; vertical-align: middle; }
+.emoji20-sunrise { content: "\1F937"; vertical-align: middle; }
+.emoji20-sunrise_over_mountains { content: "\1F937"; vertical-align: middle; }
+.emoji20-sun_with_face { content: "\1F937"; vertical-align: middle; }
+.emoji20-surfer { content: "\1F937"; vertical-align: middle; }
+.emoji20-sushi { content: "\1F937"; vertical-align: middle; }
+.emoji20-suspect { content: "\1F937"; vertical-align: middle; }
+.emoji20-suspension_railway { content: "\1F937"; vertical-align: middle; }
+.emoji20-sweat { content: "\1F937"; vertical-align: middle; }
+.emoji20-sweat_drops { content: "\1F937"; vertical-align: middle; }
+.emoji20-sweat_smile { content: "\1F937"; vertical-align: middle; }
+.emoji20-sweet_potato { content: "\1F937"; vertical-align: middle; }
+.emoji20-swimmer { content: "\1F937"; vertical-align: middle; }
+.emoji20-symbols { content: "\1F937"; vertical-align: middle; }
+.emoji20-syringe { content: "\1F937"; vertical-align: middle; }
+.emoji20-tada { content: "\1F937"; vertical-align: middle; }
+.emoji20-tanabata_tree { content: "\1F937"; vertical-align: middle; }
+.emoji20-tangerine { content: "\1F937"; vertical-align: middle; }
+.emoji20-taurus { content: "\1F937"; vertical-align: middle; }
+.emoji20-taxi { content: "\1F937"; vertical-align: middle; }
+.emoji20-tea { content: "\1F937"; vertical-align: middle; }
+.emoji20-telephone { content: "\1F937"; vertical-align: middle; }
+.emoji20-telephone_receiver { content: "\1F937"; vertical-align: middle; }
+.emoji20-telescope { content: "\1F937"; vertical-align: middle; }
+.emoji20-tennis { content: "\1F937"; vertical-align: middle; }
+.emoji20-tent { content: "\1F937"; vertical-align: middle; }
+.emoji20-thought_balloon { content: "\1F937"; vertical-align: middle; }
+.emoji20-three { content: "\1F937"; vertical-align: middle; }
+.emoji20-thumbsdown { content: "\1F937"; vertical-align: middle; }
+.emoji20-thumbsup { content: "\1F937"; vertical-align: middle; }
+.emoji20-ticket { content: "\1F937"; vertical-align: middle; }
+.emoji20-tiger { content: "\1F937"; vertical-align: middle; }
+.emoji20-tiger2 { content: "\1F937"; vertical-align: middle; }
+.emoji20-tired_face { content: "\1F937"; vertical-align: middle; }
+.emoji20-tm { content: "\1F937"; vertical-align: middle; }
+.emoji20-toilet { content: "\1F937"; vertical-align: middle; }
+.emoji20-tokyo_tower { content: "\1F937"; vertical-align: middle; }
+.emoji20-tomato { content: "\1F937"; vertical-align: middle; }
+.emoji20-tongue { content: "\1F937"; vertical-align: middle; }
+.emoji20-top { content: "\1F937"; vertical-align: middle; }
+.emoji20-tophat { content: "\1F937"; vertical-align: middle; }
+.emoji20-tractor { content: "\1F937"; vertical-align: middle; }
+.emoji20-traffic_light { content: "\1F937"; vertical-align: middle; }
+.emoji20-train { content: "\1F937"; vertical-align: middle; }
+.emoji20-train2 { content: "\1F937"; vertical-align: middle; }
+.emoji20-tram { content: "\1F937"; vertical-align: middle; }
+.emoji20-triangular_flag_on_post { content: "\1F937"; vertical-align: middle; }
+.emoji20-triangular_ruler { content: "\1F937"; vertical-align: middle; }
+.emoji20-trident { content: "\1F937"; vertical-align: middle; }
+.emoji20-triumph { content: "\1F937"; vertical-align: middle; }
+.emoji20-trolleybus { content: "\1F937"; vertical-align: middle; }
+.emoji20-trollface { content: "\1F937"; vertical-align: middle; }
+.emoji20-trophy { content: "\1F937"; vertical-align: middle; }
+.emoji20-tropical_drink { content: "\1F937"; vertical-align: middle; }
+.emoji20-tropical_fish { content: "\1F937"; vertical-align: middle; }
+.emoji20-truck { content: "\1F937"; vertical-align: middle; }
+.emoji20-trumpet { content: "\1F937"; vertical-align: middle; }
+.emoji20-tshirt { content: "\1F937"; vertical-align: middle; }
+.emoji20-tulip { content: "\1F937"; vertical-align: middle; }
+.emoji20-turtle { content: "\1F937"; vertical-align: middle; }
+.emoji20-tv { content: "\1F937"; vertical-align: middle; }
+.emoji20-twisted_rightwards_arrows { content: "\1F937"; vertical-align: middle; }
+.emoji20-two { content: "\1F937"; vertical-align: middle; }
+.emoji20-two_hearts { content: "\1F937"; vertical-align: middle; }
+.emoji20-two_men_holding_hands { content: "\1F937"; vertical-align: middle; }
+.emoji20-two_women_holding_hands { content: "\1F937"; vertical-align: middle; }
+.emoji20-u5272 { content: "\1F937"; vertical-align: middle; }
+.emoji20-u5408 { content: "\1F937"; vertical-align: middle; }
+.emoji20-u55b6 { content: "\1F937"; vertical-align: middle; }
+.emoji20-u6307 { content: "\1F937"; vertical-align: middle; }
+.emoji20-u6708 { content: "\1F937"; vertical-align: middle; }
+.emoji20-u6709 { content: "\1F937"; vertical-align: middle; }
+.emoji20-u6e80 { content: "\1F937"; vertical-align: middle; }
+.emoji20-u7121 { content: "\1F937"; vertical-align: middle; }
+.emoji20-u7533 { content: "\1F937"; vertical-align: middle; }
+.emoji20-u7981 { content: "\1F937"; vertical-align: middle; }
+.emoji20-u7a7a { content: "\1F937"; vertical-align: middle; }
+.emoji20-uk { content: "\1F937"; vertical-align: middle; }
+.emoji20-umbrella { content: "\1F937"; vertical-align: middle; }
+.emoji20-unamused { content: "\1F937"; vertical-align: middle; }
+.emoji20-underage { content: "\1F937"; vertical-align: middle; }
+.emoji20-unlock { content: "\1F937"; vertical-align: middle; }
+.emoji20-up { content: "\1F937"; vertical-align: middle; }
+.emoji20-us { content: "\1F937"; vertical-align: middle; }
+.emoji20-v { content: "\1F937"; vertical-align: middle; }
+.emoji20-vertical_traffic_light { content: "\1F937"; vertical-align: middle; }
+.emoji20-vhs { content: "\1F937"; vertical-align: middle; }
+.emoji20-vibration_mode { content: "\1F937"; vertical-align: middle; }
+.emoji20-video_camera { content: "\1F937"; vertical-align: middle; }
+.emoji20-video_game { content: "\1F937"; vertical-align: middle; }
+.emoji20-violin { content: "\1F937"; vertical-align: middle; }
+.emoji20-virgo { content: "\1F937"; vertical-align: middle; }
+.emoji20-volcano { content: "\1F937"; vertical-align: middle; }
+.emoji20-vs { content: "\1F937"; vertical-align: middle; }
+.emoji20-walking { content: "\1F937"; vertical-align: middle; }
+.emoji20-waning_crescent_moon { content: "\1F937"; vertical-align: middle; }
+.emoji20-waning_gibbous_moon { content: "\1F937"; vertical-align: middle; }
+.emoji20-warning { content: "\1F937"; vertical-align: middle; }
+.emoji20-watch { content: "\1F937"; vertical-align: middle; }
+.emoji20-watermelon { content: "\1F937"; vertical-align: middle; }
+.emoji20-water_buffalo { content: "\1F937"; vertical-align: middle; }
+.emoji20-wave { content: "\1F937"; vertical-align: middle; }
+.emoji20-wavy_dash { content: "\1F937"; vertical-align: middle; }
+.emoji20-waxing_crescent_moon { content: "\1F937"; vertical-align: middle; }
+.emoji20-waxing_gibbous_moon { content: "\1F937"; vertical-align: middle; }
+.emoji20-wc { content: "\1F937"; vertical-align: middle; }
+.emoji20-weary { content: "\1F937"; vertical-align: middle; }
+.emoji20-wedding { content: "\1F937"; vertical-align: middle; }
+.emoji20-whale { content: "\1F937"; vertical-align: middle; }
+.emoji20-whale2 { content: "\1F937"; vertical-align: middle; }
+.emoji20-wheelchair { content: "\1F937"; vertical-align: middle; }
+.emoji20-white_check_mark { content: "\1F937"; vertical-align: middle; }
+.emoji20-white_circle { content: "\1F937"; vertical-align: middle; }
+.emoji20-white_flower { content: "\1F937"; vertical-align: middle; }
+.emoji20-white_large_square { content: "\1F937"; vertical-align: middle; }
+.emoji20-white_medium_small_square { content: "\1F937"; vertical-align: middle; }
+.emoji20-white_medium_square { content: "\1F937"; vertical-align: middle; }
+.emoji20-white_small_square { content: "\1F937"; vertical-align: middle; }
+.emoji20-white_square { content: "\1F937"; vertical-align: middle; }
+.emoji20-white_square_button { content: "\1F937"; vertical-align: middle; }
+.emoji20-wind_chime { content: "\1F937"; vertical-align: middle; }
+.emoji20-wine_glass { content: "\1F937"; vertical-align: middle; }
+.emoji20-wink { content: "\1F937"; vertical-align: middle; }
+.emoji20-wink2 { content: "\1F937"; vertical-align: middle; }
+.emoji20-wolf { content: "\1F937"; vertical-align: middle; }
+.emoji20-woman { content: "\1F937"; vertical-align: middle; }
+.emoji20-womans_clothes { content: "\1F937"; vertical-align: middle; }
+.emoji20-womans_hat { content: "\1F937"; vertical-align: middle; }
+.emoji20-womens { content: "\1F937"; vertical-align: middle; }
+.emoji20-worried { content: "\1F937"; vertical-align: middle; }
+.emoji20-wrench { content: "\1F937"; vertical-align: middle; }
+.emoji20-x { content: "\1F937"; vertical-align: middle; }
+.emoji20-yellow_heart { content: "\1F937"; vertical-align: middle; }
+.emoji20-yen { content: "\1F937"; vertical-align: middle; }
+.emoji20-yum { content: "\1F937"; vertical-align: middle; }
+.emoji20-zap { content: "\1F937"; vertical-align: middle; }
+.emoji20-zero { content: "\1F937"; vertical-align: middle; }
+.emoji20-zzz { content: "\1F937"; vertical-align: middle; }
