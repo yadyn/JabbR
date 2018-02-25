@@ -6,6 +6,7 @@ td.ponymoticon { margin-top: 0; }
 .ponymoticon-d { background-image: url(images/ponymoticon/d.png); width: 70px; height: 70px; }
 .ponymoticon-e { background-image: url(images/ponymoticon/e.png); width: 70px; height: 70px; }
 .ponymoticon-f { background-image: url(images/ponymoticon/f.png); width: 70px; height: 70px; }
+.ponymoticon-g { background-image: url(images/ponymoticon/g.png); width: 70px; height: 70px; }
 
 .ponymoticon-ajlie { background-position: -0px -0px; }
 .ponymoticon-priceless { background-position: -70px -0px; }
@@ -248,3 +249,42 @@ td.ponymoticon { margin-top: 0; }
 .ponymoticon-spikeapproves { background-position: -210px -210px; }
 .ponymoticon-flutternice { background-position: -210px -280px; }
 .ponymoticon-ppdont { background-position: -210px -350px; }
+.ponymoticon-ajgrump { background-position: -210px -420px; }
+.ponymoticon-sgpopcorn { background-position: -210px -490px; }
+.ponymoticon-raritysquee { background-position: -210px -560px; }
+.ponymoticon-gummystare { background-position: -210px -630px; }
+
+.ponymoticon-karma { background-position: -0px -0px; }
+.ponymoticon-discentiajudge { background-position: -0px -70px; }
+.ponymoticon-twisnide { background-position: -0px -140px; }
+.ponymoticon-pinkie { background-position: -0px -210px; }
+.ponymoticon-cococold { background-position: -0px -280px; }
+.ponymoticon-quibble { background-position: -0px -350px; }
+.ponymoticon-rdthis { background-position: -0px -420px; }
+.ponymoticon-flutterbrow { background-position: -0px -490px; }
+.ponymoticon-celestiahurt { background-position: -0px -560px; }
+.ponymoticon-sgconcern { background-position: -0px -630px; }
+.ponymoticon-sbfocus { background-position: -70px -0px; }
+.ponymoticon-sgsneaky { background-position: -70px -70px; }
+.ponymoticon-trixieww { background-position: -70px -140px; }
+.ponymoticon-flutterplz { background-position: -70px -210px; }
+.ponymoticon-emberwtf { background-position: -70px -280px; }
+.ponymoticon-sunsetwhyme { background-position: -70px -350px; }
+.ponymoticon-abteehee { background-position: -70px -420px; }
+.ponymoticon-squintyglam { background-position: -70px -490px; }
+.ponymoticon-rdsup { background-position: -70px -560px; }
+.ponymoticon-celestiahappy { background-position: -70px -630px; }
+.ponymoticon-lunagrump { background-position: -140px -0px; }
+.ponymoticon-sgeesh { background-position: -140px -70px; }
+.ponymoticon-twieek { background-position: -140px -140px; }
+.ponymoticon-tempest { background-position: -140px -210px; }
+.ponymoticon-tempestsmile { background-position: -140px -280px; }
+.ponymoticon-squeestar { background-position: -140px -350px; }
+.ponymoticon-appleroll { background-position: -140px -420px; }
+.ponymoticon-spikeholdup { background-position: -140px -490px; }
+.ponymoticon-tempestgaze { background-position: -140px -560px; }
+.ponymoticon-squeekiepie { background-position: -140px -630px; }
+.ponymoticon-twisheepish { background-position: -210px -0px; }
+.ponymoticon-skystarfine { background-position: -210px -70px; }
+.ponymoticon-ajeesh { background-position: -210px -140px; }
+.ponymoticon-pinkiesugar { background-position: -210px -210px; }

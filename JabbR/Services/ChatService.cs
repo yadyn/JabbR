@@ -434,6 +434,11 @@ namespace JabbR.Services
 
         public ChatMessage AddMessage(ChatUser user, ChatRoom room, string id, string content)
         {
+            return AddMessage(user, room, id, content, false);
+        }
+
+        public ChatMessage AddMessage(ChatUser user, ChatRoom room, string id, string content, bool htmlEncoded)
+        {
             var chatMessage = new ChatMessage
             {
                 Id = id,
@@ -441,7 +446,7 @@ namespace JabbR.Services
                 Content = content,
                 When = DateTimeOffset.UtcNow,
                 Room = room,
-                HtmlEncoded = false
+                HtmlEncoded = htmlEncoded
             };
 
             _recentMessageCache.Add(chatMessage);

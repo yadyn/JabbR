@@ -117,10 +117,20 @@ form#send-message {
     color: #000000;
 }
 
+.emote-button {
+    display: inline-block;
+    position: absolute;
+    right: 307px;
+    bottom: 10px;
+    margin: 0 3px;
+    padding: 5px;
+    overflow: hidden;
+}
+
 .upload-button {
     display: inline-block;
     position: absolute;
-    right: 305px;
+    left: 0px;
     bottom: 10px;
     margin: 0 3px;
     padding: 5px;
@@ -878,7 +888,7 @@ li.user.typing .gravatar {
 
 #message-box {
     position: absolute;
-    left: 0;
+    left: 35px;
     right: 122px;
     padding: 0;
     margin: 0;
@@ -3150,10 +3160,10 @@ h3.userlist-header {
         right: 200px;
     }
 
-    .upload-button {
+    .emote-button {
         display: inline-block;
         position: absolute;
-        right: 270px;
+        right: 272px;
         margin: 0 3px;
         padding: 5px;
         overflow: hidden;
@@ -3203,9 +3213,7 @@ h3.userlist-header {
 @media (max-width:700px) {
     .home #heading h1 {
         text-indent: -9999px;
-        background-image: url('../../images/logo32.png');
         width: 32px;
-        height: 32px;
         margin-top: 0;
     }
     
@@ -3257,10 +3265,10 @@ h3.userlist-header {
         right: 5px;
     }
 
-    .upload-button {
+    .emote-button {
         display: inline-block;
         position: absolute;
-        right: 75px;
+        right: 77px;
         bottom: 10px;
         margin: 0 3px;
         padding: 5px;
@@ -3496,7 +3504,7 @@ h3.userlist-header {
         margin-bottom: 0;
     }
 
-    .upload-button {
+    .emote-button, .upload-button {
         bottom: 5px;
     }
 }
@@ -3671,5 +3679,28 @@ ul.ui-widget-header > li > a {
     }
 
 .ui-tabs .ui-tabs-nav li a {
-    padding: .5em .75em !important;
+    padding: 8px 10px !important;
+}
+
+span.spoiler {
+    color: #000!important;
+    background: #000!important;
+}
+
+span.spoiler:hover,span.spoiler:focus {
+    color: #fff!important;
+}
+
+s,s a:not(:hover) {
+    color: #000!important;
+    background: #000!important;
+    text-decoration: none;
+}
+
+s:hover,s:focus,s:hover a {
+    color: #fff!important;
+}
+
+s:hover a {
+    text-decoration: underline;
 }

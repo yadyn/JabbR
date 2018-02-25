@@ -189,7 +189,7 @@ namespace JabbR
 
             // Create a true unique id and save the message to the db
             string id = Guid.NewGuid().ToString("d");
-            ChatMessage chatMessage = _service.AddMessage(user, room, id, clientMessage.Content);
+            ChatMessage chatMessage = _service.AddMessage(user, room, id, clientMessage.Content, clientMessage.HtmlEncoded);
             _repository.CommitChanges();
 
 
@@ -1098,6 +1098,18 @@ namespace JabbR
         void INotificationService.SendMessage(ChatUser user, ChatRoom room, string message)
         {
             Send(message, room.Name);
+        }
+
+        void INotificationService.SendHtmlMessage(ChatUser user, ChatRoom room, string message)
+        {
+            var clientMessage = new ClientMessage
+            {
+                Content = message,
+                Room = room.Name,
+                HtmlEncoded = true
+            };
+
+            Send(clientMessage);
         }
 
         void INotificationService.AddAdmin(ChatUser targetUser)

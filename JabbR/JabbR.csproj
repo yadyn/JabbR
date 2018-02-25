@@ -27,6 +27,7 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -314,6 +315,7 @@
     <Content Include="Content\images\ponymoticon\f-pokemon.png" />
     <Content Include="Content\images\ponymoticon\f-twi.png" />
     <Content Include="Content\images\ponymoticon\f.png" />
+    <Content Include="Content\images\ponymoticon\g.png" />
     <Content Include="Content\images\splash-logo.png" />
     <Content Include="Content\images\tl-logo.png" />
     <Content Include="Content\images\tl-logo64.png" />
@@ -370,6 +372,7 @@
     <Content Include="Content\images\v4c\otter.gif" />
     <Content Include="Content\images\v4c\pekaface.png" />
     <Content Include="Content\images\v4c\pikminu.png" />
+    <Content Include="Content\images\v4c\pjsalt.png" />
     <Content Include="Content\images\v4c\plzgo.png" />
     <Content Include="Content\images\v4c\praise.png" />
     <Content Include="Content\images\v4c\pumpkindance.gif" />
@@ -406,14 +409,9 @@
     <Content Include="Content\yukkuri.css" />
     <Content Include="Content\sounds\notification.mp3" />
     <Content Include="Content\themes\default\Chat.bbcnews.css" />
-    <Content Include="Content\themes\default\Chat.css" />
-    <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\emoji20.css" />
     <Content Include="Content\font-awesome-ie7.min.css" />
-    <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\font\fontawesome-webfont.svg" />
     <Content Include="Content\images\close-icon-hover.png" />
@@ -1322,15 +1320,11 @@
     <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="Content\images\splash-logo.png" />
     <Content Include="Content\sounds\notification.mp3" />
-    <Content Include="Content\themes\default\Chat.bbcnews.css" />
     <Content Include="Content\themes\default\Chat.css" />
     <Content Include="Content\bootstrap-responsive.css" />
-    <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\font-awesome-ie7.min.css" />
     <Content Include="Content\font-awesome.css" />
-    <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\font\fontawesome-webfont.svg" />
     <Content Include="Content\images\close-icon-hover.png" />
     <Content Include="Content\images\close-icon.png" />
@@ -1609,6 +1603,7 @@
     <Compile Include="ContentProviders\VimeoContentProvider.cs" />
     <Compile Include="ContentProviders\UrbanDictionaryContentProvider.cs" />
     <Compile Include="ContentProviders\XkcdContentProvider.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Infrastructure\BinaryBlob.cs" />
     <Compile Include="Commands\MemeCommand.cs" />
     <Compile Include="Infrastructure\AuthenticationService.cs" />
