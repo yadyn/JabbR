@@ -410,7 +410,7 @@
     <Content Include="Content\sounds\notification.mp3" />
     <Content Include="Content\themes\default\Chat.bbcnews.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />
-    <Content Include="Content\emoji20.css" />
+    <Content Include="Content\emoji21.css" />
     <Content Include="Content\font-awesome-ie7.min.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\font\fontawesome-webfont.svg" />
@@ -1331,7 +1331,6 @@
     <Content Include="Content\images\contentproviders\bbcnews-header.png" />
     <Content Include="Content\images\contentproviders\bbcnews-masthead.png" />
     <Content Include="Content\images\download-icon-white.png" />
-    <Content Include="Content\images\emoji20.png" />
     <Content Include="Content\images\download-icon.png" />
     <Content Include="Content\images\error.png" />
     <Content Include="Content\images\flags.png" />
@@ -2058,7 +2057,7 @@ xcopy /s /y /R "$(SolutionDir)packages\Nancy.Viewengines.Razor.1.2.0\lib\Net40\N
 )</PostBuildEvent>
   </PropertyGroup>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
