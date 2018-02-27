@@ -47,9 +47,9 @@ var EmojiIcons;
         "r\\:P\\b": ":reimukiss:", "r\\:\\)": ":reimusmile:", "r>\\:\\(": ":reimumad:", "r\\:c\\b": ":reimucry:",
         "r\\:C\\b": ":reimucry:", "r\\:\\(": ":reimusad:", "r\\/\\/\\/": ":reimublush:",
 
-        "\\:-?\\)": ":smile:", ":-?D\\b": ":grin:", ";-?\\)": ":wink:",
-        "\\:-?\\(": ":disappointed:", "\\:'-?\\(": ":cry:", ":-?P\\b": ":tongue:",
-        ":-?p\\b": ":tongue:", ":-?O\\b": ":astonished:", ":-?o\\b": ":astonished:", "<3": ":heart:",
+        "\\:-?\\)": ":smiling-face:", ":-?D\\b": ":grinning-face:", ";-?\\)": ":winking-face:",
+        "\\:-?\\(": ":frowning-face:", "\\:'-?\\(": ":crying-face:", ":-?P\\b": ":face-with-tongue:",
+        ":-?p\\b": ":face-with-tongue:", ":-?O\\b": ":astonished-face:", ":-?o\\b": ":astonished-face:", "<3": ":red-heart:",
 
         //"bob": ":babz:", "Bob": ":babz:", "babz": ":babz:", "Babz": ":babz:",
         //"sean": ":shanz:", "Sean": ":shanz:", "shanz": ":shanz:", "Shanz": ":shanz:", "shanley": ":shanz:", "Shanley": ":shanz:",
