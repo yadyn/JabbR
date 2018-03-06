@@ -47,9 +47,9 @@ var EmojiIcons;
         "r\\:P\\b": ":reimukiss:", "r\\:\\)": ":reimusmile:", "r>\\:\\(": ":reimumad:", "r\\:c\\b": ":reimucry:",
         "r\\:C\\b": ":reimucry:", "r\\:\\(": ":reimusad:", "r\\/\\/\\/": ":reimublush:",
 
-        "\\B\\:-?\\)\\B": ":slightly-smiling-face:", "\\B:-?D\\B": ":grinning-face:", "\\B;-?\\)\\B": ":winking-face:",
-        "\\B\\:-?\\(\\B": ":slightly-frowning-face:", "\\B\\:'-?\\(\\B": ":crying-face:", "\\B:-?P\\B": ":face-with-tongue:",
-        "\\B:-?p\\B": ":face-with-tongue:", "\\B:-?O\\B": ":astonished-face:", "\\B:-?o\\B": ":astonished-face:", "\\B<3\\B": ":red-heart:",
+        "\\B\\:-?\\)\\B": ":slightly-smiling-face:", "\\B\\:-?D\\b": ":grinning-face:", "\\B;-?\\)\\B": ":winking-face:",
+        "\\B\\:-?\\(\\B": ":slightly-frowning-face:", "\\B\\:'-?\\(\\B": ":crying-face:", "\\B\\:-?P\\b": ":face-with-tongue:",
+        "\\B\\:-?p\\b": ":face-with-tongue:", "\\B\\:-?O\\b": ":astonished-face:", "\\B\\:-?o\\b": ":astonished-face:", "\\B<3\\b": ":red-heart:",
         "\\B\\:-?\\|\\B": ":neutral-face:", "\\B-\\.-\\B": ":expressionless-face:", "\\B-_-\\B": ":expressionless-face:",
         "\\B\\:-?\\\\\\B": ":confused-face:", "\\B\\:-?\\/\\B": ":confused-face:", "\\B>\\:-?\\(\\B": ":pouting-face:", "\\B8-?\\)\\B": ":smiling-face-with-sunglasses:",
 
