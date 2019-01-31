@@ -19,29 +19,9 @@ td.hotgluemoticon { margin-top: 0; }
 .hotgluemoticon-jamesy { background-position: -140px -210px; }
 .hotgluemoticon-kimjongwhere { background-position: -210px -210px; }
 .hotgluemoticon-doobie { background-position: -0px -280px; }
-/*.hotgluemoticon-scootacheer { background-position: -70px -280px; }
-.hotgluemoticon-swagintosh { background-position: -140px -280px; }
-.hotgluemoticon-pinkieawe { background-position: -210px -280px; }
-.hotgluemoticon-ajsup { background-position: -0px -350px; }
-.hotgluemoticon-flutterwhoa { background-position: -70px -350px; }
-.hotgluemoticon-rdcry { background-position: -140px -350px; }
-.hotgluemoticon-silverspoon { background-position: -210px -350px; }
-.hotgluemoticon-ohcomeon { background-position: -0px -420px; }
-.hotgluemoticon-ppcute { background-position: -70px -420px; }
-.hotgluemoticon-abbored { background-position: -140px -420px; }
-.hotgluemoticon-rarityreally { background-position: -210px -420px; }
-.hotgluemoticon-raritynews { background-position: -0px -490px; }
-.hotgluemoticon-sbbook { background-position: -70px -490px; }
-.hotgluemoticon-scootaplease { background-position: -140px -490px; }
-.hotgluemoticon-applegasp { background-position: -210px -490px; }
-.hotgluemoticon-twiright { background-position: -0px -560px; }
-.hotgluemoticon-celestiawut { background-position: -70px -560px; }
-.hotgluemoticon-grannysmith { background-position: -140px -560px; }
-.hotgluemoticon-rarishock { background-position: -210px -560px; }
-.hotgluemoticon-shiningarmor { background-position: -0px -630px; }
-.hotgluemoticon-chrysalis { background-position: -70px -630px; }
-.hotgluemoticon-cadence { background-position: -140px -630px; }
-.hotgluemoticon-applederp { background-position: -210px -630px; }*/
 
 #emotelist-dialog img.v4cemote { max-width: 80px; }
 .message img.v4cemote { max-width: 120px; }
+
+#emotelist-dialog img.blobemoji { max-width: 70px; }
+.message img.blobemoji { max-width: 70px; }

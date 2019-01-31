@@ -7,6 +7,7 @@ td.ponymoticon { margin-top: 0; }
 .ponymoticon-e { background-image: url(images/ponymoticon/e.png); width: 70px; height: 70px; }
 .ponymoticon-f { background-image: url(images/ponymoticon/f.png); width: 70px; height: 70px; }
 .ponymoticon-g { background-image: url(images/ponymoticon/g.png); width: 70px; height: 70px; }
+.ponymoticon-i { background-image: url(images/ponymoticon/i.png); width: 70px; height: 70px; }
 
 .ponymoticon-ajlie { background-position: -0px -0px; }
 .ponymoticon-priceless { background-position: -70px -0px; }
@@ -294,3 +295,29 @@ td.ponymoticon { margin-top: 0; }
 .ponymoticon-starlightspittle { background-position: -210px -490px; }
 .ponymoticon-sunburstnervous { background-position: -210px -560px; }
 .ponymoticon-spikewoke { background-position: -210px -630px; }
+
+.ponymoticon-abgrump { background-position: -0px -0px; }
+.ponymoticon-celestiawink { background-position: -0px -70px; }
+.ponymoticon-celestiasquint { background-position: -0px -140px; }
+.ponymoticon-sunsetgrump { background-position: -0px -210px; }
+.ponymoticon-sunspicious { background-position: -0px -280px; }
+.ponymoticon-twicoffee { background-position: -0px -350px; }
+.ponymoticon-twiomg { background-position: -0px -420px; }
+.ponymoticon-yak { background-position: -0px -490px; }
+.ponymoticon-starlightisee { background-position: -0px -560px; }
+.ponymoticon-yona { background-position: -0px -630px; }
+.ponymoticon-gallus { background-position: -70px -0px; }
+.ponymoticon-sandbaruhh { background-position: -70px -70px; }
+.ponymoticon-silverbored { background-position: -70px -140px; }
+.ponymoticon-ocellus { background-position: -70px -210px; }
+.ponymoticon-smolder { background-position: -70px -280px; }
+.ponymoticon-smolderwelp { background-position: -70px -350px; }
+.ponymoticon-silverstream { background-position: -70px -420px; }
+.ponymoticon-ajpuzzle { background-position: -70px -490px; }
+.ponymoticon-pinkieeager { background-position: -70px -560px; }
+.ponymoticon-trixiecheer { background-position: -70px -630px; }
+.ponymoticon-cozyglow { background-position: -140px -0px; }
+.ponymoticon-shiningsmug { background-position: -140px -70px; }
+.ponymoticon-rarischeme { background-position: -140px -140px; }
+.ponymoticon-twipudding { background-position: -140px -210px; }
+.ponymoticon-scootaglance { background-position: -140px -280px; }
