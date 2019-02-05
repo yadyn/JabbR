@@ -30,6 +30,8 @@ namespace JabbR.ContentProviders
             [?=&+%\w-]*       # Consume any URL (query) remainder.",
             RegexOptions.IgnoreCase | RegexOptions.IgnorePatternWhitespace);
 
+        private static readonly Regex TimestampRegex = new Regex(@"\&t=(\d+)", RegexOptions.IgnoreCase | RegexOptions.IgnorePatternWhitespace);
+
         public override IEnumerable<string> Domains
         {
             get
@@ -43,19 +45,29 @@ namespace JabbR.ContentProviders
 
         protected override IList<string> ExtractParameters(Uri responseUri)
         {
-            Match match = YoutubeRegex.Match(responseUri.ToString());
-            if (match.Groups.Count < 2 || String.IsNullOrEmpty(match.Groups[1].Value))
+            var url = responseUri.ToString();
+            var videoIdMatch = YoutubeRegex.Match(url);
+            if (videoIdMatch.Groups.Count < 2 || String.IsNullOrEmpty(videoIdMatch.Groups[1].Value))
             {
                 return null;
             }
 
-            string videoId = match.Groups[1].Value;
-            return new List<string> { videoId };
+            string videoId = videoIdMatch.Groups[1].Value;
+            string startTime = "0";
+
+            var timestampMatch = TimestampRegex.Match(url);
+
+            if (timestampMatch.Groups.Count > 1 && !String.IsNullOrEmpty(timestampMatch.Groups[1].Value))
+            {
+                startTime = timestampMatch.Groups[1].Value;
+            }
+
+            return new List<string> { videoId, startTime };
         }
 
         protected override string GetIFrameVideoEmbedUrl()
         {
-            return "https://www.youtube.com/embed/{0}?enablejsapi=1";
+            return "https://www.youtube.com/embed/{0}?enablejsapi=1&start={1}";
         }
     }
 }
