@@ -364,7 +364,8 @@ var EmojiIcons;
         "squeekiepie": "g", "twisheepish": "g", "skystarfine": "g", "ajeesh": "g", "pinkiesugar": "g", "flutternope": "g", "twishame": "g", "pinkiesmoosh": "g", "starlightspittle": "g", "sunburstnervous": "g", "spikewoke": "g",
 
         "abgrump": "i", "celestiawink": "i", "celestiasquint": "i", "sunsetgrump": "i", "sunspicious": "i", "twicoffee": "i", "twiomg": "i", "yak": "i", "starlightisee": "i", "yona": "i", "gallus": "i", "sandbaruhh": "i", "silverbored": "i", "ocellus": "i",
-        "smolder": "i", "smolderwelp": "i", "silverstream": "i", "ajpuzzle": "i", "pinkieeager": "i", "trixiecheer": "i", "cozyglow": "i", "shiningsmug": "i", "rarischeme": "i", "twipudding": "i", "scootaglance": "h"
+        "smolder": "i", "smolderwelp": "i", "silverstream": "i", "ajpuzzle": "i", "pinkieeager": "i", "trixiecheer": "i", "cozyglow": "i", "shiningsmug": "i", "rarischeme": "i", "twipudding": "i", "scootaglance": "i", "crazyglow": "i", "starlightsly": "i",
+        "rdeyy": "i", "galluswtf": "i", "twifret": "i", "smolderscowl": "i", "pinkiesmug": "i", "peekaloo": "i", "flutterball": "i"
     };
 
     var validHotglue = {
