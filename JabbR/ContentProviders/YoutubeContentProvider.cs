@@ -30,7 +30,7 @@ namespace JabbR.ContentProviders
             [?=&+%\w-]*       # Consume any URL (query) remainder.",
             RegexOptions.IgnoreCase | RegexOptions.IgnorePatternWhitespace);
 
-        private static readonly Regex TimestampRegex = new Regex(@"\&t=(\d+)", RegexOptions.IgnoreCase | RegexOptions.IgnorePatternWhitespace);
+        private static readonly Regex TimestampRegex = new Regex(@"(?:\&|\?)t=(\d+)", RegexOptions.IgnoreCase | RegexOptions.IgnorePatternWhitespace);
 
         public override IEnumerable<string> Domains
         {
