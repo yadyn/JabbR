@@ -16,7 +16,7 @@ module.exports = (robot) ->
   robot.respond /cast (.+)/i, (msg) ->
     msg.http('https://api.scryfall.com/cards/named')
       .query({
-        exact: msg.match[1]
+        fuzzy: msg.match[1]
       })
       .get() (err, res, body) ->
         if err
